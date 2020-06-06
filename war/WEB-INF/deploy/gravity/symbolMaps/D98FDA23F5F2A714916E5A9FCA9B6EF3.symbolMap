@@ -1,0 +1,955 @@
+# { 0 }
+# { 'user.agent' : 'ie8' }
+# jsName, jsniIdent, className, memberName, sourceUri, sourceLine, fragmentNumber
+Context2d,,com.google.gwt.canvas.dom.client.Context2d,,com/google/gwt/canvas/dom/client/Context2d.java,30,-1
+p,com.google.gwt.canvas.dom.client.Context2d::$clearRect(Lcom/google/gwt/canvas/dom/client/Context2d;DDDD)V,com.google.gwt.canvas.dom.client.Context2d,$clearRect,com/google/gwt/canvas/dom/client/Context2d.java,308,0
+q,com.google.gwt.canvas.dom.client.Context2d::$drawImage(Lcom/google/gwt/canvas/dom/client/Context2d;Lcom/google/gwt/dom/client/ImageElement;DD)V,com.google.gwt.canvas.dom.client.Context2d,$drawImage,com/google/gwt/canvas/dom/client/Context2d.java,471,0
+r,com.google.gwt.canvas.dom.client.Context2d::$fillText(Lcom/google/gwt/canvas/dom/client/Context2d;Ljava/lang/String;DD)V,com.google.gwt.canvas.dom.client.Context2d,$fillText,com/google/gwt/canvas/dom/client/Context2d.java,576,0
+s,com.google.gwt.canvas.dom.client.Context2d::$lineTo(Lcom/google/gwt/canvas/dom/client/Context2d;DD)V,com.google.gwt.canvas.dom.client.Context2d,$lineTo,com/google/gwt/canvas/dom/client/Context2d.java,807,0
+t,com.google.gwt.canvas.dom.client.Context2d::$moveTo(Lcom/google/gwt/canvas/dom/client/Context2d;DD)V,com.google.gwt.canvas.dom.client.Context2d,$moveTo,com/google/gwt/canvas/dom/client/Context2d.java,828,0
+u,com.google.gwt.canvas.dom.client.Context2d::$rotate(Lcom/google/gwt/canvas/dom/client/Context2d;D)V,com.google.gwt.canvas.dom.client.Context2d,$rotate,com/google/gwt/canvas/dom/client/Context2d.java,880,0
+v,com.google.gwt.canvas.dom.client.Context2d::$translate(Lcom/google/gwt/canvas/dom/client/Context2d;DD)V,com.google.gwt.canvas.dom.client.Context2d,$translate,com/google/gwt/canvas/dom/client/Context2d.java,1214,0
+CssColor,,com.google.gwt.canvas.dom.client.CssColor,,com/google/gwt/canvas/dom/client/CssColor.java,30,-1
+FillStrokeStyle,,com.google.gwt.canvas.dom.client.FillStrokeStyle,,com/google/gwt/canvas/dom/client/FillStrokeStyle.java,25,-1
+JavaScriptException,,com.google.gwt.core.client.JavaScriptException,,com/google/gwt/core/client/JavaScriptException.java,46,-1
+I,com.google.gwt.core.client.JavaScriptException::$clinit()V,com.google.gwt.core.client.JavaScriptException,$clinit,com/google/gwt/core/client/JavaScriptException.java,46,0
+J,com.google.gwt.core.client.JavaScriptException::JavaScriptException(Ljava/lang/Object;) <init>,com.google.gwt.core.client.JavaScriptException,JavaScriptException,com/google/gwt/core/client/JavaScriptException.java,103,0
+H,com.google.gwt.core.client.JavaScriptException::NOT_SET,com.google.gwt.core.client.JavaScriptException,NOT_SET,com/google/gwt/core/client/JavaScriptException.java,48,-1
+a,com.google.gwt.core.client.JavaScriptException::e,com.google.gwt.core.client.JavaScriptException,e,com/google/gwt/core/client/JavaScriptException.java,87,-1
+K,com.google.gwt.core.client.JavaScriptException::getThrown()Ljava/lang/Object;,com.google.gwt.core.client.JavaScriptException,getThrown,com/google/gwt/core/client/JavaScriptException.java,148,0
+JavaScriptObject,,com.google.gwt.core.client.JavaScriptObject,,com/google/gwt/core/client/JavaScriptObject.java,26,-1
+JsArray,,com.google.gwt.core.client.JsArray,,com/google/gwt/core/client/JsArray.java,37,-1
+L,com.google.gwt.core.client.JsDate::now()D,com.google.gwt.core.client.JsDate,now,com/google/gwt/core/client/JsDate.java,95,0
+Scheduler,,com.google.gwt.core.client.Scheduler,,com/google/gwt/core/client/Scheduler.java,33,-1
+P,com.google.gwt.core.client.impl.Impl::$clinit()V,com.google.gwt.core.client.impl.Impl,$clinit,com/google/gwt/core/client/impl/Impl.java,28,0
+Q,com.google.gwt.core.client.impl.Impl::apply(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.core.client.impl.Impl,apply,com/google/gwt/core/client/impl/Impl.java,236,0
+R,com.google.gwt.core.client.impl.Impl::enter()Z,com.google.gwt.core.client.impl.Impl,enter,com/google/gwt/core/client/impl/Impl.java,253,0
+S,com.google.gwt.core.client.impl.Impl::entry(Lcom/google/gwt/core/client/JavaScriptObject;)Lcom/google/gwt/core/client/JavaScriptObject;,com.google.gwt.core.client.impl.Impl,entry,com/google/gwt/core/client/impl/Impl.java,74,0
+T,com.google.gwt.core.client.impl.Impl::entry0(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.core.client.impl.Impl,entry0,com/google/gwt/core/client/impl/Impl.java,275,0
+M,com.google.gwt.core.client.impl.Impl::entryDepth,com.google.gwt.core.client.impl.Impl,entryDepth,com/google/gwt/core/client/impl/Impl.java,41,-1
+U,com.google.gwt.core.client.impl.Impl::exit(Z)V,com.google.gwt.core.client.impl.Impl,exit,com/google/gwt/core/client/impl/Impl.java,313,0
+V,com.google.gwt.core.client.impl.Impl::reportToBrowser(Ljava/lang/Object;)V,com.google.gwt.core.client.impl.Impl,reportToBrowser,com/google/gwt/core/client/impl/Impl.java,203,0
+W,com.google.gwt.core.client.impl.Impl::watchdogEntryDepthCancel(I)V,com.google.gwt.core.client.impl.Impl,watchdogEntryDepthCancel,com/google/gwt/core/client/impl/Impl.java,335,0
+N,com.google.gwt.core.client.impl.Impl::watchdogEntryDepthLastScheduled,com.google.gwt.core.client.impl.Impl,watchdogEntryDepthLastScheduled,com/google/gwt/core/client/impl/Impl.java,46,-1
+X,com.google.gwt.core.client.impl.Impl::watchdogEntryDepthRun()V,com.google.gwt.core.client.impl.Impl,watchdogEntryDepthRun,com/google/gwt/core/client/impl/Impl.java,339,0
+O,com.google.gwt.core.client.impl.Impl::watchdogEntryDepthTimerId,com.google.gwt.core.client.impl.Impl,watchdogEntryDepthTimerId,com/google/gwt/core/client/impl/Impl.java,51,-1
+JavaScriptExceptionBase,,com.google.gwt.core.client.impl.JavaScriptExceptionBase,,com/google/gwt/core/translatable/com/google/gwt/core/client/impl/JavaScriptExceptionBase.java,24,-1
+SchedulerImpl,,com.google.gwt.core.client.impl.SchedulerImpl,,com/google/gwt/core/client/impl/SchedulerImpl.java,28,-1
+Z,com.google.gwt.core.client.impl.SchedulerImpl::$clinit()V,com.google.gwt.core.client.impl.SchedulerImpl,$clinit,com/google/gwt/core/client/impl/SchedulerImpl.java,28,0
+$,com.google.gwt.core.client.impl.SchedulerImpl::$flushEntryCommands(Lcom/google/gwt/core/client/impl/SchedulerImpl;)V,com.google.gwt.core.client.impl.SchedulerImpl,$flushEntryCommands,com/google/gwt/core/client/impl/SchedulerImpl.java,256,0
+ab,com.google.gwt.core.client.impl.SchedulerImpl::$flushFinallyCommands(Lcom/google/gwt/core/client/impl/SchedulerImpl;)V,com.google.gwt.core.client.impl.SchedulerImpl,$flushFinallyCommands,com/google/gwt/core/client/impl/SchedulerImpl.java,272,0
+Y,com.google.gwt.core.client.impl.SchedulerImpl::INSTANCE,com.google.gwt.core.client.impl.SchedulerImpl,INSTANCE,com/google/gwt/core/client/impl/SchedulerImpl.java,109,-1
+bb,com.google.gwt.core.client.impl.SchedulerImpl::SchedulerImpl() <init>,com.google.gwt.core.client.impl.SchedulerImpl,SchedulerImpl,com/google/gwt/core/client/impl/SchedulerImpl.java,28,0
+a,com.google.gwt.core.client.impl.SchedulerImpl::entryCommands,com.google.gwt.core.client.impl.SchedulerImpl,entryCommands,com/google/gwt/core/client/impl/SchedulerImpl.java,242,-1
+b,com.google.gwt.core.client.impl.SchedulerImpl::finallyCommands,com.google.gwt.core.client.impl.SchedulerImpl,finallyCommands,com/google/gwt/core/client/impl/SchedulerImpl.java,243,-1
+cb,com.google.gwt.core.client.impl.SchedulerImpl::push(Lcom/google/gwt/core/client/JsArray;Lcom/google/gwt/core/client/impl/SchedulerImpl$Task;)Lcom/google/gwt/core/client/JsArray;,com.google.gwt.core.client.impl.SchedulerImpl,push,com/google/gwt/core/client/impl/SchedulerImpl.java,147,0
+db,com.google.gwt.core.client.impl.SchedulerImpl::runScheduledTasks(Lcom/google/gwt/core/client/JsArray;Lcom/google/gwt/core/client/JsArray;)Lcom/google/gwt/core/client/JsArray;,com.google.gwt.core.client.impl.SchedulerImpl,runScheduledTasks,com/google/gwt/core/client/impl/SchedulerImpl.java,167,0
+SchedulerImpl$Task,,com.google.gwt.core.client.impl.SchedulerImpl$Task,,com/google/gwt/core/client/impl/SchedulerImpl.java,33,-1
+fb,com.google.gwt.core.client.impl.StackTraceCreator::$clinit()V,com.google.gwt.core.client.impl.StackTraceCreator,$clinit,com/google/gwt/core/client/impl/StackTraceCreator.java,29,0
+gb,com.google.gwt.core.client.impl.StackTraceCreator::captureStackTrace(Ljava/lang/Object;)V,com.google.gwt.core.client.impl.StackTraceCreator,captureStackTrace,com/google/gwt/core/client/impl/StackTraceCreator.java,308,0
+eb,com.google.gwt.core.client.impl.StackTraceCreator::collector,com.google.gwt.core.client.impl.StackTraceCreator,collector,com/google/gwt/core/client/impl/StackTraceCreator.java,342,-1
+hb,com.google.gwt.core.client.impl.StackTraceCreator::extractFunctionName(Ljava/lang/String;)Ljava/lang/String;,com.google.gwt.core.client.impl.StackTraceCreator,extractFunctionName,com/google/gwt/core/client/impl/StackTraceCreator.java,370,0
+ib,com.google.gwt.core.client.impl.StackTraceCreator::supportsErrorStack()Z,com.google.gwt.core.client.impl.StackTraceCreator,supportsErrorStack,com/google/gwt/core/client/impl/StackTraceCreator.java,351,0
+StackTraceCreator$Collector,,com.google.gwt.core.client.impl.StackTraceCreator$Collector,,com/google/gwt/core/client/impl/StackTraceCreator.java,57,-1
+StackTraceCreator$CollectorLegacy,,com.google.gwt.core.client.impl.StackTraceCreator$CollectorLegacy,,com/google/gwt/core/client/impl/StackTraceCreator.java,68,-1
+jb,com.google.gwt.core.client.impl.StackTraceCreator$CollectorLegacy::StackTraceCreator$CollectorLegacy() <init>,com.google.gwt.core.client.impl.StackTraceCreator$CollectorLegacy,StackTraceCreator$CollectorLegacy,com/google/gwt/core/client/impl/StackTraceCreator.java,68,0
+kb,com.google.gwt.core.client.impl.StackTraceCreator$CollectorLegacy::collect(Ljava/lang/Object;)V,com.google.gwt.core.client.impl.StackTraceCreator$CollectorLegacy,collect,com/google/gwt/core/client/impl/StackTraceCreator.java,71,0
+StackTraceCreator$CollectorModern,,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModern,,com/google/gwt/core/client/impl/StackTraceCreator.java,163,-1
+lb,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModern::collect(Ljava/lang/Object;)V,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModern,collect,com/google/gwt/core/client/impl/StackTraceCreator.java,166,0
+StackTraceCreator$CollectorModernNoSourceMap,,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModernNoSourceMap,,com/google/gwt/core/client/impl/StackTraceCreator.java,279,-1
+mb,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModernNoSourceMap::StackTraceCreator$CollectorModernNoSourceMap() <init>,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModernNoSourceMap,StackTraceCreator$CollectorModernNoSourceMap,com/google/gwt/core/client/impl/StackTraceCreator.java,279,0
+AudioElement,,com.google.gwt.dom.client.AudioElement,,com/google/gwt/dom/client/AudioElement.java,30,-1
+BodyElement,,com.google.gwt.dom.client.BodyElement,,com/google/gwt/dom/client/BodyElement.java,27,-1
+CanvasElement,,com.google.gwt.dom.client.CanvasElement,,com/google/gwt/dom/client/CanvasElement.java,27,-1
+tb,com.google.gwt.dom.client.DOMImplIE8::$getScrollLeft(Lcom/google/gwt/dom/client/DOMImplIE8;Lcom/google/gwt/dom/client/Element;)I,com.google.gwt.dom.client.DOMImplIE8,$getScrollLeft,com/google/gwt/dom/client/DOMImplIE8.java,77,0
+qb,com.google.gwt.dom.client.DOMImplTrident::$getBoundingClientRectLeft(Lcom/google/gwt/dom/client/DOMImplTrident;Lcom/google/gwt/dom/client/Element;)I,com.google.gwt.dom.client.DOMImplTrident,$getBoundingClientRectLeft,com/google/gwt/dom/client/DOMImplTrident.java,293,0
+rb,com.google.gwt.dom.client.DOMImplTrident::$getBoundingClientRectTop(Lcom/google/gwt/dom/client/DOMImplTrident;Lcom/google/gwt/dom/client/Element;)I,com.google.gwt.dom.client.DOMImplTrident,$getBoundingClientRectTop,com/google/gwt/dom/client/DOMImplTrident.java,303,0
+sb,com.google.gwt.dom.client.DOMImplTrident::$setInnerText(Lcom/google/gwt/dom/client/DOMImplTrident;Lcom/google/gwt/dom/client/Element;Ljava/lang/String;)V,com.google.gwt.dom.client.DOMImplTrident,$setInnerText,com/google/gwt/dom/client/DOMImplTrident.java,289,0
+pb,com.google.gwt.dom.client.DOMImplTrident::currentEventTarget,com.google.gwt.dom.client.DOMImplTrident,currentEventTarget,com/google/gwt/dom/client/DOMImplTrident.java,30,-1
+Document,,com.google.gwt.dom.client.Document,,com/google/gwt/dom/client/Document.java,25,-1
+ub,com.google.gwt.dom.client.Document::$getElementById(Lcom/google/gwt/dom/client/Document;Ljava/lang/String;)Lcom/google/gwt/dom/client/Element;,com.google.gwt.dom.client.Document,$getElementById,com/google/gwt/dom/client/Document.java,1370,0
+Element,,com.google.gwt.dom.client.Element,,com/google/gwt/dom/client/Element.java,25,-1
+nb,com.google.gwt.dom.client.Element::$getAbsoluteLeft(Lcom/google/gwt/dom/client/Element;)I,com.google.gwt.dom.client.Element,$getAbsoluteLeft,com/google/gwt/dom/client/Element.java,166,0
+ob,com.google.gwt.dom.client.Element::$getAbsoluteTop(Lcom/google/gwt/dom/client/Element;)I,com.google.gwt.dom.client.Element,$getAbsoluteTop,com/google/gwt/dom/client/Element.java,182,0
+EventTarget,,com.google.gwt.dom.client.EventTarget,,com/google/gwt/dom/client/EventTarget.java,35,-1
+ImageElement,,com.google.gwt.dom.client.ImageElement,,com/google/gwt/dom/client/ImageElement.java,26,-1
+MediaElement,,com.google.gwt.dom.client.MediaElement,,com/google/gwt/dom/client/MediaElement.java,26,-1
+NativeEvent,,com.google.gwt.dom.client.NativeEvent,,com/google/gwt/dom/client/NativeEvent.java,24,-1
+Node,,com.google.gwt.dom.client.Node,,com/google/gwt/dom/client/Node.java,26,-1
+Style,,com.google.gwt.dom.client.Style,,com/google/gwt/dom/client/Style.java,32,-1
+Style$Display,,com.google.gwt.dom.client.Style$Display,,com/google/gwt/dom/client/Style.java,288,-1
+Rb,com.google.gwt.dom.client.Style$Display::$clinit()V,com.google.gwt.dom.client.Style$Display,$clinit,com/google/gwt/dom/client/Style.java,288,0
+yb,com.google.gwt.dom.client.Style$Display::BLOCK,com.google.gwt.dom.client.Style$Display,BLOCK,com/google/gwt/dom/client/Style.java,295,-1
+zb,com.google.gwt.dom.client.Style$Display::FLEX,com.google.gwt.dom.client.Style$Display,FLEX,com/google/gwt/dom/client/Style.java,391,-1
+Ab,com.google.gwt.dom.client.Style$Display::INITIAL,com.google.gwt.dom.client.Style$Display,INITIAL,com/google/gwt/dom/client/Style.java,385,-1
+Bb,com.google.gwt.dom.client.Style$Display::INLINE,com.google.gwt.dom.client.Style$Display,INLINE,com/google/gwt/dom/client/Style.java,301,-1
+Cb,com.google.gwt.dom.client.Style$Display::INLINE_BLOCK,com.google.gwt.dom.client.Style$Display,INLINE_BLOCK,com/google/gwt/dom/client/Style.java,307,-1
+Db,com.google.gwt.dom.client.Style$Display::INLINE_FLEX,com.google.gwt.dom.client.Style$Display,INLINE_FLEX,com/google/gwt/dom/client/Style.java,397,-1
+Eb,com.google.gwt.dom.client.Style$Display::INLINE_TABLE,com.google.gwt.dom.client.Style$Display,INLINE_TABLE,com/google/gwt/dom/client/Style.java,313,-1
+Fb,com.google.gwt.dom.client.Style$Display::LIST_ITEM,com.google.gwt.dom.client.Style$Display,LIST_ITEM,com/google/gwt/dom/client/Style.java,319,-1
+Gb,com.google.gwt.dom.client.Style$Display::NONE,com.google.gwt.dom.client.Style$Display,NONE,com/google/gwt/dom/client/Style.java,289,-1
+Hb,com.google.gwt.dom.client.Style$Display::RUN_IN,com.google.gwt.dom.client.Style$Display,RUN_IN,com/google/gwt/dom/client/Style.java,325,-1
+Sb,com.google.gwt.dom.client.Style$Display::Style$Display(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display,Style$Display,com/google/gwt/dom/client/Style.java,288,0
+Ib,com.google.gwt.dom.client.Style$Display::TABLE,com.google.gwt.dom.client.Style$Display,TABLE,com/google/gwt/dom/client/Style.java,331,-1
+Jb,com.google.gwt.dom.client.Style$Display::TABLE_CAPTION,com.google.gwt.dom.client.Style$Display,TABLE_CAPTION,com/google/gwt/dom/client/Style.java,337,-1
+Kb,com.google.gwt.dom.client.Style$Display::TABLE_CELL,com.google.gwt.dom.client.Style$Display,TABLE_CELL,com/google/gwt/dom/client/Style.java,367,-1
+Lb,com.google.gwt.dom.client.Style$Display::TABLE_COLUMN,com.google.gwt.dom.client.Style$Display,TABLE_COLUMN,com/google/gwt/dom/client/Style.java,373,-1
+Mb,com.google.gwt.dom.client.Style$Display::TABLE_COLUMN_GROUP,com.google.gwt.dom.client.Style$Display,TABLE_COLUMN_GROUP,com/google/gwt/dom/client/Style.java,343,-1
+Nb,com.google.gwt.dom.client.Style$Display::TABLE_FOOTER_GROUP,com.google.gwt.dom.client.Style$Display,TABLE_FOOTER_GROUP,com/google/gwt/dom/client/Style.java,355,-1
+Ob,com.google.gwt.dom.client.Style$Display::TABLE_HEADER_GROUP,com.google.gwt.dom.client.Style$Display,TABLE_HEADER_GROUP,com/google/gwt/dom/client/Style.java,349,-1
+Pb,com.google.gwt.dom.client.Style$Display::TABLE_ROW,com.google.gwt.dom.client.Style$Display,TABLE_ROW,com/google/gwt/dom/client/Style.java,379,-1
+Qb,com.google.gwt.dom.client.Style$Display::TABLE_ROW_GROUP,com.google.gwt.dom.client.Style$Display,TABLE_ROW_GROUP,com/google/gwt/dom/client/Style.java,361,-1
+Tb,com.google.gwt.dom.client.Style$Display::values()[Lcom/google/gwt/dom/client/Style$Display;,com.google.gwt.dom.client.Style$Display,values,com/google/gwt/dom/client/Style.java,288,0
+Style$Display$1,,com.google.gwt.dom.client.Style$Display$1,,com/google/gwt/dom/client/Style.java,289,-1
+Ub,com.google.gwt.dom.client.Style$Display$1::Style$Display$1(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$1,Style$Display$1,com/google/gwt/dom/client/Style.java,289,0
+Style$Display$10,,com.google.gwt.dom.client.Style$Display$10,,com/google/gwt/dom/client/Style.java,343,-1
+Vb,com.google.gwt.dom.client.Style$Display$10::Style$Display$10(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$10,Style$Display$10,com/google/gwt/dom/client/Style.java,343,0
+Style$Display$11,,com.google.gwt.dom.client.Style$Display$11,,com/google/gwt/dom/client/Style.java,349,-1
+Wb,com.google.gwt.dom.client.Style$Display$11::Style$Display$11(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$11,Style$Display$11,com/google/gwt/dom/client/Style.java,349,0
+Style$Display$12,,com.google.gwt.dom.client.Style$Display$12,,com/google/gwt/dom/client/Style.java,355,-1
+Xb,com.google.gwt.dom.client.Style$Display$12::Style$Display$12(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$12,Style$Display$12,com/google/gwt/dom/client/Style.java,355,0
+Style$Display$13,,com.google.gwt.dom.client.Style$Display$13,,com/google/gwt/dom/client/Style.java,361,-1
+Yb,com.google.gwt.dom.client.Style$Display$13::Style$Display$13(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$13,Style$Display$13,com/google/gwt/dom/client/Style.java,361,0
+Style$Display$14,,com.google.gwt.dom.client.Style$Display$14,,com/google/gwt/dom/client/Style.java,367,-1
+Zb,com.google.gwt.dom.client.Style$Display$14::Style$Display$14(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$14,Style$Display$14,com/google/gwt/dom/client/Style.java,367,0
+Style$Display$15,,com.google.gwt.dom.client.Style$Display$15,,com/google/gwt/dom/client/Style.java,373,-1
+$b,com.google.gwt.dom.client.Style$Display$15::Style$Display$15(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$15,Style$Display$15,com/google/gwt/dom/client/Style.java,373,0
+Style$Display$16,,com.google.gwt.dom.client.Style$Display$16,,com/google/gwt/dom/client/Style.java,379,-1
+_b,com.google.gwt.dom.client.Style$Display$16::Style$Display$16(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$16,Style$Display$16,com/google/gwt/dom/client/Style.java,379,0
+Style$Display$17,,com.google.gwt.dom.client.Style$Display$17,,com/google/gwt/dom/client/Style.java,385,-1
+ac,com.google.gwt.dom.client.Style$Display$17::Style$Display$17(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$17,Style$Display$17,com/google/gwt/dom/client/Style.java,385,0
+Style$Display$18,,com.google.gwt.dom.client.Style$Display$18,,com/google/gwt/dom/client/Style.java,391,-1
+bc,com.google.gwt.dom.client.Style$Display$18::Style$Display$18(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$18,Style$Display$18,com/google/gwt/dom/client/Style.java,391,0
+Style$Display$19,,com.google.gwt.dom.client.Style$Display$19,,com/google/gwt/dom/client/Style.java,397,-1
+cc,com.google.gwt.dom.client.Style$Display$19::Style$Display$19(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$19,Style$Display$19,com/google/gwt/dom/client/Style.java,397,0
+Style$Display$2,,com.google.gwt.dom.client.Style$Display$2,,com/google/gwt/dom/client/Style.java,295,-1
+dc,com.google.gwt.dom.client.Style$Display$2::Style$Display$2(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$2,Style$Display$2,com/google/gwt/dom/client/Style.java,295,0
+Style$Display$3,,com.google.gwt.dom.client.Style$Display$3,,com/google/gwt/dom/client/Style.java,301,-1
+ec,com.google.gwt.dom.client.Style$Display$3::Style$Display$3(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$3,Style$Display$3,com/google/gwt/dom/client/Style.java,301,0
+Style$Display$4,,com.google.gwt.dom.client.Style$Display$4,,com/google/gwt/dom/client/Style.java,307,-1
+fc,com.google.gwt.dom.client.Style$Display$4::Style$Display$4(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$4,Style$Display$4,com/google/gwt/dom/client/Style.java,307,0
+Style$Display$5,,com.google.gwt.dom.client.Style$Display$5,,com/google/gwt/dom/client/Style.java,313,-1
+gc,com.google.gwt.dom.client.Style$Display$5::Style$Display$5(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$5,Style$Display$5,com/google/gwt/dom/client/Style.java,313,0
+Style$Display$6,,com.google.gwt.dom.client.Style$Display$6,,com/google/gwt/dom/client/Style.java,319,-1
+hc,com.google.gwt.dom.client.Style$Display$6::Style$Display$6(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$6,Style$Display$6,com/google/gwt/dom/client/Style.java,319,0
+Style$Display$7,,com.google.gwt.dom.client.Style$Display$7,,com/google/gwt/dom/client/Style.java,325,-1
+ic,com.google.gwt.dom.client.Style$Display$7::Style$Display$7(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$7,Style$Display$7,com/google/gwt/dom/client/Style.java,325,0
+Style$Display$8,,com.google.gwt.dom.client.Style$Display$8,,com/google/gwt/dom/client/Style.java,331,-1
+jc,com.google.gwt.dom.client.Style$Display$8::Style$Display$8(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$8,Style$Display$8,com/google/gwt/dom/client/Style.java,331,0
+Style$Display$9,,com.google.gwt.dom.client.Style$Display$9,,com/google/gwt/dom/client/Style.java,337,-1
+kc,com.google.gwt.dom.client.Style$Display$9::Style$Display$9(Ljava/lang/String;I) <init>,com.google.gwt.dom.client.Style$Display$9,Style$Display$9,com/google/gwt/dom/client/Style.java,337,0
+lc,com.google.gwt.lang.Array::canSet(Ljava/lang/Object;Ljava/lang/Object;)Z,com.google.gwt.lang.Array,canSet,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,180,0
+mc,com.google.gwt.lang.Array::getClassLiteralForArray(Ljava/lang/Class;I)Ljava/lang/Class;,com.google.gwt.lang.Array,getClassLiteralForArray,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,271,0
+nc,com.google.gwt.lang.Array::getElementTypeCategory(Ljava/lang/Object;)I,com.google.gwt.lang.Array,getElementTypeCategory,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,275,0
+oc,com.google.gwt.lang.Array::initUnidimensionalArray(Ljava/lang/Class;Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;III)Ljava/lang/Object;,com.google.gwt.lang.Array,initUnidimensionalArray,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,86,0
+pc,com.google.gwt.lang.Array::initializeArrayElementsWithDefaults(II)Ljava/lang/Object;,com.google.gwt.lang.Array,initializeArrayElementsWithDefaults,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,216,0
+qc,com.google.gwt.lang.Array::isJavaArray(Ljava/lang/Object;)Z,com.google.gwt.lang.Array,isJavaArray,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,317,0
+rc,com.google.gwt.lang.Array::setCheck(Ljava/lang/Object;ILjava/lang/Object;)Ljava/lang/Object;,com.google.gwt.lang.Array,setCheck,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,174,0
+sc,com.google.gwt.lang.Array::stampJavaTypeInfo(Ljava/lang/Class;Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;ILjava/lang/Object;)Ljava/lang/Object;,com.google.gwt.lang.Array,stampJavaTypeInfo,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,139,0
+tc,com.google.gwt.lang.Array::stampJavaTypeInfo(Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;,com.google.gwt.lang.Array,stampJavaTypeInfo,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Array.java,52,0
+uc,com.google.gwt.lang.Cast::booleanCastMap,com.google.gwt.lang.Cast,booleanCastMap,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,46,-1
+xc,com.google.gwt.lang.Cast::canCast(Ljava/lang/Object;Lcom/google/gwt/core/client/JavaScriptObject;)Z,com.google.gwt.lang.Cast,canCast,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,49,0
+yc,com.google.gwt.lang.Cast::castTo(Ljava/lang/Object;Lcom/google/gwt/core/client/JavaScriptObject;)Ljava/lang/Object;,com.google.gwt.lang.Cast,castTo,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,74,0
+zc,com.google.gwt.lang.Cast::castToString(Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.lang.Cast,castToString,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,80,0
+vc,com.google.gwt.lang.Cast::doubleCastMap,com.google.gwt.lang.Cast,doubleCastMap,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,45,-1
+Ac,com.google.gwt.lang.Cast::hasJavaObjectVirtualDispatch(Ljava/lang/Object;)Z,com.google.gwt.lang.Cast,hasJavaObjectVirtualDispatch,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,377,0
+Bc,com.google.gwt.lang.Cast::instanceOf(Ljava/lang/Object;Lcom/google/gwt/core/client/JavaScriptObject;)Z,com.google.gwt.lang.Cast,instanceOf,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,163,0
+Cc,com.google.gwt.lang.Cast::instanceOfBoolean(Ljava/lang/Object;)Z,com.google.gwt.lang.Cast,instanceOfBoolean,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,178,0
+Dc,com.google.gwt.lang.Cast::instanceOfDouble(Ljava/lang/Object;)Z,com.google.gwt.lang.Cast,instanceOfDouble,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,173,0
+Ec,com.google.gwt.lang.Cast::instanceOfString(Ljava/lang/Object;)Z,com.google.gwt.lang.Cast,instanceOfString,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,168,0
+Fc,com.google.gwt.lang.Cast::isJsObjectOrFunction(Ljava/lang/Object;)Z,com.google.gwt.lang.Cast,isJsObjectOrFunction,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,257,0
+Gc,com.google.gwt.lang.Cast::maskUndefined(Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.lang.Cast,maskUndefined,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,294,0
+Hc,com.google.gwt.lang.Cast::round_int(D)I,com.google.gwt.lang.Cast,round_int,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,345,0
+wc,com.google.gwt.lang.Cast::stringCastMap,com.google.gwt.lang.Cast,stringCastMap,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,44,-1
+Ic,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_JavaScriptException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_JavaScriptException_2_classLit,com/google/gwt/core/client/JavaScriptException.java,46,-1
+Jc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_JavaScriptObject_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_JavaScriptObject_2_classLit,com/google/gwt/core/client/JavaScriptObject.java,26,-1
+Kc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_Scheduler_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_Scheduler_2_classLit,com/google/gwt/core/client/Scheduler.java,33,-1
+Lc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_impl_JavaScriptExceptionBase_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_impl_JavaScriptExceptionBase_2_classLit,com/google/gwt/core/translatable/com/google/gwt/core/client/impl/JavaScriptExceptionBase.java,24,-1
+Mc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit,com/google/gwt/core/client/impl/SchedulerImpl.java,28,-1
+Nc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorLegacy_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorLegacy_2_classLit,com/google/gwt/core/client/impl/StackTraceCreator.java,68,-1
+Oc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorModernNoSourceMap_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorModernNoSourceMap_2_classLit,com/google/gwt/core/client/impl/StackTraceCreator.java,279,-1
+Pc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorModern_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorModern_2_classLit,com/google/gwt/core/client/impl/StackTraceCreator.java,163,-1
+Qc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit,com/google/gwt/core/client/impl/StackTraceCreator.java,57,-1
+Rc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$10_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$10_2_classLit,com/google/gwt/dom/client/Style.java,343,-1
+Sc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$11_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$11_2_classLit,com/google/gwt/dom/client/Style.java,349,-1
+Tc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$12_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$12_2_classLit,com/google/gwt/dom/client/Style.java,355,-1
+Uc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$13_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$13_2_classLit,com/google/gwt/dom/client/Style.java,361,-1
+Vc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$14_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$14_2_classLit,com/google/gwt/dom/client/Style.java,367,-1
+Wc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$15_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$15_2_classLit,com/google/gwt/dom/client/Style.java,373,-1
+Xc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$16_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$16_2_classLit,com/google/gwt/dom/client/Style.java,379,-1
+Yc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$17_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$17_2_classLit,com/google/gwt/dom/client/Style.java,385,-1
+Zc,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$18_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$18_2_classLit,com/google/gwt/dom/client/Style.java,391,-1
+$c,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$19_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$19_2_classLit,com/google/gwt/dom/client/Style.java,397,-1
+_c,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$1_2_classLit,com/google/gwt/dom/client/Style.java,289,-1
+ad,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$2_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$2_2_classLit,com/google/gwt/dom/client/Style.java,295,-1
+bd,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$3_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$3_2_classLit,com/google/gwt/dom/client/Style.java,301,-1
+cd,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$4_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$4_2_classLit,com/google/gwt/dom/client/Style.java,307,-1
+dd,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$5_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$5_2_classLit,com/google/gwt/dom/client/Style.java,313,-1
+ed,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$6_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$6_2_classLit,com/google/gwt/dom/client/Style.java,319,-1
+fd,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$7_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$7_2_classLit,com/google/gwt/dom/client/Style.java,325,-1
+gd,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$8_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$8_2_classLit,com/google/gwt/dom/client/Style.java,331,-1
+hd,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display$9_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display$9_2_classLit,com/google/gwt/dom/client/Style.java,337,-1
+jd,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Display_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Display_2_classLit,com/google/gwt/dom/client/Style.java,288,-1
+kd,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_user_client_Timer_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_user_client_Timer_2_classLit,com/google/gwt/user/client/Timer.java,41,-1
+ld,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_useragent_client_UserAgentAsserter$UserAgentAssertionError_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_useragent_client_UserAgentAsserter$UserAgentAssertionError_2_classLit,com/google/gwt/useragent/client/UserAgentAsserter.java,65,-1
+md,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_WebScheduler$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_WebScheduler$1_2_classLit,gravity/client/WebScheduler.java,54,-1
+nd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_WebScheduler$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_WebScheduler$lambda$0$Type_2_classLit,gravity/client/WebScheduler.java,60,-1
+od,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_WebScheduler_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_WebScheduler_2_classLit,gravity/client/WebScheduler.java,27,-1
+pd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Engine$0methodref$getPlanetConstellation1$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Engine$0methodref$getPlanetConstellation1$Type_2_classLit,gravity/client/app/Engine.java,61,-1
+qd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Engine$1methodref$getPlanetConstellation2$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Engine$1methodref$getPlanetConstellation2$Type_2_classLit,gravity/client/app/Engine.java,62,-1
+rd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Engine$2methodref$getPlanetConstellation3$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Engine$2methodref$getPlanetConstellation3$Type_2_classLit,gravity/client/app/Engine.java,63,-1
+sd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Engine$3methodref$getPlanetConstellation4$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Engine$3methodref$getPlanetConstellation4$Type_2_classLit,gravity/client/app/Engine.java,64,-1
+td,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Engine$4methodref$getPlanetConstellation5$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Engine$4methodref$getPlanetConstellation5$Type_2_classLit,gravity/client/app/Engine.java,65,-1
+ud,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Engine$5methodref$getPlanetConstellation6$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Engine$5methodref$getPlanetConstellation6$Type_2_classLit,gravity/client/app/Engine.java,66,-1
+vd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Engine$6methodref$sniffForce$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Engine$6methodref$sniffForce$Type_2_classLit,gravity/client/app/Engine.java,124,-1
+wd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Engine_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Engine_2_classLit,gravity/client/app/Engine.java,43,-1
+xd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Presenter$0methodref$refreshView$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Presenter$0methodref$refreshView$Type_2_classLit,gravity/client/app/Presenter.java,199,-1
+yd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Presenter$1methodref$incrementTime$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Presenter$1methodref$incrementTime$Type_2_classLit,gravity/client/app/Presenter.java,86,-1
+zd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Presenter$2methodref$refreshViewWithSpeed$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Presenter$2methodref$refreshViewWithSpeed$Type_2_classLit,gravity/client/app/Presenter.java,94,-1
+Ad,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Presenter$3methodref$refreshView$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Presenter$3methodref$refreshView$Type_2_classLit,gravity/client/app/Presenter.java,104,-1
+Bd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Presenter$4methodref$refreshView$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Presenter$4methodref$refreshView$Type_2_classLit,gravity/client/app/Presenter.java,113,-1
+Cd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Presenter$5methodref$refreshView$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Presenter$5methodref$refreshView$Type_2_classLit,gravity/client/app/Presenter.java,123,-1
+Dd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Presenter$6methodref$refreshView$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Presenter$6methodref$refreshView$Type_2_classLit,gravity/client/app/Presenter.java,131,-1
+Ed,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_app_Presenter_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_app_Presenter_2_classLit,gravity/client/app/Presenter.java,28,-1
+Fd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Acceleration_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Acceleration_2_classLit,gravity/client/core/Acceleration.java,23,-1
+Gd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Body$0methodref$toString$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Body$0methodref$toString$Type_2_classLit,gravity/client/core/Body.java,34,-1
+Hd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Body$1methodref$toString$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Body$1methodref$toString$Type_2_classLit,gravity/client/core/Body.java,35,-1
+Id,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Body$2methodref$toString$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Body$2methodref$toString$Type_2_classLit,gravity/client/core/Body.java,36,-1
+Jd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Body$3methodref$gravitationalForceFrom$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Body$3methodref$gravitationalForceFrom$Type_2_classLit,gravity/client/core/Body.java,77,-1
+Kd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Body$4methodref$combineWith$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Body$4methodref$combineWith$Type_2_classLit,gravity/client/core/Body.java,78,-1
+Ld,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Body_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Body_2_classLit,gravity/client/core/Body.java,27,-1
+Md,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Force_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Force_2_classLit,gravity/client/core/Force.java,23,-1
+Nd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Planet$0methodref$toString$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Planet$0methodref$toString$Type_2_classLit,gravity/client/core/Planet.java,41,-1
+Od,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Planet$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Planet$Type_2_classLit,gravity/client/core/Planet.java,31,-1
+Pd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Planet_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Planet_2_classLit,gravity/client/core/Planet.java,26,-1
+Qd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Point_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Point_2_classLit,gravity/client/core/Point.java,25,-1
+Rd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Space$0methodref$hasSpaceCraftCrashed$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Space$0methodref$hasSpaceCraftCrashed$Type_2_classLit,gravity/client/core/Space.java,80,-1
+Sd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Space$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Space$lambda$0$Type_2_classLit,gravity/client/core/Space.java,52,-1
+Td,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Space$lambda$1$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Space$lambda$1$Type_2_classLit,gravity/client/core/Space.java,56,-1
+Ud,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_SpaceCraft_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_SpaceCraft_2_classLit,gravity/client/core/SpaceCraft.java,25,-1
+Vd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Space_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Space_2_classLit,gravity/client/core/Space.java,28,-1
+Wd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Speed_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Speed_2_classLit,gravity/client/core/Speed.java,23,-1
+Xd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_StaticPlanet_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_StaticPlanet_2_classLit,gravity/client/core/StaticPlanet.java,23,-1
+Yd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_core_Vector_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_core_Vector_2_classLit,gravity/client/core/Vector.java,25,-1
+Zd,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_SpaceCanvas$0methodref$onCanvasEvent$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_SpaceCanvas$0methodref$onCanvasEvent$Type_2_classLit,gravity/client/ui/SpaceCanvas.java,60,-1
+$d,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_SpaceCanvas$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_SpaceCanvas$lambda$0$Type_2_classLit,gravity/client/ui/SpaceCanvas.java,203,-1
+_d,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_SpaceCanvas_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_SpaceCanvas_2_classLit,gravity/client/ui/SpaceCanvas.java,41,-1
+ae,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_WebUI$0methodref$reloadLevelClicked$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_WebUI$0methodref$reloadLevelClicked$Type_2_classLit,gravity/client/ui/WebUI.java,64,-1
+be,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_WebUI$1methodref$reloadLevelClicked$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_WebUI$1methodref$reloadLevelClicked$Type_2_classLit,gravity/client/ui/WebUI.java,65,-1
+ce,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_WebUI$2methodref$nextLevelClicked$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_WebUI$2methodref$nextLevelClicked$Type_2_classLit,gravity/client/ui/WebUI.java,66,-1
+de,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_WebUI$3methodref$startClicked$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_WebUI$3methodref$startClicked$Type_2_classLit,gravity/client/ui/WebUI.java,67,-1
+ee,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_WebUI$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_WebUI$lambda$0$Type_2_classLit,gravity/client/ui/WebUI.java,56,-1
+fe,com.google.gwt.lang.ClassLiteralHolder::Lgravity_client_ui_WebUI_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lgravity_client_ui_WebUI_2_classLit,gravity/client/ui/WebUI.java,47,-1
+ge,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_ArrayStoreException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_ArrayStoreException_2_classLit,com/google/gwt/emul/java/lang/ArrayStoreException.java,23,-1
+he,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_AssertionError_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_AssertionError_2_classLit,com/google/gwt/emul/java/lang/AssertionError.java,21,-1
+ie,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Boolean_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Boolean_2_classLit,com/google/gwt/emul/java/lang/Boolean.java,29,-1
+je,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_ClassCastException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_ClassCastException_2_classLit,com/google/gwt/emul/java/lang/ClassCastException.java,21,-1
+ke,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Class_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Class_2_classLit,com/google/gwt/emul/java/lang/Class.java,33,-1
+le,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Double_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Double_2_classLit,com/google/gwt/emul/java/lang/Double.java,27,-1
+me,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Enum_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Enum_2_classLit,com/google/gwt/emul/java/lang/Enum.java,34,-1
+ne,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Error_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Error_2_classLit,com/google/gwt/emul/java/lang/Error.java,23,-1
+oe,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Exception_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Exception_2_classLit,com/google/gwt/emul/java/lang/Exception.java,23,-1
+pe,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_IllegalArgumentException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_IllegalArgumentException_2_classLit,com/google/gwt/emul/java/lang/IllegalArgumentException.java,23,-1
+qe,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_IllegalStateException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_IllegalStateException_2_classLit,com/google/gwt/emul/java/lang/IllegalStateException.java,22,-1
+re,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_IndexOutOfBoundsException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_IndexOutOfBoundsException_2_classLit,com/google/gwt/emul/java/lang/IndexOutOfBoundsException.java,23,-1
+se,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Integer_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Integer_2_classLit,com/google/gwt/emul/java/lang/Integer.java,21,-1
+te,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_JsException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_JsException_2_classLit,com/google/gwt/emul/java/lang/JsException.java,23,-1
+ue,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_NullPointerException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_NullPointerException_2_classLit,com/google/gwt/emul/java/lang/NullPointerException.java,26,-1
+ve,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_NumberFormatException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_NumberFormatException_2_classLit,com/google/gwt/emul/java/lang/NumberFormatException.java,23,-1
+we,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Number_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Number_2_classLit,com/google/gwt/emul/java/lang/Number.java,27,-1
+xe,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Object_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Object_2_classLit,com/google/gwt/emul/java/lang/Object.java,27,-1
+ye,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_RuntimeException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_RuntimeException_2_classLit,com/google/gwt/emul/java/lang/RuntimeException.java,23,-1
+ze,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_String_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_String_2_classLit,com/google/gwt/emul/java/lang/String.java,46,-1
+Ae,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_Throwable_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_Throwable_2_classLit,com/google/gwt/emul/java/lang/Throwable.java,37,-1
+Be,com.google.gwt.lang.ClassLiteralHolder::Ljava_lang_UnsupportedOperationException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_lang_UnsupportedOperationException_2_classLit,com/google/gwt/emul/java/lang/UnsupportedOperationException.java,23,-1
+Ce,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_AbstractCollection_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_AbstractCollection_2_classLit,com/google/gwt/emul/java/util/AbstractCollection.java,30,-1
+De,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_AbstractList$IteratorImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_AbstractList$IteratorImpl_2_classLit,com/google/gwt/emul/java/util/AbstractList.java,35,-1
+Ee,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_AbstractList_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_AbstractList_2_classLit,com/google/gwt/emul/java/util/AbstractList.java,32,-1
+Fe,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_ArrayList$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_ArrayList$1_2_classLit,com/google/gwt/emul/java/util/ArrayList.java,145,-1
+Ge,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_ArrayList_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_ArrayList_2_classLit,com/google/gwt/emul/java/util/ArrayList.java,51,-1
+He,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Arrays$ArrayList_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Arrays$ArrayList_2_classLit,com/google/gwt/emul/java/util/Arrays.java,53,-1
+Ie,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Collections$UnmodifiableCollectionIterator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Collections$UnmodifiableCollectionIterator_2_classLit,com/google/gwt/emul/java/util/Collections.java,780,-1
+Je,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Collections$UnmodifiableCollection_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Collections$UnmodifiableCollection_2_classLit,com/google/gwt/emul/java/util/Collections.java,296,-1
+Ke,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Collections$UnmodifiableList_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Collections$UnmodifiableList_2_classLit,com/google/gwt/emul/java/util/Collections.java,374,-1
+Le,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Collections$UnmodifiableRandomAccessList_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Collections$UnmodifiableRandomAccessList_2_classLit,com/google/gwt/emul/java/util/Collections.java,653,-1
+Me,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_NoSuchElementException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_NoSuchElementException_2_classLit,com/google/gwt/emul/java/util/NoSuchElementException.java,23,-1
+Ne,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Spliterator$OfInt$2methodref$accept$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Spliterator$OfInt$2methodref$accept$Type_2_classLit,com/google/gwt/emul/java/util/Spliterator.java,125,-1
+Oe,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Spliterator$OfInt$3methodref$accept$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Spliterator$OfInt$3methodref$accept$Type_2_classLit,com/google/gwt/emul/java/util/Spliterator.java,134,-1
+Pe,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Spliterators$AbstractIntSpliterator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Spliterators$AbstractIntSpliterator_2_classLit,com/google/gwt/emul/java/util/Spliterators.java,89,-1
+Qe,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Spliterators$AbstractSpliterator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Spliterators$AbstractSpliterator_2_classLit,com/google/gwt/emul/java/util/Spliterators.java,65,-1
+Re,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Spliterators$BaseSpliterator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Spliterators$BaseSpliterator_2_classLit,com/google/gwt/emul/java/util/Spliterators.java,36,-1
+Se,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Spliterators$IteratorSpliterator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Spliterators$IteratorSpliterator_2_classLit,com/google/gwt/emul/java/util/Spliterators.java,412,-1
+Te,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_function_Function$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_function_Function$lambda$0$Type_2_classLit,com/google/gwt/emul/java/util/function/Function.java,31,-1
+Ue,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_Collector$Characteristics_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_Collector$Characteristics_2_classLit,com/google/gwt/emul/java/util/stream/Collector.java,41,-1
+Ve,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_CollectorImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_CollectorImpl_2_classLit,com/google/gwt/emul/java/util/stream/CollectorImpl.java,28,-1
+We,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_Collectors$20methodref$add$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_Collectors$20methodref$add$Type_2_classLit,com/google/gwt/emul/java/util/stream/Collectors.java,289,-1
+Xe,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_Collectors$21methodref$ctor$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_Collectors$21methodref$ctor$Type_2_classLit,com/google/gwt/emul/java/util/stream/Collectors.java,307,-1
+Ye,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_Collectors$lambda$21$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_Collectors$lambda$21$Type_2_classLit,com/google/gwt/emul/java/util/stream/Collectors.java,291,-1
+Ze,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_IntStream$5_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_IntStream$5_2_classLit,com/google/gwt/emul/java/util/stream/IntStream.java,192,-1
+$e,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_IntStreamImpl$Empty_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_IntStreamImpl$Empty_2_classLit,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,53,-1
+_e,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_IntStreamImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_IntStreamImpl_2_classLit,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,48,-1
+af,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl$FilterSpliterator$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl$FilterSpliterator$lambda$0$Type_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,422,-1
+bf,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl$FilterSpliterator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl$FilterSpliterator_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,399,-1
+cf,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl$MapToObjSpliterator$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl$MapToObjSpliterator$lambda$0$Type_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,317,-1
+df,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl$MapToObjSpliterator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl$MapToObjSpliterator_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,302,-1
+ef,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl$ValueConsumer_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl$ValueConsumer_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,510,-1
+ff,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl$lambda$0$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl$lambda$0$Type_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,612,-1
+gf,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl$lambda$4$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl$lambda$4$Type_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,590,-1
+hf,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl$lambda$5$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl$lambda$5$Type_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,662,-1
+jf,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_StreamImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_StreamImpl_2_classLit,com/google/gwt/emul/java/util/stream/StreamImpl.java,52,-1
+kf,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_stream_TerminatableStream_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_stream_TerminatableStream_2_classLit,com/google/gwt/emul/java/util/stream/TerminatableStream.java,23,-1
+CollapsedPropertyHolder,,com.google.gwt.lang.CollapsedPropertyHolder,,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/CollapsedPropertyHolder.java,22,-1
+lf,com.google.gwt.lang.CollapsedPropertyHolder::permutationId,com.google.gwt.lang.CollapsedPropertyHolder,permutationId,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/CollapsedPropertyHolder.java,29,-1
+mf,com.google.gwt.lang.Exceptions::toJava(Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.lang.Exceptions,toJava,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Exceptions.java,29,0
+nf,com.google.gwt.lang.Exceptions::toJs(Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.lang.Exceptions,toJs,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Exceptions.java,46,0
+ModuleUtils,,com.google.gwt.lang.ModuleUtils,,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/ModuleUtils.java,25,-1
+pf,com.google.gwt.lang.ModuleUtils::addInitFunctions()V,com.google.gwt.lang.ModuleUtils,addInitFunctions,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/ModuleUtils.java,62,0
+qf,com.google.gwt.lang.ModuleUtils::ensureModuleInit()V,com.google.gwt.lang.ModuleUtils,ensureModuleInit,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/ModuleUtils.java,84,0
+rf,com.google.gwt.lang.ModuleUtils::gwtOnLoad(Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;)V,com.google.gwt.lang.ModuleUtils,gwtOnLoad,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/ModuleUtils.java,34,0
+of,com.google.gwt.lang.ModuleUtils::initFnList,com.google.gwt.lang.ModuleUtils,initFnList,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/ModuleUtils.java,90,-1
+sf,com.google.gwt.lang.ModuleUtils::setGwtProperty(Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)V,com.google.gwt.lang.ModuleUtils,setGwtProperty,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/ModuleUtils.java,74,0
+Runtime,,com.google.gwt.lang.Runtime,,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Runtime.java,26,-1
+uf,com.google.gwt.lang.Runtime::bootstrap()V,com.google.gwt.lang.Runtime,bootstrap,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Runtime.java,175,0
+vf,com.google.gwt.lang.Runtime::defineClass(Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;)V,com.google.gwt.lang.Runtime,defineClass,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Runtime.java,50,0
+wf,com.google.gwt.lang.Runtime::emptyMethod()V,com.google.gwt.lang.Runtime,emptyMethod,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Runtime.java,204,0
+xf,com.google.gwt.lang.Runtime::portableObjCreate(Lcom/google/gwt/core/client/JavaScriptObject;)Lcom/google/gwt/core/client/JavaScriptObject;,com.google.gwt.lang.Runtime,portableObjCreate,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Runtime.java,80,0
+tf,com.google.gwt.lang.Runtime::prototypesByTypeId,com.google.gwt.lang.Runtime,prototypesByTypeId,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Runtime.java,30,-1
+yf,com.google.gwt.lang.Runtime::toString(Ljava/lang/Object;)Ljava/lang/String;,com.google.gwt.lang.Runtime,toString,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Runtime.java,220,0
+zf,com.google.gwt.lang.Runtime::typeMarkerFn()V,com.google.gwt.lang.Runtime,typeMarkerFn,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Runtime.java,198,0
+Af,com.google.gwt.lang.gravity_00046Gravity__EntryMethodHolder::init()V,com.google.gwt.lang.gravity_00046Gravity__EntryMethodHolder,init,gen/com/google/gwt/lang/gravity_00046Gravity__EntryMethodHolder.java,3,0
+Bf,com.google.gwt.user.client.DOM::currentEvent,com.google.gwt.user.client.DOM,currentEvent,com/google/gwt/user/client/DOM.java,64,-1
+Df,com.google.gwt.user.client.DOM::dispatchEvent(Lcom/google/gwt/user/client/Event;Lcom/google/gwt/dom/client/Element;Lcom/google/gwt/user/client/EventListener;)V,com.google.gwt.user.client.DOM,dispatchEvent,com/google/gwt/user/client/DOM.java,1415,0
+Ef,com.google.gwt.user.client.DOM::previewEvent(Lcom/google/gwt/user/client/Event;)Z,com.google.gwt.user.client.DOM,previewEvent,com/google/gwt/user/client/DOM.java,1456,0
+Cf,com.google.gwt.user.client.DOM::sCaptureElem,com.google.gwt.user.client.DOM,sCaptureElem,com/google/gwt/user/client/DOM.java,66,-1
+Ff,com.google.gwt.user.client.DocumentModeAsserter::$onModuleLoad(Lcom/google/gwt/user/client/DocumentModeAsserter;)V,com.google.gwt.user.client.DocumentModeAsserter,$onModuleLoad,com/google/gwt/user/client/DocumentModeAsserter.java,87,0
+Event,,com.google.gwt.user.client.Event,,com/google/gwt/user/client/Event.java,36,-1
+Gf,com.google.gwt.user.client.Event::setEventListener(Lcom/google/gwt/dom/client/Element;Lcom/google/gwt/user/client/EventListener;)V,com.google.gwt.user.client.Event,setEventListener,com/google/gwt/user/client/Event.java,567,0
+Hf,com.google.gwt.user.client.Event::sinkEvents(Lcom/google/gwt/dom/client/Element;I)V,com.google.gwt.user.client.Event,sinkEvents,com/google/gwt/user/client/Event.java,580,0
+Timer,,com.google.gwt.user.client.Timer,,com/google/gwt/user/client/Timer.java,41,-1
+If,com.google.gwt.user.client.Timer::$cancel(Lcom/google/gwt/user/client/Timer;)V,com.google.gwt.user.client.Timer,$cancel,com/google/gwt/user/client/Timer.java,64,0
+Jf,com.google.gwt.user.client.Timer::$scheduleRepeating(Lcom/google/gwt/user/client/Timer;I)V,com.google.gwt.user.client.Timer,$scheduleRepeating,com/google/gwt/user/client/Timer.java,108,0
+b,com.google.gwt.user.client.Timer::cancelCounter,com.google.gwt.user.client.Timer,cancelCounter,com/google/gwt/user/client/Timer.java,51,-1
+Kf,com.google.gwt.user.client.Timer::clearInterval(I)V,com.google.gwt.user.client.Timer,clearInterval,com/google/gwt/user/client/Timer.java,150,0
+Lf,com.google.gwt.user.client.Timer::clearTimeout(I)V,com.google.gwt.user.client.Timer,clearTimeout,com/google/gwt/user/client/Timer.java,154,0
+Mf,com.google.gwt.user.client.Timer::createCallback(Lcom/google/gwt/user/client/Timer;I)Lcom/google/gwt/core/client/JavaScriptObject;,com.google.gwt.user.client.Timer,createCallback,com/google/gwt/user/client/Timer.java,138,0
+Nf,com.google.gwt.user.client.Timer::fire(I)V,com.google.gwt.user.client.Timer,fire,com/google/gwt/user/client/Timer.java,124,0
+c,com.google.gwt.user.client.Timer::isRepeating,com.google.gwt.user.client.Timer,isRepeating,com/google/gwt/user/client/Timer.java,43,-1
+Of,com.google.gwt.user.client.Timer::setInterval(Lcom/google/gwt/core/client/JavaScriptObject;I)I,com.google.gwt.user.client.Timer,setInterval,com/google/gwt/user/client/Timer.java,142,0
+d,com.google.gwt.user.client.Timer::timerId,com.google.gwt.user.client.Timer,timerId,com/google/gwt/user/client/Timer.java,45,-1
+Qf,com.google.gwt.user.client.impl.DOMImpl::$eventGetTypeInt(Lcom/google/gwt/user/client/impl/DOMImpl;Ljava/lang/String;)I,com.google.gwt.user.client.impl.DOMImpl,$eventGetTypeInt,com/google/gwt/user/client/impl/DOMImpl.java,85,0
+Rf,com.google.gwt.user.client.impl.DOMImpl::$maybeInitializeEventSystem(Lcom/google/gwt/user/client/impl/DOMImpl;)V,com.google.gwt.user.client.impl.DOMImpl,$maybeInitializeEventSystem,com/google/gwt/user/client/impl/DOMImpl.java,135,0
+Pf,com.google.gwt.user.client.impl.DOMImpl::eventSystemIsInitialized,com.google.gwt.user.client.impl.DOMImpl,eventSystemIsInitialized,com/google/gwt/user/client/impl/DOMImpl.java,28,-1
+Sf,com.google.gwt.user.client.impl.DOMImpl::getEventListener(Lcom/google/gwt/dom/client/Element;)Lcom/google/gwt/user/client/EventListener;,com.google.gwt.user.client.impl.DOMImpl,getEventListener,com/google/gwt/user/client/impl/DOMImpl.java,30,0
+Xf,com.google.gwt.user.client.impl.DOMImplTrident::$initEventSystem(Lcom/google/gwt/user/client/impl/DOMImplTrident;)V,com.google.gwt.user.client.impl.DOMImplTrident,$initEventSystem,com/google/gwt/user/client/impl/DOMImplTrident.java,87,0
+Yf,com.google.gwt.user.client.impl.DOMImplTrident::$sinkEventsImpl(Lcom/google/gwt/user/client/impl/DOMImplTrident;Lcom/google/gwt/dom/client/Element;I)V,com.google.gwt.user.client.impl.DOMImplTrident,$sinkEventsImpl,com/google/gwt/user/client/impl/DOMImplTrident.java,240,0
+Tf,com.google.gwt.user.client.impl.DOMImplTrident::callDispatchDblClickEvent,com.google.gwt.user.client.impl.DOMImplTrident,callDispatchDblClickEvent,com/google/gwt/user/client/impl/DOMImplTrident.java,29,-1
+Uf,com.google.gwt.user.client.impl.DOMImplTrident::callDispatchEvent,com.google.gwt.user.client.impl.DOMImplTrident,callDispatchEvent,com/google/gwt/user/client/impl/DOMImplTrident.java,27,-1
+Vf,com.google.gwt.user.client.impl.DOMImplTrident::callDispatchOnLoadEvent,com.google.gwt.user.client.impl.DOMImplTrident,callDispatchOnLoadEvent,com/google/gwt/user/client/impl/DOMImplTrident.java,31,-1
+Wf,com.google.gwt.user.client.impl.DOMImplTrident::callDispatchUnhandledEvent,com.google.gwt.user.client.impl.DOMImplTrident,callDispatchUnhandledEvent,com/google/gwt/user/client/impl/DOMImplTrident.java,33,-1
+Zf,com.google.gwt.user.client.impl.DOMImplTrident::previewEventImpl()Z,com.google.gwt.user.client.impl.DOMImplTrident,previewEventImpl,com/google/gwt/user/client/impl/DOMImplTrident.java,41,0
+$f,com.google.gwt.useragent.client.UserAgentAsserter::assertCompileTimeUserAgent()V,com.google.gwt.useragent.client.UserAgentAsserter,assertCompileTimeUserAgent,com/google/gwt/useragent/client/UserAgentAsserter.java,49,0
+UserAgentAsserter$UserAgentAssertionError,,com.google.gwt.useragent.client.UserAgentAsserter$UserAgentAssertionError,,com/google/gwt/useragent/client/UserAgentAsserter.java,65,-1
+ag,com.google.gwt.useragent.client.UserAgentAsserter$UserAgentAssertionError::UserAgentAsserter$UserAgentAssertionError(Ljava/lang/String;Ljava/lang/String;) <init>,com.google.gwt.useragent.client.UserAgentAsserter$UserAgentAssertionError,UserAgentAsserter$UserAgentAssertionError,com/google/gwt/useragent/client/UserAgentAsserter.java,79,0
+bg,com.google.gwt.useragent.client.UserAgentImplIe8::$getRuntimeValue(Lcom/google/gwt/useragent/client/UserAgentImplIe8;)Ljava/lang/String;,com.google.gwt.useragent.client.UserAgentImplIe8,$getRuntimeValue,gen/com/google/gwt/useragent/client/UserAgentImplIe8.java,5,0
+WebScheduler,,gravity.client.WebScheduler,,gravity/client/WebScheduler.java,27,-1
+cg,gravity.client.WebScheduler::$schedule(Lgravity/client/WebScheduler;ILjava/lang/Runnable;)V,gravity.client.WebScheduler,$schedule,gravity/client/WebScheduler.java,33,0
+dg,gravity.client.WebScheduler::WebScheduler() <init>,gravity.client.WebScheduler,WebScheduler,gravity/client/WebScheduler.java,27,0
+a,gravity.client.WebScheduler::task,gravity.client.WebScheduler,task,gravity/client/WebScheduler.java,60,-1
+b,gravity.client.WebScheduler::timer,gravity.client.WebScheduler,timer,gravity/client/WebScheduler.java,54,-1
+WebScheduler$1,,gravity.client.WebScheduler$1,,gravity/client/WebScheduler.java,54,-1
+eg,gravity.client.WebScheduler$1::WebScheduler$1(Lgravity/client/WebScheduler;) <init>,gravity.client.WebScheduler$1,WebScheduler$1,gravity/client/WebScheduler.java,54,0
+a,gravity.client.WebScheduler$1::this$01,gravity.client.WebScheduler$1,this$01,gravity/client/WebScheduler.java,54,-1
+WebScheduler$lambda$0$Type,,gravity.client.WebScheduler$lambda$0$Type,,gravity/client/WebScheduler.java,60,-1
+fg,gravity.client.WebScheduler$lambda$0$Type::WebScheduler$lambda$0$Type() <init>,gravity.client.WebScheduler$lambda$0$Type,WebScheduler$lambda$0$Type,gravity/client/WebScheduler.java,60,0
+gg,gravity.client.WebScheduler$lambda$0$Type::run()V,gravity.client.WebScheduler$lambda$0$Type,run,gravity/client/WebScheduler.java,60,0
+Engine,,gravity.client.app.Engine,,gravity/client/app/Engine.java,43,-1
+hg,gravity.client.app.Engine::$getGameResult(Lgravity/client/app/Engine;)Lgravity/client/app/Engine$Result;,gravity.client.app.Engine,$getGameResult,gravity/client/app/Engine.java,81,0
+ig,gravity.client.app.Engine::$getPlanetConstellation1(Lgravity/client/app/Engine;)Ljava/util/List;,gravity.client.app.Engine,$getPlanetConstellation1,gravity/client/app/Engine.java,196,0
+jg,gravity.client.app.Engine::$getPlanetConstellation2(Lgravity/client/app/Engine;)Ljava/util/List;,gravity.client.app.Engine,$getPlanetConstellation2,gravity/client/app/Engine.java,205,0
+kg,gravity.client.app.Engine::$getPlanetConstellation3(Lgravity/client/app/Engine;)Ljava/util/List;,gravity.client.app.Engine,$getPlanetConstellation3,gravity/client/app/Engine.java,221,0
+lg,gravity.client.app.Engine::$getPlanetConstellation4(Lgravity/client/app/Engine;)Ljava/util/List;,gravity.client.app.Engine,$getPlanetConstellation4,gravity/client/app/Engine.java,234,0
+mg,gravity.client.app.Engine::$getPlanetConstellation5(Lgravity/client/app/Engine;)Ljava/util/List;,gravity.client.app.Engine,$getPlanetConstellation5,gravity/client/app/Engine.java,256,0
+ng,gravity.client.app.Engine::$getPlanetConstellation6(Lgravity/client/app/Engine;)Ljava/util/List;,gravity.client.app.Engine,$getPlanetConstellation6,gravity/client/app/Engine.java,268,0
+og,gravity.client.app.Engine::$loadLevel(Lgravity/client/app/Engine;I)V,gravity.client.app.Engine,$loadLevel,gravity/client/app/Engine.java,119,0
+pg,gravity.client.app.Engine::$loadNextLevel(Lgravity/client/app/Engine;)V,gravity.client.app.Engine,$loadNextLevel,gravity/client/app/Engine.java,159,0
+qg,gravity.client.app.Engine::$lounchSpaceCraft(Lgravity/client/app/Engine;)V,gravity.client.app.Engine,$lounchSpaceCraft,gravity/client/app/Engine.java,111,0
+rg,gravity.client.app.Engine::$reloadLevel(Lgravity/client/app/Engine;)V,gravity.client.app.Engine,$reloadLevel,gravity/client/app/Engine.java,149,0
+sg,gravity.client.app.Engine::$setSpaceCraftSpeed(Lgravity/client/app/Engine;DD)V,gravity.client.app.Engine,$setSpaceCraftSpeed,gravity/client/app/Engine.java,101,0
+tg,gravity.client.app.Engine::$sniffForce(Lgravity/client/app/Engine;Lgravity/client/core/SpaceCraft;Lgravity/client/core/Force;)V,gravity.client.app.Engine,$sniffForce,gravity/client/app/Engine.java,141,0
+ug,gravity.client.app.Engine::Engine(III) <init>,gravity.client.app.Engine,Engine,gravity/client/app/Engine.java,55,0
+a,gravity.client.app.Engine::constellations,gravity.client.app.Engine,constellations,gravity/client/app/Engine.java,336,-1
+b,gravity.client.app.Engine::craft,gravity.client.app.Engine,craft,gravity/client/app/Engine.java,332,-1
+c,gravity.client.app.Engine::currentLevel,gravity.client.app.Engine,currentLevel,gravity/client/app/Engine.java,333,-1
+d,gravity.client.app.Engine::currentScore,gravity.client.app.Engine,currentScore,gravity/client/app/Engine.java,334,-1
+e,gravity.client.app.Engine::space,gravity.client.app.Engine,space,gravity/client/app/Engine.java,331,-1
+f,gravity.client.app.Engine::spaceHeight,gravity.client.app.Engine,spaceHeight,gravity/client/app/Engine.java,330,-1
+g,gravity.client.app.Engine::spaceWidth,gravity.client.app.Engine,spaceWidth,gravity/client/app/Engine.java,329,-1
+h,gravity.client.app.Engine::totalScore,gravity.client.app.Engine,totalScore,gravity/client/app/Engine.java,335,-1
+Engine$0methodref$getPlanetConstellation1$Type,,gravity.client.app.Engine$0methodref$getPlanetConstellation1$Type,,gravity/client/app/Engine.java,61,-1
+a,gravity.client.app.Engine$0methodref$getPlanetConstellation1$Type::$$outer_0,gravity.client.app.Engine$0methodref$getPlanetConstellation1$Type,$$outer_0,gravity/client/app/Engine.java,61,-1
+vg,gravity.client.app.Engine$0methodref$getPlanetConstellation1$Type::Engine$0methodref$getPlanetConstellation1$Type(Lgravity/client/app/Engine;) <init>,gravity.client.app.Engine$0methodref$getPlanetConstellation1$Type,Engine$0methodref$getPlanetConstellation1$Type,gravity/client/app/Engine.java,61,0
+wg,gravity.client.app.Engine$0methodref$getPlanetConstellation1$Type::get()Ljava/lang/Object;,gravity.client.app.Engine$0methodref$getPlanetConstellation1$Type,get,gravity/client/app/Engine.java,61,0
+Engine$1methodref$getPlanetConstellation2$Type,,gravity.client.app.Engine$1methodref$getPlanetConstellation2$Type,,gravity/client/app/Engine.java,62,-1
+a,gravity.client.app.Engine$1methodref$getPlanetConstellation2$Type::$$outer_0,gravity.client.app.Engine$1methodref$getPlanetConstellation2$Type,$$outer_0,gravity/client/app/Engine.java,62,-1
+xg,gravity.client.app.Engine$1methodref$getPlanetConstellation2$Type::Engine$1methodref$getPlanetConstellation2$Type(Lgravity/client/app/Engine;) <init>,gravity.client.app.Engine$1methodref$getPlanetConstellation2$Type,Engine$1methodref$getPlanetConstellation2$Type,gravity/client/app/Engine.java,62,0
+yg,gravity.client.app.Engine$1methodref$getPlanetConstellation2$Type::get()Ljava/lang/Object;,gravity.client.app.Engine$1methodref$getPlanetConstellation2$Type,get,gravity/client/app/Engine.java,62,0
+Engine$2methodref$getPlanetConstellation3$Type,,gravity.client.app.Engine$2methodref$getPlanetConstellation3$Type,,gravity/client/app/Engine.java,63,-1
+a,gravity.client.app.Engine$2methodref$getPlanetConstellation3$Type::$$outer_0,gravity.client.app.Engine$2methodref$getPlanetConstellation3$Type,$$outer_0,gravity/client/app/Engine.java,63,-1
+zg,gravity.client.app.Engine$2methodref$getPlanetConstellation3$Type::Engine$2methodref$getPlanetConstellation3$Type(Lgravity/client/app/Engine;) <init>,gravity.client.app.Engine$2methodref$getPlanetConstellation3$Type,Engine$2methodref$getPlanetConstellation3$Type,gravity/client/app/Engine.java,63,0
+Ag,gravity.client.app.Engine$2methodref$getPlanetConstellation3$Type::get()Ljava/lang/Object;,gravity.client.app.Engine$2methodref$getPlanetConstellation3$Type,get,gravity/client/app/Engine.java,63,0
+Engine$3methodref$getPlanetConstellation4$Type,,gravity.client.app.Engine$3methodref$getPlanetConstellation4$Type,,gravity/client/app/Engine.java,64,-1
+a,gravity.client.app.Engine$3methodref$getPlanetConstellation4$Type::$$outer_0,gravity.client.app.Engine$3methodref$getPlanetConstellation4$Type,$$outer_0,gravity/client/app/Engine.java,64,-1
+Bg,gravity.client.app.Engine$3methodref$getPlanetConstellation4$Type::Engine$3methodref$getPlanetConstellation4$Type(Lgravity/client/app/Engine;) <init>,gravity.client.app.Engine$3methodref$getPlanetConstellation4$Type,Engine$3methodref$getPlanetConstellation4$Type,gravity/client/app/Engine.java,64,0
+Cg,gravity.client.app.Engine$3methodref$getPlanetConstellation4$Type::get()Ljava/lang/Object;,gravity.client.app.Engine$3methodref$getPlanetConstellation4$Type,get,gravity/client/app/Engine.java,64,0
+Engine$4methodref$getPlanetConstellation5$Type,,gravity.client.app.Engine$4methodref$getPlanetConstellation5$Type,,gravity/client/app/Engine.java,65,-1
+a,gravity.client.app.Engine$4methodref$getPlanetConstellation5$Type::$$outer_0,gravity.client.app.Engine$4methodref$getPlanetConstellation5$Type,$$outer_0,gravity/client/app/Engine.java,65,-1
+Dg,gravity.client.app.Engine$4methodref$getPlanetConstellation5$Type::Engine$4methodref$getPlanetConstellation5$Type(Lgravity/client/app/Engine;) <init>,gravity.client.app.Engine$4methodref$getPlanetConstellation5$Type,Engine$4methodref$getPlanetConstellation5$Type,gravity/client/app/Engine.java,65,0
+Eg,gravity.client.app.Engine$4methodref$getPlanetConstellation5$Type::get()Ljava/lang/Object;,gravity.client.app.Engine$4methodref$getPlanetConstellation5$Type,get,gravity/client/app/Engine.java,65,0
+Engine$5methodref$getPlanetConstellation6$Type,,gravity.client.app.Engine$5methodref$getPlanetConstellation6$Type,,gravity/client/app/Engine.java,66,-1
+a,gravity.client.app.Engine$5methodref$getPlanetConstellation6$Type::$$outer_0,gravity.client.app.Engine$5methodref$getPlanetConstellation6$Type,$$outer_0,gravity/client/app/Engine.java,66,-1
+Fg,gravity.client.app.Engine$5methodref$getPlanetConstellation6$Type::Engine$5methodref$getPlanetConstellation6$Type(Lgravity/client/app/Engine;) <init>,gravity.client.app.Engine$5methodref$getPlanetConstellation6$Type,Engine$5methodref$getPlanetConstellation6$Type,gravity/client/app/Engine.java,66,0
+Gg,gravity.client.app.Engine$5methodref$getPlanetConstellation6$Type::get()Ljava/lang/Object;,gravity.client.app.Engine$5methodref$getPlanetConstellation6$Type,get,gravity/client/app/Engine.java,66,0
+Engine$6methodref$sniffForce$Type,,gravity.client.app.Engine$6methodref$sniffForce$Type,,gravity/client/app/Engine.java,124,-1
+a,gravity.client.app.Engine$6methodref$sniffForce$Type::$$outer_0,gravity.client.app.Engine$6methodref$sniffForce$Type,$$outer_0,gravity/client/app/Engine.java,124,-1
+Hg,gravity.client.app.Engine$6methodref$sniffForce$Type::$accept(Lgravity/client/app/Engine$6methodref$sniffForce$Type;Ljava/lang/Object;Ljava/lang/Object;)V,gravity.client.app.Engine$6methodref$sniffForce$Type,$accept,gravity/client/app/Engine.java,124,0
+Ig,gravity.client.app.Engine$6methodref$sniffForce$Type::Engine$6methodref$sniffForce$Type(Lgravity/client/app/Engine;) <init>,gravity.client.app.Engine$6methodref$sniffForce$Type,Engine$6methodref$sniffForce$Type,gravity/client/app/Engine.java,124,0
+Presenter,,gravity.client.app.Presenter,,gravity/client/app/Presenter.java,28,-1
+Jg,gravity.client.app.Presenter::$activate(Lgravity/client/app/Presenter;)V,gravity.client.app.Presenter,$activate,gravity/client/app/Presenter.java,84,0
+Kg,gravity.client.app.Presenter::$aimingFinished(Lgravity/client/app/Presenter;DD)V,gravity.client.app.Presenter,$aimingFinished,gravity/client/app/Presenter.java,100,0
+Lg,gravity.client.app.Presenter::$aimingStarted(Lgravity/client/app/Presenter;DD)V,gravity.client.app.Presenter,$aimingStarted,gravity/client/app/Presenter.java,91,0
+Mg,gravity.client.app.Presenter::$incrementTime(Lgravity/client/app/Presenter;)V,gravity.client.app.Presenter,$incrementTime,gravity/client/app/Presenter.java,137,0
+Ng,gravity.client.app.Presenter::$playAgain(Lgravity/client/app/Presenter;)V,gravity.client.app.Presenter,$playAgain,gravity/client/app/Presenter.java,110,0
+Og,gravity.client.app.Presenter::$playNext(Lgravity/client/app/Presenter;)V,gravity.client.app.Presenter,$playNext,gravity/client/app/Presenter.java,120,0
+Pg,gravity.client.app.Presenter::$refreshView(Lgravity/client/app/Presenter;)V,gravity.client.app.Presenter,$refreshView,gravity/client/app/Presenter.java,164,0
+Qg,gravity.client.app.Presenter::$refreshViewWithSpeed(Lgravity/client/app/Presenter;)V,gravity.client.app.Presenter,$refreshViewWithSpeed,gravity/client/app/Presenter.java,174,0
+Rg,gravity.client.app.Presenter::$start(Lgravity/client/app/Presenter;)V,gravity.client.app.Presenter,$start,gravity/client/app/Presenter.java,129,0
+Sg,gravity.client.app.Presenter::Presenter(Lgravity/client/app/UIFactory;Lgravity/client/app/Presenter$Scheduler;I) <init>,gravity.client.app.Presenter,Presenter,gravity/client/app/Presenter.java,71,0
+a,gravity.client.app.Presenter::engine,gravity.client.app.Presenter,engine,gravity/client/app/Presenter.java,196,-1
+b,gravity.client.app.Presenter::refreshCommand,gravity.client.app.Presenter,refreshCommand,gravity/client/app/Presenter.java,199,-1
+c,gravity.client.app.Presenter::scheduler,gravity.client.app.Presenter,scheduler,gravity/client/app/Presenter.java,198,-1
+d,gravity.client.app.Presenter::view,gravity.client.app.Presenter,view,gravity/client/app/Presenter.java,197,-1
+Presenter$0methodref$refreshView$Type,,gravity.client.app.Presenter$0methodref$refreshView$Type,,gravity/client/app/Presenter.java,199,-1
+a,gravity.client.app.Presenter$0methodref$refreshView$Type::$$outer_0,gravity.client.app.Presenter$0methodref$refreshView$Type,$$outer_0,gravity/client/app/Presenter.java,199,-1
+Tg,gravity.client.app.Presenter$0methodref$refreshView$Type::Presenter$0methodref$refreshView$Type(Lgravity/client/app/Presenter;) <init>,gravity.client.app.Presenter$0methodref$refreshView$Type,Presenter$0methodref$refreshView$Type,gravity/client/app/Presenter.java,199,0
+Ug,gravity.client.app.Presenter$0methodref$refreshView$Type::run()V,gravity.client.app.Presenter$0methodref$refreshView$Type,run,gravity/client/app/Presenter.java,199,0
+Presenter$1methodref$incrementTime$Type,,gravity.client.app.Presenter$1methodref$incrementTime$Type,,gravity/client/app/Presenter.java,86,-1
+a,gravity.client.app.Presenter$1methodref$incrementTime$Type::$$outer_0,gravity.client.app.Presenter$1methodref$incrementTime$Type,$$outer_0,gravity/client/app/Presenter.java,86,-1
+Vg,gravity.client.app.Presenter$1methodref$incrementTime$Type::Presenter$1methodref$incrementTime$Type(Lgravity/client/app/Presenter;) <init>,gravity.client.app.Presenter$1methodref$incrementTime$Type,Presenter$1methodref$incrementTime$Type,gravity/client/app/Presenter.java,86,0
+Wg,gravity.client.app.Presenter$1methodref$incrementTime$Type::run()V,gravity.client.app.Presenter$1methodref$incrementTime$Type,run,gravity/client/app/Presenter.java,86,0
+Presenter$2methodref$refreshViewWithSpeed$Type,,gravity.client.app.Presenter$2methodref$refreshViewWithSpeed$Type,,gravity/client/app/Presenter.java,94,-1
+a,gravity.client.app.Presenter$2methodref$refreshViewWithSpeed$Type::$$outer_0,gravity.client.app.Presenter$2methodref$refreshViewWithSpeed$Type,$$outer_0,gravity/client/app/Presenter.java,94,-1
+Xg,gravity.client.app.Presenter$2methodref$refreshViewWithSpeed$Type::Presenter$2methodref$refreshViewWithSpeed$Type(Lgravity/client/app/Presenter;) <init>,gravity.client.app.Presenter$2methodref$refreshViewWithSpeed$Type,Presenter$2methodref$refreshViewWithSpeed$Type,gravity/client/app/Presenter.java,94,0
+Yg,gravity.client.app.Presenter$2methodref$refreshViewWithSpeed$Type::run()V,gravity.client.app.Presenter$2methodref$refreshViewWithSpeed$Type,run,gravity/client/app/Presenter.java,94,0
+Presenter$3methodref$refreshView$Type,,gravity.client.app.Presenter$3methodref$refreshView$Type,,gravity/client/app/Presenter.java,104,-1
+a,gravity.client.app.Presenter$3methodref$refreshView$Type::$$outer_0,gravity.client.app.Presenter$3methodref$refreshView$Type,$$outer_0,gravity/client/app/Presenter.java,104,-1
+Zg,gravity.client.app.Presenter$3methodref$refreshView$Type::Presenter$3methodref$refreshView$Type(Lgravity/client/app/Presenter;) <init>,gravity.client.app.Presenter$3methodref$refreshView$Type,Presenter$3methodref$refreshView$Type,gravity/client/app/Presenter.java,104,0
+$g,gravity.client.app.Presenter$3methodref$refreshView$Type::run()V,gravity.client.app.Presenter$3methodref$refreshView$Type,run,gravity/client/app/Presenter.java,104,0
+Presenter$4methodref$refreshView$Type,,gravity.client.app.Presenter$4methodref$refreshView$Type,,gravity/client/app/Presenter.java,113,-1
+a,gravity.client.app.Presenter$4methodref$refreshView$Type::$$outer_0,gravity.client.app.Presenter$4methodref$refreshView$Type,$$outer_0,gravity/client/app/Presenter.java,113,-1
+_g,gravity.client.app.Presenter$4methodref$refreshView$Type::Presenter$4methodref$refreshView$Type(Lgravity/client/app/Presenter;) <init>,gravity.client.app.Presenter$4methodref$refreshView$Type,Presenter$4methodref$refreshView$Type,gravity/client/app/Presenter.java,113,0
+ah,gravity.client.app.Presenter$4methodref$refreshView$Type::run()V,gravity.client.app.Presenter$4methodref$refreshView$Type,run,gravity/client/app/Presenter.java,113,0
+Presenter$5methodref$refreshView$Type,,gravity.client.app.Presenter$5methodref$refreshView$Type,,gravity/client/app/Presenter.java,123,-1
+a,gravity.client.app.Presenter$5methodref$refreshView$Type::$$outer_0,gravity.client.app.Presenter$5methodref$refreshView$Type,$$outer_0,gravity/client/app/Presenter.java,123,-1
+bh,gravity.client.app.Presenter$5methodref$refreshView$Type::Presenter$5methodref$refreshView$Type(Lgravity/client/app/Presenter;) <init>,gravity.client.app.Presenter$5methodref$refreshView$Type,Presenter$5methodref$refreshView$Type,gravity/client/app/Presenter.java,123,0
+dh,gravity.client.app.Presenter$5methodref$refreshView$Type::run()V,gravity.client.app.Presenter$5methodref$refreshView$Type,run,gravity/client/app/Presenter.java,123,0
+Presenter$6methodref$refreshView$Type,,gravity.client.app.Presenter$6methodref$refreshView$Type,,gravity/client/app/Presenter.java,131,-1
+a,gravity.client.app.Presenter$6methodref$refreshView$Type::$$outer_0,gravity.client.app.Presenter$6methodref$refreshView$Type,$$outer_0,gravity/client/app/Presenter.java,131,-1
+eh,gravity.client.app.Presenter$6methodref$refreshView$Type::Presenter$6methodref$refreshView$Type(Lgravity/client/app/Presenter;) <init>,gravity.client.app.Presenter$6methodref$refreshView$Type,Presenter$6methodref$refreshView$Type,gravity/client/app/Presenter.java,131,0
+fh,gravity.client.app.Presenter$6methodref$refreshView$Type::run()V,gravity.client.app.Presenter$6methodref$refreshView$Type,run,gravity/client/app/Presenter.java,131,0
+Acceleration,,gravity.client.core.Acceleration,,gravity/client/core/Acceleration.java,23,-1
+jh,gravity.client.core.Acceleration::Acceleration(DD) <init>,gravity.client.core.Acceleration,Acceleration,gravity/client/core/Acceleration.java,28,0
+Body,,gravity.client.core.Body,,gravity/client/core/Body.java,27,-1
+kh,gravity.client.core.Body::$distanceTo(Lgravity/client/core/Body;Lgravity/client/core/Body;)D,gravity.client.core.Body,$distanceTo,gravity/client/core/Body.java,91,0
+lh,gravity.client.core.Body::$gravitationalForceFrom(Lgravity/client/core/Body;Lgravity/client/core/Body;)Lgravity/client/core/Force;,gravity.client.core.Body,$gravitationalForceFrom,gravity/client/core/Body.java,52,0
+mh,gravity.client.core.Body::$gravitationalForceFrom(Lgravity/client/core/Body;Ljava/util/List;)Lgravity/client/core/Force;,gravity.client.core.Body,$gravitationalForceFrom,gravity/client/core/Body.java,74,0
+nh,gravity.client.core.Body::$setSpeed(Lgravity/client/core/Body;Lgravity/client/core/Speed;)V,gravity.client.core.Body,$setSpeed,gravity/client/core/Body.java,105,0
+oh,gravity.client.core.Body::Body(DLgravity/client/core/Point;Lgravity/client/core/Speed;) <init>,gravity.client.core.Body,Body,gravity/client/core/Body.java,32,0
+c,gravity.client.core.Body::center,gravity.client.core.Body,center,gravity/client/core/Body.java,114,-1
+d,gravity.client.core.Body::mass,gravity.client.core.Body,mass,gravity/client/core/Body.java,113,-1
+ph,gravity.client.core.Body::moveBy(Lgravity/client/core/Force;D)V,gravity.client.core.Body,moveBy,gravity/client/core/Body.java,83,0
+e,gravity.client.core.Body::speed,gravity.client.core.Body,speed,gravity/client/core/Body.java,115,-1
+Body$0methodref$toString$Type,,gravity.client.core.Body$0methodref$toString$Type,,gravity/client/core/Body.java,34,-1
+a,gravity.client.core.Body$0methodref$toString$Type::$$outer_0,gravity.client.core.Body$0methodref$toString$Type,$$outer_0,gravity/client/core/Body.java,34,-1
+qh,gravity.client.core.Body$0methodref$toString$Type::Body$0methodref$toString$Type(Ljava/lang/String;) <init>,gravity.client.core.Body$0methodref$toString$Type,Body$0methodref$toString$Type,gravity/client/core/Body.java,34,0
+rh,gravity.client.core.Body$0methodref$toString$Type::get()Ljava/lang/Object;,gravity.client.core.Body$0methodref$toString$Type,get,gravity/client/core/Body.java,34,0
+Body$1methodref$toString$Type,,gravity.client.core.Body$1methodref$toString$Type,,gravity/client/core/Body.java,35,-1
+a,gravity.client.core.Body$1methodref$toString$Type::$$outer_0,gravity.client.core.Body$1methodref$toString$Type,$$outer_0,gravity/client/core/Body.java,35,-1
+sh,gravity.client.core.Body$1methodref$toString$Type::Body$1methodref$toString$Type(Ljava/lang/String;) <init>,gravity.client.core.Body$1methodref$toString$Type,Body$1methodref$toString$Type,gravity/client/core/Body.java,35,0
+th,gravity.client.core.Body$1methodref$toString$Type::get()Ljava/lang/Object;,gravity.client.core.Body$1methodref$toString$Type,get,gravity/client/core/Body.java,35,0
+Body$2methodref$toString$Type,,gravity.client.core.Body$2methodref$toString$Type,,gravity/client/core/Body.java,36,-1
+a,gravity.client.core.Body$2methodref$toString$Type::$$outer_0,gravity.client.core.Body$2methodref$toString$Type,$$outer_0,gravity/client/core/Body.java,36,-1
+uh,gravity.client.core.Body$2methodref$toString$Type::Body$2methodref$toString$Type(Ljava/lang/String;) <init>,gravity.client.core.Body$2methodref$toString$Type,Body$2methodref$toString$Type,gravity/client/core/Body.java,36,0
+vh,gravity.client.core.Body$2methodref$toString$Type::get()Ljava/lang/Object;,gravity.client.core.Body$2methodref$toString$Type,get,gravity/client/core/Body.java,36,0
+Body$3methodref$gravitationalForceFrom$Type,,gravity.client.core.Body$3methodref$gravitationalForceFrom$Type,,gravity/client/core/Body.java,77,-1
+a,gravity.client.core.Body$3methodref$gravitationalForceFrom$Type::$$outer_0,gravity.client.core.Body$3methodref$gravitationalForceFrom$Type,$$outer_0,gravity/client/core/Body.java,77,-1
+wh,gravity.client.core.Body$3methodref$gravitationalForceFrom$Type::Body$3methodref$gravitationalForceFrom$Type(Lgravity/client/core/Body;) <init>,gravity.client.core.Body$3methodref$gravitationalForceFrom$Type,Body$3methodref$gravitationalForceFrom$Type,gravity/client/core/Body.java,77,0
+xh,gravity.client.core.Body$3methodref$gravitationalForceFrom$Type::apply(Ljava/lang/Object;)Ljava/lang/Object;,gravity.client.core.Body$3methodref$gravitationalForceFrom$Type,apply,gravity/client/core/Body.java,77,0
+Body$4methodref$combineWith$Type,,gravity.client.core.Body$4methodref$combineWith$Type,,gravity/client/core/Body.java,78,-1
+yh,gravity.client.core.Body$4methodref$combineWith$Type::Body$4methodref$combineWith$Type() <init>,gravity.client.core.Body$4methodref$combineWith$Type,Body$4methodref$combineWith$Type,gravity/client/core/Body.java,78,0
+zh,gravity.client.core.Body$4methodref$combineWith$Type::apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;,gravity.client.core.Body$4methodref$combineWith$Type,apply,gravity/client/core/Body.java,78,0
+Force,,gravity.client.core.Force,,gravity/client/core/Force.java,23,-1
+Ah,gravity.client.core.Force::$accelerate(Lgravity/client/core/Force;D)Lgravity/client/core/Acceleration;,gravity.client.core.Force,$accelerate,gravity/client/core/Force.java,35,0
+Bh,gravity.client.core.Force::Force(DD) <init>,gravity.client.core.Force,Force,gravity/client/core/Force.java,28,0
+Planet,,gravity.client.core.Planet,,gravity/client/core/Planet.java,26,-1
+Ch,gravity.client.core.Planet::Planet(Lgravity/client/core/Planet$Type;DDLgravity/client/core/Point;Lgravity/client/core/Speed;) <init>,gravity.client.core.Planet,Planet,gravity/client/core/Planet.java,37,0
+a,gravity.client.core.Planet::radius,gravity.client.core.Planet,radius,gravity/client/core/Planet.java,63,-1
+b,gravity.client.core.Planet::type,gravity.client.core.Planet,type,gravity/client/core/Planet.java,64,-1
+Planet$0methodref$toString$Type,,gravity.client.core.Planet$0methodref$toString$Type,,gravity/client/core/Planet.java,41,-1
+a,gravity.client.core.Planet$0methodref$toString$Type::$$outer_0,gravity.client.core.Planet$0methodref$toString$Type,$$outer_0,gravity/client/core/Planet.java,41,-1
+Dh,gravity.client.core.Planet$0methodref$toString$Type::Planet$0methodref$toString$Type(Ljava/lang/String;) <init>,gravity.client.core.Planet$0methodref$toString$Type,Planet$0methodref$toString$Type,gravity/client/core/Planet.java,41,0
+Eh,gravity.client.core.Planet$0methodref$toString$Type::get()Ljava/lang/Object;,gravity.client.core.Planet$0methodref$toString$Type,get,gravity/client/core/Planet.java,41,0
+Planet$Type,,gravity.client.core.Planet$Type,,gravity/client/core/Planet.java,31,-1
+Lh,gravity.client.core.Planet$Type::$clinit()V,gravity.client.core.Planet$Type,$clinit,gravity/client/core/Planet.java,31,0
+Mh,gravity.client.core.Planet$Type::Planet$Type(Ljava/lang/String;I) <init>,gravity.client.core.Planet$Type,Planet$Type,gravity/client/core/Planet.java,31,0
+Fh,gravity.client.core.Planet$Type::blackHole,gravity.client.core.Planet$Type,blackHole,gravity/client/core/Planet.java,32,-1
+Gh,gravity.client.core.Planet$Type::earthLike,gravity.client.core.Planet$Type,earthLike,gravity/client/core/Planet.java,32,-1
+Hh,gravity.client.core.Planet$Type::gas,gravity.client.core.Planet$Type,gas,gravity/client/core/Planet.java,32,-1
+Ih,gravity.client.core.Planet$Type::ice,gravity.client.core.Planet$Type,ice,gravity/client/core/Planet.java,32,-1
+Jh,gravity.client.core.Planet$Type::rocky,gravity.client.core.Planet$Type,rocky,gravity/client/core/Planet.java,32,-1
+Kh,gravity.client.core.Planet$Type::star,gravity.client.core.Planet$Type,star,gravity/client/core/Planet.java,32,-1
+Nh,gravity.client.core.Planet$Type::values()[Lgravity/client/core/Planet$Type;,gravity.client.core.Planet$Type,values,gravity/client/core/Planet.java,31,0
+Point,,gravity.client.core.Point,,gravity/client/core/Point.java,25,-1
+Oh,gravity.client.core.Point::$distanceTo(Lgravity/client/core/Point;Lgravity/client/core/Point;)D,gravity.client.core.Point,$distanceTo,gravity/client/core/Point.java,82,0
+Ph,gravity.client.core.Point::$dx(Lgravity/client/core/Point;Lgravity/client/core/Point;)D,gravity.client.core.Point,$dx,gravity/client/core/Point.java,53,0
+Qh,gravity.client.core.Point::$dy(Lgravity/client/core/Point;Lgravity/client/core/Point;)D,gravity.client.core.Point,$dy,gravity/client/core/Point.java,60,0
+Rh,gravity.client.core.Point::$isWithin(Lgravity/client/core/Point;DD)Z,gravity.client.core.Point,$isWithin,gravity/client/core/Point.java,75,0
+Sh,gravity.client.core.Point::$moveAt(Lgravity/client/core/Point;Lgravity/client/core/Speed;D)V,gravity.client.core.Point,$moveAt,gravity/client/core/Point.java,67,0
+Th,gravity.client.core.Point::Point(DD) <init>,gravity.client.core.Point,Point,gravity/client/core/Point.java,30,0
+a,gravity.client.core.Point::x,gravity.client.core.Point,x,gravity/client/core/Point.java,89,-1
+b,gravity.client.core.Point::y,gravity.client.core.Point,y,gravity/client/core/Point.java,90,-1
+Uh,gravity.client.core.Preconditions::throwIf(ZLjava/util/function/Supplier;)V,gravity.client.core.Preconditions,throwIf,gravity/client/core/Preconditions.java,39,0
+Space,,gravity.client.core.Space,,gravity/client/core/Space.java,28,-1
+Vh,gravity.client.core.Space::$hasSpaceCraftCrashed(Lgravity/client/core/Space;)Z,gravity.client.core.Space,$hasSpaceCraftCrashed,gravity/client/core/Space.java,78,0
+Wh,gravity.client.core.Space::$hasSpaceCraftCrashed(Lgravity/client/core/Space;Lgravity/client/core/Planet;)Z,gravity.client.core.Space,$hasSpaceCraftCrashed,gravity/client/core/Space.java,86,0
+Xh,gravity.client.core.Space::$hasSpaceCraftPassedRightEdge(Lgravity/client/core/Space;)Z,gravity.client.core.Space,$hasSpaceCraftPassedRightEdge,gravity/client/core/Space.java,70,0
+Yh,gravity.client.core.Space::$incrementTime(Lgravity/client/core/Space;D)V,gravity.client.core.Space,$incrementTime,gravity/client/core/Space.java,45,0
+Zh,gravity.client.core.Space::$isSpaceCraftBeyondBounds(Lgravity/client/core/Space;)Z,gravity.client.core.Space,$isSpaceCraftBeyondBounds,gravity/client/core/Space.java,62,0
+$h,gravity.client.core.Space::$lambda$0(Lgravity/client/core/Space;Lgravity/client/core/Planet;)Lgravity/client/core/Force;,gravity.client.core.Space,$lambda$0,gravity/client/core/Space.java,52,0
+_h,gravity.client.core.Space::$lambda$1(Lgravity/client/core/Space;Ljava/util/List;DI)V,gravity.client.core.Space,$lambda$1,gravity/client/core/Space.java,56,0
+ai,gravity.client.core.Space::$setSpaceCraft(Lgravity/client/core/Space;Lgravity/client/core/SpaceCraft;)V,gravity.client.core.Space,$setSpaceCraft,gravity/client/core/Space.java,110,0
+bi,gravity.client.core.Space::Space(IILgravity/client/core/SpaceCraft;Ljava/util/List;) <init>,gravity.client.core.Space,Space,gravity/client/core/Space.java,33,0
+a,gravity.client.core.Space::height,gravity.client.core.Space,height,gravity/client/core/Space.java,119,-1
+b,gravity.client.core.Space::planets,gravity.client.core.Space,planets,gravity/client/core/Space.java,120,-1
+c,gravity.client.core.Space::spaceCraft,gravity.client.core.Space,spaceCraft,gravity/client/core/Space.java,121,-1
+d,gravity.client.core.Space::width,gravity.client.core.Space,width,gravity/client/core/Space.java,118,-1
+Space$0methodref$hasSpaceCraftCrashed$Type,,gravity.client.core.Space$0methodref$hasSpaceCraftCrashed$Type,,gravity/client/core/Space.java,80,-1
+a,gravity.client.core.Space$0methodref$hasSpaceCraftCrashed$Type::$$outer_0,gravity.client.core.Space$0methodref$hasSpaceCraftCrashed$Type,$$outer_0,gravity/client/core/Space.java,80,-1
+ci,gravity.client.core.Space$0methodref$hasSpaceCraftCrashed$Type::$test(Lgravity/client/core/Space$0methodref$hasSpaceCraftCrashed$Type;Ljava/lang/Object;)Z,gravity.client.core.Space$0methodref$hasSpaceCraftCrashed$Type,$test,gravity/client/core/Space.java,80,0
+di,gravity.client.core.Space$0methodref$hasSpaceCraftCrashed$Type::Space$0methodref$hasSpaceCraftCrashed$Type(Lgravity/client/core/Space;) <init>,gravity.client.core.Space$0methodref$hasSpaceCraftCrashed$Type,Space$0methodref$hasSpaceCraftCrashed$Type,gravity/client/core/Space.java,80,0
+Space$lambda$0$Type,,gravity.client.core.Space$lambda$0$Type,,gravity/client/core/Space.java,52,-1
+a,gravity.client.core.Space$lambda$0$Type::$$outer_0,gravity.client.core.Space$lambda$0$Type,$$outer_0,gravity/client/core/Space.java,52,-1
+ei,gravity.client.core.Space$lambda$0$Type::Space$lambda$0$Type(Lgravity/client/core/Space;) <init>,gravity.client.core.Space$lambda$0$Type,Space$lambda$0$Type,gravity/client/core/Space.java,52,0
+fi,gravity.client.core.Space$lambda$0$Type::apply(Ljava/lang/Object;)Ljava/lang/Object;,gravity.client.core.Space$lambda$0$Type,apply,gravity/client/core/Space.java,52,0
+Space$lambda$1$Type,,gravity.client.core.Space$lambda$1$Type,,gravity/client/core/Space.java,56,-1
+a,gravity.client.core.Space$lambda$1$Type::$$outer_0,gravity.client.core.Space$lambda$1$Type,$$outer_0,gravity/client/core/Space.java,56,-1
+gi,gravity.client.core.Space$lambda$1$Type::Space$lambda$1$Type(Lgravity/client/core/Space;Ljava/util/List;D) <init>,gravity.client.core.Space$lambda$1$Type,Space$lambda$1$Type,gravity/client/core/Space.java,56,0
+hi,gravity.client.core.Space$lambda$1$Type::accept(I)V,gravity.client.core.Space$lambda$1$Type,accept,gravity/client/core/Space.java,56,0
+b,gravity.client.core.Space$lambda$1$Type::forces_1,gravity.client.core.Space$lambda$1$Type,forces_1,gravity/client/core/Space.java,56,-1
+c,gravity.client.core.Space$lambda$1$Type::intervel_2,gravity.client.core.Space$lambda$1$Type,intervel_2,gravity/client/core/Space.java,56,-1
+SpaceCraft,,gravity.client.core.SpaceCraft,,gravity/client/core/SpaceCraft.java,25,-1
+ii,gravity.client.core.SpaceCraft::$moveBy(Lgravity/client/core/SpaceCraft;Lgravity/client/core/Force;D)V,gravity.client.core.SpaceCraft,$moveBy,gravity/client/core/SpaceCraft.java,42,0
+ji,gravity.client.core.SpaceCraft::SpaceCraft(Lgravity/client/core/Point;Lgravity/client/core/Speed;Ljava/util/function/BiConsumer;) <init>,gravity.client.core.SpaceCraft,SpaceCraft,gravity/client/core/SpaceCraft.java,30,0
+a,gravity.client.core.SpaceCraft::forceSniffer,gravity.client.core.SpaceCraft,forceSniffer,gravity/client/core/SpaceCraft.java,58,-1
+ki,gravity.client.core.SpaceCraft::moveBy(Lgravity/client/core/Force;D)V,gravity.client.core.SpaceCraft,moveBy,gravity/client/core/SpaceCraft.java,42,0
+b,gravity.client.core.SpaceCraft::radius,gravity.client.core.SpaceCraft,radius,gravity/client/core/SpaceCraft.java,57,-1
+Speed,,gravity.client.core.Speed,,gravity/client/core/Speed.java,23,-1
+li,gravity.client.core.Speed::$changeBy(Lgravity/client/core/Speed;Lgravity/client/core/Acceleration;D)V,gravity.client.core.Speed,$changeBy,gravity/client/core/Speed.java,35,0
+mi,gravity.client.core.Speed::Speed(DD) <init>,gravity.client.core.Speed,Speed,gravity/client/core/Speed.java,28,0
+StaticPlanet,,gravity.client.core.StaticPlanet,,gravity/client/core/StaticPlanet.java,23,-1
+ni,gravity.client.core.StaticPlanet::StaticPlanet(Lgravity/client/core/Planet$Type;DDLgravity/client/core/Point;Lgravity/client/core/Speed;) <init>,gravity.client.core.StaticPlanet,StaticPlanet,gravity/client/core/StaticPlanet.java,28,0
+oi,gravity.client.core.StaticPlanet::moveBy(Lgravity/client/core/Force;D)V,gravity.client.core.StaticPlanet,moveBy,gravity/client/core/StaticPlanet.java,37,0
+Vector,,gravity.client.core.Vector,,gravity/client/core/Vector.java,25,-1
+gh,gravity.client.core.Vector::$combineWith(Lgravity/client/core/Vector;Lgravity/client/core/Vector;)Lgravity/client/core/Vector;,gravity.client.core.Vector,$combineWith,gravity/client/core/Vector.java,38,0
+hh,gravity.client.core.Vector::$getAngle(Lgravity/client/core/Vector;)D,gravity.client.core.Vector,$getAngle,gravity/client/core/Vector.java,68,0
+ih,gravity.client.core.Vector::Vector(DD) <init>,gravity.client.core.Vector,Vector,gravity/client/core/Vector.java,30,0
+a,gravity.client.core.Vector::x,gravity.client.core.Vector,x,gravity/client/core/Vector.java,82,-1
+b,gravity.client.core.Vector::y,gravity.client.core.Vector,y,gravity/client/core/Vector.java,83,-1
+SpaceCanvas,,gravity.client.ui.SpaceCanvas,,gravity/client/ui/SpaceCanvas.java,41,-1
+pi,gravity.client.ui.SpaceCanvas::$clear(Lgravity/client/ui/SpaceCanvas;)V,gravity.client.ui.SpaceCanvas,$clear,gravity/client/ui/SpaceCanvas.java,231,0
+qi,gravity.client.ui.SpaceCanvas::$draw(Lgravity/client/ui/SpaceCanvas;Lgravity/client/core/Planet;)V,gravity.client.ui.SpaceCanvas,$draw,gravity/client/ui/SpaceCanvas.java,209,0
+ri,gravity.client.ui.SpaceCanvas::$draw(Lgravity/client/ui/SpaceCanvas;Lgravity/client/core/SpaceCraft;)V,gravity.client.ui.SpaceCanvas,$draw,gravity/client/ui/SpaceCanvas.java,156,0
+si,gravity.client.ui.SpaceCanvas::$getImage(Lgravity/client/ui/SpaceCanvas;Ljava/lang/String;)Lcom/google/gwt/dom/client/ImageElement;,gravity.client.ui.SpaceCanvas,$getImage,gravity/client/ui/SpaceCanvas.java,241,0
+ti,gravity.client.ui.SpaceCanvas::$onCanvasEvent(Lgravity/client/ui/SpaceCanvas;Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.SpaceCanvas,$onCanvasEvent,gravity/client/ui/SpaceCanvas.java,82,0
+ui,gravity.client.ui.SpaceCanvas::$refresh(Lgravity/client/ui/SpaceCanvas;Lgravity/client/core/SpaceCraft;Ljava/util/List;III)V,gravity.client.ui.SpaceCanvas,$refresh,gravity/client/ui/SpaceCanvas.java,92,0
+vi,gravity.client.ui.SpaceCanvas::$refreshWithExplosion(Lgravity/client/ui/SpaceCanvas;Lgravity/client/core/SpaceCraft;Ljava/util/List;III)V,gravity.client.ui.SpaceCanvas,$refreshWithExplosion,gravity/client/ui/SpaceCanvas.java,112,0
+wi,gravity.client.ui.SpaceCanvas::$refreshWithSpeed(Lgravity/client/ui/SpaceCanvas;Lgravity/client/core/SpaceCraft;Ljava/util/List;III)V,gravity.client.ui.SpaceCanvas,$refreshWithSpeed,gravity/client/ui/SpaceCanvas.java,102,0
+xi,gravity.client.ui.SpaceCanvas::SpaceCanvas(Lgravity/client/ui/SpaceCanvas$MouseEventListener;) <init>,gravity.client.ui.SpaceCanvas,SpaceCanvas,gravity/client/ui/SpaceCanvas.java,53,0
+a,gravity.client.ui.SpaceCanvas::canvas,gravity.client.ui.SpaceCanvas,canvas,gravity/client/ui/SpaceCanvas.java,249,-1
+b,gravity.client.ui.SpaceCanvas::context,gravity.client.ui.SpaceCanvas,context,gravity/client/ui/SpaceCanvas.java,250,-1
+c,gravity.client.ui.SpaceCanvas::document,gravity.client.ui.SpaceCanvas,document,gravity/client/ui/SpaceCanvas.java,252,-1
+d,gravity.client.ui.SpaceCanvas::mouseListener,gravity.client.ui.SpaceCanvas,mouseListener,gravity/client/ui/SpaceCanvas.java,251,-1
+SpaceCanvas$0methodref$onCanvasEvent$Type,,gravity.client.ui.SpaceCanvas$0methodref$onCanvasEvent$Type,,gravity/client/ui/SpaceCanvas.java,60,-1
+a,gravity.client.ui.SpaceCanvas$0methodref$onCanvasEvent$Type::$$outer_0,gravity.client.ui.SpaceCanvas$0methodref$onCanvasEvent$Type,$$outer_0,gravity/client/ui/SpaceCanvas.java,60,-1
+yi,gravity.client.ui.SpaceCanvas$0methodref$onCanvasEvent$Type::SpaceCanvas$0methodref$onCanvasEvent$Type(Lgravity/client/ui/SpaceCanvas;) <init>,gravity.client.ui.SpaceCanvas$0methodref$onCanvasEvent$Type,SpaceCanvas$0methodref$onCanvasEvent$Type,gravity/client/ui/SpaceCanvas.java,60,0
+zi,gravity.client.ui.SpaceCanvas$0methodref$onCanvasEvent$Type::onBrowserEvent(Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.SpaceCanvas$0methodref$onCanvasEvent$Type,onBrowserEvent,gravity/client/ui/SpaceCanvas.java,60,0
+SpaceCanvas$lambda$0$Type,,gravity.client.ui.SpaceCanvas$lambda$0$Type,,gravity/client/ui/SpaceCanvas.java,203,-1
+a,gravity.client.ui.SpaceCanvas$lambda$0$Type::$$outer_0,gravity.client.ui.SpaceCanvas$lambda$0$Type,$$outer_0,gravity/client/ui/SpaceCanvas.java,203,-1
+Ai,gravity.client.ui.SpaceCanvas$lambda$0$Type::SpaceCanvas$lambda$0$Type(Lgravity/client/ui/SpaceCanvas;) <init>,gravity.client.ui.SpaceCanvas$lambda$0$Type,SpaceCanvas$lambda$0$Type,gravity/client/ui/SpaceCanvas.java,203,0
+Bi,gravity.client.ui.SpaceCanvas$lambda$0$Type::accept(Ljava/lang/Object;)V,gravity.client.ui.SpaceCanvas$lambda$0$Type,accept,gravity/client/ui/SpaceCanvas.java,203,0
+WebUI,,gravity.client.ui.WebUI,,gravity/client/ui/WebUI.java,47,-1
+Ci,gravity.client.ui.WebUI::$nextLevelClicked(Lgravity/client/ui/WebUI;Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.WebUI,$nextLevelClicked,gravity/client/ui/WebUI.java,115,0
+Di,gravity.client.ui.WebUI::$onMouseEvent(Lgravity/client/ui/WebUI;IIII)V,gravity.client.ui.WebUI,$onMouseEvent,gravity/client/ui/WebUI.java,84,0
+Ei,gravity.client.ui.WebUI::$playExlposion(Lgravity/client/ui/WebUI;)V,gravity.client.ui.WebUI,$playExlposion,gravity/client/ui/WebUI.java,200,0
+Fi,gravity.client.ui.WebUI::$refresh(Lgravity/client/ui/WebUI;Lgravity/client/core/SpaceCraft;Ljava/util/List;III)V,gravity.client.ui.WebUI,$refresh,gravity/client/ui/WebUI.java,152,0
+Gi,gravity.client.ui.WebUI::$refreshWithExplosion(Lgravity/client/ui/WebUI;Lgravity/client/core/SpaceCraft;Ljava/util/List;III)V,gravity.client.ui.WebUI,$refreshWithExplosion,gravity/client/ui/WebUI.java,172,0
+Hi,gravity.client.ui.WebUI::$refreshWithSpeed(Lgravity/client/ui/WebUI;Lgravity/client/core/SpaceCraft;Ljava/util/List;III)V,gravity.client.ui.WebUI,$refreshWithSpeed,gravity/client/ui/WebUI.java,162,0
+Ii,gravity.client.ui.WebUI::$reloadLevelClicked(Lgravity/client/ui/WebUI;Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.WebUI,$reloadLevelClicked,gravity/client/ui/WebUI.java,105,0
+Ji,gravity.client.ui.WebUI::$setClickListener(Lgravity/client/ui/WebUI;Ljava/lang/String;Lcom/google/gwt/user/client/EventListener;)V,gravity.client.ui.WebUI,$setClickListener,gravity/client/ui/WebUI.java,73,0
+Ki,gravity.client.ui.WebUI::$showSuccess(Lgravity/client/ui/WebUI;I)V,gravity.client.ui.WebUI,$showSuccess,gravity/client/ui/WebUI.java,191,0
+Li,gravity.client.ui.WebUI::$startClicked(Lgravity/client/ui/WebUI;Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.WebUI,$startClicked,gravity/client/ui/WebUI.java,124,0
+Mi,gravity.client.ui.WebUI::WebUI(Lgravity/client/app/Presenter;) <init>,gravity.client.ui.WebUI,WebUI,gravity/client/ui/WebUI.java,52,0
+a,gravity.client.ui.WebUI::blast,gravity.client.ui.WebUI,blast,gravity/client/ui/WebUI.java,228,-1
+b,gravity.client.ui.WebUI::document,gravity.client.ui.WebUI,document,gravity/client/ui/WebUI.java,222,-1
+c,gravity.client.ui.WebUI::launch,gravity.client.ui.WebUI,launch,gravity/client/ui/WebUI.java,227,-1
+d,gravity.client.ui.WebUI::leftButtonPressed,gravity.client.ui.WebUI,leftButtonPressed,gravity/client/ui/WebUI.java,224,-1
+e,gravity.client.ui.WebUI::logo,gravity.client.ui.WebUI,logo,gravity/client/ui/WebUI.java,229,-1
+f,gravity.client.ui.WebUI::looseDialog,gravity.client.ui.WebUI,looseDialog,gravity/client/ui/WebUI.java,226,-1
+g,gravity.client.ui.WebUI::presenter,gravity.client.ui.WebUI,presenter,gravity/client/ui/WebUI.java,221,-1
+h,gravity.client.ui.WebUI::spacePane,gravity.client.ui.WebUI,spacePane,gravity/client/ui/WebUI.java,223,-1
+i,gravity.client.ui.WebUI::winDialog,gravity.client.ui.WebUI,winDialog,gravity/client/ui/WebUI.java,225,-1
+WebUI$0methodref$reloadLevelClicked$Type,,gravity.client.ui.WebUI$0methodref$reloadLevelClicked$Type,,gravity/client/ui/WebUI.java,64,-1
+a,gravity.client.ui.WebUI$0methodref$reloadLevelClicked$Type::$$outer_0,gravity.client.ui.WebUI$0methodref$reloadLevelClicked$Type,$$outer_0,gravity/client/ui/WebUI.java,64,-1
+Ni,gravity.client.ui.WebUI$0methodref$reloadLevelClicked$Type::WebUI$0methodref$reloadLevelClicked$Type(Lgravity/client/ui/WebUI;) <init>,gravity.client.ui.WebUI$0methodref$reloadLevelClicked$Type,WebUI$0methodref$reloadLevelClicked$Type,gravity/client/ui/WebUI.java,64,0
+Oi,gravity.client.ui.WebUI$0methodref$reloadLevelClicked$Type::onBrowserEvent(Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.WebUI$0methodref$reloadLevelClicked$Type,onBrowserEvent,gravity/client/ui/WebUI.java,64,0
+WebUI$1methodref$reloadLevelClicked$Type,,gravity.client.ui.WebUI$1methodref$reloadLevelClicked$Type,,gravity/client/ui/WebUI.java,65,-1
+a,gravity.client.ui.WebUI$1methodref$reloadLevelClicked$Type::$$outer_0,gravity.client.ui.WebUI$1methodref$reloadLevelClicked$Type,$$outer_0,gravity/client/ui/WebUI.java,65,-1
+Pi,gravity.client.ui.WebUI$1methodref$reloadLevelClicked$Type::WebUI$1methodref$reloadLevelClicked$Type(Lgravity/client/ui/WebUI;) <init>,gravity.client.ui.WebUI$1methodref$reloadLevelClicked$Type,WebUI$1methodref$reloadLevelClicked$Type,gravity/client/ui/WebUI.java,65,0
+Qi,gravity.client.ui.WebUI$1methodref$reloadLevelClicked$Type::onBrowserEvent(Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.WebUI$1methodref$reloadLevelClicked$Type,onBrowserEvent,gravity/client/ui/WebUI.java,65,0
+WebUI$2methodref$nextLevelClicked$Type,,gravity.client.ui.WebUI$2methodref$nextLevelClicked$Type,,gravity/client/ui/WebUI.java,66,-1
+a,gravity.client.ui.WebUI$2methodref$nextLevelClicked$Type::$$outer_0,gravity.client.ui.WebUI$2methodref$nextLevelClicked$Type,$$outer_0,gravity/client/ui/WebUI.java,66,-1
+Ri,gravity.client.ui.WebUI$2methodref$nextLevelClicked$Type::WebUI$2methodref$nextLevelClicked$Type(Lgravity/client/ui/WebUI;) <init>,gravity.client.ui.WebUI$2methodref$nextLevelClicked$Type,WebUI$2methodref$nextLevelClicked$Type,gravity/client/ui/WebUI.java,66,0
+Si,gravity.client.ui.WebUI$2methodref$nextLevelClicked$Type::onBrowserEvent(Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.WebUI$2methodref$nextLevelClicked$Type,onBrowserEvent,gravity/client/ui/WebUI.java,66,0
+WebUI$3methodref$startClicked$Type,,gravity.client.ui.WebUI$3methodref$startClicked$Type,,gravity/client/ui/WebUI.java,67,-1
+a,gravity.client.ui.WebUI$3methodref$startClicked$Type::$$outer_0,gravity.client.ui.WebUI$3methodref$startClicked$Type,$$outer_0,gravity/client/ui/WebUI.java,67,-1
+Ti,gravity.client.ui.WebUI$3methodref$startClicked$Type::WebUI$3methodref$startClicked$Type(Lgravity/client/ui/WebUI;) <init>,gravity.client.ui.WebUI$3methodref$startClicked$Type,WebUI$3methodref$startClicked$Type,gravity/client/ui/WebUI.java,67,0
+Ui,gravity.client.ui.WebUI$3methodref$startClicked$Type::onBrowserEvent(Lcom/google/gwt/user/client/Event;)V,gravity.client.ui.WebUI$3methodref$startClicked$Type,onBrowserEvent,gravity/client/ui/WebUI.java,67,0
+WebUI$lambda$0$Type,,gravity.client.ui.WebUI$lambda$0$Type,,gravity/client/ui/WebUI.java,56,-1
+a,gravity.client.ui.WebUI$lambda$0$Type::$$outer_0,gravity.client.ui.WebUI$lambda$0$Type,$$outer_0,gravity/client/ui/WebUI.java,56,-1
+Vi,gravity.client.ui.WebUI$lambda$0$Type::$onMouseEvent(Lgravity/client/ui/WebUI$lambda$0$Type;IIII)V,gravity.client.ui.WebUI$lambda$0$Type,$onMouseEvent,gravity/client/ui/WebUI.java,56,0
+Wi,gravity.client.ui.WebUI$lambda$0$Type::WebUI$lambda$0$Type(Lgravity/client/ui/WebUI;) <init>,gravity.client.ui.WebUI$lambda$0$Type,WebUI$lambda$0$Type,gravity/client/ui/WebUI.java,56,0
+ArrayStoreException,,java.lang.ArrayStoreException,,com/google/gwt/emul/java/lang/ArrayStoreException.java,23,-1
+Xi,java.lang.ArrayStoreException::ArrayStoreException() <init>,java.lang.ArrayStoreException,ArrayStoreException,com/google/gwt/emul/java/lang/ArrayStoreException.java,25,0
+AssertionError,,java.lang.AssertionError,,com/google/gwt/emul/java/lang/AssertionError.java,21,-1
+Boolean,,java.lang.Boolean,,com/google/gwt/emul/java/lang/Boolean.java,29,-1
+Yi,java.lang.Boolean::$clinit()V,java.lang.Boolean,$clinit,com/google/gwt/emul/java/lang/Boolean.java,29,0
+Zi,java.lang.Character::digit(CI)I,java.lang.Character,digit,com/google/gwt/emul/java/lang/Character.java,188,0
+Class,,java.lang.Class,,com/google/gwt/emul/java/lang/Class.java,33,-1
+_i,java.lang.Class::$ensureNamesAreInitialized(Ljava/lang/Class;)V,java.lang.Class,$ensureNamesAreInitialized,com/google/gwt/emul/java/lang/Class.java,334,0
+aj,java.lang.Class::$getName(Ljava/lang/Class;)Ljava/lang/String;,java.lang.Class,$getName,com/google/gwt/emul/java/lang/Class.java,355,0
+bj,java.lang.Class::Class() <init>,java.lang.Class,Class,com/google/gwt/emul/java/lang/Class.java,317,0
+a,java.lang.Class::arrayLiterals,java.lang.Class,arrayLiterals,com/google/gwt/emul/java/lang/Class.java,302,-1
+b,java.lang.Class::canonicalName,java.lang.Class,canonicalName,com/google/gwt/emul/java/lang/Class.java,294,-1
+c,java.lang.Class::componentType,java.lang.Class,componentType,com/google/gwt/emul/java/lang/Class.java,281,-1
+d,java.lang.Class::compoundName,java.lang.Class,compoundName,com/google/gwt/emul/java/lang/Class.java,298,-1
+cj,java.lang.Class::createClassLiteralForArray(I)Ljava/lang/Class;,java.lang.Class,createClassLiteralForArray,com/google/gwt/emul/java/lang/Class.java,55,0
+dj,java.lang.Class::createClassObject(Ljava/lang/String;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)Ljava/lang/Class;,java.lang.Class,createClassObject,com/google/gwt/emul/java/lang/Class.java,152,0
+ej,java.lang.Class::createForClass(Ljava/lang/String;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/Class;)Ljava/lang/Class;,java.lang.Class,createForClass,com/google/gwt/emul/java/lang/Class.java,73,0
+fj,java.lang.Class::createForEnum(Ljava/lang/String;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/Class;Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;)Ljava/lang/Class;,java.lang.Class,createForEnum,com/google/gwt/emul/java/lang/Class.java,87,0
+gj,java.lang.Class::getCanonicalName()Ljava/lang/String;,java.lang.Class,getCanonicalName,com/google/gwt/emul/java/lang/Class.java,341,0
+hj,java.lang.Class::getClassLiteralForArray(Ljava/lang/Class;I)Ljava/lang/Class;,java.lang.Class,getClassLiteralForArray,com/google/gwt/emul/java/lang/Class.java,48,0
+ij,java.lang.Class::getName()Ljava/lang/String;,java.lang.Class,getName,com/google/gwt/emul/java/lang/Class.java,355,0
+jj,java.lang.Class::getPrototypeForClass(Ljava/lang/Class;)Lcom/google/gwt/core/client/JavaScriptObject;,java.lang.Class,getPrototypeForClass,com/google/gwt/emul/java/lang/Class.java,128,0
+kj,java.lang.Class::getSimpleName()Ljava/lang/String;,java.lang.Class,getSimpleName,com/google/gwt/emul/java/lang/Class.java,360,0
+lj,java.lang.Class::initializeNames(Ljava/lang/Class;)V,java.lang.Class,initializeNames,com/google/gwt/emul/java/lang/Class.java,202,0
+mj,java.lang.Class::isArray()Z,java.lang.Class,isArray,com/google/gwt/emul/java/lang/Class.java,373,0
+nj,java.lang.Class::isPrimitive()Z,java.lang.Class,isPrimitive,com/google/gwt/emul/java/lang/Class.java,385,0
+oj,java.lang.Class::join(Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)Ljava/lang/String;,java.lang.Class,join,com/google/gwt/emul/java/lang/Class.java,232,0
+pj,java.lang.Class::maybeSetClassLiteral(Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/Class;)V,java.lang.Class,maybeSetClassLiteral,com/google/gwt/emul/java/lang/Class.java,173,0
+e,java.lang.Class::modifiers,java.lang.Class,modifiers,com/google/gwt/emul/java/lang/Class.java,279,-1
+$i,java.lang.Class::nextSequentialId,java.lang.Class,nextSequentialId,com/google/gwt/emul/java/lang/Class.java,310,-1
+f,java.lang.Class::packageName,java.lang.Class,packageName,com/google/gwt/emul/java/lang/Class.java,296,-1
+g,java.lang.Class::simpleName,java.lang.Class,simpleName,com/google/gwt/emul/java/lang/Class.java,290,-1
+h,java.lang.Class::typeId,java.lang.Class,typeId,com/google/gwt/emul/java/lang/Class.java,300,-1
+i,java.lang.Class::typeName,java.lang.Class,typeName,com/google/gwt/emul/java/lang/Class.java,292,-1
+ClassCastException,,java.lang.ClassCastException,,com/google/gwt/emul/java/lang/ClassCastException.java,21,-1
+qj,java.lang.ClassCastException::ClassCastException() <init>,java.lang.ClassCastException,ClassCastException,com/google/gwt/emul/java/lang/ClassCastException.java,23,0
+Double,,java.lang.Double,,com/google/gwt/emul/java/lang/Double.java,27,-1
+Enum,,java.lang.Enum,,com/google/gwt/emul/java/lang/Enum.java,34,-1
+vb,java.lang.Enum::$name(Ljava/lang/Enum;)Ljava/lang/String;,java.lang.Enum,$name,com/google/gwt/emul/java/lang/Enum.java,118,0
+wb,java.lang.Enum::Enum(Ljava/lang/String;I) <init>,java.lang.Enum,Enum,com/google/gwt/emul/java/lang/Enum.java,80,0
+xb,java.lang.Enum::hashCode()I,java.lang.Enum,hashCode,com/google/gwt/emul/java/lang/Enum.java,114,0
+a,java.lang.Enum::name,java.lang.Enum,name,com/google/gwt/emul/java/lang/Enum.java,76,-1
+b,java.lang.Enum::ordinal,java.lang.Enum,ordinal,com/google/gwt/emul/java/lang/Enum.java,78,-1
+Error,,java.lang.Error,,com/google/gwt/emul/java/lang/Error.java,23,-1
+_f,java.lang.Error::Error(Ljava/lang/String;Ljava/lang/Throwable;) <init>,java.lang.Error,Error,com/google/gwt/emul/java/lang/Error.java,29,0
+Exception,,java.lang.Exception,,com/google/gwt/emul/java/lang/Exception.java,23,-1
+IllegalArgumentException,,java.lang.IllegalArgumentException,,com/google/gwt/emul/java/lang/IllegalArgumentException.java,23,-1
+sj,java.lang.IllegalArgumentException::IllegalArgumentException(Ljava/lang/String;) <init>,java.lang.IllegalArgumentException,IllegalArgumentException,com/google/gwt/emul/java/lang/IllegalArgumentException.java,28,0
+IllegalStateException,,java.lang.IllegalStateException,,com/google/gwt/emul/java/lang/IllegalStateException.java,22,-1
+tj,java.lang.IllegalStateException::IllegalStateException(Ljava/lang/String;) <init>,java.lang.IllegalStateException,IllegalStateException,com/google/gwt/emul/java/lang/IllegalStateException.java,27,0
+IndexOutOfBoundsException,,java.lang.IndexOutOfBoundsException,,com/google/gwt/emul/java/lang/IndexOutOfBoundsException.java,23,-1
+uj,java.lang.IndexOutOfBoundsException::IndexOutOfBoundsException(Ljava/lang/String;) <init>,java.lang.IndexOutOfBoundsException,IndexOutOfBoundsException,com/google/gwt/emul/java/lang/IndexOutOfBoundsException.java,28,0
+Integer,,java.lang.Integer,,com/google/gwt/emul/java/lang/Integer.java,21,-1
+vj,java.lang.Integer::Integer(I) <init>,java.lang.Integer,Integer,com/google/gwt/emul/java/lang/Integer.java,263,0
+wj,java.lang.Integer::hashCode()I,java.lang.Integer,hashCode,com/google/gwt/emul/java/lang/Integer.java,297,0
+a,java.lang.Integer::value,java.lang.Integer,value,com/google/gwt/emul/java/lang/Integer.java,261,-1
+xj,java.lang.Integer::valueOf(I)Ljava/lang/Integer;,java.lang.Integer,valueOf,com/google/gwt/emul/java/lang/Integer.java,231,0
+zj,java.lang.Integer$BoxedValues::$clinit()V,java.lang.Integer$BoxedValues,$clinit,com/google/gwt/emul/java/lang/Integer.java,32,0
+yj,java.lang.Integer$BoxedValues::boxedValues,java.lang.Integer$BoxedValues,boxedValues,com/google/gwt/emul/java/lang/Integer.java,34,-1
+Aj,java.lang.Iterable::$forEach(Ljava/lang/Iterable;Ljava/util/function/Consumer;)V,java.lang.Iterable,$forEach,com/google/gwt/emul/java/lang/Iterable.java,36,0
+JsException,,java.lang.JsException,,com/google/gwt/emul/java/lang/JsException.java,23,-1
+Bj,java.lang.Math::hypot(DD)D,java.lang.Math,hypot,com/google/gwt/emul/java/lang/Math.java,166,0
+Math$NativeMath,,java.lang.Math$NativeMath,,com/google/gwt/emul/java/lang/Math.java,372,-1
+NullPointerException,,java.lang.NullPointerException,,com/google/gwt/emul/java/lang/NullPointerException.java,26,-1
+Cj,java.lang.NullPointerException::NullPointerException() <init>,java.lang.NullPointerException,NullPointerException,com/google/gwt/emul/java/lang/NullPointerException.java,28,0
+Dj,java.lang.NullPointerException::createError(Ljava/lang/String;)Ljava/lang/Object;,java.lang.NullPointerException,createError,com/google/gwt/emul/java/lang/NullPointerException.java,40,0
+NullPointerException$NativeTypeError,,java.lang.NullPointerException$NativeTypeError,,com/google/gwt/emul/java/lang/NullPointerException.java,45,-1
+Number,,java.lang.Number,,com/google/gwt/emul/java/lang/Number.java,27,-1
+rj,java.lang.Number::__parseAndValidateInt(Ljava/lang/String;III)I,java.lang.Number,__parseAndValidateInt,com/google/gwt/emul/java/lang/Number.java,208,0
+NumberFormatException,,java.lang.NumberFormatException,,com/google/gwt/emul/java/lang/NumberFormatException.java,23,-1
+Ej,java.lang.NumberFormatException::NumberFormatException(Ljava/lang/String;) <init>,java.lang.NumberFormatException,NumberFormatException,com/google/gwt/emul/java/lang/NumberFormatException.java,40,0
+Object,,java.lang.Object,,com/google/gwt/emul/java/lang/Object.java,27,-1
+k,java.lang.Object::Object() <init>,java.lang.Object,Object,com/google/gwt/emul/java/lang/Object.java,27,0
+X,java.lang.Object::___clazz,java.lang.Object,___clazz,com/google/gwt/emul/java/lang/Object.java,33,-1
+Y,java.lang.Object::castableTypeMap,java.lang.Object,castableTypeMap,com/google/gwt/emul/java/lang/Object.java,51,-1
+l,java.lang.Object::getClass()Ljava/lang/Class;,java.lang.Object,getClass,com/google/gwt/emul/java/lang/Object.java,71,0
+m,java.lang.Object::getClass__Ljava_lang_Class___devirtual$(Ljava/lang/Object;)Ljava/lang/Class;,java.lang.Object,getClass__Ljava_lang_Class___devirtual$,com/google/gwt/emul/java/lang/Object.java,71,0
+n,java.lang.Object::hashCode()I,java.lang.Object,hashCode,com/google/gwt/emul/java/lang/Object.java,75,0
+o,java.lang.Object::hashCode__I__devirtual$(Ljava/lang/Object;)I,java.lang.Object,hashCode__I__devirtual$,com/google/gwt/emul/java/lang/Object.java,75,0
+Z,java.lang.Object::typeMarker,java.lang.Object,typeMarker,com/google/gwt/emul/java/lang/Object.java,64,-1
+RuntimeException,,java.lang.RuntimeException,,com/google/gwt/emul/java/lang/RuntimeException.java,23,-1
+F,java.lang.RuntimeException::RuntimeException() <init>,java.lang.RuntimeException,RuntimeException,com/google/gwt/emul/java/lang/RuntimeException.java,25,0
+G,java.lang.RuntimeException::RuntimeException(Ljava/lang/String;) <init>,java.lang.RuntimeException,RuntimeException,com/google/gwt/emul/java/lang/RuntimeException.java,28,0
+String,,java.lang.String,,com/google/gwt/emul/java/lang/String.java,46,-1
+Fj,java.lang.String::$charAt(Ljava/lang/String;I)C,java.lang.String,$charAt,com/google/gwt/emul/java/lang/String.java,360,0
+Gj,java.lang.String::$equals(Ljava/lang/String;Ljava/lang/Object;)Z,java.lang.String,$equals,com/google/gwt/emul/java/lang/String.java,410,0
+String$NativeFunction,,java.lang.String$NativeFunction,,com/google/gwt/emul/java/lang/String.java,160,-1
+String$NativeString,,java.lang.String$NativeString,,com/google/gwt/emul/java/lang/String.java,757,-1
+length,java.lang.String$NativeString::length,java.lang.String$NativeString,length,com/google/gwt/emul/java/lang/String.java,759,-1
+System,,java.lang.System,,com/google/gwt/emul/java/lang/System.java,35,-1
+Throwable,,java.lang.Throwable,,com/google/gwt/emul/java/lang/Throwable.java,37,-1
+w,java.lang.Throwable::$fillInStackTrace(Ljava/lang/Throwable;)Ljava/lang/Throwable;,java.lang.Throwable,$fillInStackTrace,com/google/gwt/emul/java/lang/Throwable.java,177,0
+A,java.lang.Throwable::$setBackingJsObject(Ljava/lang/Throwable;Ljava/lang/Object;)V,java.lang.Throwable,$setBackingJsObject,com/google/gwt/emul/java/lang/Throwable.java,140,0
+b,java.lang.Throwable::backingJsObject,java.lang.Throwable,backingJsObject,com/google/gwt/emul/java/lang/Throwable.java,57,-1
+B,java.lang.Throwable::createError(Ljava/lang/String;)Ljava/lang/Object;,java.lang.Throwable,createError,com/google/gwt/emul/java/lang/Throwable.java,120,0
+c,java.lang.Throwable::detailMessage,java.lang.Throwable,detailMessage,com/google/gwt/emul/java/lang/Throwable.java,49,-1
+C,java.lang.Throwable::fixIE(Ljava/lang/Object;)Ljava/lang/Object;,java.lang.Throwable,fixIE,com/google/gwt/emul/java/lang/Throwable.java,124,0
+D,java.lang.Throwable::initializeBackingError()V,java.lang.Throwable,initializeBackingError,com/google/gwt/emul/java/lang/Throwable.java,106,0
+d,java.lang.Throwable::writetableStackTrace,java.lang.Throwable,writetableStackTrace,com/google/gwt/emul/java/lang/Throwable.java,54,-1
+Throwable$NativeError,,java.lang.Throwable$NativeError,,com/google/gwt/emul/java/lang/Throwable.java,301,-1
+Throwable$NativeTypeError,,java.lang.Throwable$NativeTypeError,,com/google/gwt/emul/java/lang/Throwable.java,306,-1
+UnsupportedOperationException,,java.lang.UnsupportedOperationException,,com/google/gwt/emul/java/lang/UnsupportedOperationException.java,23,-1
+Hj,java.lang.UnsupportedOperationException::UnsupportedOperationException() <init>,java.lang.UnsupportedOperationException,UnsupportedOperationException,com/google/gwt/emul/java/lang/UnsupportedOperationException.java,25,0
+Ij,java.lang.UnsupportedOperationException::UnsupportedOperationException(Ljava/lang/String;) <init>,java.lang.UnsupportedOperationException,UnsupportedOperationException,com/google/gwt/emul/java/lang/UnsupportedOperationException.java,28,0
+AbstractCollection,,java.util.AbstractCollection,,com/google/gwt/emul/java/util/AbstractCollection.java,30,-1
+Jj,java.util.AbstractCollection::add(Ljava/lang/Object;)Z,java.util.AbstractCollection,add,com/google/gwt/emul/java/util/AbstractCollection.java,36,0
+Kj,java.util.AbstractCollection::addAll(Ljava/util/Collection;)Z,java.util.AbstractCollection,addAll,com/google/gwt/emul/java/util/AbstractCollection.java,41,0
+Lj,java.util.AbstractCollection::toArray()[Ljava/lang/Object;,java.util.AbstractCollection,toArray,com/google/gwt/emul/java/util/AbstractCollection.java,117,0
+Mj,java.util.AbstractCollection::toArray([Ljava/lang/Object;)[Ljava/lang/Object;,java.util.AbstractCollection,toArray,com/google/gwt/emul/java/util/AbstractCollection.java,122,0
+AbstractList,,java.util.AbstractList,,com/google/gwt/emul/java/util/AbstractList.java,32,-1
+Nj,java.util.AbstractList::add(ILjava/lang/Object;)V,java.util.AbstractList,add,com/google/gwt/emul/java/util/AbstractList.java,186,0
+Oj,java.util.AbstractList::add(Ljava/lang/Object;)Z,java.util.AbstractList,add,com/google/gwt/emul/java/util/AbstractList.java,180,0
+Pj,java.util.AbstractList::hashCode()I,java.util.AbstractList,hashCode,com/google/gwt/emul/java/util/AbstractList.java,234,0
+Qj,java.util.AbstractList::iterator()Ljava/util/Iterator;,java.util.AbstractList,iterator,com/google/gwt/emul/java/util/AbstractList.java,249,0
+AbstractList$IteratorImpl,,java.util.AbstractList$IteratorImpl,,com/google/gwt/emul/java/util/AbstractList.java,35,-1
+Rj,java.util.AbstractList$IteratorImpl::AbstractList$IteratorImpl(Ljava/util/AbstractList;) <init>,java.util.AbstractList$IteratorImpl,AbstractList$IteratorImpl,com/google/gwt/emul/java/util/AbstractList.java,35,0
+Sj,java.util.AbstractList$IteratorImpl::hasNext()Z,java.util.AbstractList$IteratorImpl,hasNext,com/google/gwt/emul/java/util/AbstractList.java,45,0
+a,java.util.AbstractList$IteratorImpl::i,java.util.AbstractList$IteratorImpl,i,com/google/gwt/emul/java/util/AbstractList.java,42,-1
+Tj,java.util.AbstractList$IteratorImpl::next()Ljava/lang/Object;,java.util.AbstractList$IteratorImpl,next,com/google/gwt/emul/java/util/AbstractList.java,50,0
+b,java.util.AbstractList$IteratorImpl::this$01,java.util.AbstractList$IteratorImpl,this$01,com/google/gwt/emul/java/util/AbstractList.java,35,-1
+ArrayList,,java.util.ArrayList,,com/google/gwt/emul/java/util/ArrayList.java,51,-1
+Uj,java.util.ArrayList::$add(Ljava/util/ArrayList;Ljava/lang/Object;)Z,java.util.ArrayList,$add,com/google/gwt/emul/java/util/ArrayList.java,80,0
+Vj,java.util.ArrayList::$get(Ljava/util/ArrayList;I)Ljava/lang/Object;,java.util.ArrayList,$get,com/google/gwt/emul/java/util/ArrayList.java,133,0
+Wj,java.util.ArrayList::ArrayList() <init>,java.util.ArrayList,ArrayList,com/google/gwt/emul/java/util/ArrayList.java,66,0
+Xj,java.util.ArrayList::add(ILjava/lang/Object;)V,java.util.ArrayList,add,com/google/gwt/emul/java/util/ArrayList.java,86,0
+Yj,java.util.ArrayList::add(Ljava/lang/Object;)Z,java.util.ArrayList,add,com/google/gwt/emul/java/util/ArrayList.java,80,0
+Zj,java.util.ArrayList::addAll(Ljava/util/Collection;)Z,java.util.ArrayList,addAll,com/google/gwt/emul/java/util/ArrayList.java,92,0
+a,java.util.ArrayList::array,java.util.ArrayList,array,com/google/gwt/emul/java/util/ArrayList.java,57,-1
+$j,java.util.ArrayList::get(I)Ljava/lang/Object;,java.util.ArrayList,get,com/google/gwt/emul/java/util/ArrayList.java,133,0
+_j,java.util.ArrayList::iterator()Ljava/util/Iterator;,java.util.ArrayList,iterator,com/google/gwt/emul/java/util/ArrayList.java,144,0
+ak,java.util.ArrayList::size()I,java.util.ArrayList,size,com/google/gwt/emul/java/util/ArrayList.java,248,0
+bk,java.util.ArrayList::toArray()[Ljava/lang/Object;,java.util.ArrayList,toArray,com/google/gwt/emul/java/util/ArrayList.java,258,0
+ck,java.util.ArrayList::toArray([Ljava/lang/Object;)[Ljava/lang/Object;,java.util.ArrayList,toArray,com/google/gwt/emul/java/util/ArrayList.java,267,0
+ArrayList$1,,java.util.ArrayList$1,,com/google/gwt/emul/java/util/ArrayList.java,145,-1
+dk,java.util.ArrayList$1::ArrayList$1(Ljava/util/ArrayList;) <init>,java.util.ArrayList$1,ArrayList$1,com/google/gwt/emul/java/util/ArrayList.java,145,0
+ek,java.util.ArrayList$1::hasNext()Z,java.util.ArrayList$1,hasNext,com/google/gwt/emul/java/util/ArrayList.java,149,0
+a,java.util.ArrayList$1::i,java.util.ArrayList$1,i,com/google/gwt/emul/java/util/ArrayList.java,146,-1
+b,java.util.ArrayList$1::last,java.util.ArrayList$1,last,com/google/gwt/emul/java/util/ArrayList.java,146,-1
+fk,java.util.ArrayList$1::next()Ljava/lang/Object;,java.util.ArrayList$1,next,com/google/gwt/emul/java/util/ArrayList.java,154,0
+c,java.util.ArrayList$1::this$01,java.util.ArrayList$1,this$01,com/google/gwt/emul/java/util/ArrayList.java,145,-1
+Arrays$ArrayList,,java.util.Arrays$ArrayList,,com/google/gwt/emul/java/util/Arrays.java,53,-1
+gk,java.util.Arrays$ArrayList::$toArray(Ljava/util/Arrays$ArrayList;[Ljava/lang/Object;)[Ljava/lang/Object;,java.util.Arrays$ArrayList,$toArray,com/google/gwt/emul/java/util/Arrays.java,121,0
+hk,java.util.Arrays$ArrayList::Arrays$ArrayList([Ljava/lang/Object;) <init>,java.util.Arrays$ArrayList,Arrays$ArrayList,com/google/gwt/emul/java/util/Arrays.java,62,0
+a,java.util.Arrays$ArrayList::array,java.util.Arrays$ArrayList,array,com/google/gwt/emul/java/util/Arrays.java,60,-1
+ik,java.util.Arrays$ArrayList::get(I)Ljava/lang/Object;,java.util.Arrays$ArrayList,get,com/google/gwt/emul/java/util/Arrays.java,81,0
+jk,java.util.Arrays$ArrayList::size()I,java.util.Arrays$ArrayList,size,com/google/gwt/emul/java/util/Arrays.java,102,0
+kk,java.util.Arrays$ArrayList::toArray()[Ljava/lang/Object;,java.util.Arrays$ArrayList,toArray,com/google/gwt/emul/java/util/Arrays.java,112,0
+lk,java.util.Arrays$ArrayList::toArray([Ljava/lang/Object;)[Ljava/lang/Object;,java.util.Arrays$ArrayList,toArray,com/google/gwt/emul/java/util/Arrays.java,121,0
+mk,java.util.Collections::hashCode(Ljava/util/List;)I,java.util.Collections,hashCode,com/google/gwt/emul/java/util/Collections.java,1314,0
+Collections$UnmodifiableCollection,,java.util.Collections$UnmodifiableCollection,,com/google/gwt/emul/java/util/Collections.java,296,-1
+nk,java.util.Collections$UnmodifiableCollection::add(Ljava/lang/Object;)Z,java.util.Collections$UnmodifiableCollection,add,com/google/gwt/emul/java/util/Collections.java,304,0
+ok,java.util.Collections$UnmodifiableCollection::addAll(Ljava/util/Collection;)Z,java.util.Collections$UnmodifiableCollection,addAll,com/google/gwt/emul/java/util/Collections.java,309,0
+b,java.util.Collections$UnmodifiableCollection::coll,java.util.Collections$UnmodifiableCollection,coll,com/google/gwt/emul/java/util/Collections.java,297,-1
+pk,java.util.Collections$UnmodifiableCollection::iterator()Ljava/util/Iterator;,java.util.Collections$UnmodifiableCollection,iterator,com/google/gwt/emul/java/util/Collections.java,334,0
+qk,java.util.Collections$UnmodifiableCollection::size()I,java.util.Collections$UnmodifiableCollection,size,com/google/gwt/emul/java/util/Collections.java,354,0
+rk,java.util.Collections$UnmodifiableCollection::toArray()[Ljava/lang/Object;,java.util.Collections$UnmodifiableCollection,toArray,com/google/gwt/emul/java/util/Collections.java,359,0
+Collections$UnmodifiableCollectionIterator,,java.util.Collections$UnmodifiableCollectionIterator,,com/google/gwt/emul/java/util/Collections.java,780,-1
+sk,java.util.Collections$UnmodifiableCollectionIterator::Collections$UnmodifiableCollectionIterator(Ljava/util/Iterator;) <init>,java.util.Collections$UnmodifiableCollectionIterator,Collections$UnmodifiableCollectionIterator,com/google/gwt/emul/java/util/Collections.java,783,0
+tk,java.util.Collections$UnmodifiableCollectionIterator::hasNext()Z,java.util.Collections$UnmodifiableCollectionIterator,hasNext,com/google/gwt/emul/java/util/Collections.java,788,0
+a,java.util.Collections$UnmodifiableCollectionIterator::it,java.util.Collections$UnmodifiableCollectionIterator,it,com/google/gwt/emul/java/util/Collections.java,781,-1
+uk,java.util.Collections$UnmodifiableCollectionIterator::next()Ljava/lang/Object;,java.util.Collections$UnmodifiableCollectionIterator,next,com/google/gwt/emul/java/util/Collections.java,793,0
+Collections$UnmodifiableList,,java.util.Collections$UnmodifiableList,,com/google/gwt/emul/java/util/Collections.java,374,-1
+vk,java.util.Collections$UnmodifiableList::$get(Ljava/util/Collections$UnmodifiableList;I)Ljava/lang/Object;,java.util.Collections$UnmodifiableList,$get,com/google/gwt/emul/java/util/Collections.java,399,0
+wk,java.util.Collections$UnmodifiableList::Collections$UnmodifiableList(Ljava/util/List;) <init>,java.util.Collections$UnmodifiableList,Collections$UnmodifiableList,com/google/gwt/emul/java/util/Collections.java,378,0
+xk,java.util.Collections$UnmodifiableList::get(I)Ljava/lang/Object;,java.util.Collections$UnmodifiableList,get,com/google/gwt/emul/java/util/Collections.java,399,0
+yk,java.util.Collections$UnmodifiableList::hashCode()I,java.util.Collections$UnmodifiableList,hashCode,com/google/gwt/emul/java/util/Collections.java,404,0
+a,java.util.Collections$UnmodifiableList::list,java.util.Collections$UnmodifiableList,list,com/google/gwt/emul/java/util/Collections.java,376,-1
+Collections$UnmodifiableRandomAccessList,,java.util.Collections$UnmodifiableRandomAccessList,,com/google/gwt/emul/java/util/Collections.java,653,-1
+zk,java.util.Collections$UnmodifiableRandomAccessList::Collections$UnmodifiableRandomAccessList(Ljava/util/List;) <init>,java.util.Collections$UnmodifiableRandomAccessList,Collections$UnmodifiableRandomAccessList,com/google/gwt/emul/java/util/Collections.java,655,0
+InternalJsMap,,java.util.InternalJsMap,,com/google/gwt/emul/java/util/InternalJsMap.java,25,-1
+InternalJsMap$Iterator,,java.util.InternalJsMap$Iterator,,com/google/gwt/emul/java/util/InternalJsMap.java,28,-1
+InternalJsMap$IteratorEntry,,java.util.InternalJsMap$IteratorEntry,,com/google/gwt/emul/java/util/InternalJsMap.java,33,-1
+value,java.util.InternalJsMap$IteratorEntry::value,java.util.InternalJsMap$IteratorEntry,value,com/google/gwt/emul/java/util/InternalJsMap.java,34,-1
+Ak,java.util.Iterator::$forEachRemaining(Ljava/util/Iterator;Ljava/util/function/Consumer;)V,java.util.Iterator,$forEachRemaining,com/google/gwt/emul/java/util/Iterator.java,34,0
+NoSuchElementException,,java.util.NoSuchElementException,,com/google/gwt/emul/java/util/NoSuchElementException.java,23,-1
+Bk,java.util.NoSuchElementException::NoSuchElementException() <init>,java.util.NoSuchElementException,NoSuchElementException,com/google/gwt/emul/java/util/NoSuchElementException.java,25,0
+Ck,java.util.Spliterator::$forEachRemaining(Ljava/util/Spliterator;Ljava/util/function/Consumer;)V,java.util.Spliterator,$forEachRemaining,com/google/gwt/emul/java/util/Spliterator.java,51,0
+Spliterator$OfInt$2methodref$accept$Type,,java.util.Spliterator$OfInt$2methodref$accept$Type,,com/google/gwt/emul/java/util/Spliterator.java,125,-1
+a,java.util.Spliterator$OfInt$2methodref$accept$Type::$$outer_0,java.util.Spliterator$OfInt$2methodref$accept$Type,$$outer_0,com/google/gwt/emul/java/util/Spliterator.java,125,-1
+Dk,java.util.Spliterator$OfInt$2methodref$accept$Type::Spliterator$OfInt$2methodref$accept$Type(Ljava/util/function/Consumer;) <init>,java.util.Spliterator$OfInt$2methodref$accept$Type,Spliterator$OfInt$2methodref$accept$Type,com/google/gwt/emul/java/util/Spliterator.java,125,0
+Ek,java.util.Spliterator$OfInt$2methodref$accept$Type::accept(I)V,java.util.Spliterator$OfInt$2methodref$accept$Type,accept,com/google/gwt/emul/java/util/Spliterator.java,125,0
+Spliterator$OfInt$3methodref$accept$Type,,java.util.Spliterator$OfInt$3methodref$accept$Type,,com/google/gwt/emul/java/util/Spliterator.java,134,-1
+a,java.util.Spliterator$OfInt$3methodref$accept$Type::$$outer_0,java.util.Spliterator$OfInt$3methodref$accept$Type,$$outer_0,com/google/gwt/emul/java/util/Spliterator.java,134,-1
+Fk,java.util.Spliterator$OfInt$3methodref$accept$Type::Spliterator$OfInt$3methodref$accept$Type(Ljava/util/function/Consumer;) <init>,java.util.Spliterator$OfInt$3methodref$accept$Type,Spliterator$OfInt$3methodref$accept$Type,com/google/gwt/emul/java/util/Spliterator.java,134,0
+Gk,java.util.Spliterator$OfInt$3methodref$accept$Type::accept(I)V,java.util.Spliterator$OfInt$3methodref$accept$Type,accept,com/google/gwt/emul/java/util/Spliterator.java,134,0
+Hk,java.util.Spliterator$OfPrimitive::$forEachRemaining(Ljava/util/Spliterator$OfPrimitive;Ljava/lang/Object;)V,java.util.Spliterator$OfPrimitive,$forEachRemaining,com/google/gwt/emul/java/util/Spliterator.java,86,0
+Spliterators$AbstractIntSpliterator,,java.util.Spliterators$AbstractIntSpliterator,,com/google/gwt/emul/java/util/Spliterators.java,89,-1
+Mk,java.util.Spliterators$AbstractIntSpliterator::forEachRemaining(Ljava/util/function/Consumer;)V,java.util.Spliterators$AbstractIntSpliterator,forEachRemaining,com/google/gwt/emul/java/util/Spliterator.java,130,0
+Nk,java.util.Spliterators$AbstractIntSpliterator::tryAdvance(Ljava/util/function/Consumer;)Z,java.util.Spliterators$AbstractIntSpliterator,tryAdvance,com/google/gwt/emul/java/util/Spliterator.java,121,0
+Spliterators$AbstractSpliterator,,java.util.Spliterators$AbstractSpliterator,,com/google/gwt/emul/java/util/Spliterators.java,65,-1
+Ok,java.util.Spliterators$AbstractSpliterator::Spliterators$AbstractSpliterator(JI) <init>,java.util.Spliterators$AbstractSpliterator,Spliterators$AbstractSpliterator,com/google/gwt/emul/java/util/Spliterators.java,68,0
+Spliterators$BaseSpliterator,,java.util.Spliterators$BaseSpliterator,,com/google/gwt/emul/java/util/Spliterators.java,36,-1
+Ik,java.util.Spliterators$BaseSpliterator::Spliterators$BaseSpliterator(JI) <init>,java.util.Spliterators$BaseSpliterator,Spliterators$BaseSpliterator,com/google/gwt/emul/java/util/Spliterators.java,41,0
+d,java.util.Spliterators$BaseSpliterator::characteristics,java.util.Spliterators$BaseSpliterator,characteristics,com/google/gwt/emul/java/util/Spliterators.java,38,-1
+Jk,java.util.Spliterators$BaseSpliterator::characteristics()I,java.util.Spliterators$BaseSpliterator,characteristics,com/google/gwt/emul/java/util/Spliterators.java,47,0
+Kk,java.util.Spliterators$BaseSpliterator::estimateSize()J,java.util.Spliterators$BaseSpliterator,estimateSize,com/google/gwt/emul/java/util/Spliterators.java,51,0
+Lk,java.util.Spliterators$BaseSpliterator::forEachRemaining(Ljava/util/function/Consumer;)V,java.util.Spliterators$BaseSpliterator,forEachRemaining,com/google/gwt/emul/java/util/Spliterator.java,51,0
+e,java.util.Spliterators$BaseSpliterator::sizeEstimate,java.util.Spliterators$BaseSpliterator,sizeEstimate,com/google/gwt/emul/java/util/Spliterators.java,39,-1
+Spliterators$IteratorSpliterator,,java.util.Spliterators$IteratorSpliterator,,com/google/gwt/emul/java/util/Spliterators.java,412,-1
+Pk,java.util.Spliterators$IteratorSpliterator::$initIterator(Ljava/util/Spliterators$IteratorSpliterator;)V,java.util.Spliterators$IteratorSpliterator,$initIterator,com/google/gwt/emul/java/util/Spliterators.java,475,0
+Qk,java.util.Spliterators$IteratorSpliterator::Spliterators$IteratorSpliterator(Ljava/util/Collection;I) <init>,java.util.Spliterators$IteratorSpliterator,Spliterators$IteratorSpliterator,com/google/gwt/emul/java/util/Spliterators.java,418,0
+a,java.util.Spliterators$IteratorSpliterator::characteristics,java.util.Spliterators$IteratorSpliterator,characteristics,com/google/gwt/emul/java/util/Spliterators.java,415,-1
+Rk,java.util.Spliterators$IteratorSpliterator::characteristics()I,java.util.Spliterators$IteratorSpliterator,characteristics,com/google/gwt/emul/java/util/Spliterators.java,436,0
+b,java.util.Spliterators$IteratorSpliterator::collection,java.util.Spliterators$IteratorSpliterator,collection,com/google/gwt/emul/java/util/Spliterators.java,413,-1
+c,java.util.Spliterators$IteratorSpliterator::estimateSize,java.util.Spliterators$IteratorSpliterator,estimateSize,com/google/gwt/emul/java/util/Spliterators.java,416,-1
+Sk,java.util.Spliterators$IteratorSpliterator::estimateSize()J,java.util.Spliterators$IteratorSpliterator,estimateSize,com/google/gwt/emul/java/util/Spliterators.java,441,0
+Tk,java.util.Spliterators$IteratorSpliterator::forEachRemaining(Ljava/util/function/Consumer;)V,java.util.Spliterators$IteratorSpliterator,forEachRemaining,com/google/gwt/emul/java/util/Spliterators.java,447,0
+d,java.util.Spliterators$IteratorSpliterator::it,java.util.Spliterators$IteratorSpliterator,it,com/google/gwt/emul/java/util/Spliterators.java,414,-1
+Uk,java.util.Spliterators$IteratorSpliterator::tryAdvance(Ljava/util/function/Consumer;)Z,java.util.Spliterators$IteratorSpliterator,tryAdvance,com/google/gwt/emul/java/util/Spliterators.java,459,0
+Function$lambda$0$Type,,java.util.function.Function$lambda$0$Type,,com/google/gwt/emul/java/util/function/Function.java,31,-1
+Vk,java.util.function.Function$lambda$0$Type::Function$lambda$0$Type() <init>,java.util.function.Function$lambda$0$Type,Function$lambda$0$Type,com/google/gwt/emul/java/util/function/Function.java,31,0
+Wk,java.util.function.Function$lambda$0$Type::apply(Ljava/lang/Object;)Ljava/lang/Object;,java.util.function.Function$lambda$0$Type,apply,com/google/gwt/emul/java/util/function/Function.java,31,0
+Xk,java.util.stream.Collector::of(Ljava/util/function/Supplier;Ljava/util/function/BiConsumer;Ljava/util/function/BinaryOperator;[Ljava/util/stream/Collector$Characteristics;)Ljava/util/stream/Collector;,java.util.stream.Collector,of,com/google/gwt/emul/java/util/stream/Collector.java,57,0
+Collector$Characteristics,,java.util.stream.Collector$Characteristics,,com/google/gwt/emul/java/util/stream/Collector.java,41,-1
+_k,java.util.stream.Collector$Characteristics::$clinit()V,java.util.stream.Collector$Characteristics,$clinit,com/google/gwt/emul/java/util/stream/Collector.java,41,0
+Yk,java.util.stream.Collector$Characteristics::CONCURRENT,java.util.stream.Collector$Characteristics,CONCURRENT,com/google/gwt/emul/java/util/stream/Collector.java,41,-1
+al,java.util.stream.Collector$Characteristics::Collector$Characteristics(Ljava/lang/String;I) <init>,java.util.stream.Collector$Characteristics,Collector$Characteristics,com/google/gwt/emul/java/util/stream/Collector.java,41,0
+Zk,java.util.stream.Collector$Characteristics::IDENTITY_FINISH,java.util.stream.Collector$Characteristics,IDENTITY_FINISH,com/google/gwt/emul/java/util/stream/Collector.java,41,-1
+$k,java.util.stream.Collector$Characteristics::UNORDERED,java.util.stream.Collector$Characteristics,UNORDERED,com/google/gwt/emul/java/util/stream/Collector.java,41,-1
+bl,java.util.stream.Collector$Characteristics::values()[Ljava/util/stream/Collector$Characteristics;,java.util.stream.Collector$Characteristics,values,com/google/gwt/emul/java/util/stream/Collector.java,41,0
+CollectorImpl,,java.util.stream.CollectorImpl,,com/google/gwt/emul/java/util/stream/CollectorImpl.java,28,-1
+cl,java.util.stream.CollectorImpl::CollectorImpl(Ljava/util/function/Supplier;Ljava/util/function/BiConsumer;Ljava/util/function/BinaryOperator;Ljava/util/function/Function;[Ljava/util/stream/Collector$Characteristics;) <init>,java.util.stream.CollectorImpl,CollectorImpl,com/google/gwt/emul/java/util/stream/CollectorImpl.java,35,0
+a,java.util.stream.CollectorImpl::finisher,java.util.stream.CollectorImpl,finisher,com/google/gwt/emul/java/util/stream/CollectorImpl.java,33,-1
+Collectors$20methodref$add$Type,,java.util.stream.Collectors$20methodref$add$Type,,com/google/gwt/emul/java/util/stream/Collectors.java,289,-1
+dl,java.util.stream.Collectors$20methodref$add$Type::Collectors$20methodref$add$Type() <init>,java.util.stream.Collectors$20methodref$add$Type,Collectors$20methodref$add$Type,com/google/gwt/emul/java/util/stream/Collectors.java,289,0
+Collectors$21methodref$ctor$Type,,java.util.stream.Collectors$21methodref$ctor$Type,,com/google/gwt/emul/java/util/stream/Collectors.java,307,-1
+el,java.util.stream.Collectors$21methodref$ctor$Type::Collectors$21methodref$ctor$Type() <init>,java.util.stream.Collectors$21methodref$ctor$Type,Collectors$21methodref$ctor$Type,com/google/gwt/emul/java/util/stream/Collectors.java,307,0
+fl,java.util.stream.Collectors$21methodref$ctor$Type::get()Ljava/lang/Object;,java.util.stream.Collectors$21methodref$ctor$Type,get,com/google/gwt/emul/java/util/stream/Collectors.java,307,0
+Collectors$lambda$21$Type,,java.util.stream.Collectors$lambda$21$Type,,com/google/gwt/emul/java/util/stream/Collectors.java,291,-1
+gl,java.util.stream.Collectors$lambda$21$Type::Collectors$lambda$21$Type() <init>,java.util.stream.Collectors$lambda$21$Type,Collectors$lambda$21$Type,com/google/gwt/emul/java/util/stream/Collectors.java,291,0
+hl,java.util.stream.Collectors$lambda$21$Type::apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;,java.util.stream.Collectors$lambda$21$Type,apply,com/google/gwt/emul/java/util/stream/Collectors.java,291,0
+il,java.util.stream.IntStream::range(II)Ljava/util/stream/IntStream;,java.util.stream.IntStream,range,com/google/gwt/emul/java/util/stream/IntStream.java,178,0
+jl,java.util.stream.IntStream::rangeClosed(II)Ljava/util/stream/IntStream;,java.util.stream.IntStream,rangeClosed,com/google/gwt/emul/java/util/stream/IntStream.java,185,0
+IntStream$5,,java.util.stream.IntStream$5,,com/google/gwt/emul/java/util/stream/IntStream.java,192,-1
+kl,java.util.stream.IntStream$5::$tryAdvance(Ljava/util/stream/IntStream$5;Ljava/util/function/IntConsumer;)Z,java.util.stream.IntStream$5,$tryAdvance,com/google/gwt/emul/java/util/stream/IntStream.java,208,0
+ll,java.util.stream.IntStream$5::IntStream$5(JI) <init>,java.util.stream.IntStream$5,IntStream$5,com/google/gwt/emul/java/util/stream/IntStream.java,192,0
+a,java.util.stream.IntStream$5::next,java.util.stream.IntStream$5,next,com/google/gwt/emul/java/util/stream/IntStream.java,200,-1
+b,java.util.stream.IntStream$5::val$endInclusive5,java.util.stream.IntStream$5,val$endInclusive5,com/google/gwt/emul/java/util/stream/IntStream.java,192,-1
+c,java.util.stream.IntStream$5::val$startInclusive4,java.util.stream.IntStream$5,val$startInclusive4,com/google/gwt/emul/java/util/stream/IntStream.java,192,-1
+IntStreamImpl,,java.util.stream.IntStreamImpl,,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,48,-1
+pl,java.util.stream.IntStreamImpl::IntStreamImpl(Ljava/util/stream/TerminatableStream;Ljava/util/Spliterator$OfInt;) <init>,java.util.stream.IntStreamImpl,IntStreamImpl,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,494,0
+ql,java.util.stream.IntStreamImpl::forEach(Ljava/util/function/IntConsumer;)V,java.util.stream.IntStreamImpl,forEach,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,640,0
+a,java.util.stream.IntStreamImpl::spliterator,java.util.stream.IntStreamImpl,spliterator,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,492,-1
+IntStreamImpl$Empty,,java.util.stream.IntStreamImpl$Empty,,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,53,-1
+rl,java.util.stream.IntStreamImpl$Empty::IntStreamImpl$Empty(Ljava/util/stream/TerminatableStream;) <init>,java.util.stream.IntStreamImpl$Empty,IntStreamImpl$Empty,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,54,0
+sl,java.util.stream.IntStreamImpl$Empty::forEach(Ljava/util/function/IntConsumer;)V,java.util.stream.IntStreamImpl$Empty,forEach,com/google/gwt/emul/java/util/stream/IntStreamImpl.java,127,0
+StreamImpl,,java.util.stream.StreamImpl,,com/google/gwt/emul/java/util/stream/StreamImpl.java,52,-1
+vl,java.util.stream.StreamImpl::$anyMatch(Ljava/util/stream/StreamImpl;Ljava/util/function/Predicate;)Z,java.util.stream.StreamImpl,$anyMatch,com/google/gwt/emul/java/util/stream/StreamImpl.java,615,0
+ul,java.util.stream.StreamImpl::$clinit()V,java.util.stream.StreamImpl,$clinit,com/google/gwt/emul/java/util/stream/StreamImpl.java,52,0
+wl,java.util.stream.StreamImpl::$collect(Ljava/util/stream/StreamImpl;Ljava/util/stream/Collector;)Ljava/lang/Object;,java.util.stream.StreamImpl,$collect,com/google/gwt/emul/java/util/stream/StreamImpl.java,584,0
+xl,java.util.stream.StreamImpl::$map(Ljava/util/stream/StreamImpl;Ljava/util/function/Function;)Ljava/util/stream/Stream;,java.util.stream.StreamImpl,$map,com/google/gwt/emul/java/util/stream/StreamImpl.java,677,0
+yl,java.util.stream.StreamImpl::$reduce(Ljava/util/stream/StreamImpl;Ljava/lang/Object;Ljava/util/function/BiFunction;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;,java.util.stream.StreamImpl,$reduce,com/google/gwt/emul/java/util/stream/StreamImpl.java,656,0
+zl,java.util.stream.StreamImpl::$spliterator(Ljava/util/stream/StreamImpl;)Ljava/util/Spliterator;,java.util.stream.StreamImpl,$spliterator,com/google/gwt/emul/java/util/stream/StreamImpl.java,528,0
+tl,java.util.stream.StreamImpl::NULL_CONSUMER,java.util.stream.StreamImpl,NULL_CONSUMER,com/google/gwt/emul/java/util/stream/StreamImpl.java,612,-1
+Al,java.util.stream.StreamImpl::StreamImpl(Ljava/util/stream/TerminatableStream;Ljava/util/Spliterator;) <init>,java.util.stream.StreamImpl,StreamImpl,com/google/gwt/emul/java/util/stream/StreamImpl.java,521,0
+Bl,java.util.stream.StreamImpl::lambda$5(Ljava/util/stream/StreamImpl$ValueConsumer;Ljava/util/function/BiFunction;Ljava/lang/Object;)V,java.util.stream.StreamImpl,lambda$5,com/google/gwt/emul/java/util/stream/StreamImpl.java,662,0
+a,java.util.stream.StreamImpl::spliterator,java.util.stream.StreamImpl,spliterator,com/google/gwt/emul/java/util/stream/StreamImpl.java,519,-1
+StreamImpl$FilterSpliterator,,java.util.stream.StreamImpl$FilterSpliterator,,com/google/gwt/emul/java/util/stream/StreamImpl.java,399,-1
+Cl,java.util.stream.StreamImpl$FilterSpliterator::$lambda$0(Ljava/util/stream/StreamImpl$FilterSpliterator;Ljava/util/function/Consumer;Ljava/lang/Object;)V,java.util.stream.StreamImpl$FilterSpliterator,$lambda$0,com/google/gwt/emul/java/util/stream/StreamImpl.java,422,0
+Dl,java.util.stream.StreamImpl$FilterSpliterator::StreamImpl$FilterSpliterator(Ljava/util/function/Predicate;Ljava/util/Spliterator;) <init>,java.util.stream.StreamImpl$FilterSpliterator,StreamImpl$FilterSpliterator,com/google/gwt/emul/java/util/stream/StreamImpl.java,405,0
+a,java.util.stream.StreamImpl$FilterSpliterator::filter,java.util.stream.StreamImpl$FilterSpliterator,filter,com/google/gwt/emul/java/util/stream/StreamImpl.java,400,-1
+b,java.util.stream.StreamImpl$FilterSpliterator::found,java.util.stream.StreamImpl$FilterSpliterator,found,com/google/gwt/emul/java/util/stream/StreamImpl.java,403,-1
+c,java.util.stream.StreamImpl$FilterSpliterator::original,java.util.stream.StreamImpl$FilterSpliterator,original,com/google/gwt/emul/java/util/stream/StreamImpl.java,401,-1
+El,java.util.stream.StreamImpl$FilterSpliterator::tryAdvance(Ljava/util/function/Consumer;)Z,java.util.stream.StreamImpl$FilterSpliterator,tryAdvance,com/google/gwt/emul/java/util/stream/StreamImpl.java,418,0
+StreamImpl$FilterSpliterator$lambda$0$Type,,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type,,com/google/gwt/emul/java/util/stream/StreamImpl.java,422,-1
+a,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type::$$outer_0,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type,$$outer_0,com/google/gwt/emul/java/util/stream/StreamImpl.java,422,-1
+Fl,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type::StreamImpl$FilterSpliterator$lambda$0$Type(Ljava/util/stream/StreamImpl$FilterSpliterator;Ljava/util/function/Consumer;) <init>,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type,StreamImpl$FilterSpliterator$lambda$0$Type,com/google/gwt/emul/java/util/stream/StreamImpl.java,422,0
+Gl,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type::accept(Ljava/lang/Object;)V,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type,accept,com/google/gwt/emul/java/util/stream/StreamImpl.java,422,0
+b,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type::action_1,java.util.stream.StreamImpl$FilterSpliterator$lambda$0$Type,action_1,com/google/gwt/emul/java/util/stream/StreamImpl.java,422,-1
+StreamImpl$MapToObjSpliterator,,java.util.stream.StreamImpl$MapToObjSpliterator,,com/google/gwt/emul/java/util/stream/StreamImpl.java,302,-1
+Hl,java.util.stream.StreamImpl$MapToObjSpliterator::$lambda$0(Ljava/util/stream/StreamImpl$MapToObjSpliterator;Ljava/util/function/Consumer;Ljava/lang/Object;)V,java.util.stream.StreamImpl$MapToObjSpliterator,$lambda$0,com/google/gwt/emul/java/util/stream/StreamImpl.java,317,0
+Il,java.util.stream.StreamImpl$MapToObjSpliterator::StreamImpl$MapToObjSpliterator(Ljava/util/function/Function;Ljava/util/Spliterator;) <init>,java.util.stream.StreamImpl$MapToObjSpliterator,StreamImpl$MapToObjSpliterator,com/google/gwt/emul/java/util/stream/StreamImpl.java,306,0
+a,java.util.stream.StreamImpl$MapToObjSpliterator::map,java.util.stream.StreamImpl$MapToObjSpliterator,map,com/google/gwt/emul/java/util/stream/StreamImpl.java,303,-1
+b,java.util.stream.StreamImpl$MapToObjSpliterator::original,java.util.stream.StreamImpl$MapToObjSpliterator,original,com/google/gwt/emul/java/util/stream/StreamImpl.java,304,-1
+Jl,java.util.stream.StreamImpl$MapToObjSpliterator::tryAdvance(Ljava/util/function/Consumer;)Z,java.util.stream.StreamImpl$MapToObjSpliterator,tryAdvance,com/google/gwt/emul/java/util/stream/StreamImpl.java,316,0
+StreamImpl$MapToObjSpliterator$lambda$0$Type,,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type,,com/google/gwt/emul/java/util/stream/StreamImpl.java,317,-1
+a,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type::$$outer_0,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type,$$outer_0,com/google/gwt/emul/java/util/stream/StreamImpl.java,317,-1
+Kl,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type::StreamImpl$MapToObjSpliterator$lambda$0$Type(Ljava/util/stream/StreamImpl$MapToObjSpliterator;Ljava/util/function/Consumer;) <init>,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type,StreamImpl$MapToObjSpliterator$lambda$0$Type,com/google/gwt/emul/java/util/stream/StreamImpl.java,317,0
+Ll,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type::accept(Ljava/lang/Object;)V,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type,accept,com/google/gwt/emul/java/util/stream/StreamImpl.java,317,0
+b,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type::action_1,java.util.stream.StreamImpl$MapToObjSpliterator$lambda$0$Type,action_1,com/google/gwt/emul/java/util/stream/StreamImpl.java,317,-1
+StreamImpl$ValueConsumer,,java.util.stream.StreamImpl$ValueConsumer,,com/google/gwt/emul/java/util/stream/StreamImpl.java,510,-1
+Ml,java.util.stream.StreamImpl$ValueConsumer::$accept(Ljava/util/stream/StreamImpl$ValueConsumer;Ljava/lang/Object;)V,java.util.stream.StreamImpl$ValueConsumer,$accept,com/google/gwt/emul/java/util/stream/StreamImpl.java,514,0
+Nl,java.util.stream.StreamImpl$ValueConsumer::StreamImpl$ValueConsumer() <init>,java.util.stream.StreamImpl$ValueConsumer,StreamImpl$ValueConsumer,com/google/gwt/emul/java/util/stream/StreamImpl.java,510,0
+Ol,java.util.stream.StreamImpl$ValueConsumer::accept(Ljava/lang/Object;)V,java.util.stream.StreamImpl$ValueConsumer,accept,com/google/gwt/emul/java/util/stream/StreamImpl.java,514,0
+a,java.util.stream.StreamImpl$ValueConsumer::value,java.util.stream.StreamImpl$ValueConsumer,value,com/google/gwt/emul/java/util/stream/StreamImpl.java,511,-1
+StreamImpl$lambda$0$Type,,java.util.stream.StreamImpl$lambda$0$Type,,com/google/gwt/emul/java/util/stream/StreamImpl.java,612,-1
+Pl,java.util.stream.StreamImpl$lambda$0$Type::StreamImpl$lambda$0$Type() <init>,java.util.stream.StreamImpl$lambda$0$Type,StreamImpl$lambda$0$Type,com/google/gwt/emul/java/util/stream/StreamImpl.java,612,0
+Ql,java.util.stream.StreamImpl$lambda$0$Type::accept(Ljava/lang/Object;)V,java.util.stream.StreamImpl$lambda$0$Type,accept,com/google/gwt/emul/java/util/stream/StreamImpl.java,612,0
+StreamImpl$lambda$4$Type,,java.util.stream.StreamImpl$lambda$4$Type,,com/google/gwt/emul/java/util/stream/StreamImpl.java,590,-1
+Rl,java.util.stream.StreamImpl$lambda$4$Type::StreamImpl$lambda$4$Type(Ljava/util/stream/Collector;) <init>,java.util.stream.StreamImpl$lambda$4$Type,StreamImpl$lambda$4$Type,com/google/gwt/emul/java/util/stream/StreamImpl.java,590,0
+Sl,java.util.stream.StreamImpl$lambda$4$Type::apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;,java.util.stream.StreamImpl$lambda$4$Type,apply,com/google/gwt/emul/java/util/stream/StreamImpl.java,590,0
+StreamImpl$lambda$5$Type,,java.util.stream.StreamImpl$lambda$5$Type,,com/google/gwt/emul/java/util/stream/StreamImpl.java,662,-1
+Tl,java.util.stream.StreamImpl$lambda$5$Type::$accept(Ljava/util/stream/StreamImpl$lambda$5$Type;Ljava/lang/Object;)V,java.util.stream.StreamImpl$lambda$5$Type,$accept,com/google/gwt/emul/java/util/stream/StreamImpl.java,662,0
+Ul,java.util.stream.StreamImpl$lambda$5$Type::StreamImpl$lambda$5$Type(Ljava/util/stream/StreamImpl$ValueConsumer;Ljava/util/function/BiFunction;) <init>,java.util.stream.StreamImpl$lambda$5$Type,StreamImpl$lambda$5$Type,com/google/gwt/emul/java/util/stream/StreamImpl.java,662,0
+Vl,java.util.stream.StreamImpl$lambda$5$Type::accept(Ljava/lang/Object;)V,java.util.stream.StreamImpl$lambda$5$Type,accept,com/google/gwt/emul/java/util/stream/StreamImpl.java,662,0
+a,java.util.stream.StreamImpl$lambda$5$Type::accumulator_1,java.util.stream.StreamImpl$lambda$5$Type,accumulator_1,com/google/gwt/emul/java/util/stream/StreamImpl.java,662,-1
+b,java.util.stream.StreamImpl$lambda$5$Type::consumer_0,java.util.stream.StreamImpl$lambda$5$Type,consumer_0,com/google/gwt/emul/java/util/stream/StreamImpl.java,662,-1
+TerminatableStream,,java.util.stream.TerminatableStream,,com/google/gwt/emul/java/util/stream/TerminatableStream.java,23,-1
+ml,java.util.stream.TerminatableStream::$terminate(Ljava/util/stream/TerminatableStream;)V,java.util.stream.TerminatableStream,$terminate,com/google/gwt/emul/java/util/stream/TerminatableStream.java,49,0
+nl,java.util.stream.TerminatableStream::$throwIfTerminated(Ljava/util/stream/TerminatableStream;)V,java.util.stream.TerminatableStream,$throwIfTerminated,com/google/gwt/emul/java/util/stream/TerminatableStream.java,40,0
+ol,java.util.stream.TerminatableStream::TerminatableStream(Ljava/util/stream/TerminatableStream;) <init>,java.util.stream.TerminatableStream,TerminatableStream,com/google/gwt/emul/java/util/stream/TerminatableStream.java,30,0
+b,java.util.stream.TerminatableStream::root,java.util.stream.TerminatableStream,root,com/google/gwt/emul/java/util/stream/TerminatableStream.java,28,-1
+c,java.util.stream.TerminatableStream::terminated,java.util.stream.TerminatableStream,terminated,com/google/gwt/emul/java/util/stream/TerminatableStream.java,25,-1
+Wl,javaemul.internal.ArrayHelper::applySplice(Ljava/lang/Object;IILjava/lang/Object;)V,javaemul.internal.ArrayHelper,applySplice,com/google/gwt/emul/javaemul/internal/ArrayHelper.java,93,0
+Xl,javaemul.internal.ArrayHelper::clone([Ljava/lang/Object;II)[Ljava/lang/Object;,javaemul.internal.ArrayHelper,clone,com/google/gwt/emul/javaemul/internal/ArrayHelper.java,25,0
+Yl,javaemul.internal.ArrayHelper::copy(Ljava/lang/Object;ILjava/lang/Object;IIZ)V,javaemul.internal.ArrayHelper,copy,com/google/gwt/emul/javaemul/internal/ArrayHelper.java,71,0
+Zl,javaemul.internal.ArrayHelper::insertTo(Ljava/lang/Object;ILjava/lang/Object;)V,javaemul.internal.ArrayHelper,insertTo,com/google/gwt/emul/javaemul/internal/ArrayHelper.java,59,0
+$l,javaemul.internal.ArrayHelper::insertTo(Ljava/lang/Object;I[Ljava/lang/Object;)V,javaemul.internal.ArrayHelper,insertTo,com/google/gwt/emul/javaemul/internal/ArrayHelper.java,63,0
+_l,javaemul.internal.InternalPreconditions::checkCriticalArrayType(Z)V,javaemul.internal.InternalPreconditions,checkCriticalArrayType,com/google/gwt/emul/javaemul/internal/InternalPreconditions.java,160,0
+am,javaemul.internal.InternalPreconditions::checkCriticalElement(Z)V,javaemul.internal.InternalPreconditions,checkCriticalElement,com/google/gwt/emul/javaemul/internal/InternalPreconditions.java,226,0
+bm,javaemul.internal.InternalPreconditions::checkCriticalElementIndex(II)V,javaemul.internal.InternalPreconditions,checkCriticalElementIndex,com/google/gwt/emul/javaemul/internal/InternalPreconditions.java,482,0
+cm,javaemul.internal.InternalPreconditions::checkCriticalNotNull(Ljava/lang/Object;)Ljava/lang/Object;,javaemul.internal.InternalPreconditions,checkCriticalNotNull,com/google/gwt/emul/javaemul/internal/InternalPreconditions.java,417,0
+dm,javaemul.internal.InternalPreconditions::checkCriticalPositionIndex(II)V,javaemul.internal.InternalPreconditions,checkCriticalPositionIndex,com/google/gwt/emul/javaemul/internal/InternalPreconditions.java,504,0
+em,javaemul.internal.InternalPreconditions::checkCriticalType(Z)V,javaemul.internal.InternalPreconditions,checkCriticalType,com/google/gwt/emul/javaemul/internal/InternalPreconditions.java,139,0
+fm,javaemul.internal.InternalPreconditions::checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;,javaemul.internal.InternalPreconditions,checkNotNull,com/google/gwt/emul/javaemul/internal/InternalPreconditions.java,403,0
+gm,javaemul.internal.JsUtils::setPropertySafe(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V,javaemul.internal.JsUtils,setPropertySafe,com/google/gwt/emul/javaemul/internal/JsUtils.java,59,0
+NativeRegExp,,javaemul.internal.NativeRegExp,,com/google/gwt/emul/javaemul/internal/NativeRegExp.java,24,-1
+im,javaemul.internal.ObjectHashing::getHashCode(Ljava/lang/Object;)I,javaemul.internal.ObjectHashing,getHashCode,com/google/gwt/emul/javaemul/internal/ObjectHashing.java,26,0
+hm,javaemul.internal.ObjectHashing::nextHashId,javaemul.internal.ObjectHashing,nextHashId,com/google/gwt/emul/javaemul/internal/ObjectHashing.java,23,-1
+mm,javaemul.internal.StringHashCache::$clinit()V,javaemul.internal.StringHashCache,$clinit,com/google/gwt/emul/javaemul/internal/StringHashCache.java,23,0
+jm,javaemul.internal.StringHashCache::back,javaemul.internal.StringHashCache,back,com/google/gwt/emul/javaemul/internal/StringHashCache.java,27,-1
+nm,javaemul.internal.StringHashCache::compute(Ljava/lang/String;)I,javaemul.internal.StringHashCache,compute,com/google/gwt/emul/javaemul/internal/StringHashCache.java,62,0
+km,javaemul.internal.StringHashCache::count,javaemul.internal.StringHashCache,count,com/google/gwt/emul/javaemul/internal/StringHashCache.java,31,-1
+lm,javaemul.internal.StringHashCache::front,javaemul.internal.StringHashCache,front,com/google/gwt/emul/javaemul/internal/StringHashCache.java,35,-1
+om,javaemul.internal.StringHashCache::getHashCode(Ljava/lang/String;)I,javaemul.internal.StringHashCache,getHashCode,com/google/gwt/emul/javaemul/internal/StringHashCache.java,41,0
+pm,javaemul.internal.StringHashCache::increment()V,javaemul.internal.StringHashCache,increment,com/google/gwt/emul/javaemul/internal/StringHashCache.java,89,0

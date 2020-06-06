@@ -1,0 +1,172 @@
+<!doctype html>
+<!-- 
+//Star Drifter - a gravity base space game.
+//Copyright (C) 2020  name of lukasz.bownik@gmail.com
+//
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the GNU General Public License
+//as published by the Free Software Foundation; either version 2
+//of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ -->
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.png" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+canvas {
+	background-image: url("space.jpg");
+	z-index: 0;
+	position: fixed;
+	left: 50%;
+	margin-left: -400px;
+	padding: 0px;
+	margin-top: 1.5em;
+}
+
+#logo {
+	background-image: url("logo.png");
+	z-index: 1;
+	position: fixed;
+	left: 50%;
+	margin-left: -400px;
+	padding: 0px;
+	margin-top: 1.5em;
+	width: 800px;
+	height: 600px;
+}
+
+#startButton {
+	margin-top: 320px;
+	margin-left: 300px;
+	width: 200px;
+	height: 105px;
+	background-color: Transparent;
+	border: none;
+}
+
+#winDialog {
+	position: fixed;
+	display: none;
+	top: 225px;
+	left: 50%;
+	margin-left: -100px;
+	z-index: 1;
+	background: url("win.png");
+	border: 1px solid blue;
+	width: 200px;
+	height: 195px;
+}
+
+#looseDialog {
+	position: fixed;
+	display: none;
+	top: 225px;
+	left: 50%;
+	margin-left: -100px;
+	z-index: 1;
+	background: url("lose.png");
+	border: 1px solid red;
+	width: 200px;
+	height: 126px;
+}
+
+#reloadLevel_loose {
+	margin-left: 75px;
+	margin-top: 65px;
+	width: 58px;
+	height: 53px;
+	background-color: Transparent;
+	border: none;
+}
+
+#reloadLevel_win {
+	margin-left: 5px;
+	margin-top: 20px;
+	width: 58px;
+	height: 53px;
+	background-color: Transparent;
+	border: none;
+}
+
+#nextLevel {
+	margin-left: 45px;
+	width: 80px;
+	height: 53px;
+	background-color: Transparent;
+	border: none;
+}
+
+#authors {
+	width: 800px;
+	position: fixed;
+	left: 50%;
+	margin-left: -400px;
+}
+
+#scorePanel {
+	font: 20px Comic Sans MS;
+	color: yellow;
+	margin-top: 80px;
+	width: 100%;
+	text-align: center;
+}
+</style>
+<title>Star Drifter</title>
+<script type="text/javascript" src="gravity/gravity.nocache.js"></script>
+</head>
+<body>
+	<div id="authors">
+		<span>Programming: <a href="http://lukaszbownik.wordpress.com">Lukasz
+				Bownik</a></span> <span>Graphics: <a href="http://digisculptor.com">Keivan
+				Fotoohi</a></span> <span>Sound: <a href="http://freesound.org">freesound.org</a></span>
+	</div>
+	<canvas id="canvas" width="800px" height="600px"></canvas>
+	<!--  "You win!" dialog -->
+	<div id="winDialog">
+		<div id="scorePanel">
+			Your score is: <span id="score"></span>
+		</div>
+		<button id="reloadLevel_win"></button>
+		<button id="nextLevel"></button>
+	</div>
+	<!-- "You loose!" dialog -->
+	<div id="looseDialog">
+		<button id="reloadLevel_loose"></button>
+	</div>
+	<div id="logo">
+		<button id="startButton"></button>
+	</div>
+	<!-- preload images -->
+	<img src="spaceship.png" id="spaceship" hidden="true" width="40px"
+		height="40px" />
+	<img src="blackHole.png" id="blackHole" hidden="true" width="100px"
+		height="100px" />
+	<img src="earthLike.png" id="earthLike" hidden="true" width="100px"
+		height="100px" />
+	<img src="gas.png" id="gas" hidden="true" width="100px" height="100px" />
+	<img src="ice.png" id="ice" hidden="true" width="100px" height="100px" />
+	<img src="rocky.png" id="rocky" hidden="true" width="100px"
+		height="100px" />
+	<img src="star.png" id="star" hidden="true" width="100px"
+		height="100px" />
+	<img src="explosion.png" id="explosion" hidden="true" width="300px"
+		height="300px" />
+
+	<audio id="blast" preload="auto">
+		<source src="200466__wubitog__short-explosion.wav" type="audio/wav" />
+	</audio>
+	<audio id="launch" preload="auto">
+		<source src="517169__mrthenoronha__rocket-launcher-1-8-bit.wav"
+			type="audio/wav" />
+	</audio>
+</body>
+</html>
