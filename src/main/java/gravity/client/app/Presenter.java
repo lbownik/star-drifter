@@ -21,6 +21,7 @@ import java.util.List;
 
 import gravity.client.core.Planet;
 import gravity.client.core.SpaceCraft;
+import gravity.client.core.SpaceFactory;
 
 /*******************************************************************************
  *
@@ -31,12 +32,10 @@ public final class Presenter {
 	 *
 	 ***************************************************************************/
 	public interface UI {
+		
+		void setPresenter(Presenter presenter);
 
-		int getVisibleWidth();
-
-		int getVisibleHeight();
-
-		void refresh(SpaceCraft craft, List<Planet> planets, int scode, int level,
+		void refresh(SpaceCraft craft, List<Planet> planets, int score, int level,
 				int numOfLevels);
 
 		void refreshWithSpeed(SpaceCraft craft, List<Planet> planets, int score,
@@ -68,13 +67,13 @@ public final class Presenter {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Presenter(final UIFactory<Presenter.UI, Presenter> uiFactory,
+	public Presenter(final Presenter.UI view, final SpaceFactory spaceFacotry, 
 			final Scheduler scheduler, int initialLevel) {
 
-		this.view = uiFactory.create(this);
+		this.view = view;
+		this.view.setPresenter(this);
 		this.scheduler = scheduler;
-		this.engine = new Engine(view.getVisibleWidth(), view.getVisibleHeight(),
-				initialLevel);
+		this.engine = new Engine(spaceFacotry, initialLevel);
 		refreshView();
 	}
 

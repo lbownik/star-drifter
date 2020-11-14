@@ -49,9 +49,8 @@ public final class WebUI implements Presenter.UI {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public WebUI(final Presenter presenter) {
+	public WebUI() {
 
-		this.presenter = presenter;
 		this.spacePane = new SpaceCanvas(
 				(type, button, x, y) -> onMouseEvent(type, button, x, y));
 
@@ -70,8 +69,7 @@ public final class WebUI implements Presenter.UI {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void setClickListener(final String id,
-			final EventListener listener) {
+	private void setClickListener(final String id, final EventListener listener) {
 
 		final Element button = this.document.getElementById(id);
 		sinkEvents(button, ONCLICK);
@@ -86,8 +84,8 @@ public final class WebUI implements Presenter.UI {
 		switch (type) {
 		case ONMOUSEDOWN:
 			this.leftButtonPressed = (button & BUTTON_LEFT) != 0;
-			//fallthrough
-		case ONMOUSEMOVE: 
+			// fallthrough
+		case ONMOUSEMOVE:
 			if (this.leftButtonPressed) {
 				this.presenter.aimingStarted(x, y);
 			}
@@ -118,6 +116,7 @@ public final class WebUI implements Presenter.UI {
 		this.winDialog.getStyle().setDisplay(NONE);
 		this.presenter.playNext();
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -131,6 +130,14 @@ public final class WebUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
+	public void setPresenter(final Presenter presenter) {
+
+		this.presenter = presenter;
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
 	public int getVisibleWidth() {
 
 		return this.spacePane.getVisibleWidth();
@@ -139,7 +146,6 @@ public final class WebUI implements Presenter.UI {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	@Override
 	public int getVisibleHeight() {
 
 		return this.spacePane.getVisibleHeight();
@@ -169,8 +175,8 @@ public final class WebUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void refreshWithExplosion(final SpaceCraft craft,
-			final List<Planet> planets, final int score, int level, int numOfLevels) {
+	public void refreshWithExplosion(final SpaceCraft craft, final List<Planet> planets,
+			final int score, int level, int numOfLevels) {
 
 		this.spacePane.refreshWithExplosion(craft, planets, score, level, numOfLevels);
 	}
@@ -193,18 +199,20 @@ public final class WebUI implements Presenter.UI {
 		get().getElementById("score").setInnerText(valueOf(score));
 		this.winDialog.getStyle().setDisplay(BLOCK);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
 	public void playExlposion() {
-		
-		//mute lounch first
+
+		// mute lounch first
 		this.launch.pause();
 		this.launch.setCurrentTime(0);
-		
+
 		this.blast.play();
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -214,11 +222,10 @@ public final class WebUI implements Presenter.UI {
 		this.launch.play();
 	}
 
-
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private final Presenter presenter;
+	private Presenter presenter;
 	private final Document document = Document.get();
 	private final SpaceCanvas spacePane;
 	private boolean leftButtonPressed = false;
