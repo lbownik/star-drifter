@@ -12,6 +12,7 @@ import gravity.client.core.GravityUseCases;
 @RunWith(Suite.class)
 @SuiteClasses({ EmptySpaceUseCases.class,
 					 OnePlanetSpaceUseCases.class,
+					 LevelTransitionUseCases.class,
 					 GravityUseCases.class })
 public class AllUseCases {
 

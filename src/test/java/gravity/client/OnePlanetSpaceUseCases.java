@@ -31,20 +31,20 @@ public class OnePlanetSpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + initialSpeed * speedFactor,
 				initialCraftPosition.getY());
 
-		for (int i = 0; i < timeIncrements; ++i) {
+		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
 		
-		this.view.assertThatRefreshWasCalled(timeIncrements);
-		FakeUI.RefreshRecord rr = this.view.refreshCalled.get(timeIncrements - 1);
-		rr.assertThatCraftPositionIs(finalCraftPositionToRight);
-		rr.assertThatCraftSpeedIs(new Speed(finalSpeed, 0));
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(2);
-		rr.assertThatNumberOfPlanetsIs(1);
+		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		record.assertThatCraftPositionIs(finalCraftPositionToRight);
+		record.assertThatCraftSpeedIs(new Speed(finalSpeed, 0));
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(2);
+		record.assertThatNumberOfPlanetsIs(1);
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(oneTime);
@@ -63,10 +63,9 @@ public class OnePlanetSpaceUseCases {
 	private final Point initialCraftPosition = new Point(20, 20);
 	private final Point finalCraftPositionToRight = new Point(20 + finalPosition, 20);
 	
-	private final static double timeInrement = 0.2;
 	private final static double initialSpeed = 1.0;
 	private final static double speedFactor = 10;
-	private final static int timeIncrements = 70;
+	private final static int numberOfTimeIncrements = 70;
 	private final static double finalPosition = 86.7679;
 	private final static double finalSpeed = 12.7089;
 	

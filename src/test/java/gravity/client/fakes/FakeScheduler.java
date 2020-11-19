@@ -71,6 +71,14 @@ public class FakeScheduler implements Presenter.Scheduler {
 		
 		assertEquals(times, this.cancelCalled.size());
 	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void clearAll() {
+		
+		this.scheduleCalled.clear();
+		this.cancelCalled.clear();
+	}
 
 	/****************************************************************************
 	 *

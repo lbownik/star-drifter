@@ -27,12 +27,12 @@ public class EmptySpaceUseCases {
 		this.view.assertThatPresenterIs(presenter);
 		this.view.assertThatRefreshWasCalled(oneTime);
 
-		FakeUI.RefreshRecord rr = this.view.refreshCalled.get(0);
-		rr.assertThatCraftPositionIs(initialCraftPosition);
-		rr.assertThatCraftSpeedIs(Speed.zero());
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(1);
-		rr.assertThatNumberOfPlanetsIs(0);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
+		record.assertThatCraftPositionIs(initialCraftPosition);
+		record.assertThatCraftSpeedIs(Speed.zero());
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(1);
+		record.assertThatNumberOfPlanetsIs(0);
 
 		this.view.assertThatLaunchWasPlayed(zeroTimes);
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
@@ -56,12 +56,12 @@ public class EmptySpaceUseCases {
 		this.scheduler.run();
 
 		this.view.assertThatRefreshWasCalled(oneTime);
-		FakeUI.RefreshRecord rr = this.view.refreshCalled.get(0);
-		rr.assertThatCraftPositionIs(initialCraftPosition);
-		rr.assertThatCraftSpeedIs(Speed.zero());
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(1);
-		rr.assertThatNumberOfPlanetsIs(0);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
+		record.assertThatCraftPositionIs(initialCraftPosition);
+		record.assertThatCraftSpeedIs(Speed.zero());
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(1);
+		record.assertThatNumberOfPlanetsIs(0);
 
 		this.view.assertThatLaunchWasPlayed(zeroTimes);
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
@@ -88,12 +88,12 @@ public class EmptySpaceUseCases {
 
 		this.view.assertThatRefreshWithSpeedWasCalled(oneTime);
 
-		FakeUI.RefreshRecord rr = this.view.refreshWithSpeedCalled.get(0);
-		rr.assertThatCraftPositionIs(initialCraftPosition);
-		rr.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(1);
-		rr.assertThatNumberOfPlanetsIs(0);
+		FakeUI.RefreshRecord record = this.view.refreshWithSpeedCalled.get(0);
+		record.assertThatCraftPositionIs(initialCraftPosition);
+		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(1);
+		record.assertThatNumberOfPlanetsIs(0);
 
 		this.view.assertThatLaunchWasPlayed(zeroTimes);
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
@@ -123,14 +123,14 @@ public class EmptySpaceUseCases {
 
 		this.view.assertThatRefreshWasCalled(oneTime);
 
-		FakeUI.RefreshRecord rr = this.view.refreshCalled.get(0);
-		rr.assertThatCraftPositionIs(
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
+		record.assertThatCraftPositionIs(
 				new Point(initialCraftPosition.getX() + timeInrement * 3.0,
 						initialCraftPosition.getY()));
-		rr.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(1);
-		rr.assertThatNumberOfPlanetsIs(0);
+		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(1);
+		record.assertThatNumberOfPlanetsIs(0);
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
@@ -156,20 +156,20 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
-		for (int i = 0; i < timeIncrements; ++i) {
+		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
 
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		
-		this.view.assertThatRefreshWasCalled(timeIncrements);
+		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
 
-		FakeUI.RefreshRecord rr = this.view.refreshCalled.get(timeIncrements - 1);
-		rr.assertThatCraftPositionIs(finalCraftPositionToRight);
-		rr.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(1);
-		rr.assertThatNumberOfPlanetsIs(0);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		record.assertThatCraftPositionIs(finalCraftPositionToRight);
+		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(1);
+		record.assertThatNumberOfPlanetsIs(0);
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
@@ -197,20 +197,20 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX(),
 				initialCraftPosition.getY() + speedFactor * initialSpeed);
 
-		for (int i = 0; i < timeIncrements; ++i) {
+		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
 		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
-		this.view.assertThatRefreshWasCalled(timeIncrements);
+		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
 
-		FakeUI.RefreshRecord rr = this.view.refreshCalled.get(timeIncrements - 1);
-		rr.assertThatCraftPositionIs(finalCraftPositionToBottom);
-		rr.assertThatCraftSpeedIs(new Speed(0, initialSpeed));
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(1);
-		rr.assertThatNumberOfPlanetsIs(0);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		record.assertThatCraftPositionIs(finalCraftPositionToBottom);
+		record.assertThatCraftSpeedIs(new Speed(0, initialSpeed));
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(1);
+		record.assertThatNumberOfPlanetsIs(0);
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
@@ -236,20 +236,20 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX(),
 				initialCraftPosition.getY() - speedFactor * initialSpeed);
 
-		for (int i = 0; i < timeIncrements; ++i) {
+		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
 		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		
-		this.view.assertThatRefreshWasCalled(timeIncrements);
+		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
 
-		FakeUI.RefreshRecord rr = this.view.refreshCalled.get(timeIncrements - 1);
-		rr.assertThatCraftPositionIs(finalCraftPositionToTop);
-		rr.assertThatCraftSpeedIs(new Speed(0, -initialSpeed));
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(1);
-		rr.assertThatNumberOfPlanetsIs(0);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		record.assertThatCraftPositionIs(finalCraftPositionToTop);
+		record.assertThatCraftSpeedIs(new Speed(0, -initialSpeed));
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(1);
+		record.assertThatNumberOfPlanetsIs(0);
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
@@ -275,20 +275,20 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() - speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
-		for (int i = 0; i < timeIncrements; ++i) {
+		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
 
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		
-		this.view.assertThatRefreshWasCalled(timeIncrements);
+		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
 
-		FakeUI.RefreshRecord rr = this.view.refreshCalled.get(timeIncrements - 1);
-		rr.assertThatCraftPositionIs(finalCraftPositionToLeft);
-		rr.assertThatCraftSpeedIs(new Speed(-initialSpeed, 0));
-		rr.assertThatScoreIs(0);
-		rr.assertThatLevelNumberIs(1);
-		rr.assertThatNumberOfPlanetsIs(0);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		record.assertThatCraftPositionIs(finalCraftPositionToLeft);
+		record.assertThatCraftSpeedIs(new Speed(-initialSpeed, 0));
+		record.assertThatScoreIs(0);
+		record.assertThatLevelNumberIs(1);
+		record.assertThatNumberOfPlanetsIs(0);
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
@@ -313,7 +313,7 @@ public class EmptySpaceUseCases {
 	private final static double timeInrement = 0.2;
 	private final static double initialSpeed = 3.0;
 	private final static double speedFactor = 10;
-	private final static int timeIncrements = 34;
+	private final static int numberOfTimeIncrements = 34;
 	private final static double finalPosition = 20.4;
 
 	private final static int oneTime = 1;

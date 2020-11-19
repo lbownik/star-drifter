@@ -31,9 +31,9 @@ public abstract class Body {
 	 ***************************************************************************/
 	public Body(final double mass, final Point center, final Speed speed) {
 
-		throwIf(mass < 0, "Negative mass"::toString);
-		throwIfNull(center, "Null center"::toString);
-		throwIfNull(speed, "Null speed"::toString);
+		throwIf(mass < 0, "Negative mass");
+		throwIfNull(center, "Null center");
+		throwIfNull(speed, "Null speed");
 
 		this.mass = mass;
 		this.center = center;

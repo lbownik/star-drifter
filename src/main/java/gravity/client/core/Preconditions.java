@@ -36,10 +36,28 @@ final class Preconditions {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
+	static void throwIfNull(final Object o, final String msg) {
+
+		if (o == null) {
+			throw new NullPointerException(msg);
+		}
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
 	static void throwIf(final boolean condition, final Supplier<String> msg) {
 
 		if (condition) {
 			throw new IllegalArgumentException(msg.get());
+		}
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	static void throwIf(final boolean condition, final String msg) {
+
+		if (condition) {
+			throw new IllegalArgumentException(msg);
 		}
 	}
 }

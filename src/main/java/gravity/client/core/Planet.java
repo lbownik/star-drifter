@@ -38,7 +38,7 @@ public class Planet extends Body {
 			  final Point center, final Speed speed) {
 
 		super(mass, center, speed);
-		throwIf(radius < 0, "Negative radius"::toString);
+		throwIf(radius < 0, "Negative radius");
 
 		this.type = type;
 		this.radius = radius;
