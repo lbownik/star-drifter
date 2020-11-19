@@ -18,7 +18,7 @@
 package gravity.client.core;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public final class Acceleration extends Vector {
 
@@ -28,13 +28,6 @@ public final class Acceleration extends Vector {
 	Acceleration(final double x, final double y) {
 
 		super(x, y);
-	}
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	public static Acceleration zero() {
-
-		return new Acceleration(0, 0);
 	}
 	/****************************************************************************
 	 *

@@ -21,7 +21,7 @@ package gravity.client.core;
 import static gravity.client.core.Preconditions.*;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public class Planet extends Body {
 

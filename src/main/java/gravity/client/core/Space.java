@@ -23,7 +23,7 @@ import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.range;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public final class Space {
 

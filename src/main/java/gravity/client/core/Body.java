@@ -22,7 +22,7 @@ import static gravity.client.core.Preconditions.*;
 import java.util.List;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public abstract class Body {
 

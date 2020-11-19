@@ -20,7 +20,7 @@ package gravity.client.core;
 import java.util.function.Supplier;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 final class Preconditions {
 

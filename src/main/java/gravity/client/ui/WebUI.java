@@ -42,7 +42,7 @@ import gravity.client.core.Planet;
 import gravity.client.core.SpaceCraft;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public final class WebUI implements Presenter.UI {
 

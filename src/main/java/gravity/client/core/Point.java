@@ -20,7 +20,7 @@ package gravity.client.core;
 import static java.lang.Math.hypot;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public final class Point {
 

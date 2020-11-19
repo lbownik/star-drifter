@@ -5,14 +5,14 @@ import static org.junit.Assert.*;
 import static gravity.client.core.Planet.Type.rocky;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public class GravityTest {
+public class GravityUseCases {
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public GravityTest() {
+	public GravityUseCases() {
 	}
 	/****************************************************************************
 	 *
@@ -170,7 +170,7 @@ public class GravityTest {
 			  Point cBottomLeftCenter, Point cTopLeftCenter)
 			  throws Exception {
 
-		double halfBySquareRootOfTwo = 0.5;///sqrt(2);
+		double oneHalf = 0.5;
 		double accuracy = 0.0000001;
 
 		Planet p = new Planet(rocky, 1, 1, planetCenter, Speed.zero());
@@ -185,23 +185,23 @@ public class GravityTest {
 
 		Force fTopRight = cTopRight.gravitationalForceFrom(p);
 
-		assertEquals(-halfBySquareRootOfTwo, fTopRight.x, accuracy);
-		assertEquals(-halfBySquareRootOfTwo, fTopRight.y, accuracy);
+		assertEquals(-oneHalf, fTopRight.x, accuracy);
+		assertEquals(-oneHalf, fTopRight.y, accuracy);
 
 		Force fBottomRight = cBottomRight.gravitationalForceFrom(p);
 
-		assertEquals(-halfBySquareRootOfTwo, fBottomRight.x, accuracy);
-		assertEquals(halfBySquareRootOfTwo, fBottomRight.y, accuracy);
+		assertEquals(-oneHalf, fBottomRight.x, accuracy);
+		assertEquals(oneHalf, fBottomRight.y, accuracy);
 
 		Force fBottomLeft = cBottomLeft.gravitationalForceFrom(p);
 
-		assertEquals(halfBySquareRootOfTwo, fBottomLeft.x, accuracy);
-		assertEquals(halfBySquareRootOfTwo, fBottomLeft.y, accuracy);
+		assertEquals(oneHalf, fBottomLeft.x, accuracy);
+		assertEquals(oneHalf, fBottomLeft.y, accuracy);
 
 		Force fTopLeft = cTopLeft.gravitationalForceFrom(p);
 
-		assertEquals(halfBySquareRootOfTwo, fTopLeft.x, accuracy);
-		assertEquals(-halfBySquareRootOfTwo, fTopLeft.y, accuracy);
+		assertEquals(oneHalf, fTopLeft.x, accuracy);
+		assertEquals(-oneHalf, fTopLeft.y, accuracy);
 	}
 	/****************************************************************************
 	 *

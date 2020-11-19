@@ -22,7 +22,7 @@ import com.google.gwt.user.client.Timer;
 import gravity.client.app.Presenter;
 
 /*******************************************************************************
-*
+* @author lukasz.bownik@gmail.com
 ******************************************************************************/
 public final class WebScheduler implements Presenter.Scheduler {
 

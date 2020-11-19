@@ -27,7 +27,7 @@ import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public final class Engine {
 
@@ -165,7 +165,7 @@ public final class Engine {
 	 ***************************************************************************/
 	public int getCurrentLevelNo() {
 
-		return this.currentLevel + 1;
+		return this.currentLevel;
 	}
 
 	/****************************************************************************

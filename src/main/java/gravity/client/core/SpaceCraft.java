@@ -20,7 +20,7 @@ package gravity.client.core;
 import java.util.function.BiConsumer;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public class SpaceCraft extends Body {
 

@@ -24,7 +24,7 @@ import gravity.client.core.SpaceCraft;
 import gravity.client.core.SpaceFactory;
 
 /*******************************************************************************
- *
+ * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 public final class Presenter {
 

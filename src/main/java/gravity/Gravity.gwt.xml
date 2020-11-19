@@ -17,6 +17,8 @@
 //along with this program; if not, write to the Free Software
 //Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  -->
+ 
+<!--  @author lukasz.bownik@gmail.com -->
 
 <!-- When updating your version of GWT, you should also update this DTD reference, 
 	so that your app can take advantage of the latest GWT module capabilities. 
