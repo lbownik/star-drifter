@@ -23,8 +23,8 @@ import static java.lang.Integer.parseInt;
 import com.google.gwt.core.client.EntryPoint;
 
 import gravity.client.app.Presenter;
+import gravity.client.core.DefaultSpaceFactory;
 import gravity.client.core.SpaceFactory;
-import gravity.client.fakes.FakeSpaceFactory;
 import gravity.client.ui.WebUI;
 
 /*******************************************************************************
@@ -38,7 +38,7 @@ public class Gravity implements EntryPoint {
 	public void onModuleLoad() {
 
 		final WebUI view = new WebUI();
-		final SpaceFactory spaceFactory = new FakeSpaceFactory(
+		final SpaceFactory spaceFactory = new DefaultSpaceFactory(
 				view.getVisibleWidth(), view.getVisibleHeight());
 		new Presenter(view, spaceFactory, new WebScheduler(), getInitialLevel())
 				.activate();

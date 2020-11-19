@@ -9,6 +9,7 @@ import gravity.client.core.Speed;
 import gravity.client.fakes.FakeScheduler;
 import gravity.client.fakes.FakeSpaceFactory;
 import gravity.client.fakes.FakeUI;
+import static java.lang.Math.PI;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -30,6 +31,7 @@ public class EmptySpaceUseCases {
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
 		record.assertThatCraftSpeedIs(Speed.zero());
+		record.assertThatCraftAngleIs(0);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -59,6 +61,7 @@ public class EmptySpaceUseCases {
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
 		record.assertThatCraftSpeedIs(Speed.zero());
+		record.assertThatCraftAngleIs(0);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -91,6 +94,7 @@ public class EmptySpaceUseCases {
 		FakeUI.RefreshRecord record = this.view.refreshWithSpeedCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
 		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
+		record.assertThatCraftAngleIs(0);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -128,6 +132,7 @@ public class EmptySpaceUseCases {
 				new Point(initialCraftPosition.getX() + timeInrement * 3.0,
 						initialCraftPosition.getY()));
 		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
+		record.assertThatCraftAngleIs(0);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -167,6 +172,7 @@ public class EmptySpaceUseCases {
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
 		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
+		record.assertThatCraftAngleIs(0);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -208,6 +214,7 @@ public class EmptySpaceUseCases {
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToBottom);
 		record.assertThatCraftSpeedIs(new Speed(0, initialSpeed));
+		record.assertThatCraftAngleIs(PI/2);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -247,6 +254,7 @@ public class EmptySpaceUseCases {
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToTop);
 		record.assertThatCraftSpeedIs(new Speed(0, -initialSpeed));
+		record.assertThatCraftAngleIs(-PI/2);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -286,6 +294,7 @@ public class EmptySpaceUseCases {
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToLeft);
 		record.assertThatCraftSpeedIs(new Speed(-initialSpeed, 0));
+		record.assertThatCraftAngleIs(PI);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
