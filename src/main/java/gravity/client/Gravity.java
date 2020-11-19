@@ -40,8 +40,7 @@ public class Gravity implements EntryPoint {
 		final WebUI view = new WebUI();
 		final SpaceFactory spaceFactory = new DefaultSpaceFactory(
 				view.getVisibleWidth(), view.getVisibleHeight());
-		new Presenter(view, spaceFactory, new WebScheduler(), getInitialLevel())
-				.activate();
+		new Presenter(view, spaceFactory, new WebScheduler(), getInitialLevel());
 	}
 
 	/****************************************************************************

@@ -54,7 +54,7 @@ public class EmptySpaceUseCases {
 				1);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.activate();
+		presenter.start();
 		this.scheduler.run();
 
 		this.view.assertThatRefreshWasCalled(oneTime);
@@ -84,7 +84,7 @@ public class EmptySpaceUseCases {
 				1);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 		this.scheduler.run();
@@ -117,7 +117,7 @@ public class EmptySpaceUseCases {
 				1);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
@@ -155,7 +155,7 @@ public class EmptySpaceUseCases {
 				1);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
@@ -166,10 +166,11 @@ public class EmptySpaceUseCases {
 		}
 
 		this.scheduler.assertThatCancelWasCalled(oneTime);
-		
+
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
 
-		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		FakeUI.RefreshRecord record = this.view.refreshCalled
+				.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
 		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
 		record.assertThatCraftAngleIs(0);
@@ -183,7 +184,7 @@ public class EmptySpaceUseCases {
 		this.view.assertThatFailureWasShown(zeroTimes);
 		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
-		
+
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 	}
 
@@ -197,7 +198,7 @@ public class EmptySpaceUseCases {
 				1);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX(),
 				initialCraftPosition.getY() + speedFactor * initialSpeed);
 		presenter.aimingFinished(initialCraftPosition.getX(),
@@ -206,15 +207,16 @@ public class EmptySpaceUseCases {
 		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
-		
+
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
 
-		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		FakeUI.RefreshRecord record = this.view.refreshCalled
+				.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToBottom);
 		record.assertThatCraftSpeedIs(new Speed(0, initialSpeed));
-		record.assertThatCraftAngleIs(PI/2);
+		record.assertThatCraftAngleIs(PI / 2);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -237,7 +239,7 @@ public class EmptySpaceUseCases {
 				1);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX(),
 				initialCraftPosition.getY() - speedFactor * initialSpeed);
 		presenter.aimingFinished(initialCraftPosition.getX(),
@@ -246,15 +248,16 @@ public class EmptySpaceUseCases {
 		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
-		
+
 		this.scheduler.assertThatCancelWasCalled(oneTime);
-		
+
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
 
-		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		FakeUI.RefreshRecord record = this.view.refreshCalled
+				.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToTop);
 		record.assertThatCraftSpeedIs(new Speed(0, -initialSpeed));
-		record.assertThatCraftAngleIs(-PI/2);
+		record.assertThatCraftAngleIs(-PI / 2);
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(1);
 		record.assertThatNumberOfPlanetsIs(0);
@@ -277,7 +280,7 @@ public class EmptySpaceUseCases {
 				1);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() - speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 		presenter.aimingFinished(initialCraftPosition.getX() - speedFactor * initialSpeed,
@@ -288,10 +291,11 @@ public class EmptySpaceUseCases {
 		}
 
 		this.scheduler.assertThatCancelWasCalled(oneTime);
-		
+
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
 
-		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+		FakeUI.RefreshRecord record = this.view.refreshCalled
+				.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToLeft);
 		record.assertThatCraftSpeedIs(new Speed(-initialSpeed, 0));
 		record.assertThatCraftAngleIs(PI);
@@ -316,8 +320,8 @@ public class EmptySpaceUseCases {
 	private final Point initialCraftPosition = new Point(20, 20);
 	private final Point finalCraftPositionToLeft = new Point(20 - finalPosition, 20);
 	private final Point finalCraftPositionToRight = new Point(20 + finalPosition, 20);
-	private final Point finalCraftPositionToTop = new Point(20, 20  - finalPosition);
-	private final Point finalCraftPositionToBottom = new Point(20, 20  + finalPosition);
+	private final Point finalCraftPositionToTop = new Point(20, 20 - finalPosition);
+	private final Point finalCraftPositionToBottom = new Point(20, 20 + finalPosition);
 
 	private final static double timeInrement = 0.2;
 	private final static double initialSpeed = 3.0;

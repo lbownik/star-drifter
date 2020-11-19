@@ -25,7 +25,7 @@ public class OnePlanetSpaceUseCases {
 				2);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + initialSpeed * speedFactor,
 				initialCraftPosition.getY());
 		presenter.aimingFinished(initialCraftPosition.getX() + initialSpeed * speedFactor,

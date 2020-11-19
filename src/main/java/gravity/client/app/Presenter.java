@@ -80,13 +80,6 @@ public final class Presenter {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void activate() {
-		
-		this.scheduler.schedule(10, this::incrementTime);
-	}
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	public void aimingStarted(final double x, final double y) {
 
 		this.engine.setSpaceCraftSpeed(x, y);
@@ -110,7 +103,7 @@ public final class Presenter {
 
 		this.engine.reloadLevel();
 		this.refreshCommand = this::refreshView;
-		activate();
+		start();
 	}
 
 	/****************************************************************************
@@ -120,13 +113,14 @@ public final class Presenter {
 
 		this.engine.loadNextLevel();
 		this.refreshCommand = this::refreshView;
-		activate();
+		start();
 	}
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public void start() {
 
+		this.scheduler.schedule(10, this::incrementTime);
 		this.refreshCommand = this::refreshView;
 	}
 

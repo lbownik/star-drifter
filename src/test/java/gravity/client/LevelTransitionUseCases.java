@@ -25,7 +25,7 @@ public class LevelTransitionUseCases {
 				1);
 		
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
@@ -74,7 +74,7 @@ public class LevelTransitionUseCases {
 				1);
 		
 
-		presenter.activate();
+		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
