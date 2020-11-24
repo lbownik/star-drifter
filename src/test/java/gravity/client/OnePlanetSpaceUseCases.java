@@ -51,6 +51,10 @@ public class OnePlanetSpaceUseCases {
 		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
+		
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(oneTime);
+		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.scheduler.assertThatSheduleWasCalled(oneTime);

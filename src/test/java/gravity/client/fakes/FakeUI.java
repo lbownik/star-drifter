@@ -170,6 +170,22 @@ public class FakeUI implements Presenter.UI {
 
 		this.launchPlayed.add(true);
 	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	@Override
+	public void enableAming() {
+		
+		this.aimingEnabled.add(true);
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	@Override
+	public void disableAiming() {
+	
+		this.aimingDisabled.add(true);
+	}
 
 	/****************************************************************************
 	 *
@@ -226,6 +242,21 @@ public class FakeUI implements Presenter.UI {
 
 		assertEquals(numberOfTimes, this.refreshWithExplosionCalled.size());
 	}
+	
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void assertThatAimingEnabledWasCalled(final int numberOfTimes) {
+
+		assertEquals(numberOfTimes, this.aimingEnabled.size());
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void assertThatAimingDisabledWasCalled(final int numberOfTimes) {
+
+		assertEquals(numberOfTimes, this.aimingDisabled.size());
+	}
 
 	/****************************************************************************
 	 *
@@ -247,6 +278,8 @@ public class FakeUI implements Presenter.UI {
 		this.refreshWithExplosionCalled.clear();
 		this.refreshWithSpeedCalled.clear();
 		this.successShown.clear();
+		this.aimingDisabled.clear();
+		this.aimingEnabled.clear();
 	}
 
 	/****************************************************************************
@@ -255,6 +288,8 @@ public class FakeUI implements Presenter.UI {
 	public Presenter presenter;
 	public List<Boolean> explosionPlayed = new ArrayList<>();
 	public List<Boolean> launchPlayed = new ArrayList<>();
+	public List<Boolean> aimingEnabled = new ArrayList<>();
+	public List<Boolean> aimingDisabled = new ArrayList<>();
 	public List<Boolean> failureShown = new ArrayList<>();
 	public List<Integer> successShown = new ArrayList<>();
 	public List<RefreshRecord> refreshCalled = new ArrayList<>();

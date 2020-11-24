@@ -74,6 +74,9 @@ public class EmptySpaceUseCases {
 		presenter.start();
 		this.scheduler.run();
 
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(zeroTimes);
+		
 		this.view.assertThatRefreshWasCalled(oneTime);
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
@@ -101,11 +104,14 @@ public class EmptySpaceUseCases {
 				1);
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
-		presenter.start();
+		presenter.start();		
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 		this.scheduler.run();
 
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(zeroTimes);
+		
 		this.view.assertThatRefreshWithSpeedWasCalled(oneTime);
 
 		FakeUI.RefreshRecord record = this.view.refreshWithSpeedCalled.get(0);
@@ -142,6 +148,9 @@ public class EmptySpaceUseCases {
 
 		this.scheduler.run();
 
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(oneTime);
+		
 		this.view.assertThatRefreshWasCalled(oneTime);
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
@@ -182,6 +191,9 @@ public class EmptySpaceUseCases {
 			this.scheduler.run();
 		}
 
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(oneTime);
+		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
@@ -225,6 +237,9 @@ public class EmptySpaceUseCases {
 			this.scheduler.run();
 		}
 
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(oneTime);
+		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
@@ -266,6 +281,9 @@ public class EmptySpaceUseCases {
 			this.scheduler.run();
 		}
 
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(oneTime);
+		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
@@ -307,6 +325,9 @@ public class EmptySpaceUseCases {
 			this.scheduler.run();
 		}
 
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(oneTime);
+		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);

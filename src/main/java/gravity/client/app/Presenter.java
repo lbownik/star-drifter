@@ -51,7 +51,10 @@ public final class Presenter {
 		void playExlposion();
 		
 		void playLaunch();
-
+		
+		void enableAming();
+		
+		void disableAiming();
 	}
 
 	/****************************************************************************
@@ -91,6 +94,7 @@ public final class Presenter {
 	 ***************************************************************************/
 	public void aimingFinished(final double x, final double y) {
 
+		this.view.disableAiming();
 		this.engine.lounchSpaceCraft();
 		this.view.playLaunch();
 		this.refreshCommand = this::refreshView;
@@ -122,6 +126,7 @@ public final class Presenter {
 
 		this.scheduler.schedule(10, this::incrementTime);
 		this.refreshCommand = this::refreshView;
+		this.view.enableAming();
 	}
 
 	/****************************************************************************

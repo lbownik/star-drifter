@@ -57,7 +57,20 @@ public final class SpaceCanvas {
 		this.mouseListener = mouseListener;
 
 		sinkEvents(this.canvas, ONMOUSEDOWN | ONMOUSEUP | ONMOUSEMOVE);
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void enableClickEvents() {
+		
 		setEventListener(this.canvas, this::onCanvasEvent);
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void disableClickEvents() {
+		
+		setEventListener(this.canvas, null);
 	}
 
 	/****************************************************************************

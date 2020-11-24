@@ -50,7 +50,9 @@ public class LevelTransitionUseCases {
 		for (int i = 0; i < numberOfTimeIncrements; ++i) {
 			this.scheduler.run();
 		}
-
+		
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(oneTime);
 		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		this.view.assertThatSuccessWasShown(oneTime);
@@ -59,6 +61,9 @@ public class LevelTransitionUseCases {
 		this.scheduler.clearAll();
 		
 		presenter.playAgain();
+		
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(zeroTimes);
 		
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
 		
