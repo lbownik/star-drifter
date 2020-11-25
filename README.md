@@ -3,6 +3,7 @@ Star Drifter - a multi level, gravity based space game (play **[here](https://st
 
 ## Use cases
 The following diagram presentes the use cases implemented by the game.
+
 ![Use Cases](/docs/use_cases.png)
 
 **Figure 1. Game states.**
@@ -21,6 +22,7 @@ Red components are platfrom (browser) specific.
 
 ## Game states
 The game operates acording to the following state machine implemented jointly by __Presenter__ and __User Interface__.
+
 ![Game states](/docs/states.png)
 
 **Figure 3. Game states.**
