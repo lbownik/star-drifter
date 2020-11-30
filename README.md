@@ -31,6 +31,13 @@ Purple denotes passive initial state when __Player__ is expected to start the ga
 Blue denotes active states when persiodic screen refreshes governed by __Scheduler__ take place.
 Green denotes passive states where no screen refreshes take place, and __Player__ decition is awaited.
 
+The main event loop of the game controlled by __Scheduler__ is depicted below.
+
+![Game loop](/docs/game_loop.png)
+
+**Figure 4. Main game loop.**
+
+
 ## Implementation
 The game has been written in Java with the use of [Google Web Toolkit](http://www.gwtproject.org/) as browser adaptation mechanism.
 The game is ment to be portable across many Java implementations (client side web with GWT, desktop with [Swing](https://en.wikipedia.org/wiki/Swing_(Java))
@@ -38,7 +45,7 @@ The game is ment to be portable across many Java implementations (client side we
 
 ![Compile time dependencies](/docs/comile_time_dependencies.png)
 
-**Figure 4. Compile time dependencies.**
+**Figure 5. Compile time dependencies.**
 
 The organization of code dependencies follows [hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)) 
 with platform independent core logic and platform adapters.
@@ -55,7 +62,7 @@ In this case a unit is understood as entire platform-independent part of the gam
 
 ![Tests setup](/docs/tests_setup.png)
 
-**Figure 4. Tests setup.**
+**Figure 6. Tests setup.**
 
 __User Interface__, __Scheduler__ and __Space Factory__ are intentionally not tested automaticaly.
 

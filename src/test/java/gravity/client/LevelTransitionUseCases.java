@@ -18,6 +18,7 @@
 package gravity.client;
 
 import org.junit.Test;
+
 import gravity.client.app.Presenter;
 import gravity.client.core.Point;
 import gravity.client.core.SpaceFactory;
@@ -39,7 +40,6 @@ public class LevelTransitionUseCases {
 
 		Presenter presenter = new Presenter(this.view, this.spaceFactory, this.scheduler,
 				1);
-		
 
 		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
@@ -47,28 +47,26 @@ public class LevelTransitionUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
-		for (int i = 0; i < numberOfTimeIncrements; ++i) {
-			this.scheduler.run();
-		}
-		
+		this.scheduler.run(numberOfTimeIncrements);
+
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
-		
+
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		this.view.assertThatSuccessWasShown(oneTime);
-		
+
 		this.view.clearAll();
 		this.scheduler.clearAll();
-		
+
 		presenter.playAgain();
-		
+
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(zeroTimes);
-		
+
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
-		
+
 		this.scheduler.run();
-		
+
 		this.view.assertThatRefreshWasCalled(oneTime);
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
@@ -84,7 +82,7 @@ public class LevelTransitionUseCases {
 		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 	}
-	
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -93,7 +91,6 @@ public class LevelTransitionUseCases {
 
 		Presenter presenter = new Presenter(this.view, this.spaceFactory, this.scheduler,
 				1);
-		
 
 		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
@@ -101,23 +98,20 @@ public class LevelTransitionUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
-		for (int i = 0; i < numberOfTimeIncrements; ++i) {
-			this.scheduler.run();
-		}
+		this.scheduler.run(numberOfTimeIncrements);
 
-		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		this.view.assertThatSuccessWasShown(oneTime);
-		
+
 		this.view.clearAll();
 		this.scheduler.clearAll();
-		
+
 		presenter.playNext();
-		
+
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
-		
+
 		this.scheduler.run();
-		
+
 		this.view.assertThatRefreshWasCalled(oneTime);
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
@@ -133,6 +127,7 @@ public class LevelTransitionUseCases {
 		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -141,25 +136,25 @@ public class LevelTransitionUseCases {
 
 		Presenter presenter = new Presenter(this.view, this.spaceFactory, this.scheduler,
 				1);
-		
+
 		this.view.clearAll();
 		this.scheduler.clearAll();
-		
+
 		presenter.playNext();
 		this.scheduler.run();
 		this.scheduler.cancel();
-		
+
 		this.view.assertThatRefreshWasCalled(oneTime);
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatLevelNumberIs(2);
-		
+
 		this.view.clearAll();
 		this.scheduler.clearAll();
-		
+
 		presenter.playNext();
 		this.scheduler.run();
 		this.scheduler.cancel();
-		
+
 		this.view.assertThatRefreshWasCalled(oneTime);
 		record = this.view.refreshCalled.get(0);
 		record.assertThatLevelNumberIs(1);
@@ -172,13 +167,11 @@ public class LevelTransitionUseCases {
 	private final FakeUI view = new FakeUI();
 	private final FakeScheduler scheduler = new FakeScheduler();
 	private final Point initialCraftPosition = new Point(20, 20);
-	
-	private final static double timeInrement = 0.2;
+
 	private final static double initialSpeed = 10;
 	private final static double speedFactor = 10;
 	private final static int numberOfTimeIncrements = 90;
-	private final static double finalPosition = 20.4;
-	
+
 	private final static int oneTime = 1;
 	private final static int zeroTimes = 0;
 }

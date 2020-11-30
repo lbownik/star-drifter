@@ -20,6 +20,7 @@ package gravity.client;
 import com.google.gwt.user.client.Timer;
 
 import gravity.client.app.Presenter;
+import static gravity.client.core.Preconditions.throwIfNull;
 
 /*******************************************************************************
 * @author lukasz.bownik@gmail.com
@@ -32,11 +33,10 @@ public final class WebScheduler implements Presenter.Scheduler {
 	@Override
 	public void schedule(final int interval, final Runnable task) {
 		
-		if(task == null) {
-			throw new NullPointerException("Null task.");
-		}
+		throwIfNull(task, "Null task.");
+		
 		this.task = task;
-		this.timer.scheduleRepeating(10);
+		this.timer.scheduleRepeating(interval);
 	}
 
 	/****************************************************************************

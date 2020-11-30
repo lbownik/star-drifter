@@ -17,7 +17,6 @@
 
 package gravity.client.ui;
 
-import static com.google.gwt.dom.client.Document.get;
 import static com.google.gwt.dom.client.NativeEvent.BUTTON_LEFT;
 import static com.google.gwt.dom.client.Style.Display.BLOCK;
 import static com.google.gwt.dom.client.Style.Display.NONE;
@@ -211,7 +210,7 @@ public final class WebUI implements Presenter.UI {
 	@Override
 	public void showSuccess(final int score) {
 
-		get().getElementById("score").setInnerText(valueOf(score));
+		this.document.getElementById("score").setInnerText(valueOf(score));
 		this.winDialog.getStyle().setDisplay(BLOCK);
 	}
 

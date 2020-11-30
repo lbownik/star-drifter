@@ -22,12 +22,12 @@ import java.util.function.Supplier;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-final class Preconditions {
+public final class Preconditions {
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	static void throwIfNull(final Object o, final Supplier<String> msg) {
+	public static void throwIfNull(final Object o, final Supplier<String> msg) {
 
 		if (o == null) {
 			throw new NullPointerException(msg.get());
@@ -36,7 +36,7 @@ final class Preconditions {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	static void throwIfNull(final Object o, final String msg) {
+	public static void throwIfNull(final Object o, final String msg) {
 
 		if (o == null) {
 			throw new NullPointerException(msg);
@@ -45,7 +45,7 @@ final class Preconditions {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	static void throwIf(final boolean condition, final Supplier<String> msg) {
+	public static void throwIf(final boolean condition, final Supplier<String> msg) {
 
 		if (condition) {
 			throw new IllegalArgumentException(msg.get());
@@ -54,7 +54,7 @@ final class Preconditions {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	static void throwIf(final boolean condition, final String msg) {
+	public static void throwIf(final boolean condition, final String msg) {
 
 		if (condition) {
 			throw new IllegalArgumentException(msg);

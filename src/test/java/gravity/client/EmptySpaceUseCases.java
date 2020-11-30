@@ -187,9 +187,7 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
-		for (int i = 0; i < numberOfTimeIncrements; ++i) {
-			this.scheduler.run();
-		}
+		this.scheduler.run(numberOfTimeIncrements);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
@@ -233,9 +231,7 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX(),
 				initialCraftPosition.getY() + speedFactor * initialSpeed);
 
-		for (int i = 0; i < numberOfTimeIncrements; ++i) {
-			this.scheduler.run();
-		}
+		this.scheduler.run(numberOfTimeIncrements);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
@@ -277,10 +273,8 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX(),
 				initialCraftPosition.getY() - speedFactor * initialSpeed);
 
-		for (int i = 0; i < numberOfTimeIncrements; ++i) {
-			this.scheduler.run();
-		}
-
+		this.scheduler.run(numberOfTimeIncrements);
+		
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
 		
@@ -321,9 +315,7 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() - speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
-		for (int i = 0; i < numberOfTimeIncrements; ++i) {
-			this.scheduler.run();
-		}
+		this.scheduler.run(numberOfTimeIncrements);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);

@@ -48,9 +48,7 @@ public class OnePlanetSpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + initialSpeed * speedFactor,
 				initialCraftPosition.getY());
 
-		for (int i = 0; i < numberOfTimeIncrements; ++i) {
-			this.scheduler.run();
-		}
+		this.scheduler.run(numberOfTimeIncrements);
 		
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);

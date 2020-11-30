@@ -49,7 +49,7 @@ public class FakeScheduler implements Presenter.Scheduler {
 
 		this.cancelCalled.add(true);
 	}
-	
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -57,25 +57,38 @@ public class FakeScheduler implements Presenter.Scheduler {
 
 		this.scheduleCalled.forEach(r -> r.task.run());
 	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void run(final int numberOfTimeIncrements) {
+
+		for (int i = 0; i < numberOfTimeIncrements; ++i) {
+			this.run();
+		}
+	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public void assertThatSheduleWasCalled(final int numberOfTimes) {
-		
+
 		assertEquals(numberOfTimes, this.scheduleCalled.size());
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public void assertThatCancelWasCalled(final int times) {
-		
+
 		assertEquals(times, this.cancelCalled.size());
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public void clearAll() {
-		
+
 		this.scheduleCalled.clear();
 		this.cancelCalled.clear();
 	}
