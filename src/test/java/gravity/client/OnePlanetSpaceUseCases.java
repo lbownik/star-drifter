@@ -48,6 +48,8 @@ public class OnePlanetSpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + initialSpeed * speedFactor,
 				initialCraftPosition.getY());
 
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+		
 		this.scheduler.run(numberOfTimeIncrements);
 		
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
@@ -58,6 +60,9 @@ public class OnePlanetSpaceUseCases {
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
 		
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
+		
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
 		record.assertThatCraftSpeedIs(new Speed(finalSpeed, 0));

@@ -5,6 +5,7 @@ import java.util.List;
 
 import gravity.client.app.Presenter;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -82,6 +83,15 @@ public class FakeScheduler implements Presenter.Scheduler {
 	public void assertThatCancelWasCalled(final int times) {
 
 		assertEquals(times, this.cancelCalled.size());
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void assertThatScheduledTasksAreNotNull() {
+
+		assertTrue(
+				this.scheduleCalled.stream().map(r -> r.task).allMatch(t -> t != null));
 	}
 
 	/****************************************************************************

@@ -1,6 +1,7 @@
 package gravity.client.fakes;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +76,7 @@ public class FakeUI implements Presenter.UI {
 			assertEquals(speed.getX(), this.craft.getSpeed().getX(), 0.0001);
 			assertEquals(speed.getY(), this.craft.getSpeed().getY(), 0.0001);
 		}
+
 		/*************************************************************************
 		 *
 		 ************************************************************************/
@@ -170,20 +172,22 @@ public class FakeUI implements Presenter.UI {
 
 		this.launchPlayed.add(true);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
 	public void enableAming() {
-		
+
 		this.aimingEnabled.add(true);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
 	public void disableAiming() {
-	
+
 		this.aimingDisabled.add(true);
 	}
 
@@ -242,7 +246,33 @@ public class FakeUI implements Presenter.UI {
 
 		assertEquals(numberOfTimes, this.refreshWithExplosionCalled.size());
 	}
-	
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void assertThatSpacecraftWasNeverNull() {
+
+		assertTrue(
+				this.refreshCalled.stream().map(r -> r.craft).allMatch(c -> c != null));
+		assertTrue(this.refreshWithExplosionCalled.stream().map(r -> r.craft)
+				.allMatch(c -> c != null));
+		assertTrue(this.refreshWithSpeedCalled.stream().map(r -> r.craft)
+				.allMatch(c -> c != null));
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void assertThatPlanetsWereNeverNull() {
+
+		assertTrue(this.refreshCalled.stream().flatMap(r -> r.planets.stream())
+				.allMatch(p -> p != null));
+		assertTrue(this.refreshWithExplosionCalled.stream()
+				.flatMap(r -> r.planets.stream()).allMatch(p -> p != null));
+		assertTrue(this.refreshWithSpeedCalled.stream().flatMap(r -> r.planets.stream())
+				.allMatch(p -> p != null));
+	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -250,6 +280,7 @@ public class FakeUI implements Presenter.UI {
 
 		assertEquals(numberOfTimes, this.aimingEnabled.size());
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -265,11 +296,12 @@ public class FakeUI implements Presenter.UI {
 
 		assertEquals(presenter, this.presenter);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public void clearAll() {
-		
+
 		this.presenter = null;
 		this.explosionPlayed.clear();
 		this.failureShown.clear();

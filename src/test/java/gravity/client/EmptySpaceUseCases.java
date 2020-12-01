@@ -44,6 +44,8 @@ public class EmptySpaceUseCases {
 
 		this.view.assertThatPresenterIs(presenter);
 		this.view.assertThatRefreshWasCalled(oneTime);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
@@ -72,12 +74,18 @@ public class EmptySpaceUseCases {
 		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
 
 		presenter.start();
+		
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+		
 		this.scheduler.run();
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(zeroTimes);
 		
 		this.view.assertThatRefreshWasCalled(oneTime);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
+		
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
 		record.assertThatCraftSpeedIs(Speed.zero());
@@ -107,12 +115,17 @@ public class EmptySpaceUseCases {
 		presenter.start();		
 		presenter.aimingStarted(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
+		
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+		
 		this.scheduler.run();
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(zeroTimes);
 		
 		this.view.assertThatRefreshWithSpeedWasCalled(oneTime);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshWithSpeedCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
@@ -146,12 +159,16 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+		
 		this.scheduler.run();
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
 		
 		this.view.assertThatRefreshWasCalled(oneTime);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(
@@ -187,6 +204,8 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+		
 		this.scheduler.run(numberOfTimeIncrements);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
@@ -195,6 +214,8 @@ public class EmptySpaceUseCases {
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled
 				.get(numberOfTimeIncrements - 1);
@@ -231,6 +252,8 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX(),
 				initialCraftPosition.getY() + speedFactor * initialSpeed);
 
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+		
 		this.scheduler.run(numberOfTimeIncrements);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
@@ -239,6 +262,8 @@ public class EmptySpaceUseCases {
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled
 				.get(numberOfTimeIncrements - 1);
@@ -273,6 +298,8 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX(),
 				initialCraftPosition.getY() - speedFactor * initialSpeed);
 
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+		
 		this.scheduler.run(numberOfTimeIncrements);
 		
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
@@ -281,6 +308,8 @@ public class EmptySpaceUseCases {
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled
 				.get(numberOfTimeIncrements - 1);
@@ -315,6 +344,8 @@ public class EmptySpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() - speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+		
 		this.scheduler.run(numberOfTimeIncrements);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
@@ -323,6 +354,8 @@ public class EmptySpaceUseCases {
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
+		this.view.assertThatSpacecraftWasNeverNull();
+		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled
 				.get(numberOfTimeIncrements - 1);
