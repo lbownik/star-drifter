@@ -15,31 +15,10 @@ public class FakeScheduler implements Presenter.Scheduler {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public static class Record {
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		public Record(final int interval, final Runnable task) {
-
-			this.interval = interval;
-			this.task = task;
-		}
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		public final int interval;
-		public final Runnable task;
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	@Override
-	public void schedule(final int interval, final Runnable task) {
+	public void schedule(final Presenter presenter) {
 
-		this.scheduleCalled.add(new Record(interval, task));
+		this.scheduleCalled.add(presenter);
 	}
 
 	/****************************************************************************
@@ -56,7 +35,7 @@ public class FakeScheduler implements Presenter.Scheduler {
 	 ***************************************************************************/
 	public void run() {
 
-		this.scheduleCalled.forEach(r -> r.task.run());
+		this.scheduleCalled.forEach(p -> p.incrementTime(10));
 	}
 
 	/****************************************************************************
@@ -90,8 +69,7 @@ public class FakeScheduler implements Presenter.Scheduler {
 	 ***************************************************************************/
 	public void assertThatScheduledTasksAreNotNull() {
 
-		assertTrue(
-				this.scheduleCalled.stream().map(r -> r.task).allMatch(t -> t != null));
+		assertTrue(this.scheduleCalled.stream().allMatch(p -> p != null));
 	}
 
 	/****************************************************************************
@@ -107,6 +85,6 @@ public class FakeScheduler implements Presenter.Scheduler {
 	 *
 	 ***************************************************************************/
 	public List<Boolean> cancelCalled = new ArrayList<>();
-	public List<Record> scheduleCalled = new ArrayList<>();
+	public List<Presenter> scheduleCalled = new ArrayList<>();
 
 }

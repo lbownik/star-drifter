@@ -24,16 +24,24 @@ import gravity.client.app.Presenter;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public final class WebScheduler implements Presenter.Scheduler {
+public final class WebScheduler extends Timer implements Presenter.Scheduler {
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public WebScheduler(final int interval) {
+
+		this.interval = interval;
+	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
-	public void schedule(final int interval, final Runnable task) {
+	public void schedule(final Presenter presenter) {
 
-		this.task = task;
-		this.timer.scheduleRepeating(interval);
+		this.presenter = presenter;
+		scheduleRepeating(this.interval);
 	}
 
 	/****************************************************************************
@@ -42,19 +50,24 @@ public final class WebScheduler implements Presenter.Scheduler {
 	@Override
 	public void cancel() {
 
-		this.timer.cancel();
-
+		this.presenter = null;
+		super.cancel();
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private final Timer timer = new Timer() {
-		@Override
-		public void run() {
-			task.run();
+	@Override
+	public void run() {
+
+		if (this.presenter != null) {
+			this.presenter.incrementTime(this.interval);
 		}
-	};
-	private Runnable task = () -> {
-	};
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private final int interval;
+	private Presenter presenter;
 }

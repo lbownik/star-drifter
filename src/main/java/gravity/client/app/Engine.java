@@ -50,9 +50,10 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void incrementTime(final double interval) {
+	public void incrementTime(final int interval_ms) {
 
-		this.space.incrementTime(interval);
+		final double refreshRateIndependentInterval = interval_ms * gamePace;
+		this.space.incrementTime(refreshRateIndependentInterval);
 	}
 
 	/****************************************************************************
@@ -194,4 +195,5 @@ public final class Engine {
 	private double currentScore = 0;
 	private double totalScore = 0;
 	
+	private final double gamePace = 0.02;
 }
