@@ -49,21 +49,22 @@ public class OnePlanetSpaceUseCases {
 				initialCraftPosition.getY());
 
 		this.scheduler.assertThatScheduledTasksAreNotNull();
-		
+
 		this.scheduler.run(numberOfTimeIncrements);
-		
+
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
-		
+
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
-		
-		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements);
+
+		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements - 1);
+		this.view.assertThatRefreshWithExplosionWasCalled(oneTime);
 		this.view.assertThatSpacecraftWasNeverNull();
 		this.view.assertThatPlanetsWereNeverNull();
-		
-		FakeUI.RefreshRecord record = this.view.refreshCalled.get(numberOfTimeIncrements - 1);
+
+		FakeUI.RefreshRecord record = this.view.refreshWithExplosionCalled.get(0);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
 		record.assertThatCraftSpeedIs(new Speed(finalSpeed, 0));
 		record.assertThatScoreIs(0);
@@ -74,7 +75,6 @@ public class OnePlanetSpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(oneTime);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(oneTime);
-		this.view.assertThatRefreshWithExplosionWasCalled(oneTime);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 	}
 
@@ -86,13 +86,13 @@ public class OnePlanetSpaceUseCases {
 	private final FakeScheduler scheduler = new FakeScheduler();
 	private final Point initialCraftPosition = new Point(20, 20);
 	private final Point finalCraftPositionToRight = new Point(20 + finalPosition, 20);
-	
+
 	private final static double initialSpeed = 1.0;
 	private final static double speedFactor = 10;
 	private final static int numberOfTimeIncrements = 70;
 	private final static double finalPosition = 86.7679;
 	private final static double finalSpeed = 12.7089;
-	
+
 	private final static int oneTime = 1;
 	private final static int zeroTimes = 0;
 }

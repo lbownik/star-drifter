@@ -62,7 +62,7 @@ public final class Presenter {
 	 ***************************************************************************/
 	public interface Scheduler {
 
-		void schedule(int interval, Runnable task);
+		void schedule(Presenter presenter);
 
 		void cancel();
 	}
@@ -124,7 +124,7 @@ public final class Presenter {
 	 ***************************************************************************/
 	public void start() {
 
-		this.scheduler.schedule(10, this::incrementTime);
+		this.scheduler.schedule(this);
 		this.refreshCommand = this::refreshView;
 		this.view.enableAming();
 	}
@@ -132,18 +132,19 @@ public final class Presenter {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void incrementTime() {
+	public void incrementTime(final int interval_ms) {
 
-		this.engine.incrementTime(0.2);
-		this.refreshCommand.run();
+		this.engine.incrementTime(interval_ms);
 
 		switch (this.engine.getGameResult()) {
 		case success:
 			this.scheduler.cancel();
+			refreshView();
 			this.view.showSuccess(this.engine.getCurrentScore());
 			return;
 		case failedMissed:
 			this.scheduler.cancel();
+			refreshView();
 			this.view.showFailure();
 			return;
 		case failedCrashed:
@@ -152,6 +153,7 @@ public final class Presenter {
 			this.view.showFailure();
 			return;
 		default:
+			this.refreshCommand.run();
 			return;
 		}
 	}
