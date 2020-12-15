@@ -58,18 +58,20 @@ public final class SpaceCanvas {
 
 		sinkEvents(this.canvas, ONMOUSEDOWN | ONMOUSEUP | ONMOUSEMOVE);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public void enableClickEvents() {
-		
+
 		setEventListener(this.canvas, this::onCanvasEvent);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public void disableClickEvents() {
-		
+
 		setEventListener(this.canvas, null);
 	}
 
@@ -122,9 +124,8 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void refreshWithExplosion(final SpaceCraft craft,
-			final List<Planet> planets, final int score, final int level,
-			final int numOfLevels) {
+	public void refreshWithExplosion(final SpaceCraft craft, final List<Planet> planets,
+			final int score, final int level, final int numOfLevels) {
 
 		clear();
 		drawWithExplosion(planets, craft, score, level, numOfLevels);
@@ -166,20 +167,6 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void draw(final SpaceCraft craft) {
-
-		this.context.save();
-
-		this.context.translate(craft.getCenter().getX(), craft.getCenter().getY());
-		this.context.rotate(craft.getSpeed().getAngle());
-		this.context.drawImage(getImage("spaceship"), -craft.getRaduis(),
-				-craft.getRaduis());
-		this.context.restore();
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	private void drawWithSpeed(final SpaceCraft craft) {
 
 		draw(craft);
@@ -200,10 +187,8 @@ public final class SpaceCanvas {
 	 ***************************************************************************/
 	private void drawWithExplosion(final SpaceCraft craft) {
 
-		final double x = craft.getCenter().getX()
-				- getImage("explosion").getWidth() / 2;
-		final double y = craft.getCenter().getY()
-				- getImage("explosion").getHeight() / 2;
+		final double x = craft.getCenter().getX() - getImage("explosion").getWidth() / 2;
+		final double y = craft.getCenter().getY() - getImage("explosion").getHeight() / 2;
 
 		this.context.drawImage(getImage("explosion"), x, y);
 	}
@@ -221,11 +206,33 @@ public final class SpaceCanvas {
 	 ***************************************************************************/
 	private void draw(final Planet planet) {
 
-		final double x = planet.getCenter().getX() - planet.getRaduis();
-		final double y = planet.getCenter().getY() - planet.getRaduis();
+//		final double x = planet.getCenter().getX() - planet.getRaduis();
+//		final double y = planet.getCenter().getY() - planet.getRaduis();
+//
+//		final ImageElement image = getImage(planet.getType().name());
+//		this.context.drawImage(image, x, y);
+		
+		this.context.save();
 
-		final ImageElement image = getImage(planet.getType().name());
-		this.context.drawImage(image, x, y);
+		this.context.translate(planet.getCenter().getX(), planet.getCenter().getY());
+		this.context.rotate(planet.getAngle());
+		this.context.drawImage(getImage(planet.getType().name()), -planet.getRaduis(),
+				-planet.getRaduis());
+		this.context.restore();
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void draw(final SpaceCraft craft) {
+
+		this.context.save();
+
+		this.context.translate(craft.getCenter().getX(), craft.getCenter().getY());
+		this.context.rotate(craft.getAngle());
+		this.context.drawImage(getImage("spaceship"), -craft.getRaduis(),
+				-craft.getRaduis());
+		this.context.restore();
 	}
 
 	/****************************************************************************
@@ -233,8 +240,8 @@ public final class SpaceCanvas {
 	 ***************************************************************************/
 	private void draw(final int score, final int level, final int numOfLevels) {
 
-		this.context.fillText(
-				"Level " + valueOf(level) + " of " + valueOf(numOfLevels), 30, 30);
+		this.context.fillText("Level " + valueOf(level) + " of " + valueOf(numOfLevels),
+				30, 30);
 		this.context.fillText("Total Score: ".concat(valueOf(score)), 600, 30);
 	}
 

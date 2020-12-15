@@ -29,7 +29,7 @@ public class Planet extends Body {
 	 *
 	 ***************************************************************************/
 	public enum Type {
-		rocky, earthLike, gas, ice, star, blackHole;
+		rocky, earthLike, gas, ice, star, blackHole, meteorite;
 	}
 	/****************************************************************************
 	 *
@@ -42,6 +42,14 @@ public class Planet extends Body {
 
 		this.type = type;
 		this.radius = radius;
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	@Override
+	public double getAngle() {
+
+		return 0; // planets do not face speed direction
 	}
 	/****************************************************************************
 	 *

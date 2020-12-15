@@ -21,29 +21,29 @@ import static gravity.client.core.Planet.Type.blackHole;
 import static gravity.client.core.Planet.Type.earthLike;
 import static gravity.client.core.Planet.Type.gas;
 import static gravity.client.core.Planet.Type.ice;
+import static gravity.client.core.Planet.Type.meteorite;
 import static gravity.client.core.Planet.Type.rocky;
 import static gravity.client.core.Planet.Type.star;
 import static gravity.client.core.Preconditions.throwIf;
-import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
 /*******************************************************************************
-* @author lukasz.bownik@gmail.com
-*******************************************************************************/
+ * @author lukasz.bownik@gmail.com
+ *******************************************************************************/
 public final class DefaultSpaceFactory implements SpaceFactory {
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public DefaultSpaceFactory(final int spaceWidth, final int spaceHeight) {
-		
+
 		this.spaceWidth = spaceWidth;
 		this.spaceHeight = spaceHeight;
-		
-		//this.constellations.add(this::getPlanetConstellation0);
+
+		// this.constellations.add(this::getPlanetConstellation0);
 		this.constellations.add(this::getPlanetConstellation1);
 		this.constellations.add(this::getPlanetConstellation2);
 		this.constellations.add(this::getPlanetConstellation3);
@@ -51,139 +51,168 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		this.constellations.add(this::getPlanetConstellation5);
 		this.constellations.add(this::getPlanetConstellation6);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
 	public Space create(final int level) {
-		
-		throwIf(level < 1 | level > getMaxLevel(), 
+
+		throwIf(level < 1 | level > getMaxLevel(),
 				() -> "Level mustbe between 1 and " + getMaxLevel());
-		
-		final List<Planet> planets = this.constellations.get(level -1).get();
 
-		return  new Space(this.spaceWidth, this.spaceHeight, null, planets);
-	}
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private List<Planet> getPlanetConstellation0() {
-
-		return asList(
-				new StaticPlanet(rocky, 200, 50,
-						new Point(this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()),
-				new StaticPlanet(ice, 100, 50,
-						new Point(2 * this.spaceWidth / 7, 2 * this.spaceHeight / 7),
-						Speed.zero()),
-				new StaticPlanet(earthLike, 100, 50,
-						new Point(3 * this.spaceWidth / 7, this.spaceHeight / 7),
-						Speed.zero()),
-				new StaticPlanet(gas, 100, 50,
-						new Point(4 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
-						Speed.zero()),
-				new StaticPlanet(star, 100, 50,
-						new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
-						Speed.zero()),
-				new StaticPlanet(blackHole, 100, 50,
-						new Point(6 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
-						Speed.zero()));
+		return this.constellations.get(level - 1).get();
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private List<Planet> getPlanetConstellation1() {
+	private Space getPlanetConstellation0() {
 
-		return asList(new StaticPlanet(rocky, 100, 50,
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+
+		space.add(new StaticPlanet(rocky, 200, 50,
+				new Point(this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+		space.add(new StaticPlanet(ice, 100, 50,
+				new Point(2 * this.spaceWidth / 7, 2 * this.spaceHeight / 7),
+				Speed.zero()));
+		space.add(new StaticPlanet(earthLike, 100, 50,
+				new Point(3 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+		space.add(new StaticPlanet(gas, 100, 50,
+				new Point(4 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
+				Speed.zero()));
+		space.add(new StaticPlanet(star, 100, 50,
+				new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
+				Speed.zero()));
+		space.add(new StaticPlanet(blackHole, 100, 50,
+				new Point(6 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
+				Speed.zero()));
+		space.add(new LoosePlanet(space, meteorite, 10, 15,
+				new Point(50, this.spaceHeight), new Speed(0, -10), this.spaceWidth));
+
+		return space;
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private Space getPlanetConstellation1() {
+
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+
+		space.add(new StaticPlanet(rocky, 100, 50,
 				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
+
+		space.add(new LoosePlanet(space, meteorite, 10, 15,
+				new Point(this.spaceWidth - 100, -100), new Speed(-5, 30),
+				this.spaceWidth));
+
+		return space;
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private List<Planet> getPlanetConstellation2() {
+	private Space getPlanetConstellation2() {
 
-		return asList(
-				new StaticPlanet(rocky, 100, 50,
-						new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()),
-				new StaticPlanet(ice, 100, 50,
-						new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
-						Speed.zero()),
-				new StaticPlanet(earthLike, 100, 50,
-						new Point(5 * this.spaceWidth / 7, this.spaceHeight / 7),
-						Speed.zero()));
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+
+		space.add(new StaticPlanet(rocky, 100, 50,
+				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
+		space.add(new StaticPlanet(ice, 100, 50,
+				new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
+				Speed.zero()));
+		space.add(new StaticPlanet(earthLike, 100, 50,
+				new Point(5 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+
+		space.add(new LoosePlanet(space, meteorite, 10, 15,
+				new Point(100, this.spaceHeight + 200), new Speed(5, -30),
+				this.spaceWidth + 100));
+
+		return space;
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private List<Planet> getPlanetConstellation3() {
+	private Space getPlanetConstellation3() {
 
-		return asList(
-				new StaticPlanet(gas, 100, 50,
-						new Point(this.spaceWidth / 4, this.spaceHeight / 2), Speed.zero()),
-				new StaticPlanet(blackHole, 5000, 50,
-						new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
-						Speed.zero()));
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+
+		space.add(new StaticPlanet(gas, 100, 50,
+				new Point(this.spaceWidth / 4, this.spaceHeight / 2), Speed.zero()));
+		space.add(new StaticPlanet(blackHole, 5000, 50,
+				new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
+				Speed.zero()));
+
+		return space;
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private List<Planet> getPlanetConstellation4() {
+	private Space getPlanetConstellation4() {
 
-		return asList(
-				new StaticPlanet(gas, 100, 50,
-						new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()),
-				new StaticPlanet(ice, 100, 50,
-						new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
-						Speed.zero()),
-				new StaticPlanet(earthLike, 100, 50,
-						new Point(5 * this.spaceWidth / 7, this.spaceHeight / 7),
-						Speed.zero()),
-				new StaticPlanet(blackHole, 1000, 50,
-						new Point(2 * this.spaceWidth / 7, this.spaceHeight / 7),
-						Speed.zero()),
-				new StaticPlanet(star, 1000, 50,
-						new Point(9 * this.spaceWidth / 10, this.spaceHeight / 2),
-						Speed.zero()));
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+
+		space.add(new StaticPlanet(gas, 100, 50,
+				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
+		space.add(new StaticPlanet(ice, 100, 50,
+				new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
+				Speed.zero()));
+		space.add(new StaticPlanet(earthLike, 100, 50,
+				new Point(5 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+		space.add(new StaticPlanet(blackHole, 1000, 50,
+				new Point(2 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+		space.add(new StaticPlanet(star, 1000, 50,
+				new Point(9 * this.spaceWidth / 10, this.spaceHeight / 2), Speed.zero()));
+
+		return space;
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private List<Planet> getPlanetConstellation5() {
+	private Space getPlanetConstellation5() {
 
-		return asList(
-				new Planet(gas, 500, 50,
-						new Point(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(15, 0)),
-				new Planet(rocky, 500, 50,
-						new Point(this.spaceWidth / 2, 6 * this.spaceHeight / 7),
-						new Speed(-15, 0)));
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+
+		space.add(new Planet(gas, 500, 50,
+				new Point(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(15, 0)));
+		space.add(new Planet(rocky, 500, 50,
+				new Point(this.spaceWidth / 2, 6 * this.spaceHeight / 7),
+				new Speed(-15, 0)));
+
+		return space;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private List<Planet> getPlanetConstellation6() {
+	private Space getPlanetConstellation6() {
 
-		return asList(
-				new StaticPlanet(blackHole, 5000, 50,
-						new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()),
-				new Planet(ice, 100, 50,
-						new Point(this.spaceWidth / 2, this.spaceHeight / 7),
-						new Speed(-60, 0)));
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+
+		space.add(new StaticPlanet(blackHole, 5000, 50,
+				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
+		space.add(new Planet(ice, 100, 50,
+				new Point(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(-60, 0)));
+
+		return space;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public int getMaxLevel() {
-		
+
 		return this.constellations.size();
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private final int spaceWidth;
 	private final int spaceHeight;
-	private final List<Supplier<List<Planet>>> constellations = new ArrayList<>();
+	private final List<Supplier<Space>> constellations = new ArrayList<>();
 }

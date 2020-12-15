@@ -22,6 +22,8 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.range;
 
+import java.util.ArrayList;
+
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
@@ -30,13 +32,11 @@ public final class Space {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Space(final int width, final int height, final SpaceCraft spaceCraft,
-			final List<Planet> planets) {
+	public Space(final int width, final int height, final SpaceCraft spaceCraft) {
 
 		this.width = width;
 		this.height = height;
 		this.spaceCraft = spaceCraft;
-		this.planets = unmodifiableList(planets);
 	}
 
 	/****************************************************************************
@@ -94,7 +94,7 @@ public final class Space {
 	 ***************************************************************************/
 	public List<Planet> getPlanets() {
 
-		return this.planets;
+		return unmodifiableList(this.planets);
 	}
 
 	/****************************************************************************
@@ -118,12 +118,25 @@ public final class Space {
 
 		return new Point(20, this.height/2);
 	}
-
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public Point getCenter() {
+		
+		return new Point(this.width/2, this.height/2);
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	void add(final Planet planet) {
+		
+		this.planets.add(planet);
+	}
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private final int width;
 	private final int height;
-	private final List<Planet> planets;
+	private final List<Planet> planets = new ArrayList<>();
 	private SpaceCraft spaceCraft;
 }

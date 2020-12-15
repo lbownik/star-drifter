@@ -27,10 +27,9 @@ import gravity.client.core.GravityUseCases;
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
 @RunWith(Suite.class)
-@SuiteClasses({ EmptySpaceUseCases.class,
-					 OnePlanetSpaceUseCases.class,
-					 LevelTransitionUseCases.class,
-					 GravityUseCases.class })
+@SuiteClasses({ EmptySpaceUseCases.class, OnePlanetSpaceUseCases.class,
+		OneLoosePlanetSpaceUseCases.class, LevelTransitionUseCases.class,
+		GravityUseCases.class })
 public class AllUseCases {
 
 }

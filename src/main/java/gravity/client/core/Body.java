@@ -88,6 +88,13 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
+	protected void moveTo(final Point position) {
+
+		this.center = position;
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
 	public double distanceTo(final Body other) {
 
 		return this.center.distanceTo(other.center);
@@ -102,6 +109,13 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
+	public double getAngle() {
+
+		return this.speed.getAngle();
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
 	public void setSpeed(final Speed speed) {
 
 		this.speed = speed;
@@ -111,7 +125,7 @@ public abstract class Body {
 	 *
 	 ***************************************************************************/
 	private final double mass;
-	private final Point center;
+	private Point center;
 	private Speed speed;
 	private static final double G = 1;
 }

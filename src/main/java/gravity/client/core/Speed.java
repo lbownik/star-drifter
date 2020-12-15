@@ -32,6 +32,13 @@ public final class Speed extends Vector {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
+	public Speed clone() {
+
+		return new Speed(this.x, this.y);
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
 	public void changeBy(final Acceleration acc, final double timeInterval) {
 
 		this.x += acc.x * timeInterval;

@@ -20,11 +20,11 @@ package gravity.client;
 import org.junit.Test;
 
 import gravity.client.app.Presenter;
+import gravity.client.core.FakeSpaceFactory;
 import gravity.client.core.Point;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
 import gravity.client.fakes.FakeScheduler;
-import gravity.client.fakes.FakeSpaceFactory;
 import gravity.client.fakes.FakeUI;
 
 /*******************************************************************************
@@ -48,7 +48,7 @@ public class LevelTransitionUseCases {
 				initialCraftPosition.getY());
 
 		this.scheduler.assertThatScheduledTasksAreNotNull();
-		
+
 		this.scheduler.run(numberOfTimeIncrements);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
@@ -66,14 +66,14 @@ public class LevelTransitionUseCases {
 		this.view.assertThatAimingDisabledWasCalled(zeroTimes);
 
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
-		this.scheduler.assertThatScheduledTasksAreNotNull(); 
-		
+		this.scheduler.assertThatScheduledTasksAreNotNull();
+
 		this.scheduler.run();
 
 		this.view.assertThatRefreshWasCalled(oneTime);
 		this.view.assertThatSpacecraftWasNeverNull();
 		this.view.assertThatPlanetsWereNeverNull();
-		
+
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
 		record.assertThatCraftSpeedIs(Speed.zero());
@@ -105,7 +105,7 @@ public class LevelTransitionUseCases {
 				initialCraftPosition.getY());
 
 		this.scheduler.assertThatScheduledTasksAreNotNull();
-		
+
 		this.scheduler.run(numberOfTimeIncrements);
 
 		this.scheduler.assertThatCancelWasCalled(oneTime);
@@ -124,7 +124,7 @@ public class LevelTransitionUseCases {
 		this.view.assertThatRefreshWasCalled(oneTime);
 		this.view.assertThatSpacecraftWasNeverNull();
 		this.view.assertThatPlanetsWereNeverNull();
-		
+
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
 		record.assertThatCraftSpeedIs(Speed.zero());
@@ -159,6 +159,17 @@ public class LevelTransitionUseCases {
 		this.view.assertThatRefreshWasCalled(oneTime);
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatLevelNumberIs(2);
+
+		this.view.clearAll();
+		this.scheduler.clearAll();
+
+		presenter.playNext();
+		this.scheduler.run();
+		this.scheduler.cancel();
+
+		this.view.assertThatRefreshWasCalled(oneTime);
+		record = this.view.refreshCalled.get(0);
+		record.assertThatLevelNumberIs(3);
 
 		this.view.clearAll();
 		this.scheduler.clearAll();

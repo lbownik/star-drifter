@@ -82,7 +82,7 @@ public class FakeUI implements Presenter.UI {
 		 ************************************************************************/
 		public void assertThatCraftAngleIs(final double angle) {
 
-			assertEquals(angle, this.craft.getSpeed().getAngle(), 0.0001);
+			assertEquals(angle, this.craft.getAngle(), 0.0001);
 		}
 
 		/*************************************************************************

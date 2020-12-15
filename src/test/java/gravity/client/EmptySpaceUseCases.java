@@ -20,11 +20,11 @@ package gravity.client;
 import org.junit.Test;
 
 import gravity.client.app.Presenter;
+import gravity.client.core.FakeSpaceFactory;
 import gravity.client.core.Point;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
 import gravity.client.fakes.FakeScheduler;
-import gravity.client.fakes.FakeSpaceFactory;
 import gravity.client.fakes.FakeUI;
 import static java.lang.Math.PI;
 
