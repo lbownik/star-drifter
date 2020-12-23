@@ -25,24 +25,14 @@ public class LoosePlanet extends Planet {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public LoosePlanet(final Space space, final Type type, final double mass,
+	public LoosePlanet(final Type type, final double mass,
 			final double radius, final Point center, final Speed speed,
 			final double maxDistanceFromSpaceCenter) {
 
-		super(type, mass, radius, center, speed);
-		this.space = space;
+		super(type, mass, radius, center, speed, angleFollowsSpeed);
 		this.initialPosition = center.clone();
 		this.initialSpeed = speed.clone();
 		this.maxDistanceFromSpaceCenter = maxDistanceFromSpaceCenter;
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	@Override
-	public double getAngle() {
-
-		return getSpeed().getAngle(); // loose planets do face speed direction
 	}
 
 	/****************************************************************************
@@ -64,13 +54,12 @@ public class LoosePlanet extends Planet {
 	private boolean isFarEnough() {
 
 		return getCenter()
-				.distanceTo(this.space.getCenter()) > this.maxDistanceFromSpaceCenter;
+				.distanceTo(this.initialPosition) > this.maxDistanceFromSpaceCenter;
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private final Space space;
 	private final Point initialPosition;
 	private final Speed initialSpeed;
 	private final double maxDistanceFromSpaceCenter;

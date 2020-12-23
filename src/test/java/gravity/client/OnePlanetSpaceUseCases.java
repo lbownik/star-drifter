@@ -50,7 +50,7 @@ public class OnePlanetSpaceUseCases {
 
 		this.scheduler.assertThatScheduledTasksAreNotNull();
 
-		this.scheduler.run(numberOfTimeIncrements);
+		this.scheduler.run(seventyTimes);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
@@ -59,7 +59,7 @@ public class OnePlanetSpaceUseCases {
 
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
 
-		this.view.assertThatRefreshWasCalled(numberOfTimeIncrements - 1);
+		this.view.assertThatRefreshWasCalled(seventyTimes - 1);
 		this.view.assertThatRefreshWithExplosionWasCalled(oneTime);
 		this.view.assertThatSpacecraftWasNeverNull();
 		this.view.assertThatPlanetsWereNeverNull();
@@ -89,7 +89,7 @@ public class OnePlanetSpaceUseCases {
 
 	private final static double initialSpeed = 1.0;
 	private final static double speedFactor = 10;
-	private final static int numberOfTimeIncrements = 70;
+	private final static int seventyTimes = 70;
 	private final static double finalPosition = 86.7679;
 	private final static double finalSpeed = 12.7089;
 

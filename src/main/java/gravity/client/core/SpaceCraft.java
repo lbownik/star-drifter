@@ -30,7 +30,7 @@ public class SpaceCraft extends Body {
 	public SpaceCraft(final Point center, final Speed speed,
 			  final BiConsumer<SpaceCraft, Force> forceSniffer) {
 
-		super(1, center, speed);
+		super(1, center, speed, angleFollowsSpeed);
 
 		this.radius = 20;
 		this.forceSniffer = forceSniffer;

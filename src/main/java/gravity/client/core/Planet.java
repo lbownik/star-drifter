@@ -20,6 +20,8 @@ package gravity.client.core;
 
 import static gravity.client.core.Preconditions.*;
 
+import java.util.function.DoubleUnaryOperator;
+
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
@@ -35,9 +37,10 @@ public class Planet extends Body {
 	 *
 	 ***************************************************************************/
 	public Planet(final Type type, final double mass, final double radius, 
-			  final Point center, final Speed speed) {
+			  final Point center, final Speed speed,
+			  final DoubleUnaryOperator angleStrategy) {
 
-		super(mass, center, speed);
+		super(mass, center, speed, angleStrategy);
 		throwIf(radius < 0, "Negative radius");
 
 		this.type = type;
@@ -46,10 +49,10 @@ public class Planet extends Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	@Override
-	public double getAngle() {
+	public Planet(final Type type, final double mass, final double radius, 
+			  final Point center, final Speed speed) {
 
-		return 0; // planets do not face speed direction
+		this(type, mass, radius, center, speed, angleIsFixed);
 	}
 	/****************************************************************************
 	 *

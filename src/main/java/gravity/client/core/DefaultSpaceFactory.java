@@ -87,7 +87,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		space.add(new StaticPlanet(blackHole, 100, 50,
 				new Point(6 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
 				Speed.zero()));
-		space.add(new LoosePlanet(space, meteorite, 10, 15,
+		space.add(new LoosePlanet(meteorite, 10, 15,
 				new Point(50, this.spaceHeight), new Speed(0, -10), this.spaceWidth));
 
 		return space;
@@ -103,7 +103,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
 
-		space.add(new LoosePlanet(space, meteorite, 10, 15,
+		space.add(new LoosePlanet(meteorite, 10, 15,
 				new Point(this.spaceWidth - 100, -100), new Speed(-5, 30),
 				this.spaceWidth));
 
@@ -125,7 +125,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		space.add(new StaticPlanet(earthLike, 100, 50,
 				new Point(5 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
 
-		space.add(new LoosePlanet(space, meteorite, 10, 15,
+		space.add(new LoosePlanet(meteorite, 10, 15,
 				new Point(100, this.spaceHeight + 200), new Speed(5, -30),
 				this.spaceWidth + 100));
 

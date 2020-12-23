@@ -63,9 +63,9 @@ public final class FakeSpaceFactory implements SpaceFactory {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
-		space.add(new LoosePlanet(space, meteorite, 100, 50,
+		space.add(new LoosePlanet(meteorite, 100, 50,
 				new Point(50, this.spaceHeight / 2), new Speed(10, 0),
-				this.spaceWidth / 2.0));
+				this.spaceWidth -50));
 
 		return space;
 	}

@@ -49,7 +49,7 @@ public class LevelTransitionUseCases {
 
 		this.scheduler.assertThatScheduledTasksAreNotNull();
 
-		this.scheduler.run(numberOfTimeIncrements);
+		this.scheduler.run(ninetyTimes);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
@@ -106,7 +106,7 @@ public class LevelTransitionUseCases {
 
 		this.scheduler.assertThatScheduledTasksAreNotNull();
 
-		this.scheduler.run(numberOfTimeIncrements);
+		this.scheduler.run(ninetyTimes);
 
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		this.view.assertThatSuccessWasShown(oneTime);
@@ -193,7 +193,7 @@ public class LevelTransitionUseCases {
 
 	private final static double initialSpeed = 10;
 	private final static double speedFactor = 10;
-	private final static int numberOfTimeIncrements = 90;
+	private final static int ninetyTimes = 90;
 
 	private final static int oneTime = 1;
 	private final static int zeroTimes = 0;

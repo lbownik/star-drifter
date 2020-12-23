@@ -17,9 +17,12 @@
 
 package gravity.client.core;
 
+import static gravity.client.core.Preconditions.throwIf;
+import static gravity.client.core.Preconditions.throwIfNull;
 import static java.lang.Math.hypot;
-import static gravity.client.core.Preconditions.*;
+
 import java.util.List;
+import java.util.function.DoubleUnaryOperator;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -29,15 +32,18 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Body(final double mass, final Point center, final Speed speed) {
+	public Body(final double mass, final Point center, final Speed speed, 
+			final DoubleUnaryOperator angleStrategy) {
 
 		throwIf(mass < 0, "Negative mass");
 		throwIfNull(center, "Null center");
 		throwIfNull(speed, "Null speed");
+		throwIfNull(angleStrategy, "Null angleStrategy");
 
 		this.mass = mass;
 		this.center = center;
 		this.speed = speed;
+		this.angleStrategy = angleStrategy;
 	}
 	/****************************************************************************
 	 *
@@ -111,7 +117,7 @@ public abstract class Body {
 	 ***************************************************************************/
 	public double getAngle() {
 
-		return this.speed.getAngle();
+		return this.angleStrategy.applyAsDouble(this.speed.getAngle());
 	}
 	/****************************************************************************
 	 *
@@ -127,5 +133,9 @@ public abstract class Body {
 	private final double mass;
 	private Point center;
 	private Speed speed;
+	private final DoubleUnaryOperator angleStrategy;
+	
+	public final static DoubleUnaryOperator angleFollowsSpeed = a -> a;
+	public final static DoubleUnaryOperator angleIsFixed = a -> 0;
 	private static final double G = 1;
 }
