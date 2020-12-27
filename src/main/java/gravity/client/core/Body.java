@@ -118,6 +118,14 @@ public abstract class Body {
 
 		return this.center.distanceTo(other.center);
 	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public boolean isCollidingWith(final Body other) {
+
+		final double minDistance = this.getRadius() + other.getRadius();
+		return distanceTo(other) <= minDistance;
+	}
 
 	/****************************************************************************
 	 *

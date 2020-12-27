@@ -53,10 +53,11 @@ public final class Space {
 				.map(planet -> planet.gravitationalForceFrom(this.planets))
 				.collect(toList());
 
-		range(0, forces.size())
-				.forEach(i -> {this.planets.get(i).moveBy(forces.get(i), intervel);
-					this.planets.get(i).incrementTime(intervel);});
-		
+		range(0, forces.size()).forEach(i -> {
+			this.planets.get(i).moveBy(forces.get(i), intervel);
+			this.planets.get(i).incrementTime(intervel);
+		});
+
 	}
 
 	/****************************************************************************
@@ -80,16 +81,8 @@ public final class Space {
 	 ***************************************************************************/
 	public boolean hasSpaceCraftCrashed() {
 
-		return this.planets.stream().anyMatch(this::hasSpaceCraftCrashed);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private boolean hasSpaceCraftCrashed(final Planet planet) {
-
-		final double minDistance = this.spaceCraft.getRadius() + planet.getRadius();
-		return this.spaceCraft.distanceTo(planet) <= minDistance;
+		return this.planets.stream()
+				.anyMatch(planet -> this.spaceCraft.isCollidingWith(planet));
 	}
 
 	/****************************************************************************
@@ -107,6 +100,7 @@ public final class Space {
 
 		return this.spaceCraft;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -114,20 +108,23 @@ public final class Space {
 
 		this.spaceCraft = craft;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public Point getInitialSpaceCraftPosition() {
 
-		return new Point(20, this.height/2);
+		return new Point(20, this.height / 2);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	void add(final Planet planet) {
-		
+
 		this.planets.add(planet);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
