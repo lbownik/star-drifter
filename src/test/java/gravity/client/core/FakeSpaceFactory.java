@@ -2,6 +2,8 @@ package gravity.client.core;
 
 import static gravity.client.core.Planet.Type.meteorite;
 import static gravity.client.core.Planet.Type.rocky;
+import static gravity.client.core.Body.angleCirculatesAt;
+import static java.lang.Math.PI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +53,8 @@ public final class FakeSpaceFactory implements SpaceFactory {
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
-				new Point(this.spaceWidth - 25, this.spaceHeight / 2), Speed.zero()));
+				new Point(this.spaceWidth - 25, this.spaceHeight / 2), Speed.zero(),
+				angleCirculatesAt(1)));
 
 		return space;
 	}
@@ -63,9 +66,8 @@ public final class FakeSpaceFactory implements SpaceFactory {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
-		space.add(new LoosePlanet(meteorite, 100, 50,
-				new Point(50, this.spaceHeight / 2), new Speed(10, 0),
-				this.spaceWidth -50));
+		space.add(new LoosePlanet(meteorite, 100, 50, new Point(50, this.spaceHeight / 2),
+				new Speed(10, 0), this.spaceWidth - 50));
 
 		return space;
 	}

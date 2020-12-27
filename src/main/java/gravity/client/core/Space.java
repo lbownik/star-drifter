@@ -47,13 +47,16 @@ public final class Space {
 		if (this.spaceCraft != null) {
 			this.spaceCraft.moveBy(this.spaceCraft.gravitationalForceFrom(this.planets),
 					intervel);
+			this.spaceCraft.incrementTime(intervel);
 		}
 		final List<Force> forces = this.planets.stream()
 				.map(planet -> planet.gravitationalForceFrom(this.planets))
 				.collect(toList());
 
 		range(0, forces.size())
-				.forEach(i -> this.planets.get(i).moveBy(forces.get(i), intervel));
+				.forEach(i -> {this.planets.get(i).moveBy(forces.get(i), intervel);
+					this.planets.get(i).incrementTime(intervel);});
+		
 	}
 
 	/****************************************************************************

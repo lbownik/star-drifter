@@ -25,18 +25,29 @@ public class StaticPlanet extends Planet {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public StaticPlanet(final Type type, final double mass, final double radius, 
-			  final Point center, final Speed speed) {
+	public StaticPlanet(final Type type, final double mass, final double radius,
+			final Point center, final Speed speed) {
 
 		super(type, mass, radius, center, speed);
 	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public StaticPlanet(final Type type, final double mass, final double radius,
+			final Point center, final Speed speed,
+			final IncrementableOperator angleStrategy) {
+
+		super(type, mass, radius, center, speed, angleStrategy);
+	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
 	public void moveBy(final Force force, final double timeDuration) {
 
-		//static planets don't move
+		// static planets don't move
 	}
 	/****************************************************************************
 	 *

@@ -35,7 +35,7 @@ public class FakeScheduler implements Presenter.Scheduler {
 	 ***************************************************************************/
 	public void run() {
 
-		this.scheduleCalled.forEach(p -> p.incrementTime(10));
+		this.scheduleCalled.forEach(p -> p.incrementTime(timeInterval));
 	}
 
 	/****************************************************************************
@@ -86,5 +86,6 @@ public class FakeScheduler implements Presenter.Scheduler {
 	 ***************************************************************************/
 	public List<Boolean> cancelCalled = new ArrayList<>();
 	public List<Presenter> scheduleCalled = new ArrayList<>();
+	public static final int timeInterval = 10;
 
 }

@@ -32,8 +32,8 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Body(final double mass, final Point center, final Speed speed, 
-			final DoubleUnaryOperator angleStrategy) {
+	public Body(final double mass, final Point center, final Speed speed,
+			final IncrementableOperator angleStrategy) {
 
 		throwIf(mass < 0, "Negative mass");
 		throwIfNull(center, "Null center");
@@ -45,6 +45,7 @@ public abstract class Body {
 		this.speed = speed;
 		this.angleStrategy = angleStrategy;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -52,6 +53,7 @@ public abstract class Body {
 
 		return this.center;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -74,15 +76,16 @@ public abstract class Body {
 			return new Force(F * dx / distance, F * dy / distance);
 		}
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public Force gravitationalForceFrom(final List<? extends Body> bodies) {
 
-		return bodies.stream()
-				  .map(this::gravitationalForceFrom)
-				  .reduce(Force.zero(), Force::combineWith);
+		return bodies.stream().map(this::gravitationalForceFrom).reduce(Force.zero(),
+				Force::combineWith);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -91,6 +94,7 @@ public abstract class Body {
 		this.speed.changeBy(force.accelerate(this.mass), timeInterval);
 		this.center.moveAt(this.speed, timeInterval);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -98,6 +102,15 @@ public abstract class Body {
 
 		this.center = position;
 	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void incrementTime(final double intervel) {
+
+		this.angleStrategy.incrementTime(intervel);
+	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -105,6 +118,7 @@ public abstract class Body {
 
 		return this.center.distanceTo(other.center);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -112,6 +126,7 @@ public abstract class Body {
 
 		return this.speed;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -119,6 +134,7 @@ public abstract class Body {
 
 		return this.angleStrategy.applyAsDouble(this.speed.getAngle());
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -126,16 +142,91 @@ public abstract class Body {
 
 		this.speed = speed;
 	}
-	
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public static IncrementableOperator angleFollowsSpeed() {
+
+		return a -> a;
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public static IncrementableOperator angleIsFixedAt(final double angle) {
+
+		return a -> angle;
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public static IncrementableOperator angleCirculatesAt(final double delta) {
+
+		return new CircularOperator(delta);
+	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private final double mass;
 	private Point center;
 	private Speed speed;
-	private final DoubleUnaryOperator angleStrategy;
-	
-	public final static DoubleUnaryOperator angleFollowsSpeed = a -> a;
-	public final static DoubleUnaryOperator angleIsFixed = a -> 0;
+	private final IncrementableOperator angleStrategy;
+
 	private static final double G = 1;
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	interface IncrementableOperator extends DoubleUnaryOperator {
+
+		/*************************************************************************
+		 *
+		 ************************************************************************/
+		@SuppressWarnings("unused")
+		public default void incrementTime(final double intervel) {
+
+			return;
+		}
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private static final class CircularOperator
+			implements IncrementableOperator {
+
+		/*************************************************************************
+		 *
+		 ************************************************************************/
+		public CircularOperator(final double speed) {
+
+			this.speed = speed;
+		}
+
+		/*************************************************************************
+		 *
+		 ************************************************************************/
+		@Override
+		public double applyAsDouble(final double x) {
+
+			return this.angle;
+		}
+		/*************************************************************************
+		 *
+		 ************************************************************************/
+		@Override
+		public void incrementTime(final double interval) {
+
+			this.angle += this.speed * interval;
+		}
+
+		/*************************************************************************
+		 *
+		 ************************************************************************/
+		private double angle = 0;
+		private final double speed;
+	}
 }

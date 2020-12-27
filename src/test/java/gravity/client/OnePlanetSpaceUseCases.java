@@ -18,9 +18,12 @@
 package gravity.client;
 
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static java.lang.Math.PI;
 
 import gravity.client.app.Presenter;
 import gravity.client.core.FakeSpaceFactory;
+import gravity.client.core.Planet;
 import gravity.client.core.Point;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
@@ -65,11 +68,13 @@ public class OnePlanetSpaceUseCases {
 		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshWithExplosionCalled.get(0);
+		Planet planet = record.planets.get(0);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
 		record.assertThatCraftSpeedIs(new Speed(finalSpeed, 0));
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(2);
 		record.assertThatNumberOfPlanetsIs(1);
+		assertEquals(14, planet.getAngle(), 0.001);
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(oneTime);

@@ -29,7 +29,7 @@ public class LoosePlanet extends Planet {
 			final double radius, final Point center, final Speed speed,
 			final double maxDistanceFromSpaceCenter) {
 
-		super(type, mass, radius, center, speed, angleFollowsSpeed);
+		super(type, mass, radius, center, speed, angleFollowsSpeed());
 		this.initialPosition = center.clone();
 		this.initialSpeed = speed.clone();
 		this.maxDistanceFromSpaceCenter = maxDistanceFromSpaceCenter;

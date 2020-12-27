@@ -20,7 +20,6 @@ package gravity.client.core;
 
 import static gravity.client.core.Preconditions.*;
 
-import java.util.function.DoubleUnaryOperator;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -38,7 +37,7 @@ public class Planet extends Body {
 	 ***************************************************************************/
 	public Planet(final Type type, final double mass, final double radius, 
 			  final Point center, final Speed speed,
-			  final DoubleUnaryOperator angleStrategy) {
+			  final IncrementableOperator angleStrategy) {
 
 		super(mass, center, speed, angleStrategy);
 		throwIf(radius < 0, "Negative radius");
@@ -52,7 +51,7 @@ public class Planet extends Body {
 	public Planet(final Type type, final double mass, final double radius, 
 			  final Point center, final Speed speed) {
 
-		this(type, mass, radius, center, speed, angleIsFixed);
+		this(type, mass, radius, center, speed, angleIsFixedAt(0));
 	}
 	/****************************************************************************
 	 *
