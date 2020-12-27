@@ -32,6 +32,7 @@ import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.ImageElement;
 import com.google.gwt.user.client.Event;
 
+import gravity.client.core.Body;
 import gravity.client.core.Planet;
 import gravity.client.core.SpaceCraft;
 
@@ -206,32 +207,28 @@ public final class SpaceCanvas {
 	 ***************************************************************************/
 	private void draw(final Planet planet) {
 
-//		final double x = planet.getCenter().getX() - planet.getRaduis();
-//		final double y = planet.getCenter().getY() - planet.getRaduis();
-//
-//		final ImageElement image = getImage(planet.getType().name());
-//		this.context.drawImage(image, x, y);
-		
-		this.context.save();
-
-		this.context.translate(planet.getCenter().getX(), planet.getCenter().getY());
-		this.context.rotate(planet.getAngle());
-		this.context.drawImage(getImage(planet.getType().name()), -planet.getRaduis(),
-				-planet.getRaduis());
-		this.context.restore();
+		draw(planet, getImage(planet.getType().name()));
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private void draw(final SpaceCraft craft) {
+		
+		draw(craft, getImage("spaceship"));
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void draw(final Body body, final ImageElement image) {
 
 		this.context.save();
 
-		this.context.translate(craft.getCenter().getX(), craft.getCenter().getY());
-		this.context.rotate(craft.getAngle());
-		this.context.drawImage(getImage("spaceship"), -craft.getRaduis(),
-				-craft.getRaduis());
+		this.context.translate(body.getCenter().getX(), body.getCenter().getY());
+		this.context.rotate(body.getAngle());
+		this.context.drawImage(image, -body.getRadius(), -body.getRadius());
+		
 		this.context.restore();
 	}
 

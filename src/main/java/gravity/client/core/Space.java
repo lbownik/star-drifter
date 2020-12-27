@@ -88,7 +88,7 @@ public final class Space {
 	 ***************************************************************************/
 	private boolean hasSpaceCraftCrashed(final Planet planet) {
 
-		final double minDistance = this.spaceCraft.getRaduis() + planet.getRaduis();
+		final double minDistance = this.spaceCraft.getRadius() + planet.getRadius();
 		return this.spaceCraft.distanceTo(planet) <= minDistance;
 	}
 

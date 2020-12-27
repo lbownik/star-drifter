@@ -56,7 +56,8 @@ public class Planet extends Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public double getRaduis() {
+	@Override
+	public double getRadius() {
 
 		return this.radius;
 	}

@@ -32,7 +32,6 @@ public class SpaceCraft extends Body {
 
 		super(1, center, speed, angleFollowsSpeed());
 
-		this.radius = 20;
 		this.forceSniffer = forceSniffer;
 	}
 	/****************************************************************************
@@ -47,13 +46,13 @@ public class SpaceCraft extends Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public double getRaduis() {
+	@Override
+	public double getRadius() {
 
-		return this.radius;
+		return 20;
 	}
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private final double radius;
 	private final BiConsumer<SpaceCraft, Force> forceSniffer;
 }
