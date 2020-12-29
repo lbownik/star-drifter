@@ -25,8 +25,8 @@ public class StaticPlanet extends Planet {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public StaticPlanet(final Type type, final double mass, final double radius,
-			final Point center, final Speed speed) {
+	StaticPlanet(final Type type, final double mass, final double radius,
+			final Position center, final Speed speed) {
 
 		super(type, mass, radius, center, speed);
 	}
@@ -34,11 +34,11 @@ public class StaticPlanet extends Planet {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public StaticPlanet(final Type type, final double mass, final double radius,
-			final Point center, final Speed speed,
-			final IncrementableOperator angleStrategy) {
+	StaticPlanet(final Type type, final double mass, final double radius,
+			final Position center, final Speed speed,
+			final IncrementableOperator angleStrategy, final Phase phase) {
 
-		super(type, mass, radius, center, speed, angleStrategy);
+		super(type, mass, radius, center, speed, angleStrategy, phase);
 	}
 
 	/****************************************************************************

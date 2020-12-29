@@ -20,8 +20,9 @@ package gravity.client;
 import org.junit.Test;
 
 import gravity.client.app.Presenter;
+import gravity.client.core.EmptySpaceFactory;
 import gravity.client.core.FakeSpaceFactory;
-import gravity.client.core.Point;
+import gravity.client.core.Position;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
 import gravity.client.fakes.FakeScheduler;
@@ -172,7 +173,7 @@ public class EmptySpaceUseCases {
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(
-				new Point(initialCraftPosition.getX() + timeInrement * 3.0,
+				new Position(initialCraftPosition.getX() + timeInrement * 3.0,
 						initialCraftPosition.getY()));
 		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
 		record.assertThatCraftAngleIs(0);
@@ -377,14 +378,14 @@ public class EmptySpaceUseCases {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private final SpaceFactory spaceFactory = new FakeSpaceFactory(40, 40);
+	private final SpaceFactory spaceFactory = new EmptySpaceFactory(40, 40);
 	private final FakeUI view = new FakeUI();
 	private final FakeScheduler scheduler = new FakeScheduler();
-	private final Point initialCraftPosition = new Point(20, 20);
-	private final Point finalCraftPositionToLeft = new Point(20 - finalPosition, 20);
-	private final Point finalCraftPositionToRight = new Point(20 + finalPosition, 20);
-	private final Point finalCraftPositionToTop = new Point(20, 20 - finalPosition);
-	private final Point finalCraftPositionToBottom = new Point(20, 20 + finalPosition);
+	private final Position initialCraftPosition = new Position(20, 20);
+	private final Position finalCraftPositionToLeft = new Position(20 - finalPosition, 20);
+	private final Position finalCraftPositionToRight = new Position(20 + finalPosition, 20);
+	private final Position finalCraftPositionToTop = new Position(20, 20 - finalPosition);
+	private final Position finalCraftPositionToBottom = new Position(20, 20 + finalPosition);
 
 	private final static double timeInrement = 0.2;
 	private final static double initialSpeed = 3.0;

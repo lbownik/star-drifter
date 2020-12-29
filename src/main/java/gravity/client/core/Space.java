@@ -112,9 +112,9 @@ public final class Space {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Point getInitialSpaceCraftPosition() {
+	public Position getInitialSpaceCraftPosition() {
 
-		return new Point(20, this.height / 2);
+		return new Position(20, this.height / 2);
 	}
 
 	/****************************************************************************

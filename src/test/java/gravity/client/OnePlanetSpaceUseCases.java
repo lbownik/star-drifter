@@ -24,7 +24,7 @@ import static java.lang.Math.PI;
 import gravity.client.app.Presenter;
 import gravity.client.core.FakeSpaceFactory;
 import gravity.client.core.Planet;
-import gravity.client.core.Point;
+import gravity.client.core.Position;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
 import gravity.client.fakes.FakeScheduler;
@@ -75,6 +75,7 @@ public class OnePlanetSpaceUseCases {
 		record.assertThatLevelNumberIs(2);
 		record.assertThatNumberOfPlanetsIs(1);
 		assertEquals(14, planet.getAngle(), 0.001);
+		assertEquals(0, planet.getPhase().getValue());
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(oneTime);
@@ -89,8 +90,8 @@ public class OnePlanetSpaceUseCases {
 	private final SpaceFactory spaceFactory = new FakeSpaceFactory(200, 40);
 	private final FakeUI view = new FakeUI();
 	private final FakeScheduler scheduler = new FakeScheduler();
-	private final Point initialCraftPosition = new Point(20, 20);
-	private final Point finalCraftPositionToRight = new Point(20 + finalPosition, 20);
+	private final Position initialCraftPosition = new Position(20, 20);
+	private final Position finalCraftPositionToRight = new Position(20 + finalPosition, 20);
 
 	private final static double initialSpeed = 1.0;
 	private final static double speedFactor = 10;

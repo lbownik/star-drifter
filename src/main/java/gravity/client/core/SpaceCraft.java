@@ -27,7 +27,7 @@ public class SpaceCraft extends Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public SpaceCraft(final Point center, final Speed speed,
+	public SpaceCraft(final Position center, final Speed speed,
 			  final BiConsumer<SpaceCraft, Force> forceSniffer) {
 
 		super(1, center, speed, angleFollowsSpeed());

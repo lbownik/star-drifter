@@ -207,15 +207,31 @@ public final class SpaceCanvas {
 	 ***************************************************************************/
 	private void draw(final Planet planet) {
 
-		draw(planet, getImage(planet.getType().name()));
+		this.context.save();
+
+		this.context.translate(planet.getCenter().getX(), planet.getCenter().getY());
+		this.context.rotate(planet.getAngle());
+		final ImageElement image = getImage(planet.getType().name());
+		final double size = image.getHeight();
+		this.context.drawImage(image, planet.getPhase().getValue() * size, 0, size, size,
+				-planet.getRadius(), -planet.getRadius(), size, size);
+
+		this.context.restore();
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private void draw(final SpaceCraft craft) {
-		
-		draw(craft, getImage("spaceship"));
+
+		this.context.save();
+
+		this.context.translate(craft.getCenter().getX(), craft.getCenter().getY());
+		this.context.rotate(craft.getAngle());
+		this.context.drawImage(getImage("spaceship"), -craft.getRadius(),
+				-craft.getRadius());
+
+		this.context.restore();
 	}
 
 	/****************************************************************************
@@ -228,7 +244,7 @@ public final class SpaceCanvas {
 		this.context.translate(body.getCenter().getX(), body.getCenter().getY());
 		this.context.rotate(body.getAngle());
 		this.context.drawImage(image, -body.getRadius(), -body.getRadius());
-		
+
 		this.context.restore();
 	}
 

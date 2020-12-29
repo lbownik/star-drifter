@@ -25,11 +25,11 @@ public class LoosePlanet extends Planet {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public LoosePlanet(final Type type, final double mass,
-			final double radius, final Point center, final Speed speed,
+	public LoosePlanet(final Type type, final double mass, final double radius,
+			final Position center, final Speed speed, final Phase phase,
 			final double maxDistanceFromSpaceCenter) {
 
-		super(type, mass, radius, center, speed, angleFollowsSpeed());
+		super(type, mass, radius, center, speed, angleFollowsSpeed(), phase);
 		this.initialPosition = center.clone();
 		this.initialSpeed = speed.clone();
 		this.maxDistanceFromSpaceCenter = maxDistanceFromSpaceCenter;
@@ -42,7 +42,7 @@ public class LoosePlanet extends Planet {
 	public void moveBy(final Force force, final double timeDuration) {
 
 		super.moveBy(force, timeDuration);
-		if(isFarEnough()) {
+		if (isFarEnough()) {
 			moveTo(this.initialPosition.clone());
 			setSpeed(this.initialSpeed.clone());
 		}
@@ -60,7 +60,7 @@ public class LoosePlanet extends Planet {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private final Point initialPosition;
+	private final Position initialPosition;
 	private final Speed initialSpeed;
 	private final double maxDistanceFromSpaceCenter;
 }

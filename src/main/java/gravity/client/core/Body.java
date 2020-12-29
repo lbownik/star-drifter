@@ -32,7 +32,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Body(final double mass, final Point center, final Speed speed,
+	public Body(final double mass, final Position center, final Speed speed,
 			final IncrementableOperator angleStrategy) {
 
 		throwIf(mass < 0, "Negative mass");
@@ -49,7 +49,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Point getCenter() {
+	public Position getCenter() {
 
 		return this.center;
 	}
@@ -98,7 +98,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	protected void moveTo(final Point position) {
+	protected void moveTo(final Position position) {
 
 		this.center = position;
 	}
@@ -106,9 +106,9 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void incrementTime(final double intervel) {
+	public void incrementTime(final double interval) {
 
-		this.angleStrategy.incrementTime(intervel);
+		this.angleStrategy.incrementTime(interval);
 	}
 
 	/****************************************************************************
@@ -183,7 +183,7 @@ public abstract class Body {
 	 *
 	 ***************************************************************************/
 	private final double mass;
-	private Point center;
+	private Position center;
 	private Speed speed;
 	private final IncrementableOperator angleStrategy;
 
@@ -198,7 +198,7 @@ public abstract class Body {
 		 *
 		 ************************************************************************/
 		@SuppressWarnings("unused")
-		public default void incrementTime(final double intervel) {
+		public default void incrementTime(final double interval) {
 
 			return;
 		}

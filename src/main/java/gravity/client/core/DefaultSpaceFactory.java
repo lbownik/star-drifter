@@ -31,6 +31,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
+import gravity.client.core.Phase.Static;
+
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  *******************************************************************************/
@@ -73,23 +75,23 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(rocky, 200, 50,
-				new Point(this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+				new Position(this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
 		space.add(new StaticPlanet(ice, 100, 50,
-				new Point(2 * this.spaceWidth / 7, 2 * this.spaceHeight / 7),
+				new Position(2 * this.spaceWidth / 7, 2 * this.spaceHeight / 7),
 				Speed.zero()));
 		space.add(new StaticPlanet(earthLike, 100, 50,
-				new Point(3 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+				new Position(3 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
 		space.add(new StaticPlanet(gas, 100, 50,
-				new Point(4 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
+				new Position(4 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
 				Speed.zero()));
 		space.add(new StaticPlanet(star, 100, 50,
-				new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
+				new Position(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
 				Speed.zero()));
 		space.add(new StaticPlanet(blackHole, 100, 50,
-				new Point(6 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
+				new Position(6 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
 				Speed.zero()));
-		space.add(new LoosePlanet(meteorite, 10, 15, new Point(50, this.spaceHeight),
-				new Speed(0, -10), this.spaceWidth));
+		space.add(new LoosePlanet(meteorite, 10, 15, new Position(50, this.spaceHeight),
+				new Speed(0, -10), new Phase.Static(), this.spaceWidth));
 
 		return space;
 	}
@@ -102,12 +104,26 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
-				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero(),
-				angleCirculatesAt(0.1)));
+				new Position(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero(),
+				//angleCirculatesAt(0.1), new Phase.Static()));
+				angleIsFixedAt(0), new Phase.Looping(9, 5, 1)));
+		
+		space.add(new StaticPlanet(rocky, 100, 50,
+				new Position(this.spaceWidth / 2, this.spaceHeight / 4), Speed.zero(),
+				//angleCirculatesAt(0.1), new Phase.Static()));
+				angleIsFixedAt(Math.PI), new Phase.Looping(9, 5, 1)));
+		space.add(new StaticPlanet(rocky, 100, 50,
+				new Position(this.spaceWidth / 2, 3 * this.spaceHeight / 4), Speed.zero(),
+				//angleCirculatesAt(0.1), new Phase.Static()));
+				angleIsFixedAt(0), new Phase.Looping(9, 5, -1)));
+		space.add(new StaticPlanet(rocky, 100, 50,
+				new Position(this.spaceWidth / 4, 3 * this.spaceHeight / 4), Speed.zero(),
+				//angleCirculatesAt(0.1), new Phase.Static()));
+				angleCirculatesAt(0.1), new Phase.Looping(9, 5, -1)));
 
 		space.add(
-				new LoosePlanet(meteorite, 10, 15, new Point(this.spaceWidth - 100, -100),
-						new Speed(-5, 30), this.spaceWidth*2));
+				new LoosePlanet(meteorite, 10, 15, new Position(this.spaceWidth - 100, -100),
+						new Speed(-5, 30), new Phase.Static(), this.spaceWidth*2));
 
 		return space;
 	}
@@ -120,16 +136,16 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
-				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
+				new Position(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
 		space.add(new StaticPlanet(ice, 100, 50,
-				new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
+				new Position(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
 				Speed.zero()));
 		space.add(new StaticPlanet(earthLike, 100, 50,
-				new Point(5 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+				new Position(5 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
 
 		space.add(
-				new LoosePlanet(meteorite, 10, 15, new Point(100, this.spaceHeight + 200),
-						new Speed(5, -30), this.spaceWidth * 2));
+				new LoosePlanet(meteorite, 10, 15, new Position(100, this.spaceHeight + 200),
+						new Speed(5, -30), new Phase.Static(), this.spaceWidth * 2));
 
 		return space;
 	}
@@ -142,9 +158,9 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(gas, 100, 50,
-				new Point(this.spaceWidth / 4, this.spaceHeight / 2), Speed.zero()));
+				new Position(this.spaceWidth / 4, this.spaceHeight / 2), Speed.zero()));
 		space.add(new StaticPlanet(blackHole, 5000, 50,
-				new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
+				new Position(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
 				Speed.zero()));
 
 		return space;
@@ -158,16 +174,16 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(gas, 100, 50,
-				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
+				new Position(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
 		space.add(new StaticPlanet(ice, 100, 50,
-				new Point(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
+				new Position(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
 				Speed.zero()));
 		space.add(new StaticPlanet(earthLike, 100, 50,
-				new Point(5 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+				new Position(5 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
 		space.add(new StaticPlanet(blackHole, 1000, 50,
-				new Point(2 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+				new Position(2 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
 		space.add(new StaticPlanet(star, 1000, 50,
-				new Point(9 * this.spaceWidth / 10, this.spaceHeight / 2), Speed.zero()));
+				new Position(9 * this.spaceWidth / 10, this.spaceHeight / 2), Speed.zero()));
 
 		return space;
 	}
@@ -180,11 +196,11 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new Planet(gas, 500, 50,
-				new Point(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(15, 0),
-				angleFollowsSpeed()));
+				new Position(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(15, 0),
+				angleFollowsSpeed(), new Phase.Static()));
 		space.add(new Planet(rocky, 500, 50,
-				new Point(this.spaceWidth / 2, 6 * this.spaceHeight / 7),
-				new Speed(-15, 0), angleCirculatesAt(-0.1)));
+				new Position(this.spaceWidth / 2, 6 * this.spaceHeight / 7),
+				new Speed(-15, 0), angleCirculatesAt(-0.1), new Phase.Static()));
 
 		return space;
 	}
@@ -197,9 +213,9 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(blackHole, 5000, 50,
-				new Point(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
+				new Position(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero()));
 		space.add(new Planet(ice, 100, 50,
-				new Point(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(-60, 0)));
+				new Position(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(-60, 0)));
 
 		return space;
 	}

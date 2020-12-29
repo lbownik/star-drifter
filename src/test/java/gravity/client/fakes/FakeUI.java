@@ -8,7 +8,7 @@ import java.util.List;
 
 import gravity.client.app.Presenter;
 import gravity.client.core.Planet;
-import gravity.client.core.Point;
+import gravity.client.core.Position;
 import gravity.client.core.SpaceCraft;
 import gravity.client.core.Speed;
 
@@ -62,7 +62,7 @@ public class FakeUI implements Presenter.UI {
 		/*************************************************************************
 		 *
 		 ************************************************************************/
-		public void assertThatCraftPositionIs(final Point position) {
+		public void assertThatCraftPositionIs(final Position position) {
 
 			assertEquals(position.getX(), this.craft.getCenter().getX(), 0.0001);
 			assertEquals(position.getY(), this.craft.getCenter().getY(), 0.0001);

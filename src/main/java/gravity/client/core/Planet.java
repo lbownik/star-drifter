@@ -20,7 +20,6 @@ package gravity.client.core;
 
 import static gravity.client.core.Preconditions.*;
 
-
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
@@ -32,27 +31,32 @@ public class Planet extends Body {
 	public enum Type {
 		rocky, earthLike, gas, ice, star, blackHole, meteorite;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Planet(final Type type, final double mass, final double radius, 
-			  final Point center, final Speed speed,
-			  final IncrementableOperator angleStrategy) {
+	Planet(final Type type, final double mass, final double radius,
+			final Position center, final Speed speed,
+			final IncrementableOperator angleStrategy, final Phase phase) {
 
 		super(mass, center, speed, angleStrategy);
-		throwIf(radius < 0, "Negative radius");
+		throwIf(radius < 0, "Negative radius.");
+		throwIfNull(phase, "Null phase.");
 
 		this.type = type;
 		this.radius = radius;
+		this.phase = phase;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Planet(final Type type, final double mass, final double radius, 
-			  final Point center, final Speed speed) {
+	Planet(final Type type, final double mass, final double radius,
+			final Position center, final Speed speed) {
 
-		this(type, mass, radius, center, speed, angleIsFixedAt(0));
+		this(type, mass, radius, center, speed, angleIsFixedAt(0), new Phase.Static());
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -64,13 +68,33 @@ public class Planet extends Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
+	@Override
+	public void incrementTime(final double interval) {
+
+		super.incrementTime(interval);
+		this.phase.incrementTime(interval);
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
 	public Type getType() {
 
 		return this.type;
 	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public Phase getPhase() {
+
+		return this.phase;
+	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private final double radius;
 	private final Type type;
+	private final Phase phase;
 }
