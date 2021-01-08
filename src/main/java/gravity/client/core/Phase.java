@@ -23,27 +23,48 @@ import java.util.function.IntUnaryOperator;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public interface Phase {
+public class Phase {
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	default void incrementTime(final double interval) {
+	private Phase(final int index, final double changeTimeInterval,
+			final IntUnaryOperator operator) {
 
-		return;
+		throwIf(index < 0, "Negative index.");
+		throwIf(changeTimeInterval < 0.0, "Negative changeTimeInterval.");
+
+		this.index = index;
+		this.changeTimeInterval = changeTimeInterval;
+		this.operator = operator;
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	int getIndex();
+	void incrementTime(final double interval) {
+
+		this.threshold += interval;
+		if (this.threshold >= this.changeTimeInterval) {
+			this.threshold = 0;
+			this.index = this.operator.applyAsInt(this.index);
+		}
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public int getIndex() {
+
+		return this.index;
+	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	static Phase constant(final int index) {
 
-		return () -> index;
+		return new Phase(index, 0.0, i -> i);
 	}
 
 	/****************************************************************************
@@ -51,8 +72,7 @@ public interface Phase {
 	 ***************************************************************************/
 	static Phase forwardLooping(final int maxIndex, final double changeTimeInterval) {
 
-		return new Looping(0, changeTimeInterval,
-				(index) -> (index < maxIndex) ? index + 1 : 0);
+		return new Phase(0, changeTimeInterval, (i) -> (i < maxIndex) ? i + 1 : 0);
 	}
 
 	/****************************************************************************
@@ -60,57 +80,14 @@ public interface Phase {
 	 ***************************************************************************/
 	static Phase backwardLooping(final int maxIndex, final double changeTimeInterval) {
 
-		return new Looping(maxIndex, changeTimeInterval,
-				(index) -> (index > 0) ? index - 1 : maxIndex);
+		return new Phase(maxIndex, changeTimeInterval, (i) -> (i > 0) ? i - 1 : maxIndex);
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	class Looping implements Phase {
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		public Looping(final int index, final double changeTimeInterval,
-				final IntUnaryOperator operator) {
-
-			throwIf(index < 0, "Negative index.");
-			throwIf(changeTimeInterval <= 0.0, "Non-positive changeTimeInterval.");
-
-			this.index = index;
-			this.changeTimeInterval = changeTimeInterval;
-			this.operator = operator;
-		}
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		@Override
-		public void incrementTime(final double interval) {
-
-			this.threshold += interval;
-			if (this.threshold >= this.changeTimeInterval) {
-				this.threshold = 0;
-				this.index = this.operator.applyAsInt(this.index);
-			}
-		}
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		@Override
-		public int getIndex() {
-
-			return this.index;
-		}
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		private int index;
-		private final double changeTimeInterval;
-		private double threshold = 0;
-		private final IntUnaryOperator operator;
-	}
+	private int index;
+	private final double changeTimeInterval;
+	private double threshold = 0;
+	private final IntUnaryOperator operator;
 }
