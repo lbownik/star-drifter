@@ -47,7 +47,7 @@ public class LevelTransitionUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
-		this.scheduler.assertThatScheduledTasksAreNotNull();
+		this.scheduler.assertThatInvariantsHoldTrue();
 
 		this.scheduler.run(ninetyTimes);
 
@@ -66,13 +66,11 @@ public class LevelTransitionUseCases {
 		this.view.assertThatAimingDisabledWasCalled(zeroTimes);
 
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
-		this.scheduler.assertThatScheduledTasksAreNotNull();
+		this.scheduler.assertThatInvariantsHoldTrue();
 
 		this.scheduler.run();
 
 		this.view.assertThatRefreshWasCalled(oneTime);
-		this.view.assertThatSpacecraftWasNeverNull();
-		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
@@ -87,6 +85,7 @@ public class LevelTransitionUseCases {
 		this.view.assertThatFailureWasShown(zeroTimes);
 		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
+		this.view.assertThatInvariantsHoldTrue();
 	}
 
 	/****************************************************************************
@@ -104,7 +103,7 @@ public class LevelTransitionUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + speedFactor * initialSpeed,
 				initialCraftPosition.getY());
 
-		this.scheduler.assertThatScheduledTasksAreNotNull();
+		this.scheduler.assertThatInvariantsHoldTrue();
 
 		this.scheduler.run(ninetyTimes);
 
@@ -117,13 +116,11 @@ public class LevelTransitionUseCases {
 		presenter.playNext();
 
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
-		this.scheduler.assertThatScheduledTasksAreNotNull();
+		this.scheduler.assertThatInvariantsHoldTrue();
 
 		this.scheduler.run();
 
 		this.view.assertThatRefreshWasCalled(oneTime);
-		this.view.assertThatSpacecraftWasNeverNull();
-		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatCraftPositionIs(initialCraftPosition);
@@ -138,6 +135,7 @@ public class LevelTransitionUseCases {
 		this.view.assertThatFailureWasShown(zeroTimes);
 		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
+		this.view.assertThatInvariantsHoldTrue();
 	}
 
 	/****************************************************************************
@@ -155,19 +153,26 @@ public class LevelTransitionUseCases {
 		presenter.playNext();
 		this.scheduler.run();
 		this.scheduler.cancel();
+		
+		this.scheduler.assertThatInvariantsHoldTrue();
 
 		this.view.assertThatRefreshWasCalled(oneTime);
+		this.view.assertThatInvariantsHoldTrue();
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(0);
 		record.assertThatLevelNumberIs(2);
 
 		this.view.clearAll();
 		this.scheduler.clearAll();
+		
 
 		presenter.playNext();
 		this.scheduler.run();
 		this.scheduler.cancel();
+		
+		this.scheduler.assertThatInvariantsHoldTrue();
 
 		this.view.assertThatRefreshWasCalled(oneTime);
+		this.view.assertThatInvariantsHoldTrue();
 		record = this.view.refreshCalled.get(0);
 		record.assertThatLevelNumberIs(3);
 
@@ -177,8 +182,11 @@ public class LevelTransitionUseCases {
 		presenter.playNext();
 		this.scheduler.run();
 		this.scheduler.cancel();
+		
+		this.scheduler.assertThatInvariantsHoldTrue();
 
 		this.view.assertThatRefreshWasCalled(oneTime);
+		this.view.assertThatInvariantsHoldTrue();
 		record = this.view.refreshCalled.get(0);
 		record.assertThatLevelNumberIs(1);
 	}

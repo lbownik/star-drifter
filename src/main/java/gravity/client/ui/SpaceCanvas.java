@@ -237,20 +237,6 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void draw(final Body body, final ImageElement image) {
-
-		this.context.save();
-
-		this.context.translate(body.getCenter().getX(), body.getCenter().getY());
-		this.context.rotate(body.getAngle());
-		this.context.drawImage(image, -body.getRadius(), -body.getRadius());
-
-		this.context.restore();
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	private void draw(final int score, final int level, final int numOfLevels) {
 
 		this.context.fillText("Level " + valueOf(level) + " of " + valueOf(numOfLevels),

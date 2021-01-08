@@ -51,21 +51,21 @@ public class OnePlanetSpaceUseCases {
 		presenter.aimingFinished(initialCraftPosition.getX() + initialSpeed * speedFactor,
 				initialCraftPosition.getY());
 
-		this.scheduler.assertThatScheduledTasksAreNotNull();
+		this.scheduler.assertThatInvariantsHoldTrue();
 
 		this.scheduler.run(seventyTimes);
-
+		
+		this.scheduler.assertThatInvariantsHoldTrue();
+		
+		this.scheduler.assertThatInvariantsHoldTrue();
+		this.scheduler.assertThatCancelWasCalled(oneTime);
+		this.scheduler.assertThatSheduleWasCalled(oneTime);
+		
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
 
-		this.scheduler.assertThatCancelWasCalled(oneTime);
-
-		this.scheduler.assertThatSheduleWasCalled(oneTime);
-
 		this.view.assertThatRefreshWasCalled(seventyTimes - 1);
 		this.view.assertThatRefreshWithExplosionWasCalled(oneTime);
-		this.view.assertThatSpacecraftWasNeverNull();
-		this.view.assertThatPlanetsWereNeverNull();
 
 		FakeUI.RefreshRecord record = this.view.refreshWithExplosionCalled.get(0);
 		Planet planet = record.planets.get(0);
@@ -82,6 +82,7 @@ public class OnePlanetSpaceUseCases {
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(oneTime);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
+		this.view.assertThatInvariantsHoldTrue();
 	}
 
 	/****************************************************************************

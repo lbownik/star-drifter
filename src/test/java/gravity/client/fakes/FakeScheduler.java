@@ -67,7 +67,15 @@ public class FakeScheduler implements Presenter.Scheduler {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void assertThatScheduledTasksAreNotNull() {
+	public void assertThatInvariantsHoldTrue() {
+
+		assertThatScheduledTasksAreNeverNull();
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void assertThatScheduledTasksAreNeverNull() {
 
 		assertTrue(this.scheduleCalled.stream().allMatch(p -> p != null));
 	}

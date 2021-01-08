@@ -46,7 +46,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		this.spaceWidth = spaceWidth;
 		this.spaceHeight = spaceHeight;
 
-		// this.constellations.add(this::getPlanetConstellation0);
+		this.constellations.add(this::getPlanetConstellation0);
 		this.constellations.add(this::getPlanetConstellation1);
 		this.constellations.add(this::getPlanetConstellation2);
 		this.constellations.add(this::getPlanetConstellation3);
@@ -72,18 +72,24 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private Space getPlanetConstellation0() {
 
+		final int numberOfPhases = 49;
+		
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(rocky, 200, 50,
-				new Position(this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+				new Position(this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero(),
+				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
 		space.add(new StaticPlanet(ice, 100, 50,
 				new Position(2 * this.spaceWidth / 7, 2 * this.spaceHeight / 7),
-				Speed.zero()));
+				Speed.zero(),
+				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
 		space.add(new StaticPlanet(earthLike, 100, 50,
-				new Position(3 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero()));
+				new Position(3 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero(),
+				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
 		space.add(new StaticPlanet(gas, 100, 50,
 				new Position(4 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
-				Speed.zero()));
+				Speed.zero(),
+				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
 		space.add(new StaticPlanet(star, 100, 50,
 				new Position(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
 				Speed.zero()));
@@ -101,29 +107,13 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private Space getPlanetConstellation1() {
 
+		final int numberOfPhases = 48;
+		
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero(),
-				//angleCirculatesAt(0.1), new Phase.Static()));
-				angleIsFixedAt(0), new Phase.Looping(9, 5, 1)));
-		
-		space.add(new StaticPlanet(rocky, 100, 50,
-				new Position(this.spaceWidth / 2, this.spaceHeight / 4), Speed.zero(),
-				//angleCirculatesAt(0.1), new Phase.Static()));
-				angleIsFixedAt(Math.PI), new Phase.Looping(9, 5, 1)));
-		space.add(new StaticPlanet(rocky, 100, 50,
-				new Position(this.spaceWidth / 2, 3 * this.spaceHeight / 4), Speed.zero(),
-				//angleCirculatesAt(0.1), new Phase.Static()));
-				angleIsFixedAt(0), new Phase.Looping(9, 5, -1)));
-		space.add(new StaticPlanet(rocky, 100, 50,
-				new Position(this.spaceWidth / 4, 3 * this.spaceHeight / 4), Speed.zero(),
-				//angleCirculatesAt(0.1), new Phase.Static()));
-				angleCirculatesAt(0.1), new Phase.Looping(9, 5, -1)));
-
-		space.add(
-				new LoosePlanet(meteorite, 10, 15, new Position(this.spaceWidth - 100, -100),
-						new Speed(-5, 30), new Phase.Static(), this.spaceWidth*2));
+				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
 
 		return space;
 	}

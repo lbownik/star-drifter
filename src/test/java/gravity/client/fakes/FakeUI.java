@@ -88,6 +88,14 @@ public class FakeUI implements Presenter.UI {
 		/*************************************************************************
 		 *
 		 ************************************************************************/
+		public void assertThatNumberOfLevelsIsNotNegative() {
+
+			assertTrue(this.level >= 0);
+		}
+
+		/*************************************************************************
+		 *
+		 ************************************************************************/
 		public final SpaceCraft craft;
 		public final List<Planet> planets;
 		public final int score;
@@ -250,27 +258,18 @@ public class FakeUI implements Presenter.UI {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void assertThatSpacecraftWasNeverNull() {
+	private void assertThatSpacecraftWasNeverNullIn(final List<RefreshRecord> records) {
 
-		assertTrue(
-				this.refreshCalled.stream().map(r -> r.craft).allMatch(c -> c != null));
-		assertTrue(this.refreshWithExplosionCalled.stream().map(r -> r.craft)
-				.allMatch(c -> c != null));
-		assertTrue(this.refreshWithSpeedCalled.stream().map(r -> r.craft)
-				.allMatch(c -> c != null));
+		assertTrue(records.stream().map(r -> r.craft).allMatch(c -> c != null));
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void assertThatPlanetsWereNeverNull() {
+	public void assertThatPlanetsWereNeverNullIn(final List<RefreshRecord> records) {
 
-		assertTrue(this.refreshCalled.stream().flatMap(r -> r.planets.stream())
-				.allMatch(p -> p != null));
-		assertTrue(this.refreshWithExplosionCalled.stream()
-				.flatMap(r -> r.planets.stream()).allMatch(p -> p != null));
-		assertTrue(this.refreshWithSpeedCalled.stream().flatMap(r -> r.planets.stream())
-				.allMatch(p -> p != null));
+		assertTrue(
+				records.stream().flatMap(r -> r.planets.stream()).allMatch(p -> p != null));
 	}
 
 	/****************************************************************************
@@ -295,6 +294,59 @@ public class FakeUI implements Presenter.UI {
 	public void assertThatPresenterIs(final Presenter presenter) {
 
 		assertEquals(presenter, this.presenter);
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void assertThatLevelWasAlwaysPositiveIn(final List<RefreshRecord> records) {
+
+		assertTrue(records.stream().allMatch(r -> r.level > 0));
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void assertThatNumberOfLevelsIsGreaterOrEqualToCurrentLevelIn(
+			final List<RefreshRecord> records) {
+
+		assertTrue(records.stream().allMatch(r -> r.numOfLevels >= r.level));
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void assertThatScoreWasNeverNegativeIn(final List<RefreshRecord> records) {
+
+		assertTrue(records.stream().allMatch(r -> r.score >= 0));
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void assertThatInvariantsHoldTrue() {
+
+		assertThatSpacecraftWasNeverNullIn(this.refreshCalled);
+		assertThatSpacecraftWasNeverNullIn(this.refreshWithExplosionCalled);
+		assertThatSpacecraftWasNeverNullIn(this.refreshWithSpeedCalled);
+
+		assertThatPlanetsWereNeverNullIn(this.refreshCalled);
+		assertThatPlanetsWereNeverNullIn(this.refreshWithExplosionCalled);
+		assertThatPlanetsWereNeverNullIn(this.refreshWithSpeedCalled);
+
+		assertThatLevelWasAlwaysPositiveIn(this.refreshCalled);
+		assertThatLevelWasAlwaysPositiveIn(this.refreshWithExplosionCalled);
+		assertThatLevelWasAlwaysPositiveIn(this.refreshWithSpeedCalled);
+
+		assertThatScoreWasNeverNegativeIn(this.refreshCalled);
+		assertThatScoreWasNeverNegativeIn(this.refreshWithExplosionCalled);
+		assertThatScoreWasNeverNegativeIn(this.refreshWithSpeedCalled);
+
+		assertThatNumberOfLevelsIsGreaterOrEqualToCurrentLevelIn(this.refreshCalled);
+		assertThatNumberOfLevelsIsGreaterOrEqualToCurrentLevelIn(
+				this.refreshWithExplosionCalled);
+		assertThatNumberOfLevelsIsGreaterOrEqualToCurrentLevelIn(
+				this.refreshWithSpeedCalled);
 	}
 
 	/****************************************************************************
