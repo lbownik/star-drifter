@@ -18,6 +18,8 @@ package gravity.client.core;
 
 import static gravity.client.core.Preconditions.throwIf;
 
+import java.util.function.IntUnaryOperator;
+
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
@@ -26,35 +28,40 @@ public interface Phase {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	void incrementTime(final double interval);
+	default void incrementTime(final double interval) {
+
+		return;
+	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	int getValue();
+	int getIndex();
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	class Static implements Phase {
+	static Phase constant(final int index) {
 
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		@Override
-		public void incrementTime(final double interval) {
+		return () -> index;
+	}
 
-			return;
-		}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	static Phase forwardLooping(final int maxIndex, final double changeTimeInterval) {
 
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		@Override
-		public int getValue() {
+		return new Looping(0, changeTimeInterval,
+				(index) -> (index < maxIndex) ? index + 1 : 0);
+	}
 
-			return 0;
-		}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	static Phase backwardLooping(final int maxIndex, final double changeTimeInterval) {
+
+		return new Looping(maxIndex, changeTimeInterval,
+				(index) -> (index > 0) ? index - 1 : maxIndex);
 	}
 
 	/****************************************************************************
@@ -65,21 +72,15 @@ public interface Phase {
 		/*************************************************************************
 		 *
 		 ************************************************************************/
-		public Looping(final int maxValue,
-				final double changeTimeInterval, final int valueIncrement) {
+		public Looping(final int index, final double changeTimeInterval,
+				final IntUnaryOperator operator) {
 
-			throwIf(valueIncrement == 0, "valueIncrement is 0");
+			throwIf(index < 0, "Negative index.");
+			throwIf(changeTimeInterval <= 0.0, "Non-positive changeTimeInterval.");
 
-			this.maxValue = maxValue;
+			this.index = index;
 			this.changeTimeInterval = changeTimeInterval;
-
-			if (valueIncrement > 0) {
-				this.value = 0;
-				this.changePhase = () -> this.increasePhase(valueIncrement);
-			} else {
-				this.value = maxValue;
-				this.changePhase = () -> this.decreasePhase(-valueIncrement);
-			}
+			this.operator = operator;
 		}
 
 		/*************************************************************************
@@ -91,42 +92,25 @@ public interface Phase {
 			this.threshold += interval;
 			if (this.threshold >= this.changeTimeInterval) {
 				this.threshold = 0;
-				this.changePhase.run();
+				this.index = this.operator.applyAsInt(this.index);
 			}
 		}
 
 		/*************************************************************************
 		 *
 		 ************************************************************************/
-		private void increasePhase(final int delta) {
-
-			this.value = (this.value < this.maxValue) ? this.value + delta : 0;
-		}
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
-		private void decreasePhase(final int delta) {
-
-			this.value = (this.value > 0) ? this.value - delta : this.maxValue;
-		}
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
 		@Override
-		public int getValue() {
+		public int getIndex() {
 
-			return this.value;
+			return this.index;
 		}
 
 		/*************************************************************************
 		 *
 		 ************************************************************************/
-		private int value;
-		private final int maxValue;
+		private int index;
 		private final double changeTimeInterval;
 		private double threshold = 0;
-		private final Runnable changePhase;
+		private final IntUnaryOperator operator;
 	}
 }

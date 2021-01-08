@@ -88,14 +88,6 @@ public class FakeUI implements Presenter.UI {
 		/*************************************************************************
 		 *
 		 ************************************************************************/
-		public void assertThatNumberOfLevelsIsNotNegative() {
-
-			assertTrue(this.level >= 0);
-		}
-
-		/*************************************************************************
-		 *
-		 ************************************************************************/
 		public final SpaceCraft craft;
 		public final List<Planet> planets;
 		public final int score;

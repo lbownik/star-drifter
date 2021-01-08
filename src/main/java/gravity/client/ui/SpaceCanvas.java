@@ -213,7 +213,7 @@ public final class SpaceCanvas {
 		this.context.rotate(planet.getAngle());
 		final ImageElement image = getImage(planet.getType().name());
 		final double size = image.getHeight();
-		this.context.drawImage(image, planet.getPhase().getValue() * size, 0, size, size,
+		this.context.drawImage(image, planet.getPhase().getIndex() * size, 0, size, size,
 				-planet.getRadius(), -planet.getRadius(), size, size);
 
 		this.context.restore();

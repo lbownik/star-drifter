@@ -54,7 +54,7 @@ public class Planet extends Body {
 	Planet(final Type type, final double mass, final double radius,
 			final Position center, final Speed speed) {
 
-		this(type, mass, radius, center, speed, angleIsFixedAt(0), new Phase.Static());
+		this(type, mass, radius, center, speed, angleIsFixedAt(0), Phase.constant(0));
 	}
 
 	/****************************************************************************

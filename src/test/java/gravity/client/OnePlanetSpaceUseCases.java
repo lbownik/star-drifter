@@ -75,7 +75,7 @@ public class OnePlanetSpaceUseCases {
 		record.assertThatLevelNumberIs(2);
 		record.assertThatNumberOfPlanetsIs(1);
 		assertEquals(14, planet.getAngle(), 0.001);
-		assertEquals(0, planet.getPhase().getValue());
+		assertEquals(0, planet.getPhase().getIndex());
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(oneTime);

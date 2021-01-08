@@ -17,6 +17,11 @@
 
 package gravity.client.core;
 
+import static gravity.client.core.Body.angleCirculatesAt;
+import static gravity.client.core.Body.angleFollowsSpeed;
+import static gravity.client.core.Body.angleIsFixedAt;
+import static gravity.client.core.Phase.constant;
+import static gravity.client.core.Phase.forwardLooping;
 import static gravity.client.core.Planet.Type.blackHole;
 import static gravity.client.core.Planet.Type.earthLike;
 import static gravity.client.core.Planet.Type.gas;
@@ -25,13 +30,10 @@ import static gravity.client.core.Planet.Type.meteorite;
 import static gravity.client.core.Planet.Type.rocky;
 import static gravity.client.core.Planet.Type.star;
 import static gravity.client.core.Preconditions.throwIf;
-import static gravity.client.core.Body.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
-
-import gravity.client.core.Phase.Static;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -78,18 +80,18 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 
 		space.add(new StaticPlanet(rocky, 200, 50,
 				new Position(this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero(),
-				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
+				angleIsFixedAt(0), forwardLooping(numberOfPhases, 0.8)));
 		space.add(new StaticPlanet(ice, 100, 50,
 				new Position(2 * this.spaceWidth / 7, 2 * this.spaceHeight / 7),
 				Speed.zero(),
-				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
+				angleIsFixedAt(0), forwardLooping(numberOfPhases, 0.8)));
 		space.add(new StaticPlanet(earthLike, 100, 50,
 				new Position(3 * this.spaceWidth / 7, this.spaceHeight / 7), Speed.zero(),
-				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
+				angleIsFixedAt(0),forwardLooping(numberOfPhases, 0.8)));
 		space.add(new StaticPlanet(gas, 100, 50,
 				new Position(4 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
 				Speed.zero(),
-				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
+				angleIsFixedAt(0), forwardLooping(numberOfPhases, 0.8)));
 		space.add(new StaticPlanet(star, 100, 50,
 				new Position(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
 				Speed.zero()));
@@ -97,7 +99,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 				new Position(6 * this.spaceWidth / 7, 6 * this.spaceHeight / 7),
 				Speed.zero()));
 		space.add(new LoosePlanet(meteorite, 10, 15, new Position(50, this.spaceHeight),
-				new Speed(0, -10), new Phase.Static(), this.spaceWidth));
+				new Speed(0, -10), constant(0), this.spaceWidth));
 
 		return space;
 	}
@@ -107,13 +109,13 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private Space getPlanetConstellation1() {
 
-		final int numberOfPhases = 48;
+		final int numberOfPhases = 49;
 		
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 2), Speed.zero(),
-				angleIsFixedAt(0), new Phase.Looping(numberOfPhases, 0.8, 1)));
+				angleIsFixedAt(0), forwardLooping(numberOfPhases, 0.8)));
 
 		return space;
 	}
@@ -135,7 +137,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 
 		space.add(
 				new LoosePlanet(meteorite, 10, 15, new Position(100, this.spaceHeight + 200),
-						new Speed(5, -30), new Phase.Static(), this.spaceWidth * 2));
+						new Speed(5, -30), Phase.constant(0), this.spaceWidth * 2));
 
 		return space;
 	}
@@ -187,10 +189,10 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 
 		space.add(new Planet(gas, 500, 50,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(15, 0),
-				angleFollowsSpeed(), new Phase.Static()));
+				angleFollowsSpeed(), Phase.constant(0)));
 		space.add(new Planet(rocky, 500, 50,
 				new Position(this.spaceWidth / 2, 6 * this.spaceHeight / 7),
-				new Speed(-15, 0), angleCirculatesAt(-0.1), new Phase.Static()));
+				new Speed(-15, 0), angleCirculatesAt(-0.1), Phase.constant(0)));
 
 		return space;
 	}
