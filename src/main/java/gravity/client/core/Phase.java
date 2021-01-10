@@ -86,6 +86,14 @@ public class Phase {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
+	static Phase forwardStopping(final int maxIndex, final double changeTimeInterval) {
+
+		return new Phase(0, changeTimeInterval, (i) -> (i < maxIndex) ? i + 1 : i);
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
 	private int index;
 	private final double changeTimeInterval;
 	private double threshold = 0;
