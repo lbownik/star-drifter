@@ -49,7 +49,7 @@ public class LevelTransitionUseCases {
 
 		this.scheduler.assertThatInvariantsHoldTrue();
 
-		this.scheduler.run(ninetyTimes);
+		this.scheduler.run(eightyEightTimes);
 
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
@@ -105,7 +105,7 @@ public class LevelTransitionUseCases {
 
 		this.scheduler.assertThatInvariantsHoldTrue();
 
-		this.scheduler.run(ninetyTimes);
+		this.scheduler.run(eightyEightTimes);
 
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		this.view.assertThatSuccessWasShown(oneTime);
@@ -197,11 +197,11 @@ public class LevelTransitionUseCases {
 	private final SpaceFactory spaceFactory = new FakeSpaceFactory(200, 40);
 	private final FakeUI view = new FakeUI();
 	private final FakeScheduler scheduler = new FakeScheduler();
-	private final Position initialCraftPosition = new Position(20, 20);
+	private final Position initialCraftPosition = new Position(25, 20);
 
 	private final static double initialSpeed = 10;
 	private final static double speedFactor = 10;
-	private final static int ninetyTimes = 90;
+	private final static int eightyEightTimes = 88;
 
 	private final static int oneTime = 1;
 	private final static int zeroTimes = 0;

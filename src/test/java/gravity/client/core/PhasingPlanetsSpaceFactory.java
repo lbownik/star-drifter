@@ -71,6 +71,9 @@ public final class PhasingPlanetsSpaceFactory implements SpaceFactory {
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Position(this.spaceWidth + 50, this.spaceHeight / 2),
 				angleCirculatesAt(1), forwardStopping(3, phasingSpeed)));
+		space.add(new StaticPlanet(rocky, 100, 50,
+				new Position(this.spaceWidth + 75, this.spaceHeight / 2),
+				angleCirculatesAt(1), forwardBackwardLooping(3, phasingSpeed)));
 
 		return space;
 	}

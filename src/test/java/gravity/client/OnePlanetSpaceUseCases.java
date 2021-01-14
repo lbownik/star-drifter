@@ -53,7 +53,7 @@ public class OnePlanetSpaceUseCases {
 
 		this.scheduler.assertThatInvariantsHoldTrue();
 
-		this.scheduler.run(seventyTimes);
+		this.scheduler.run(sixtyEightTimes);
 		
 		this.scheduler.assertThatInvariantsHoldTrue();
 		
@@ -64,7 +64,7 @@ public class OnePlanetSpaceUseCases {
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
 
-		this.view.assertThatRefreshWasCalled(seventyTimes - 1);
+		this.view.assertThatRefreshWasCalled(sixtyEightTimes - 1);
 		this.view.assertThatRefreshWithExplosionWasCalled(oneTime);
 
 		FakeUI.RefreshRecord record = this.view.refreshWithExplosionCalled.get(0);
@@ -74,7 +74,7 @@ public class OnePlanetSpaceUseCases {
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(2);
 		record.assertThatNumberOfPlanetsIs(1);
-		assertEquals(14, planet.getAngle(), 0.001);
+		assertEquals(13.599, planet.getAngle(), 0.001);
 		assertEquals(0, planet.getPhase().getIndex());
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
@@ -96,9 +96,9 @@ public class OnePlanetSpaceUseCases {
 
 	private final static double initialSpeed = 1.0;
 	private final static double speedFactor = 10;
-	private final static int seventyTimes = 70;
-	private final static double finalPosition = 86.7679;
-	private final static double finalSpeed = 12.7089;
+	private final static int sixtyEightTimes = 68;
+	private final static double finalPosition = 81.32257;
+	private final static double finalSpeed = 11.8029;
 
 	private final static int oneTime = 1;
 	private final static int zeroTimes = 0;

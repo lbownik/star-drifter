@@ -94,6 +94,21 @@ public class Phase {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
+	static Phase forwardBackwardLooping(final int maxIndex,
+			final double changeTimeInterval) {
+
+		final int[] delta = { -1 };
+		return new Phase(0, changeTimeInterval, (i) -> {
+			if (i == 0 | i == maxIndex) {
+				delta[0] = -delta[0];
+			}
+			return i + delta[0];
+		});
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
 	private int index;
 	private final double changeTimeInterval;
 	private double threshold = 0;

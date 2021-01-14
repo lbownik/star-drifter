@@ -28,12 +28,13 @@ public class SpaceCraft extends Body {
 	 *
 	 ***************************************************************************/
 	public SpaceCraft(final Position center, final Speed speed,
-			  final BiConsumer<SpaceCraft, Force> forceSniffer) {
+			final BiConsumer<SpaceCraft, Force> forceSniffer) {
 
 		super(1, center, speed, angleFollowsSpeed());
 
 		this.forceSniffer = forceSniffer;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -42,17 +43,29 @@ public class SpaceCraft extends Body {
 
 		super.moveBy(force, timeInterval);
 		this.forceSniffer.accept(this, force);
+		this.phase.incrementTime(timeInterval);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
 	public double getRadius() {
 
-		return 20;
+		return 25;
 	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public Phase getPhase() {
+
+		return this.phase;
+	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private final BiConsumer<SpaceCraft, Force> forceSniffer;
+	private final Phase phase = Phase.forwardStopping(49, 0.8);
 }

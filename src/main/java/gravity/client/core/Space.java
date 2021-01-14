@@ -114,7 +114,7 @@ public final class Space {
 	 ***************************************************************************/
 	public Position getInitialSpaceCraftPosition() {
 
-		return new Position(20, this.height / 2);
+		return new Position(25, this.height / 2);
 	}
 
 	/****************************************************************************

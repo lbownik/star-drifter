@@ -188,10 +188,11 @@ public final class SpaceCanvas {
 	 ***************************************************************************/
 	private void drawWithExplosion(final SpaceCraft craft) {
 
-		final double x = craft.getCenter().getX() - getImage("explosion").getWidth() / 2;
-		final double y = craft.getCenter().getY() - getImage("explosion").getHeight() / 2;
+		final ImageElement image = getImage("explosion");
+		final double x = craft.getCenter().getX() - image.getWidth() / 2;
+		final double y = craft.getCenter().getY() - image.getHeight() / 2;
 
-		this.context.drawImage(getImage("explosion"), x, y);
+		this.context.drawImage(image, x, y);
 	}
 
 	/****************************************************************************
@@ -214,7 +215,7 @@ public final class SpaceCanvas {
 		final ImageElement image = getImage(planet.getType().name());
 		final double size = image.getHeight();
 		this.context.drawImage(image, planet.getPhase().getIndex() * size, 0, size, size,
-				-planet.getRadius(), -planet.getRadius(), size, size);
+				-size / 2, -size / 2, size, size);
 
 		this.context.restore();
 	}
@@ -228,8 +229,10 @@ public final class SpaceCanvas {
 
 		this.context.translate(craft.getCenter().getX(), craft.getCenter().getY());
 		this.context.rotate(craft.getAngle());
-		this.context.drawImage(getImage("spaceship"), -craft.getRadius(),
-				-craft.getRadius());
+		final ImageElement image = getImage("spaceship");
+		final double size = image.getHeight();
+		this.context.drawImage(image, craft.getPhase().getIndex() * size, 0, size, size,
+				-size / 2, -size / 2, size, size);
 
 		this.context.restore();
 	}

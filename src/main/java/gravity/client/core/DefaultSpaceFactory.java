@@ -22,6 +22,7 @@ import static gravity.client.core.Body.angleFollowsSpeed;
 import static gravity.client.core.Body.angleIsFixedAt;
 import static gravity.client.core.Phase.constant;
 import static gravity.client.core.Phase.forwardLooping;
+import static gravity.client.core.Phase.forwardBackwardLooping;
 import static gravity.client.core.Planet.Type.blackHole;
 import static gravity.client.core.Planet.Type.earthLike;
 import static gravity.client.core.Planet.Type.gas;
@@ -95,7 +96,8 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 				new Position(6 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
 				angleIsFixedAt(0), forwardLooping(maxPhaseIndex, 0.8)));
 		space.add(new LoosePlanet(meteorite, 10, 15, new Position(50, this.spaceHeight),
-				new Speed(0, -10), constant(0), this.spaceWidth));
+				new Speed(0, -10), forwardBackwardLooping(maxPhaseIndex, 0.8),
+				this.spaceWidth));
 
 		return space;
 	}
@@ -134,7 +136,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 
 		space.add(new LoosePlanet(meteorite, 10, 15,
 				new Position(100, this.spaceHeight + 200), new Speed(5, -30),
-				Phase.constant(0), this.spaceWidth * 2));
+				forwardBackwardLooping(maxPhaseIndex, 0.8), this.spaceWidth * 2));
 
 		return space;
 	}

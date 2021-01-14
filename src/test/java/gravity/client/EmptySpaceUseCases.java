@@ -210,7 +210,7 @@ public class EmptySpaceUseCases {
 
 		this.scheduler.assertThatInvariantsHoldTrue();
 		
-		this.scheduler.run(thrityFourTimes);
+		this.scheduler.run(twentyFiveTimes);
 		
 		this.scheduler.assertThatInvariantsHoldTrue();
 
@@ -219,10 +219,10 @@ public class EmptySpaceUseCases {
 		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
-		this.view.assertThatRefreshWasCalled(thrityFourTimes);
+		this.view.assertThatRefreshWasCalled(twentyFiveTimes);
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled
-				.get(thrityFourTimes - 1);
+				.get(twentyFiveTimes - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
 		record.assertThatCraftSpeedIs(new Speed(initialSpeed, 0));
 		record.assertThatCraftAngleIs(0);
@@ -351,7 +351,7 @@ public class EmptySpaceUseCases {
 
 		this.scheduler.assertThatInvariantsHoldTrue();
 		
-		this.scheduler.run(thrityFourTimes);
+		this.scheduler.run(fourtyTwoTimes);
 		
 		this.scheduler.assertThatInvariantsHoldTrue();
 
@@ -360,10 +360,10 @@ public class EmptySpaceUseCases {
 		
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 
-		this.view.assertThatRefreshWasCalled(thrityFourTimes);
+		this.view.assertThatRefreshWasCalled(fourtyTwoTimes);
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled
-				.get(thrityFourTimes - 1);
+				.get(fourtyTwoTimes - 1);
 		record.assertThatCraftPositionIs(finalCraftPositionToLeft);
 		record.assertThatCraftSpeedIs(new Speed(-initialSpeed, 0));
 		record.assertThatCraftAngleIs(PI);
@@ -386,16 +386,18 @@ public class EmptySpaceUseCases {
 	private final SpaceFactory spaceFactory = new EmptySpaceFactory(40, 40);
 	private final FakeUI view = new FakeUI();
 	private final FakeScheduler scheduler = new FakeScheduler();
-	private final Position initialCraftPosition = new Position(20, 20);
-	private final Position finalCraftPositionToLeft = new Position(20 - finalPosition, 20);
-	private final Position finalCraftPositionToRight = new Position(20 + finalPosition, 20);
-	private final Position finalCraftPositionToTop = new Position(20, 20 - finalPosition);
-	private final Position finalCraftPositionToBottom = new Position(20, 20 + finalPosition);
+	private final Position initialCraftPosition = new Position(25, 20);
+	private final Position finalCraftPositionToLeft = new Position(-0.2, 20);
+	private final Position finalCraftPositionToRight = new Position(40, 20);
+	private final Position finalCraftPositionToTop = new Position(25, 20 - finalPosition);
+	private final Position finalCraftPositionToBottom = new Position(25, 20 + finalPosition);
 
 	private final static double timeInrement = 0.2;
 	private final static double initialSpeed = 3.0;
 	private final static double speedFactor = 10;
 	private final static int thrityFourTimes = 34;
+	private final static int fourtyTwoTimes = 42;
+	private final static int twentyFiveTimes = 25;
 	private final static double finalPosition = 20.4;
 
 	private final static int oneTime = 1;

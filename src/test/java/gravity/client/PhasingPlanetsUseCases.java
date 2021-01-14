@@ -51,6 +51,7 @@ public class PhasingPlanetsUseCases {
 		assertEquals(1, record.planets.get(1).getPhase().getIndex());
 		assertEquals(2, record.planets.get(2).getPhase().getIndex());
 		assertEquals(1, record.planets.get(3).getPhase().getIndex());
+		assertEquals(1, record.planets.get(4).getPhase().getIndex());
 
 		this.scheduler.run(oneTime);
 
@@ -58,6 +59,7 @@ public class PhasingPlanetsUseCases {
 		assertEquals(2, record.planets.get(1).getPhase().getIndex());
 		assertEquals(1, record.planets.get(2).getPhase().getIndex());
 		assertEquals(2, record.planets.get(3).getPhase().getIndex());
+		assertEquals(2, record.planets.get(4).getPhase().getIndex());
 
 		this.scheduler.run(oneTime);
 
@@ -65,6 +67,7 @@ public class PhasingPlanetsUseCases {
 		assertEquals(3, record.planets.get(1).getPhase().getIndex());
 		assertEquals(0, record.planets.get(2).getPhase().getIndex());
 		assertEquals(3, record.planets.get(3).getPhase().getIndex());
+		assertEquals(3, record.planets.get(4).getPhase().getIndex());
 		
 		this.scheduler.run(oneTime);
 
@@ -72,6 +75,7 @@ public class PhasingPlanetsUseCases {
 		assertEquals(0, record.planets.get(1).getPhase().getIndex());
 		assertEquals(3, record.planets.get(2).getPhase().getIndex());
 		assertEquals(3, record.planets.get(3).getPhase().getIndex());
+		assertEquals(2, record.planets.get(4).getPhase().getIndex());
 		
 		this.scheduler.run(oneTime);
 
@@ -79,6 +83,15 @@ public class PhasingPlanetsUseCases {
 		assertEquals(1, record.planets.get(1).getPhase().getIndex());
 		assertEquals(2, record.planets.get(2).getPhase().getIndex());
 		assertEquals(3, record.planets.get(3).getPhase().getIndex());
+		assertEquals(1, record.planets.get(4).getPhase().getIndex());
+		
+		this.scheduler.run(oneTime);
+		
+		assertEquals(0, record.planets.get(4).getPhase().getIndex());
+		
+		this.scheduler.run(oneTime);
+		
+		assertEquals(1, record.planets.get(4).getPhase().getIndex());
 	}
 	/****************************************************************************
 	 *
