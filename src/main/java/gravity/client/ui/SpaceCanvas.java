@@ -229,7 +229,7 @@ public final class SpaceCanvas {
 
 		this.context.translate(craft.getCenter().getX(), craft.getCenter().getY());
 		this.context.rotate(craft.getAngle());
-		final ImageElement image = getImage("spaceship");
+		final ImageElement image = getImage("spacecraft");
 		final double size = image.getHeight();
 		this.context.drawImage(image, craft.getPhase().getIndex() * size, 0, size, size,
 				-size / 2, -size / 2, size, size);
