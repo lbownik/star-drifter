@@ -1,5 +1,5 @@
 # Star Drifter
-Star Drifter - a multi level, gravity based space game (play **[here](https://star-drifter.uc.r.appspot.com/)**).
+Star Drifter - a multi level, gravity based space game (play **[here](https://star-drifter.appspot.com/)**).
 
 ## Use cases
 The following diagram presentes the use cases implemented by the game.
