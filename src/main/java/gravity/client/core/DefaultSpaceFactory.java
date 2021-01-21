@@ -51,7 +51,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 		this.spaceWidth = spaceWidth;
 		this.spaceHeight = spaceHeight;
 
-		// this.constellations.add(this::getPlanetConstellation0);
+		this.constellations.add(this::getPlanetConstellation0);
 		this.constellations.add(this::getPlanetConstellation1);
 		this.constellations.add(this::getPlanetConstellation2);
 		this.constellations.add(this::getPlanetConstellation3);
@@ -66,10 +66,10 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	@Override
 	public Space create(final int level) {
 
-		throwIf(level < 1 | level > getMaxLevel(),
-				() -> "Level mustbe between 1 and " + getMaxLevel());
+		throwIf(level < 0 | level > getMaxLevel(),
+				() -> "Level mustbe between 0 and " + getMaxLevel());
 
-		return this.constellations.get(level - 1).get();
+		return this.constellations.get(level).get();
 	}
 
 	/****************************************************************************
@@ -225,7 +225,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	public int getMaxLevel() {
 
-		return this.constellations.size();
+		return this.constellations.size()-1;
 	}
 
 	/****************************************************************************
