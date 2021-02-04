@@ -57,11 +57,27 @@ public final class Space {
 			this.spaceCraft.moveBy(this.spaceCraft.gravitationalForceFrom(this.planets),
 					intervel);
 			this.spaceCraft.incrementTime(intervel);
-			if (hasSpaceCraftCrashed()) {
+
+			if (hasSpaceCraftCrashed() && !isSpaceCraftBurning()) {
 				this.spaceCraft = new FireBall(this.spaceCraft.getCenter());
-				//System.out.println("fireball!!!!!");
 			}
 		}
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public boolean isSpaceCraftBurning() {
+
+		return this.spaceCraft.getName().equals(FireBall.name);
+	}
+	
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public boolean hasSpaceCraftFinishedBurning() {
+
+		return this.spaceCraft.getPhaseIndex() == FireBall.maxIndex;
 	}
 
 	/****************************************************************************

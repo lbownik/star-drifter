@@ -17,9 +17,9 @@
 
 package gravity.client;
 
-import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static java.lang.Math.PI;
+
+import org.junit.Test;
 
 import gravity.client.app.Presenter;
 import gravity.client.core.FakeSpaceFactory;
@@ -63,7 +63,6 @@ public class OnePlanetSpaceUseCases {
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
 
 		this.view.assertThatRefreshWasCalled(sixtyEightTimes);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(sixtyEightTimes -1);
 		Planet planet = record.planets.get(0);
@@ -97,7 +96,6 @@ public class OnePlanetSpaceUseCases {
 	private final static double speedFactor = 10;
 	private final static int sixtyEightTimes = 68;
 	private final static double finalPosition = 81.32257;
-	private final static double finalSpeed = 11.8029;
 
 	private final static int oneTime = 1;
 	private final static int zeroTimes = 0;

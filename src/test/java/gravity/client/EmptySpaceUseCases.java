@@ -17,17 +17,17 @@
 
 package gravity.client;
 
+import static java.lang.Math.PI;
+
 import org.junit.Test;
 
 import gravity.client.app.Presenter;
 import gravity.client.core.EmptySpaceFactory;
-import gravity.client.core.FakeSpaceFactory;
 import gravity.client.core.Position;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
 import gravity.client.fakes.FakeScheduler;
 import gravity.client.fakes.FakeUI;
-import static java.lang.Math.PI;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -58,7 +58,6 @@ public class EmptySpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(zeroTimes);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}
@@ -98,7 +97,6 @@ public class EmptySpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(zeroTimes);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}
@@ -140,7 +138,6 @@ public class EmptySpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(zeroTimes);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}
@@ -187,7 +184,6 @@ public class EmptySpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(zeroTimes);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}
@@ -234,7 +230,6 @@ public class EmptySpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(oneTime);
 		this.view.assertThatFailureWasShown(zeroTimes);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}
@@ -281,7 +276,6 @@ public class EmptySpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(oneTime);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}
@@ -328,7 +322,6 @@ public class EmptySpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(oneTime);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}
@@ -375,7 +368,6 @@ public class EmptySpaceUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(oneTime);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}

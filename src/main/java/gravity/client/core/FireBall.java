@@ -27,7 +27,9 @@ public class FireBall extends Body {
 	 ***************************************************************************/
 	public FireBall(final Position center) {
 
-		super(0.0001, 25, center, Speed.zero(), angleIsFixedAt(0), Phase.constant(0));
+		super(0.0001, 25, center, Speed.zero(), angleIsFixedAt(0),
+				Phase.constant(4));
+				//Phase.forwardStopping(maxIndex, 0.8));
 	}
 
 	/****************************************************************************
@@ -36,10 +38,12 @@ public class FireBall extends Body {
 	@Override
 	public String getName() {
 
-		return "fireball";
+		return name;
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
+	public static String name = "fireball";
+	public static int maxIndex = 25;
 }

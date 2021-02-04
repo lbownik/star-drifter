@@ -10,7 +10,6 @@ import gravity.client.app.Presenter;
 import gravity.client.core.Body;
 import gravity.client.core.Planet;
 import gravity.client.core.Position;
-import gravity.client.core.SpaceCraft;
 import gravity.client.core.Speed;
 
 /*******************************************************************************
@@ -138,17 +137,6 @@ public class FakeUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void refreshWithExplosion(final SpaceCraft craft, final List<Planet> planets,
-			final int score, final int level, final int numOfLevels) {
-
-		this.refreshWithExplosionCalled
-				.add(new RefreshRecord(craft, planets, score, level, numOfLevels));
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	@Override
 	public void showFailure() {
 
 		this.failureShown.add(true);
@@ -250,14 +238,6 @@ public class FakeUI implements Presenter.UI {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void assertThatRefreshWithExplosionWasCalled(final int numberOfTimes) {
-
-		assertEquals(numberOfTimes, this.refreshWithExplosionCalled.size());
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	private void assertThatSpacecraftWasNeverNullIn(final List<RefreshRecord> records) {
 
 		assertTrue(records.stream().map(r -> r.craft).allMatch(c -> c != null));
@@ -327,24 +307,18 @@ public class FakeUI implements Presenter.UI {
 	public void assertThatInvariantsHoldTrue() {
 
 		assertThatSpacecraftWasNeverNullIn(this.refreshCalled);
-		assertThatSpacecraftWasNeverNullIn(this.refreshWithExplosionCalled);
 		assertThatSpacecraftWasNeverNullIn(this.refreshWithSpeedCalled);
 
 		assertThatPlanetsWereNeverNullIn(this.refreshCalled);
-		assertThatPlanetsWereNeverNullIn(this.refreshWithExplosionCalled);
 		assertThatPlanetsWereNeverNullIn(this.refreshWithSpeedCalled);
 
 		assertThatLevelWasAlwaysPositiveIn(this.refreshCalled);
-		assertThatLevelWasAlwaysPositiveIn(this.refreshWithExplosionCalled);
 		assertThatLevelWasAlwaysPositiveIn(this.refreshWithSpeedCalled);
 
 		assertThatScoreWasNeverNegativeIn(this.refreshCalled);
-		assertThatScoreWasNeverNegativeIn(this.refreshWithExplosionCalled);
 		assertThatScoreWasNeverNegativeIn(this.refreshWithSpeedCalled);
 
 		assertThatNumberOfLevelsIsGreaterOrEqualToCurrentLevelIn(this.refreshCalled);
-		assertThatNumberOfLevelsIsGreaterOrEqualToCurrentLevelIn(
-				this.refreshWithExplosionCalled);
 		assertThatNumberOfLevelsIsGreaterOrEqualToCurrentLevelIn(
 				this.refreshWithSpeedCalled);
 	}
@@ -359,7 +333,6 @@ public class FakeUI implements Presenter.UI {
 		this.failureShown.clear();
 		this.launchPlayed.clear();
 		this.refreshCalled.clear();
-		this.refreshWithExplosionCalled.clear();
 		this.refreshWithSpeedCalled.clear();
 		this.successShown.clear();
 		this.aimingDisabled.clear();
@@ -378,6 +351,5 @@ public class FakeUI implements Presenter.UI {
 	public List<Integer> successShown = new ArrayList<>();
 	public List<RefreshRecord> refreshCalled = new ArrayList<>();
 	public List<RefreshRecord> refreshWithSpeedCalled = new ArrayList<>();
-	public List<RefreshRecord> refreshWithExplosionCalled = new ArrayList<>();
 
 }

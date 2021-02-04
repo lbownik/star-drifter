@@ -83,7 +83,6 @@ public class LevelTransitionUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(zeroTimes);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}
@@ -133,7 +132,6 @@ public class LevelTransitionUseCases {
 		this.view.assertThatExplosionWasPlayed(zeroTimes);
 		this.view.assertThatSuccessWasShown(zeroTimes);
 		this.view.assertThatFailureWasShown(zeroTimes);
-		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 		this.view.assertThatRefreshWithSpeedWasCalled(zeroTimes);
 		this.view.assertThatInvariantsHoldTrue();
 	}

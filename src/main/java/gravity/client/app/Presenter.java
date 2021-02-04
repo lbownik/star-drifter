@@ -131,29 +131,40 @@ public final class Presenter {
 	 ***************************************************************************/
 	public void incrementTime(final int interval_ms) {
 
-		this.engine.incrementTime(interval_ms);
-
-		switch (this.engine.getGameResult()) {
-		case success:
-			this.scheduler.cancel();
-			refreshView();
-			this.view.showSuccess(this.engine.getCurrentScore());
-			return;
-		case failedMissed:
-			this.scheduler.cancel();
-			refreshView();
-			this.view.showFailure();
-			return;
-		case failedCrashed:
-			this.scheduler.cancel();
-			this.view.playExlposion();
-			refreshView();
-			this.view.showFailure();
-			return;
-		default:
-			this.refreshCommand.run();
-			return;
-		}
+		this.engine.incrementTime(interval_ms, this);
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	void inProgress() {
+		
+		this.refreshCommand.run();
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	void crashed() {
+		
+		this.view.playExlposion();
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	void success() {
+		
+		this.scheduler.cancel();
+		refreshView();
+		this.view.showSuccess(this.engine.getCurrentScore());
+	}
+	
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	void failure() {
+		
+		this.scheduler.cancel();
+		refreshView();
+		this.view.showFailure();
 	}
 
 	/****************************************************************************

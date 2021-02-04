@@ -30,19 +30,12 @@ import gravity.client.core.Speed;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public final class Engine {
+final class Engine {
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public enum Result {
-		notStarted, inPorgress, success, failedCrashed, failedMissed;
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	public Engine(final SpaceFactory spaceFactory, final int initialLevel) {
+	Engine(final SpaceFactory spaceFactory, final int initialLevel) {
 
 		this.spaceFactory = spaceFactory;
 		loadLevel(initialLevel);
@@ -51,36 +44,31 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void incrementTime(final int interval_ms) {
+	void incrementTime(final int interval_ms, final Presenter presenter) {
 
 		final double refreshRateIndependentInterval = interval_ms * gamePace;
 		this.space.incrementTime(refreshRateIndependentInterval);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	public Result getGameResult() {
-
+		
 		if (this.space.getSpaceCraft() == null) {
-			return Result.notStarted;
+			presenter.inProgress();
 		} else if (this.space.hasSpaceCraftCrashed()) {
-			return Result.failedCrashed;
+			presenter.crashed();
+			presenter.failure();
 		} else if (this.space.isSpaceCraftBeyondBounds()) {
 			if (this.space.hasSpaceCraftPassedRightEdge()) {
-				return Result.success;
+				presenter.success();
 			} else {
-				return Result.failedMissed;
+				presenter.failure();
 			}
 		} else {
-			return Result.inPorgress;
+			presenter.inProgress();
 		}
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void setSpaceCraftSpeed(double cursorX, double cursorY) {
+	void setSpaceCraftSpeed(double cursorX, double cursorY) {
 
 		final Speed speed = new Speed(cursorX - getSpaceCraft().getCenter().getX(),
 				cursorY - getSpaceCraft().getCenter().getY());
@@ -91,7 +79,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void lounchSpaceCraft() {
+	void lounchSpaceCraft() {
 
 		this.space.setSpaceCraft(this.craft);
 	}
@@ -99,7 +87,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void loadLevel(final int level) {
+	void loadLevel(final int level) {
 
 		this.currentLevel = level;
 
@@ -119,7 +107,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void reloadLevel() {
+	void reloadLevel() {
 
 		this.currentScore = 0.0;
 
@@ -129,7 +117,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void loadNextLevel() {
+	void loadNextLevel() {
 
 		this.totalScore += this.currentScore;
 		this.currentScore = 0.0;
@@ -140,7 +128,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public List<Planet> getPlanets() {
+	List<Planet> getPlanets() {
 
 		return this.space.getPlanets();
 	}
@@ -148,7 +136,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Body getSpaceCraft() {
+	Body getSpaceCraft() {
 
 		return this.space.getSpaceCraft() != null ? this.space.getSpaceCraft()
 				: this.craft;
@@ -157,7 +145,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public int getLevelsCount() {
+	int getLevelsCount() {
 
 		return this.spaceFactory.getMaxLevel();
 	}
@@ -165,7 +153,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public int getCurrentLevelNo() {
+	int getCurrentLevelNo() {
 
 		return this.currentLevel;
 	}
@@ -173,7 +161,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public int getCurrentScore() {
+	int getCurrentScore() {
 
 		return (int) this.currentScore;
 	}
@@ -181,7 +169,7 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public int getTotalScore() {
+	int getTotalScore() {
 
 		return (int) this.totalScore;
 	}
