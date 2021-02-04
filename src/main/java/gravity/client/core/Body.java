@@ -32,17 +32,21 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Body(final double mass, final Position center, final Speed speed,
-			final IncrementableOperator angleStrategy) {
+	public Body(final double mass, final double radius, final Position center, final Speed speed,
+			final IncrementableOperator angleStrategy, final Phase phase) {
 
 		throwIf(mass < 0, "Negative mass");
+		throwIf(radius < 0, "Negative radius");
 		throwIfNull(center, "Null center");
 		throwIfNull(speed, "Null speed");
 		throwIfNull(angleStrategy, "Null angleStrategy");
+		throwIfNull(phase, "Null phase");
 
 		this.mass = mass;
+		this.radius = radius;
 		this.center = center;
 		this.speed = speed;
+		this.phase = phase;
 		this.angleStrategy = angleStrategy;
 	}
 
@@ -65,7 +69,7 @@ public abstract class Body {
 			final double dx = body.center.dx(this.center);
 			final double dy = body.center.dy(this.center);
 			final double distance = hypot(dx, dy);
-			// appearently true gravity does not make game very exiting
+			// appearently true gravity does not make the game very exiting
 			final double squaredDistance = distance;// * distance;
 
 			if (squaredDistance == 0.0) {
@@ -109,6 +113,7 @@ public abstract class Body {
 	public void incrementTime(final double interval) {
 
 		this.angleStrategy.incrementTime(interval);
+		this.phase.incrementTime(interval);
 	}
 
 	/****************************************************************************
@@ -118,6 +123,7 @@ public abstract class Body {
 
 		return this.center.distanceTo(other.center);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -150,10 +156,27 @@ public abstract class Body {
 
 		this.speed = speed;
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public abstract double getRadius();
+	public double getRadius() {
+
+		return this.radius;
+	}
+	
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public abstract String getName();
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public int getPhaseIndex() {
+
+		return this.phase.getIndex();
+	}
 
 	/****************************************************************************
 	 *
@@ -184,7 +207,9 @@ public abstract class Body {
 	 ***************************************************************************/
 	private final double mass;
 	private Position center;
+	private final double radius;
 	private Speed speed;
+	private final Phase phase;
 	private final IncrementableOperator angleStrategy;
 
 	private static final double G = 1;
@@ -207,8 +232,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private static final class CircularOperator
-			implements IncrementableOperator {
+	private static final class CircularOperator implements IncrementableOperator {
 
 		/*************************************************************************
 		 *
@@ -226,6 +250,7 @@ public abstract class Body {
 
 			return this.angle;
 		}
+
 		/*************************************************************************
 		 *
 		 ************************************************************************/

@@ -19,6 +19,7 @@ package gravity.client.app;
 
 import java.util.List;
 
+import gravity.client.core.Body;
 import gravity.client.core.Force;
 import gravity.client.core.Planet;
 import gravity.client.core.Space;
@@ -61,9 +62,9 @@ public final class Engine {
 	 ***************************************************************************/
 	public Result getGameResult() {
 
-		if(this.space.getSpaceCraft() == null) {
+		if (this.space.getSpaceCraft() == null) {
 			return Result.notStarted;
-		}else if (this.space.hasSpaceCraftCrashed()) {
+		} else if (this.space.hasSpaceCraftCrashed()) {
 			return Result.failedCrashed;
 		} else if (this.space.isSpaceCraftBeyondBounds()) {
 			if (this.space.hasSpaceCraftPassedRightEdge()) {
@@ -86,6 +87,7 @@ public final class Engine {
 		speed.scaleBy(0.1);
 		getSpaceCraft().setSpeed(speed);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -99,11 +101,10 @@ public final class Engine {
 	 ***************************************************************************/
 	public void loadLevel(final int level) {
 
-		
 		this.currentLevel = level;
 
 		this.space = this.spaceFactory.create(level);
-		this.craft = new SpaceCraft(this.space.getInitialSpaceCraftPosition(), 
+		this.craft = new SpaceCraft(this.space.getInitialSpaceCraftPosition(),
 				Speed.zero(), this::sniffForce);
 	}
 
@@ -133,8 +134,7 @@ public final class Engine {
 		this.totalScore += this.currentScore;
 		this.currentScore = 0.0;
 
-		loadLevel(
-				this.currentLevel == getLevelsCount() ? 1 : this.currentLevel + 1);
+		loadLevel(this.currentLevel == getLevelsCount() ? 1 : this.currentLevel + 1);
 	}
 
 	/****************************************************************************
@@ -148,9 +148,10 @@ public final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public SpaceCraft getSpaceCraft() {
+	public Body getSpaceCraft() {
 
-		return this.craft;
+		return this.space.getSpaceCraft() != null ? this.space.getSpaceCraft()
+				: this.craft;
 	}
 
 	/****************************************************************************
@@ -194,6 +195,6 @@ public final class Engine {
 	private int currentLevel = 0;
 	private double currentScore = 0;
 	private double totalScore = 0;
-	
+
 	private final double gamePace = 0.02;
 }

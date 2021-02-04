@@ -44,11 +44,6 @@ public final class Space {
 	 ***************************************************************************/
 	public void incrementTime(final double intervel) {
 
-		if (this.spaceCraft != null) {
-			this.spaceCraft.moveBy(this.spaceCraft.gravitationalForceFrom(this.planets),
-					intervel);
-			this.spaceCraft.incrementTime(intervel);
-		}
 		final List<Force> forces = this.planets.stream()
 				.map(planet -> planet.gravitationalForceFrom(this.planets))
 				.collect(toList());
@@ -58,6 +53,15 @@ public final class Space {
 			this.planets.get(i).incrementTime(intervel);
 		});
 
+		if (this.spaceCraft != null) {
+			this.spaceCraft.moveBy(this.spaceCraft.gravitationalForceFrom(this.planets),
+					intervel);
+			this.spaceCraft.incrementTime(intervel);
+			if (hasSpaceCraftCrashed()) {
+				this.spaceCraft = new FireBall(this.spaceCraft.getCenter());
+				//System.out.println("fireball!!!!!");
+			}
+		}
 	}
 
 	/****************************************************************************
@@ -96,7 +100,7 @@ public final class Space {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public SpaceCraft getSpaceCraft() {
+	public Body getSpaceCraft() {
 
 		return this.spaceCraft;
 	}
@@ -131,5 +135,5 @@ public final class Space {
 	private final int width;
 	private final int height;
 	private final List<Planet> planets = new ArrayList<>();
-	private SpaceCraft spaceCraft;
+	private Body spaceCraft;
 }

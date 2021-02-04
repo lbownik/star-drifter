@@ -18,6 +18,7 @@
 package gravity.client.core;
 
 import java.util.function.BiConsumer;
+import static gravity.client.core.Phase.forwardStopping;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -30,7 +31,7 @@ public class SpaceCraft extends Body {
 	public SpaceCraft(final Position center, final Speed speed,
 			final BiConsumer<SpaceCraft, Force> forceSniffer) {
 
-		super(1, center, speed, angleFollowsSpeed());
+		super(1, 25, center, speed, angleFollowsSpeed(), forwardStopping(49, 0.8));
 
 		this.forceSniffer = forceSniffer;
 	}
@@ -43,29 +44,19 @@ public class SpaceCraft extends Body {
 
 		super.moveBy(force, timeInterval);
 		this.forceSniffer.accept(this, force);
-		this.phase.incrementTime(timeInterval);
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
-	public double getRadius() {
+	public String getName() {
 
-		return 25;
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	public Phase getPhase() {
-
-		return this.phase;
+		return "spacecraft";
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private final BiConsumer<SpaceCraft, Force> forceSniffer;
-	private final Phase phase = Phase.forwardStopping(49, 0.8);
 }

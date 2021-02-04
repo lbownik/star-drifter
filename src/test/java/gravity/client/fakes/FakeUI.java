@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gravity.client.app.Presenter;
+import gravity.client.core.Body;
 import gravity.client.core.Planet;
 import gravity.client.core.Position;
 import gravity.client.core.SpaceCraft;
@@ -25,7 +26,7 @@ public class FakeUI implements Presenter.UI {
 		/*************************************************************************
 		 *
 		 ************************************************************************/
-		public RefreshRecord(final SpaceCraft craft, final List<Planet> planets,
+		public RefreshRecord(final Body craft, final List<Planet> planets,
 				final int score, final int level, final int numOfLevels) {
 
 			this.craft = craft;
@@ -84,11 +85,18 @@ public class FakeUI implements Presenter.UI {
 
 			assertEquals(angle, this.craft.getAngle(), 0.0001);
 		}
+		/*************************************************************************
+		 *
+		 ************************************************************************/
+		public void assertThatCraftNameIs(final String name) {
+
+			assertEquals(name, this.craft.getName());
+		}
 
 		/*************************************************************************
 		 *
 		 ************************************************************************/
-		public final SpaceCraft craft;
+		public final Body craft;
 		public final List<Planet> planets;
 		public final int score;
 		public final int level;
@@ -108,7 +116,7 @@ public class FakeUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void refresh(final SpaceCraft craft, final List<Planet> planets,
+	public void refresh(final Body craft, final List<Planet> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		this.refreshCalled
@@ -119,7 +127,7 @@ public class FakeUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void refreshWithSpeed(final SpaceCraft craft, final List<Planet> planets,
+	public void refreshWithSpeed(final Body craft, final List<Planet> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		this.refreshWithSpeedCalled

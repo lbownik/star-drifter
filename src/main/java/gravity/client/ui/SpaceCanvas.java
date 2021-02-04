@@ -34,7 +34,6 @@ import com.google.gwt.user.client.Event;
 
 import gravity.client.core.Body;
 import gravity.client.core.Planet;
-import gravity.client.core.SpaceCraft;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -105,7 +104,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void refresh(final SpaceCraft craft, final List<Planet> planets,
+	public void refresh(final Body craft, final List<Planet> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		clear();
@@ -115,7 +114,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void refreshWithSpeed(final SpaceCraft craft, final List<Planet> planets,
+	public void refreshWithSpeed(final Body craft, final List<Planet> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		clear();
@@ -125,17 +124,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void refreshWithExplosion(final SpaceCraft craft, final List<Planet> planets,
-			final int score, final int level, final int numOfLevels) {
-
-		clear();
-		drawWithExplosion(planets, craft, score, level, numOfLevels);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private void draw(final List<Planet> planets, final SpaceCraft craft,
+	private void draw(final List<Planet> planets, final Body craft,
 			final int score, final int level, final int numOfLevels) {
 
 		draw(planets);
@@ -146,7 +135,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void drawWithSpeed(final List<Planet> planets, final SpaceCraft craft,
+	private void drawWithSpeed(final List<Planet> planets, final Body craft,
 			final int score, final int level, final int numOfLevels) {
 
 		draw(planets);
@@ -157,18 +146,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void drawWithExplosion(final List<Planet> planets, final SpaceCraft craft,
-			final int score, final int level, final int numOfLevels) {
-
-		draw(planets);
-		drawWithExplosion(craft);
-		draw(score, level, numOfLevels);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private void drawWithSpeed(final SpaceCraft craft) {
+	private void drawWithSpeed(final Body craft) {
 
 		draw(craft);
 
@@ -186,18 +164,6 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void drawWithExplosion(final SpaceCraft craft) {
-
-		final ImageElement image = getImage("explosion");
-		final double x = craft.getCenter().getX() - image.getWidth() / 2;
-		final double y = craft.getCenter().getY() - image.getHeight() / 2;
-
-		this.context.drawImage(image, x, y);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	private void draw(final List<Planet> planets) {
 
 		planets.forEach(planet -> draw(planet));
@@ -206,32 +172,15 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void draw(final Planet planet) {
+	private void draw(final Body body) {
 
 		this.context.save();
 
-		this.context.translate(planet.getCenter().getX(), planet.getCenter().getY());
-		this.context.rotate(planet.getAngle());
-		final ImageElement image = getImage(planet.getType().name());
+		this.context.translate(body.getCenter().getX(), body.getCenter().getY());
+		this.context.rotate(body.getAngle());
+		final ImageElement image = getImage(body.getName());
 		final double size = image.getHeight();
-		this.context.drawImage(image, planet.getPhase().getIndex() * size, 0, size, size,
-				-size / 2, -size / 2, size, size);
-
-		this.context.restore();
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private void draw(final SpaceCraft craft) {
-
-		this.context.save();
-
-		this.context.translate(craft.getCenter().getX(), craft.getCenter().getY());
-		this.context.rotate(craft.getAngle());
-		final ImageElement image = getImage("spacecraft");
-		final double size = image.getHeight();
-		this.context.drawImage(image, craft.getPhase().getIndex() * size, 0, size, size,
+		this.context.drawImage(image, body.getPhaseIndex() * size, 0, size, size,
 				-size / 2, -size / 2, size, size);
 
 		this.context.restore();

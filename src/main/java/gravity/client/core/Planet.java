@@ -39,13 +39,10 @@ public class Planet extends Body {
 			final Position center, final Speed speed,
 			final IncrementableOperator angleStrategy, final Phase phase) {
 
-		super(mass, center, speed, angleStrategy);
+		super(mass, radius, center, speed, angleStrategy, phase);
 		throwIf(radius < 0, "Negative radius.");
-		throwIfNull(phase, "Null phase.");
 
 		this.type = type;
-		this.radius = radius;
-		this.phase = phase;
 	}
 
 	/****************************************************************************
@@ -61,40 +58,23 @@ public class Planet extends Body {
 	 *
 	 ***************************************************************************/
 	@Override
-	public double getRadius() {
+	public void incrementTime(final double interval) {
 
-		return this.radius;
+		super.incrementTime(interval);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
-	public void incrementTime(final double interval) {
+	public String getName() {
 
-		super.incrementTime(interval);
-		this.phase.incrementTime(interval);
+		return this.type.name();
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Type getType() {
 
-		return this.type;
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	public Phase getPhase() {
-
-		return this.phase;
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private final double radius;
 	private final Type type;
-	private final Phase phase;
 }

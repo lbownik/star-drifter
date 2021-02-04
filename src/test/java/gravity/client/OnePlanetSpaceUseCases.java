@@ -56,26 +56,25 @@ public class OnePlanetSpaceUseCases {
 		this.scheduler.run(sixtyEightTimes);
 		
 		this.scheduler.assertThatInvariantsHoldTrue();
-		
-		this.scheduler.assertThatInvariantsHoldTrue();
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
 		
 		this.view.assertThatAimingEnabledWasCalled(oneTime);
 		this.view.assertThatAimingDisabledWasCalled(oneTime);
 
-		this.view.assertThatRefreshWasCalled(sixtyEightTimes - 1);
-		this.view.assertThatRefreshWithExplosionWasCalled(oneTime);
+		this.view.assertThatRefreshWasCalled(sixtyEightTimes);
+		this.view.assertThatRefreshWithExplosionWasCalled(zeroTimes);
 
-		FakeUI.RefreshRecord record = this.view.refreshWithExplosionCalled.get(0);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(sixtyEightTimes -1);
 		Planet planet = record.planets.get(0);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
-		record.assertThatCraftSpeedIs(new Speed(finalSpeed, 0));
+		record.assertThatCraftSpeedIs(Speed.zero());
+		record.assertThatCraftNameIs("fireball");
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(2);
 		record.assertThatNumberOfPlanetsIs(1);
 		assertEquals(13.599, planet.getAngle(), 0.001);
-		assertEquals(0, planet.getPhase().getIndex());
+		assertEquals(0, planet.getPhaseIndex());
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
 		this.view.assertThatExplosionWasPlayed(oneTime);

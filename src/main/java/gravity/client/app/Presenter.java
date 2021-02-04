@@ -19,8 +19,8 @@ package gravity.client.app;
 
 import java.util.List;
 
+import gravity.client.core.Body;
 import gravity.client.core.Planet;
-import gravity.client.core.SpaceCraft;
 import gravity.client.core.SpaceFactory;
 
 /*******************************************************************************
@@ -35,13 +35,10 @@ public final class Presenter {
 		
 		void setPresenter(Presenter presenter);
 
-		void refresh(SpaceCraft craft, List<Planet> planets, int score, int level,
+		void refresh(Body craft, List<Planet> planets, int score, int level,
 				int numOfLevels);
 
-		void refreshWithSpeed(SpaceCraft craft, List<Planet> planets, int score,
-				int level, int numOfLevels);
-
-		void refreshWithExplosion(SpaceCraft craft, List<Planet> planets, int score,
+		void refreshWithSpeed(Body craft, List<Planet> planets, int score,
 				int level, int numOfLevels);
 
 		void showFailure();
@@ -149,7 +146,8 @@ public final class Presenter {
 			return;
 		case failedCrashed:
 			this.scheduler.cancel();
-			refreshViewWithExplosion();
+			this.view.playExlposion();
+			refreshView();
 			this.view.showFailure();
 			return;
 		default:
@@ -176,18 +174,6 @@ public final class Presenter {
 		this.view.refreshWithSpeed(this.engine.getSpaceCraft(), this.engine.getPlanets(),
 				this.engine.getTotalScore(), this.engine.getCurrentLevelNo(),
 				this.engine.getLevelsCount());
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private void refreshViewWithExplosion() {
-
-		this.view.playExlposion();
-		
-		this.view.refreshWithExplosion(this.engine.getSpaceCraft(),
-				this.engine.getPlanets(), this.engine.getTotalScore(),
-				this.engine.getCurrentLevelNo(), this.engine.getLevelsCount());
 	}
 
 	/****************************************************************************

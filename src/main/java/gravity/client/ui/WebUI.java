@@ -37,8 +37,8 @@ import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.EventListener;
 
 import gravity.client.app.Presenter;
+import gravity.client.core.Body;
 import gravity.client.core.Planet;
-import gravity.client.core.SpaceCraft;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -169,7 +169,7 @@ public final class WebUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void refresh(final SpaceCraft craft, final List<Planet> planets,
+	public void refresh(final Body craft, final List<Planet> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		this.spacePane.refresh(craft, planets, score, level, numOfLevels);
@@ -179,20 +179,10 @@ public final class WebUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void refreshWithSpeed(final SpaceCraft craft, final List<Planet> planets,
+	public void refreshWithSpeed(final Body craft, final List<Planet> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		this.spacePane.refreshWithSpeed(craft, planets, score, level, numOfLevels);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	@Override
-	public void refreshWithExplosion(final SpaceCraft craft, final List<Planet> planets,
-			final int score, int level, int numOfLevels) {
-
-		this.spacePane.refreshWithExplosion(craft, planets, score, level, numOfLevels);
 	}
 
 	/****************************************************************************
