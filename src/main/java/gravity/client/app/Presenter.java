@@ -95,6 +95,7 @@ public final class Presenter {
 		this.engine.lounchSpaceCraft();
 		this.view.playLaunch();
 		this.refreshCommand = this::refreshView;
+		this.playExplosionCommand = this.view::playExlposion;
 	}
 
 	/****************************************************************************
@@ -145,7 +146,8 @@ public final class Presenter {
 	 ***************************************************************************/
 	void crashed() {
 		
-		this.view.playExlposion();
+		this.playExplosionCommand.run();
+		this.playExplosionCommand = () -> {};
 	}
 	/****************************************************************************
 	 *
@@ -194,4 +196,5 @@ public final class Presenter {
 	private final UI view;
 	private final Scheduler scheduler;
 	private Runnable refreshCommand = this::refreshView;
+	private Runnable playExplosionCommand = () -> {};
 }

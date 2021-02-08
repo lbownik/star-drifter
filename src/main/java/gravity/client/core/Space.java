@@ -71,13 +71,14 @@ public final class Space {
 
 		return this.spaceCraft.getName().equals(FireBall.name);
 	}
-	
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	public boolean hasSpaceCraftFinishedBurning() {
 
-		return this.spaceCraft.getPhaseIndex() == FireBall.maxIndex;
+		return isSpaceCraftBurning()
+				&& this.spaceCraft.getPhaseIndex() >= FireBall.maxIndex;
 	}
 
 	/****************************************************************************
@@ -152,4 +153,5 @@ public final class Space {
 	private final int height;
 	private final List<Planet> planets = new ArrayList<>();
 	private Body spaceCraft;
+	private int counter = 1;
 }

@@ -43,7 +43,7 @@ public class OnePlanetSpaceUseCases {
 
 		Presenter presenter = new Presenter(this.view, this.spaceFactory, this.scheduler,
 				2);
-		this.view.refreshCalled.clear(); // clear recorded view refreshes so far
+		this.view.clearAll(); // clear recorded view refreshes so far
 
 		presenter.start();
 		presenter.aimingStarted(initialCraftPosition.getX() + initialSpeed * speedFactor,
@@ -53,18 +53,19 @@ public class OnePlanetSpaceUseCases {
 
 		this.scheduler.assertThatInvariantsHoldTrue();
 
-		this.scheduler.run(sixtyEightTimes);
+		this.scheduler.run(oneHundredAndEightTimes);
+		
+		this.view.assertThatAimingEnabledWasCalled(oneTime);
+		this.view.assertThatAimingDisabledWasCalled(oneTime);
+
+		this.view.assertThatRefreshWasCalled(oneHundredAndEightTimes);
 		
 		this.scheduler.assertThatInvariantsHoldTrue();
 		this.scheduler.assertThatCancelWasCalled(oneTime);
 		this.scheduler.assertThatSheduleWasCalled(oneTime);
 		
-		this.view.assertThatAimingEnabledWasCalled(oneTime);
-		this.view.assertThatAimingDisabledWasCalled(oneTime);
 
-		this.view.assertThatRefreshWasCalled(sixtyEightTimes);
-
-		FakeUI.RefreshRecord record = this.view.refreshCalled.get(sixtyEightTimes -1);
+		FakeUI.RefreshRecord record = this.view.refreshCalled.get(oneHundredAndEightTimes-1);
 		Planet planet = record.planets.get(0);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
 		record.assertThatCraftSpeedIs(Speed.zero());
@@ -72,7 +73,7 @@ public class OnePlanetSpaceUseCases {
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(2);
 		record.assertThatNumberOfPlanetsIs(1);
-		assertEquals(13.599, planet.getAngle(), 0.001);
+		assertEquals(21.599, planet.getAngle(), 0.001);
 		assertEquals(0, planet.getPhaseIndex());
 
 		this.view.assertThatLaunchWasPlayed(oneTime);
@@ -94,7 +95,7 @@ public class OnePlanetSpaceUseCases {
 
 	private final static double initialSpeed = 1.0;
 	private final static double speedFactor = 10;
-	private final static int sixtyEightTimes = 68;
+	private final static int oneHundredAndEightTimes = 108;
 	private final static double finalPosition = 81.32257;
 
 	private final static int oneTime = 1;

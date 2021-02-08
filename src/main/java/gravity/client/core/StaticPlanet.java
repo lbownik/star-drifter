@@ -47,7 +47,7 @@ public class StaticPlanet extends Planet {
 	@Override
 	public void moveBy(final Force force, final double timeDuration) {
 
-		// static planets don't move
+		return; // static planets don't move
 	}
 	/****************************************************************************
 	 *

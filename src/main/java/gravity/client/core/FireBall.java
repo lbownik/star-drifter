@@ -28,8 +28,16 @@ public class FireBall extends Body {
 	public FireBall(final Position center) {
 
 		super(0.0001, 25, center, Speed.zero(), angleIsFixedAt(0),
-				Phase.constant(4));
-				//Phase.forwardStopping(maxIndex, 0.8));
+				//Phase.constant(4));
+				Phase.forwardStopping(maxIndex, 0.2));
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	@Override
+	public void moveBy(final Force force, final double timeDuration) {
+
+		return; // fireballs don't move
 	}
 
 	/****************************************************************************
@@ -45,5 +53,5 @@ public class FireBall extends Body {
 	 *
 	 ***************************************************************************/
 	public static String name = "fireball";
-	public static int maxIndex = 25;
+	public static int maxIndex = 40;
 }
