@@ -22,8 +22,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import gravity.client.app.Presenter;
+import gravity.client.core.Body;
 import gravity.client.core.FakeSpaceFactory;
-import gravity.client.core.Planet;
 import gravity.client.core.Position;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
@@ -66,7 +66,7 @@ public class OnePlanetSpaceUseCases {
 		
 
 		FakeUI.RefreshRecord record = this.view.refreshCalled.get(oneHundredAndEightTimes-1);
-		Planet planet = record.planets.get(0);
+		Body planet = record.planets.get(0);
 		record.assertThatCraftPositionIs(finalCraftPositionToRight);
 		record.assertThatCraftSpeedIs(Speed.zero());
 		record.assertThatCraftNameIs("fireball");

@@ -17,10 +17,10 @@
 
 package gravity.client.app;
 
+
 import java.util.List;
 
 import gravity.client.core.Body;
-import gravity.client.core.Planet;
 import gravity.client.core.SpaceFactory;
 
 /*******************************************************************************
@@ -35,10 +35,10 @@ public final class Presenter {
 		
 		void setPresenter(Presenter presenter);
 
-		void refresh(Body craft, List<Planet> planets, int score, int level,
+		void refresh(Body craft, List<? extends Body> planets, int score, int level,
 				int numOfLevels);
 
-		void refreshWithSpeed(Body craft, List<Planet> planets, int score,
+		void refreshWithSpeed(Body craft, List<? extends Body> planets, int score,
 				int level, int numOfLevels);
 
 		void showFailure();

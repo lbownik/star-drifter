@@ -40,7 +40,7 @@ public class SpaceCraft extends Body {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void moveBy(final Force force, final double timeInterval) {
+	void moveBy(final Force force, final double timeInterval) {
 
 		super.moveBy(force, timeInterval);
 		this.forceSniffer.accept(this, force);

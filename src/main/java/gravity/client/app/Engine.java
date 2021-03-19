@@ -21,7 +21,6 @@ import java.util.List;
 
 import gravity.client.core.Body;
 import gravity.client.core.Force;
-import gravity.client.core.Planet;
 import gravity.client.core.Space;
 import gravity.client.core.SpaceCraft;
 import gravity.client.core.SpaceFactory;
@@ -134,7 +133,7 @@ final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	List<Planet> getPlanets() {
+	List<? extends Body> getPlanets() {
 
 		return this.space.getPlanets();
 	}

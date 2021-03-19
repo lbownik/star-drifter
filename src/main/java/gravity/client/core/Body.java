@@ -61,22 +61,21 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Force gravitationalForceFrom(final Body body) {
+	Force gravitationalForceFrom(final Body body) {
 
 		if (body == this) {
 			return Force.zero();
 		} else {
+			// appearently true gravity does not make the game very exiting
 			final double dx = body.center.dx(this.center);
 			final double dy = body.center.dy(this.center);
 			final double distance = hypot(dx, dy);
-			// appearently true gravity does not make the game very exiting
-			final double squaredDistance = distance;// * distance;
 
-			if (squaredDistance == 0.0) {
+			if (distance == 0.0) {
 				throw new IllegalStateException("Two objects cannot ocupy the same point.");
 			}
-
-			final double F = G * this.mass * body.mass / squaredDistance;
+			
+			final double F = this.mass * body.mass / distance;
 			return new Force(F * dx / distance, F * dy / distance);
 		}
 	}
@@ -84,7 +83,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Force gravitationalForceFrom(final List<? extends Body> bodies) {
+	Force gravitationalForceFrom(final List<? extends Body> bodies) {
 
 		return bodies.stream().map(this::gravitationalForceFrom).reduce(Force.zero(),
 				Force::combineWith);
@@ -93,7 +92,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void moveBy(final Force force, final double timeInterval) {
+	void moveBy(final Force force, final double timeInterval) {
 
 		this.speed.changeBy(force.accelerate(this.mass), timeInterval);
 		this.center.moveAt(this.speed, timeInterval);
@@ -110,7 +109,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void incrementTime(final double interval) {
+	void incrementTime(final double interval) {
 
 		this.angleStrategy.incrementTime(interval);
 		this.phase.incrementTime(interval);
@@ -119,7 +118,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public double distanceTo(final Body other) {
+	double distanceTo(final Body other) {
 
 		return this.center.distanceTo(other.center);
 	}
@@ -127,7 +126,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public boolean isCollidingWith(final Body other) {
+	boolean isCollidingWith(final Body other) {
 
 		final double minDistance = this.getRadius() + other.getRadius();
 		return distanceTo(other) <= minDistance;
@@ -181,7 +180,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public static IncrementableOperator angleFollowsSpeed() {
+	static IncrementableOperator angleFollowsSpeed() {
 
 		return a -> a;
 	}
@@ -189,7 +188,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public static IncrementableOperator angleIsFixedAt(final double angle) {
+	static IncrementableOperator angleIsFixedAt(final double angle) {
 
 		return a -> angle;
 	}
@@ -197,7 +196,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public static IncrementableOperator angleCirculatesAt(final double delta) {
+	static IncrementableOperator angleCirculatesAt(final double delta) {
 
 		return new CircularOperator(delta);
 	}
@@ -211,8 +210,6 @@ public abstract class Body {
 	private Speed speed;
 	private final Phase phase;
 	private final IncrementableOperator angleStrategy;
-
-	private static final double G = 1;
 
 	/****************************************************************************
 	 *

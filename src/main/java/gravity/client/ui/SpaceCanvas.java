@@ -24,8 +24,6 @@ import static com.google.gwt.user.client.Event.setEventListener;
 import static com.google.gwt.user.client.Event.sinkEvents;
 import static java.lang.String.valueOf;
 
-import java.util.List;
-
 import com.google.gwt.canvas.dom.client.Context2d;
 import com.google.gwt.dom.client.CanvasElement;
 import com.google.gwt.dom.client.Document;
@@ -33,26 +31,25 @@ import com.google.gwt.dom.client.ImageElement;
 import com.google.gwt.user.client.Event;
 
 import gravity.client.core.Body;
-import gravity.client.core.Planet;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public final class SpaceCanvas {
+final class SpaceCanvas {
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public interface MouseEventListener {
+	interface MouseEventListener {
 		void onMouseEvent(int type, int button, int x, int y);
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public SpaceCanvas(final MouseEventListener mouseListener) {
+	SpaceCanvas(final MouseEventListener mouseListener) {
 
-		this.canvas = (CanvasElement) this.document.getElementById("canvas");
+		this.canvas = (CanvasElement) Document.get().getElementById("canvas");
 		this.context = this.canvas.getContext2d();
 		this.mouseListener = mouseListener;
 
@@ -62,7 +59,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void enableClickEvents() {
+	void enableClickEvents() {
 
 		setEventListener(this.canvas, this::onCanvasEvent);
 	}
@@ -70,7 +67,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void disableClickEvents() {
+	void disableClickEvents() {
 
 		setEventListener(this.canvas, null);
 	}
@@ -78,7 +75,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public int getVisibleWidth() {
+	int getVisibleWidth() {
 
 		return this.canvas.getClientWidth();
 	}
@@ -86,7 +83,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public int getVisibleHeight() {
+	int getVisibleHeight() {
 
 		return this.canvas.getClientHeight();
 	}
@@ -104,41 +101,23 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void refresh(final Body craft, final List<Planet> planets,
+	void refresh(final Body craft, final Iterable<? extends Body> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		clear();
-		draw(planets, craft, score, level, numOfLevels);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	public void refreshWithSpeed(final Body craft, final List<Planet> planets,
-			final int score, final int level, final int numOfLevels) {
-
-		clear();
-		drawWithSpeed(planets, craft, score, level, numOfLevels);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private void draw(final List<Planet> planets, final Body craft,
-			final int score, final int level, final int numOfLevels) {
-
-		draw(planets);
-		draw(score, level, numOfLevels);
+		planets.forEach(this::draw);
 		draw(craft);
+		draw(score, level, numOfLevels);
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void drawWithSpeed(final List<Planet> planets, final Body craft,
+	void refreshWithSpeed(final Body craft, final Iterable<? extends Body> planets,
 			final int score, final int level, final int numOfLevels) {
 
-		draw(planets);
+		clear();
+		planets.forEach(this::draw);
 		drawWithSpeed(craft);
 		draw(score, level, numOfLevels);
 	}
@@ -164,21 +143,14 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void draw(final List<Planet> planets) {
-
-		planets.forEach(planet -> draw(planet));
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	private void draw(final Body body) {
 
 		this.context.save();
 
 		this.context.translate(body.getCenter().getX(), body.getCenter().getY());
 		this.context.rotate(body.getAngle());
-		final ImageElement image = getImage(body.getName());
+		final ImageElement image = (ImageElement) Document.get()
+				.getElementById(body.getName());
 		final double size = image.getHeight();
 		this.context.drawImage(image, body.getPhaseIndex() * size, 0, size, size,
 				-size / 2, -size / 2, size, size);
@@ -191,8 +163,7 @@ public final class SpaceCanvas {
 	 ***************************************************************************/
 	private void draw(final int score, final int level, final int numOfLevels) {
 
-		this.context.fillText("Level " + valueOf(level) + " of " + valueOf(numOfLevels),
-				30, 30);
+		this.context.fillText("Level " + level + " of " + numOfLevels, 30, 30);
 		this.context.fillText("Total Score: ".concat(valueOf(score)), 600, 30);
 	}
 
@@ -209,17 +180,7 @@ public final class SpaceCanvas {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private ImageElement getImage(final String name) {
-
-		return (ImageElement) this.document.getElementById(name);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	private final CanvasElement canvas;
 	private final Context2d context;
 	private final MouseEventListener mouseListener;
-	private final Document document = Document.get();
-
 }

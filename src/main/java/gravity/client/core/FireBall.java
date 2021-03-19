@@ -20,12 +20,12 @@ package gravity.client.core;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public class FireBall extends Body {
+class FireBall extends Body {
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public FireBall(final Position center) {
+	FireBall(final Position center) {
 
 		super(0.0001, 25, center, Speed.zero(), angleIsFixedAt(0),
 				//Phase.constant(4));
@@ -35,7 +35,7 @@ public class FireBall extends Body {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void moveBy(final Force force, final double timeDuration) {
+	void moveBy(final Force force, final double timeDuration) {
 
 		return; // fireballs don't move
 	}

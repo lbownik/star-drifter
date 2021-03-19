@@ -18,11 +18,11 @@
 package gravity.client.core;
 
 import static java.util.Collections.unmodifiableList;
-import java.util.List;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.range;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -44,6 +44,32 @@ public final class Space {
 	 ***************************************************************************/
 	public void incrementTime(final double intervel) {
 
+		movePlanets(intervel);
+
+		if (this.spaceCraft != null) {
+			moveSpaceScraft(intervel);
+			
+			if (hasSpaceCraftCrashed() && !isSpaceCraftBurning()) {
+				replaceSpaceCraftWithFireball();
+			}
+		}
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void moveSpaceScraft(final double intervel) {
+
+		this.spaceCraft.moveBy(this.spaceCraft.gravitationalForceFrom(this.planets),
+				intervel);
+		this.spaceCraft.incrementTime(intervel);
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void movePlanets(final double intervel) {
+
 		final List<Force> forces = this.planets.stream()
 				.map(planet -> planet.gravitationalForceFrom(this.planets))
 				.collect(toList());
@@ -52,16 +78,14 @@ public final class Space {
 			this.planets.get(i).moveBy(forces.get(i), intervel);
 			this.planets.get(i).incrementTime(intervel);
 		});
+	}
 
-		if (this.spaceCraft != null) {
-			this.spaceCraft.moveBy(this.spaceCraft.gravitationalForceFrom(this.planets),
-					intervel);
-			this.spaceCraft.incrementTime(intervel);
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void replaceSpaceCraftWithFireball() {
 
-			if (hasSpaceCraftCrashed() && !isSpaceCraftBurning()) {
-				this.spaceCraft = new FireBall(this.spaceCraft.getCenter());
-			}
-		}
+		this.spaceCraft = new FireBall(this.spaceCraft.getCenter());
 	}
 
 	/****************************************************************************
@@ -109,7 +133,7 @@ public final class Space {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public List<Planet> getPlanets() {
+	public List<? extends Body> getPlanets() {
 
 		return unmodifiableList(this.planets);
 	}
@@ -153,5 +177,4 @@ public final class Space {
 	private final int height;
 	private final List<Planet> planets = new ArrayList<>();
 	private Body spaceCraft;
-	private int counter = 1;
 }

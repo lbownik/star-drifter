@@ -20,12 +20,12 @@ package gravity.client.core;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public class LoosePlanet extends Planet {
+class LoosePlanet extends Planet {
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public LoosePlanet(final Type type, final double mass, final double radius,
+	LoosePlanet(final Type type, final double mass, final double radius,
 			final Position center, final Speed speed, final Phase phase,
 			final double maxDistanceFromSpaceCenter) {
 
@@ -39,7 +39,7 @@ public class LoosePlanet extends Planet {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void moveBy(final Force force, final double timeDuration) {
+	void moveBy(final Force force, final double timeDuration) {
 
 		super.moveBy(force, timeDuration);
 		if (isFarEnough()) {

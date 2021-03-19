@@ -5,10 +5,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import gravity.client.app.Presenter;
 import gravity.client.core.Body;
-import gravity.client.core.Planet;
 import gravity.client.core.Position;
 import gravity.client.core.Speed;
 
@@ -25,7 +25,7 @@ public class FakeUI implements Presenter.UI {
 		/*************************************************************************
 		 *
 		 ************************************************************************/
-		public RefreshRecord(final Body craft, final List<Planet> planets,
+		public RefreshRecord(final Body craft, final List<? extends Body> planets,
 				final int score, final int level, final int numOfLevels) {
 
 			this.craft = craft;
@@ -84,6 +84,7 @@ public class FakeUI implements Presenter.UI {
 
 			assertEquals(angle, this.craft.getAngle(), 0.0001);
 		}
+
 		/*************************************************************************
 		 *
 		 ************************************************************************/
@@ -96,7 +97,7 @@ public class FakeUI implements Presenter.UI {
 		 *
 		 ************************************************************************/
 		public final Body craft;
-		public final List<Planet> planets;
+		public final List<? extends Body> planets;
 		public final int score;
 		public final int level;
 		public final int numOfLevels;
@@ -115,7 +116,7 @@ public class FakeUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void refresh(final Body craft, final List<Planet> planets,
+	public void refresh(final Body craft, final List<? extends Body> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		this.refreshCalled
@@ -126,7 +127,7 @@ public class FakeUI implements Presenter.UI {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void refreshWithSpeed(final Body craft, final List<Planet> planets,
+	public void refreshWithSpeed(final Body craft, final List<? extends Body> planets,
 			final int score, final int level, final int numOfLevels) {
 
 		this.refreshWithSpeedCalled
@@ -240,7 +241,7 @@ public class FakeUI implements Presenter.UI {
 	 ***************************************************************************/
 	private void assertThatSpacecraftWasNeverNullIn(final List<RefreshRecord> records) {
 
-		assertTrue(records.stream().map(r -> r.craft).allMatch(c -> c != null));
+		assertTrue(records.stream().map(r -> r.craft).allMatch(Objects::nonNull));
 	}
 
 	/****************************************************************************
@@ -248,8 +249,8 @@ public class FakeUI implements Presenter.UI {
 	 ***************************************************************************/
 	public void assertThatPlanetsWereNeverNullIn(final List<RefreshRecord> records) {
 
-		assertTrue(
-				records.stream().flatMap(r -> r.planets.stream()).allMatch(p -> p != null));
+		assertTrue(records.stream().flatMap(r -> r.planets.stream())
+				.allMatch(Objects::nonNull));
 	}
 
 	/****************************************************************************

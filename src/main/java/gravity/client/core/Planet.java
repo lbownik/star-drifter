@@ -23,7 +23,7 @@ import static gravity.client.core.Preconditions.*;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public class Planet extends Body {
+class Planet extends Body {
 
 	/****************************************************************************
 	 *
@@ -58,7 +58,7 @@ public class Planet extends Body {
 	 *
 	 ***************************************************************************/
 	@Override
-	public void incrementTime(final double interval) {
+	void incrementTime(final double interval) {
 
 		super.incrementTime(interval);
 	}
