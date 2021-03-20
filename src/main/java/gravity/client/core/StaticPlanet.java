@@ -20,7 +20,7 @@ package gravity.client.core;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public class StaticPlanet extends Planet {
+class StaticPlanet extends Planet {
 
 	/****************************************************************************
 	 *

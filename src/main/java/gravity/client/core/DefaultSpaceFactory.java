@@ -20,10 +20,9 @@ package gravity.client.core;
 import static gravity.client.core.Body.angleCirculatesAt;
 import static gravity.client.core.Body.angleFollowsSpeed;
 import static gravity.client.core.Body.angleIsFixedAt;
-import static gravity.client.core.Phase.constant;
-import static gravity.client.core.Phase.forwardLooping;
 import static gravity.client.core.Phase.backwardLooping;
 import static gravity.client.core.Phase.forwardBackwardLooping;
+import static gravity.client.core.Phase.forwardLooping;
 import static gravity.client.core.Planet.Type.blackHole;
 import static gravity.client.core.Planet.Type.earthLike;
 import static gravity.client.core.Planet.Type.gas;
@@ -36,7 +35,8 @@ import static java.lang.Math.PI;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -64,20 +64,20 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 *
 	 ***************************************************************************/
 	@Override
-	public Space create(final int level) {
+	public Space create(final int level, final Consumer<Force> forceSniffer) {
 
 		throwIf(level < 0 | level > getMaxLevel(),
 				() -> "Level mustbe between 0 and " + getMaxLevel());
 
-		return this.constellations.get(level).get();
+		return this.constellations.get(level).apply(forceSniffer);
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation0() {
+	private Space getPlanetConstellation0(final Consumer<Force> forceSniffer) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new StaticPlanet(rocky, 200, 50,
 				new Position(this.spaceWidth / 7, this.spaceHeight / 7), angleIsFixedAt(0),
@@ -106,11 +106,11 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation1() {
+	private Space getPlanetConstellation1(final Consumer<Force> forceSniffer) {
 
 		final int numberOfPhases = 49;
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 2), angleIsFixedAt(0),
@@ -122,9 +122,9 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation2() {
+	private Space getPlanetConstellation2(final Consumer<Force> forceSniffer) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 2),
@@ -145,9 +145,9 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation3() {
+	private Space getPlanetConstellation3(final Consumer<Force> forceSniffer) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new StaticPlanet(gas, 100, 50,
 				new Position(this.spaceWidth / 4, this.spaceHeight / 2), angleIsFixedAt(0),
@@ -162,19 +162,19 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation4() {
+	private Space getPlanetConstellation4(final Consumer<Force> forceSniffer) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new StaticPlanet(gas, 100, 50,
-				new Position(this.spaceWidth / 2, this.spaceHeight / 2), angleIsFixedAt(PI/8),
-				forwardLooping(maxPhaseIndex, 0.8)));
+				new Position(this.spaceWidth / 2, this.spaceHeight / 2),
+				angleIsFixedAt(PI / 8), forwardLooping(maxPhaseIndex, 0.8)));
 		space.add(new StaticPlanet(ice, 100, 50,
 				new Position(5 * this.spaceWidth / 7, 5 * this.spaceHeight / 7),
 				angleCirculatesAt(0.03), forwardLooping(maxPhaseIndex, 0.8)));
 		space.add(new StaticPlanet(earthLike, 100, 50,
 				new Position(5 * this.spaceWidth / 7, this.spaceHeight / 7),
-				angleIsFixedAt(-PI/3), forwardLooping(maxPhaseIndex, 0.8)));
+				angleIsFixedAt(-PI / 3), forwardLooping(maxPhaseIndex, 0.8)));
 		space.add(new StaticPlanet(blackHole, 1000, 50,
 				new Position(2 * this.spaceWidth / 7, this.spaceHeight / 7),
 				angleIsFixedAt(0), forwardLooping(maxPhaseIndex, 0.8)));
@@ -188,9 +188,9 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation5() {
+	private Space getPlanetConstellation5(final Consumer<Force> forceSniffer) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new Planet(gas, 500, 50,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 7), new Speed(15, 0),
@@ -206,9 +206,9 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation6() {
+	private Space getPlanetConstellation6(final Consumer<Force> forceSniffer) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new StaticPlanet(blackHole, 4000, 50,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 2), angleIsFixedAt(0),
@@ -225,7 +225,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	public int getMaxLevel() {
 
-		return this.constellations.size()-1;
+		return this.constellations.size() - 1;
 	}
 
 	/****************************************************************************
@@ -233,7 +233,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private final int spaceWidth;
 	private final int spaceHeight;
-	private final List<Supplier<Space>> constellations = new ArrayList<>();
+	private final List<Function<Consumer<Force>, Space>> constellations = new ArrayList<>();
 
 	final static int maxPhaseIndex = 49;
 }

@@ -30,15 +30,15 @@ public class GravityUseCases {
 	 ***************************************************************************/
 	public GravityUseCases() {
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Test
-	public void forceIsZero_forTwoZeroMassObjects()
-			  throws Exception {
+	public void forceIsZero_forTwoZeroMassObjects() throws Exception {
 
 		Planet p = new Planet(rocky, 0, 1, new Position(0, 0), Speed.zero());
-		SpaceCraft c = new SpaceCraft(new Position(1, 0), Speed.zero(), (s, f) -> {
+		SpaceCraft c = new SpaceCraft(new Position(1, 0), Speed.zero(), (f) -> {
 		});
 
 		Force f = c.gravitationalForceFrom(p);
@@ -46,12 +46,13 @@ public class GravityUseCases {
 		assertEquals(0.0, f.x, 0.00000001);
 		assertEquals(0.0, f.y, 0.00000001);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Test
 	public void forceIsZero_forZeroMassObject_whanOtherObjectHassMass()
-			  throws Exception {
+			throws Exception {
 
 		Planet p = new Planet(rocky, 1, 1, new Position(0, 0), Speed.zero());
 		Planet c = new Planet(rocky, 0, 1, new Position(1, 0), Speed.zero());
@@ -61,15 +62,16 @@ public class GravityUseCases {
 		assertEquals(0.0, f.x, 0.00000001);
 		assertEquals(0.0, f.y, 0.00000001);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Test
 	public void forceCannotBeComputed_forTwoMassiveObjects_whanThenOccupyTheSamePoint()
-			  throws Exception {
+			throws Exception {
 
 		Planet p = new Planet(rocky, 1, 1, new Position(0, 0), Speed.zero());
-		SpaceCraft c = new SpaceCraft(new Position(0, 0), Speed.zero(), (s, f) -> {
+		SpaceCraft c = new SpaceCraft(new Position(0, 0), Speed.zero(), (f) -> {
 		});
 
 		try {
@@ -78,22 +80,22 @@ public class GravityUseCases {
 			assertEquals("Two objects cannot ocupy the same point.", e.getMessage());
 		}
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void verifyThatForceIsOne(Position planetCenter,
-			  Position cOverCenter, Position cOnTheRightCenter,
-			  Position cUnderCenter, Position cOntheLeftCenter)
-			  throws Exception {
+	private void verifyThatForceIsOne(Position planetCenter, Position cOverCenter,
+			Position cOnTheRightCenter, Position cUnderCenter, Position cOntheLeftCenter)
+			throws Exception {
 
 		Planet p = new Planet(rocky, 1, 1, planetCenter, Speed.zero());
-		SpaceCraft oOver = new SpaceCraft(cOverCenter, Speed.zero(), (s, f) -> {
+		SpaceCraft oOver = new SpaceCraft(cOverCenter, Speed.zero(), (f) -> {
 		});
-		SpaceCraft cOnTheRight = new SpaceCraft(cOnTheRightCenter, Speed.zero(), (s, f) -> {
+		SpaceCraft cOnTheRight = new SpaceCraft(cOnTheRightCenter, Speed.zero(), (f) -> {
 		});
-		SpaceCraft cUnder = new SpaceCraft(cUnderCenter, Speed.zero(), (s, f) -> {
+		SpaceCraft cUnder = new SpaceCraft(cUnderCenter, Speed.zero(), (f) -> {
 		});
-		SpaceCraft cOnTheLeft = new SpaceCraft(cOntheLeftCenter, Speed.zero(), (s, f) -> {
+		SpaceCraft cOnTheLeft = new SpaceCraft(cOntheLeftCenter, Speed.zero(), (f) -> {
 		});
 
 		Force fOver = oOver.gravitationalForceFrom(p);
@@ -116,87 +118,61 @@ public class GravityUseCases {
 		assertEquals(1.0, fOnTheLeft.x, 0.00000001);
 		assertEquals(0.0, fOnTheLeft.y, 0.00000001);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Test
 	public void forceEqualsOne_forTwoMassiveObjects_whanTheDistanceIsOne()
-			  throws Exception {
+			throws Exception {
 
-		verifyThatForceIsOne(new Position(0, 0),
-				  new Position(0, 1),
-				  new Position(1, 0),
-				  new Position(0, -1),
-				  new Position(-1, 0));
+		verifyThatForceIsOne(new Position(0, 0), new Position(0, 1), new Position(1, 0),
+				new Position(0, -1), new Position(-1, 0));
 
-		verifyThatForceIsOne(new Position(1, 1),
-				  new Position(1, 2),
-				  new Position(2, 1),
-				  new Position(1, 0),
-				  new Position(0, 1));
+		verifyThatForceIsOne(new Position(1, 1), new Position(1, 2), new Position(2, 1),
+				new Position(1, 0), new Position(0, 1));
 
-		verifyThatForceIsOne(new Position(2, 2),
-				  new Position(2, 3),
-				  new Position(3, 2),
-				  new Position(2, 1),
-				  new Position(1, 2));
+		verifyThatForceIsOne(new Position(2, 2), new Position(2, 3), new Position(3, 2),
+				new Position(2, 1), new Position(1, 2));
 
-		verifyThatForceIsOne(new Position(1, -1),
-				  new Position(1, 0),
-				  new Position(2, -1),
-				  new Position(1, -2),
-				  new Position(0, -1));
+		verifyThatForceIsOne(new Position(1, -1), new Position(1, 0), new Position(2, -1),
+				new Position(1, -2), new Position(0, -1));
 
-		verifyThatForceIsOne(new Position(2, -2),
-				  new Position(2, -1),
-				  new Position(3, -2),
-				  new Position(2, -3),
-				  new Position(1, -2));
+		verifyThatForceIsOne(new Position(2, -2), new Position(2, -1),
+				new Position(3, -2), new Position(2, -3), new Position(1, -2));
 
-		verifyThatForceIsOne(new Position(-1, -1),
-				  new Position(-1, 0),
-				  new Position(0, -1),
-				  new Position(-1, -2),
-				  new Position(-2, -1));
+		verifyThatForceIsOne(new Position(-1, -1), new Position(-1, 0),
+				new Position(0, -1), new Position(-1, -2), new Position(-2, -1));
 
-		verifyThatForceIsOne(new Position(-2, -2),
-				  new Position(-2, -1),
-				  new Position(-1, -2),
-				  new Position(-2, -3),
-				  new Position(-3, -2));
+		verifyThatForceIsOne(new Position(-2, -2), new Position(-2, -1),
+				new Position(-1, -2), new Position(-2, -3), new Position(-3, -2));
 
-		verifyThatForceIsOne(new Position(-1, 1),
-				  new Position(-1, 2),
-				  new Position(0, 1),
-				  new Position(-1, 0),
-				  new Position(-2, 1));
+		verifyThatForceIsOne(new Position(-1, 1), new Position(-1, 2), new Position(0, 1),
+				new Position(-1, 0), new Position(-2, 1));
 
-		verifyThatForceIsOne(new Position(-2, 2),
-				  new Position(-2, 3),
-				  new Position(-1, 2),
-				  new Position(-2, 1),
-				  new Position(-3, 2));
+		verifyThatForceIsOne(new Position(-2, 2), new Position(-2, 3),
+				new Position(-1, 2), new Position(-2, 1), new Position(-3, 2));
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	private void verifyThatForceIsOneHalf(Position planetCenter,
-			  Position cTopRightCenter, Position cBottomRightCenter,
-			  Position cBottomLeftCenter, Position cTopLeftCenter)
-			  throws Exception {
+			Position cTopRightCenter, Position cBottomRightCenter,
+			Position cBottomLeftCenter, Position cTopLeftCenter) throws Exception {
 
 		double oneHalf = 0.5;
 		double accuracy = 0.0000001;
 
 		Planet p = new Planet(rocky, 1, 1, planetCenter, Speed.zero());
-		SpaceCraft cTopRight = new SpaceCraft(cTopRightCenter, Speed.zero(), (s, f) -> {
+		SpaceCraft cTopRight = new SpaceCraft(cTopRightCenter, Speed.zero(), (f) -> {
 		});
-		SpaceCraft cBottomRight = new SpaceCraft(cBottomRightCenter, Speed.zero(), (s, f) -> {
+		SpaceCraft cBottomRight = new SpaceCraft(cBottomRightCenter, Speed.zero(),
+				(f) -> {
+				});
+		SpaceCraft cBottomLeft = new SpaceCraft(cBottomLeftCenter, Speed.zero(), (f) -> {
 		});
-		SpaceCraft cBottomLeft = new SpaceCraft(cBottomLeftCenter, Speed.zero(), (s, f) -> {
-		});
-		SpaceCraft cTopLeft = new SpaceCraft(cTopLeftCenter, Speed.zero(), (s, f) -> {
+		SpaceCraft cTopLeft = new SpaceCraft(cTopLeftCenter, Speed.zero(), (f) -> {
 		});
 
 		Force fTopRight = cTopRight.gravitationalForceFrom(p);
@@ -219,66 +195,40 @@ public class GravityUseCases {
 		assertEquals(oneHalf, fTopLeft.x, accuracy);
 		assertEquals(-oneHalf, fTopLeft.y, accuracy);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Test
 	public void forceEqualsOneHalf_forTwoMassiveObjects_whanTheDistanceIsSquareRootOfTwo()
-			  throws Exception {
+			throws Exception {
 
-		verifyThatForceIsOneHalf(new Position(0, 0),
-				  new Position(1, 1),
-				  new Position(1, -1),
-				  new Position(-1, -1),
-				  new Position(-1, 1));
+		verifyThatForceIsOneHalf(new Position(0, 0), new Position(1, 1),
+				new Position(1, -1), new Position(-1, -1), new Position(-1, 1));
 
-		verifyThatForceIsOneHalf(new Position(1, 1),
-				  new Position(2, 2),
-				  new Position(2, 0),
-				  new Position(0, 0),
-				  new Position(0, 2));
+		verifyThatForceIsOneHalf(new Position(1, 1), new Position(2, 2),
+				new Position(2, 0), new Position(0, 0), new Position(0, 2));
 
-		verifyThatForceIsOneHalf(new Position(2, 2),
-				  new Position(3, 3),
-				  new Position(3, 1),
-				  new Position(1, 1),
-				  new Position(1, 3));
+		verifyThatForceIsOneHalf(new Position(2, 2), new Position(3, 3),
+				new Position(3, 1), new Position(1, 1), new Position(1, 3));
 
-		verifyThatForceIsOneHalf(new Position(1, -1),
-				  new Position(2, 0),
-				  new Position(2, -2),
-				  new Position(0, -2),
-				  new Position(0, 0));
+		verifyThatForceIsOneHalf(new Position(1, -1), new Position(2, 0),
+				new Position(2, -2), new Position(0, -2), new Position(0, 0));
 
-		verifyThatForceIsOneHalf(new Position(2, -2),
-				  new Position(3, -1),
-				  new Position(3, -3),
-				  new Position(1, -3),
-				  new Position(1, -1));
+		verifyThatForceIsOneHalf(new Position(2, -2), new Position(3, -1),
+				new Position(3, -3), new Position(1, -3), new Position(1, -1));
 
-		verifyThatForceIsOneHalf(new Position(-1, -1),
-				  new Position(0, 0),
-				  new Position(0, -2),
-				  new Position(-2, -2),
-				  new Position(-2, 0));
+		verifyThatForceIsOneHalf(new Position(-1, -1), new Position(0, 0),
+				new Position(0, -2), new Position(-2, -2), new Position(-2, 0));
 
-		verifyThatForceIsOneHalf(new Position(-2, -2),
-				  new Position(-1, -1),
-				  new Position(-1, -3),
-				  new Position(-3, -3),
-				  new Position(-3, -1));
+		verifyThatForceIsOneHalf(new Position(-2, -2), new Position(-1, -1),
+				new Position(-1, -3), new Position(-3, -3), new Position(-3, -1));
 
-		verifyThatForceIsOneHalf(new Position(-1, 1),
-				  new Position(0, 2),
-				  new Position(0, 0),
-				  new Position(-2, 0),
-				  new Position(-2, 2));
+		verifyThatForceIsOneHalf(new Position(-1, 1), new Position(0, 2),
+				new Position(0, 0), new Position(-2, 0), new Position(-2, 2));
 
-		verifyThatForceIsOneHalf(new Position(-2, 2),
-				  new Position(-1, 3),
-				  new Position(-1, 1),
-				  new Position(-3, 1),
-				  new Position(-3, 3));
+		verifyThatForceIsOneHalf(new Position(-2, 2), new Position(-1, 3),
+				new Position(-1, 1), new Position(-3, 1), new Position(-3, 3));
 	}
 	/****************************************************************************
 	 *

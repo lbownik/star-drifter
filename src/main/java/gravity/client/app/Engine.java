@@ -22,7 +22,6 @@ import java.util.List;
 import gravity.client.core.Body;
 import gravity.client.core.Force;
 import gravity.client.core.Space;
-import gravity.client.core.SpaceCraft;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
 
@@ -86,7 +85,7 @@ final class Engine {
 	 ***************************************************************************/
 	void lounchSpaceCraft() {
 
-		this.space.setSpaceCraft(this.craft);
+		this.space.lounchSpaceCraft();
 	}
 
 	/****************************************************************************
@@ -96,15 +95,13 @@ final class Engine {
 
 		this.currentLevel = level;
 
-		this.space = this.spaceFactory.create(level);
-		this.craft = new SpaceCraft(this.space.getInitialSpaceCraftPosition(),
-				Speed.zero(), this::sniffForce);
+		this.space = this.spaceFactory.create(level, this::sniffForce);
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void sniffForce(final SpaceCraft craft, final Force force) {
+	private void sniffForce(final Force force) {
 
 		this.currentScore += force.getValue() / 10;
 	}
@@ -143,8 +140,7 @@ final class Engine {
 	 ***************************************************************************/
 	Body getSpaceCraft() {
 
-		return this.space.getSpaceCraft() != null ? this.space.getSpaceCraft()
-				: this.craft;
+		return this.space.getSpaceCraft();
 	}
 
 	/****************************************************************************
@@ -184,7 +180,6 @@ final class Engine {
 	 ***************************************************************************/
 	private final SpaceFactory spaceFactory;
 	private Space space;
-	private SpaceCraft craft;
 	private int currentLevel = 0;
 	private double currentScore = 0;
 	private double totalScore = 0;

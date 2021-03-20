@@ -23,6 +23,8 @@ import static java.lang.Math.PI;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 /*******************************************************************************
@@ -47,26 +49,26 @@ public final class FakeSpaceFactory implements SpaceFactory {
 	 *
 	 ***************************************************************************/
 	@Override
-	public Space create(final int level) {
+	public Space create(final int level, final Consumer<Force> forceSniffer) {
 
-		return this.constellations.get(level - 1).get();
+		return this.constellations.get(level - 1).apply(forceSniffer);
 
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getEmptyConstellation() {
+	private Space getEmptyConstellation(final Consumer<Force> forceSniffer) {
 
-		return new Space(this.spaceWidth, this.spaceHeight, null);
+		return new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getOnePlanetConstellation() {
+	private Space getOnePlanetConstellation(final Consumer<Force> forceSniffer) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Position(this.spaceWidth - 25, this.spaceHeight / 2),
@@ -78,9 +80,9 @@ public final class FakeSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getOneLoosePlanetConstellation() {
+	private Space getOneLoosePlanetConstellation(final Consumer<Force> forceSniffer) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(
 				new LoosePlanet(meteorite, 100, 50, new Position(50, this.spaceHeight / 2),
@@ -102,5 +104,5 @@ public final class FakeSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private final int spaceWidth;
 	private final int spaceHeight;
-	private final List<Supplier<Space>> constellations = new ArrayList<>();
+	private final List<Function<Consumer<Force>, Space>> constellations = new ArrayList<>();
 }

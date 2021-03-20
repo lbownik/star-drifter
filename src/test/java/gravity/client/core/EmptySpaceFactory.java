@@ -16,6 +16,8 @@
 //Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package gravity.client.core;
 
+import java.util.function.Consumer;
+
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  *******************************************************************************/
@@ -34,9 +36,9 @@ public final class EmptySpaceFactory implements SpaceFactory {
 	 *
 	 ***************************************************************************/
 	@Override
-	public Space create(final int level) {
+	public Space create(final int level, final Consumer<Force> forceSniffer) {
 
-		return new Space(this.spaceWidth, this.spaceHeight, null);
+		return new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 	}
 
 	/****************************************************************************

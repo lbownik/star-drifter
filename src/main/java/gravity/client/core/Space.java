@@ -23,6 +23,8 @@ import static java.util.stream.IntStream.range;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -32,37 +34,43 @@ public final class Space {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Space(final int width, final int height, final SpaceCraft spaceCraft) {
+	public Space(final int width, final int height, final Consumer<Force> forceSniffer) {
 
 		this.width = width;
 		this.height = height;
-		this.spaceCraft = spaceCraft;
+		this.spaceCraft = new SpaceCraft(new Position(25, this.height / 2), Speed.zero(),
+				forceSniffer);
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void incrementTime(final double intervel) {
+	public void lounchSpaceCraft() {
 
-		movePlanets(intervel);
-
-		if (this.spaceCraft != null) {
-			moveSpaceScraft(intervel);
-			
-			if (hasSpaceCraftCrashed() && !isSpaceCraftBurning()) {
-				replaceSpaceCraftWithFireball();
-			}
-		}
+		this.moveCraft = this::moveSpaceCraft;
 	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void moveSpaceScraft(final double intervel) {
+	public void incrementTime(final double interval) {
+
+		movePlanets(interval);
+		this.moveCraft.accept(interval);
+	}
+
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	private void moveSpaceCraft(final double intervel) {
 
 		this.spaceCraft.moveBy(this.spaceCraft.gravitationalForceFrom(this.planets),
 				intervel);
 		this.spaceCraft.incrementTime(intervel);
+
+		if (hasSpaceCraftCrashed() && !isSpaceCraftBurning()) {
+			replaceSpaceCraftWithFireball();
+		}
 	}
 
 	/****************************************************************************
@@ -149,22 +157,6 @@ public final class Space {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void setSpaceCraft(final SpaceCraft craft) {
-
-		this.spaceCraft = craft;
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	public Position getInitialSpaceCraftPosition() {
-
-		return new Position(25, this.height / 2);
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
 	void add(final Planet planet) {
 
 		this.planets.add(planet);
@@ -177,4 +169,6 @@ public final class Space {
 	private final int height;
 	private final List<Planet> planets = new ArrayList<>();
 	private Body spaceCraft;
+	private DoubleConsumer moveCraft = (d) -> {
+	};
 }

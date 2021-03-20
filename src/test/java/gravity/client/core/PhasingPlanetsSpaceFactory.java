@@ -22,6 +22,7 @@ import static gravity.client.core.Phase.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 /*******************************************************************************
@@ -45,7 +46,7 @@ public final class PhasingPlanetsSpaceFactory implements SpaceFactory {
 	 *
 	 ***************************************************************************/
 	@Override
-	public Space create(final int level) {
+	public Space create(final int level, final Consumer<Force> forceSniffer) {
 
 		return this.constellations.get(level - 1).get();
 
@@ -56,7 +57,8 @@ public final class PhasingPlanetsSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private Space getConstellation(final double phasingSpeed) {
 
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, null);
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, (f) -> {
+		});
 
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Position(this.spaceWidth - 25, this.spaceHeight / 2),
