@@ -47,25 +47,21 @@ final class Engine {
 		final double refreshRateIndependentInterval = interval_ms * gamePace;
 		this.space.incrementTime(refreshRateIndependentInterval);
 
-		if (this.space.getSpaceCraft() != null) {
-			if (this.space.isSpaceCraftBeyondBounds()) {
-				if (this.space.hasSpaceCraftPassedRightEdge()) {
-					presenter.success();
-				} else {
-					presenter.failure();
-				}
+		if (this.space.isSpaceCraftBeyondBounds()) {
+			if (this.space.hasSpaceCraftPassedRightEdge()) {
+				presenter.success();
 			} else {
-				if (this.space.hasSpaceCraftCrashed()) {
-					presenter.crashed();
-				}
-				if (this.space.hasSpaceCraftFinishedBurning()) {
-					presenter.failure();
-				} else {
-					presenter.inProgress();
-				}
+				presenter.failure();
 			}
 		} else {
-			presenter.inProgress();
+			if (this.space.hasSpaceCraftCrashed()) {
+				presenter.crashed();
+			}
+			if (this.space.hasSpaceCraftFinishedBurning()) {
+				presenter.failure();
+			} else {
+				presenter.inProgress();
+			}
 		}
 	}
 

@@ -68,8 +68,9 @@ public final class Space {
 				intervel);
 		this.spaceCraft.incrementTime(intervel);
 
-		if (hasSpaceCraftCrashed() && !isSpaceCraftBurning()) {
-			replaceSpaceCraftWithFireball();
+		if (hasSpaceCraftCrashed()) {
+			this.spaceCraft = new FireBall(this.spaceCraft.getCenter());
+			this.moveCraft = this.spaceCraft::incrementTime;
 		}
 	}
 
@@ -86,14 +87,6 @@ public final class Space {
 			this.planets.get(i).moveBy(forces.get(i), intervel);
 			this.planets.get(i).incrementTime(intervel);
 		});
-	}
-
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	private void replaceSpaceCraftWithFireball() {
-
-		this.spaceCraft = new FireBall(this.spaceCraft.getCenter());
 	}
 
 	/****************************************************************************

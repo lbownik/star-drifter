@@ -32,8 +32,9 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Body(final double mass, final double radius, final Position center, final Speed speed,
-			final IncrementableOperator angleStrategy, final Phase phase) {
+	public Body(final double mass, final double radius, final Position center,
+			final Speed speed, final IncrementableOperator angleStrategy,
+			final Phase phase) {
 
 		throwIf(mass < 0, "Negative mass");
 		throwIf(radius < 0, "Negative radius");
@@ -63,18 +64,14 @@ public abstract class Body {
 	 ***************************************************************************/
 	Force gravitationalForceFrom(final Body body) {
 
-		if (body == this) {
+		// appearently true gravity does not make the game very exiting
+		final double dx = body.center.dx(this.center);
+		final double dy = body.center.dy(this.center);
+		final double distance = hypot(dx, dy);
+
+		if (distance < 0.1) {
 			return Force.zero();
 		} else {
-			// appearently true gravity does not make the game very exiting
-			final double dx = body.center.dx(this.center);
-			final double dy = body.center.dy(this.center);
-			final double distance = hypot(dx, dy);
-
-			if (distance == 0.0) {
-				throw new IllegalStateException("Two objects cannot ocupy the same point.");
-			}
-			
 			final double F = this.mass * body.mass / distance;
 			return new Force(F * dx / distance, F * dy / distance);
 		}
@@ -163,7 +160,7 @@ public abstract class Body {
 
 		return this.radius;
 	}
-	
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
