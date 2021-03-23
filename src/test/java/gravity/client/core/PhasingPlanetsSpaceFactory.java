@@ -17,12 +17,16 @@
 package gravity.client.core;
 
 import static gravity.client.core.Body.angleCirculatesAt;
+import static gravity.client.core.Phase.backwardLooping;
+import static gravity.client.core.Phase.constant;
+import static gravity.client.core.Phase.forwardBackwardLooping;
+import static gravity.client.core.Phase.forwardLooping;
+import static gravity.client.core.Phase.forwardStopping;
 import static gravity.client.core.Planet.Type.rocky;
-import static gravity.client.core.Phase.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 import java.util.function.Supplier;
 
 /*******************************************************************************
@@ -46,7 +50,7 @@ public final class PhasingPlanetsSpaceFactory implements SpaceFactory {
 	 *
 	 ***************************************************************************/
 	@Override
-	public Space create(final int level, final Consumer<Force> forceSniffer) {
+	public Space create(final int level, final DoubleConsumer forceSniffer) {
 
 		return this.constellations.get(level - 1).get();
 

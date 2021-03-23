@@ -20,7 +20,7 @@ package gravity.client.core;
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
  ******************************************************************************/
-public final class Force extends Vector {
+final class Force extends Vector {
 
 	/****************************************************************************
 	 *
@@ -32,14 +32,14 @@ public final class Force extends Vector {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Acceleration accelerate(final double mass) {
+	Acceleration accelerate(final double mass) {
 
 		return new Acceleration(this.x / mass, this.y / mass);
 	}
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public static Force zero() {
+	static Force zero() {
 
 		return new Force(0, 0);
 	}

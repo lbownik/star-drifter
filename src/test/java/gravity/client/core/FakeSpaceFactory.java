@@ -16,16 +16,14 @@
 //Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package gravity.client.core;
 
+import static gravity.client.core.Body.angleCirculatesAt;
 import static gravity.client.core.Planet.Type.meteorite;
 import static gravity.client.core.Planet.Type.rocky;
-import static gravity.client.core.Body.angleCirculatesAt;
-import static java.lang.Math.PI;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -49,7 +47,7 @@ public final class FakeSpaceFactory implements SpaceFactory {
 	 *
 	 ***************************************************************************/
 	@Override
-	public Space create(final int level, final Consumer<Force> forceSniffer) {
+	public Space create(final int level, DoubleConsumer forceSniffer) {
 
 		return this.constellations.get(level - 1).apply(forceSniffer);
 
@@ -58,7 +56,7 @@ public final class FakeSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getEmptyConstellation(final Consumer<Force> forceSniffer) {
+	private Space getEmptyConstellation(final DoubleConsumer forceSniffer) {
 
 		return new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 	}
@@ -66,7 +64,7 @@ public final class FakeSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getOnePlanetConstellation(final Consumer<Force> forceSniffer) {
+	private Space getOnePlanetConstellation(final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
@@ -80,7 +78,7 @@ public final class FakeSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getOneLoosePlanetConstellation(final Consumer<Force> forceSniffer) {
+	private Space getOneLoosePlanetConstellation(final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
@@ -104,5 +102,5 @@ public final class FakeSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private final int spaceWidth;
 	private final int spaceHeight;
-	private final List<Function<Consumer<Force>, Space>> constellations = new ArrayList<>();
+	private final List<Function<DoubleConsumer, Space>> constellations = new ArrayList<>();
 }

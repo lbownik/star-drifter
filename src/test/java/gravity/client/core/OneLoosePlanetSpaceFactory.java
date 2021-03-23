@@ -18,7 +18,7 @@ package gravity.client.core;
 
 import static gravity.client.core.Planet.Type.meteorite;
 
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -39,7 +39,7 @@ public final class OneLoosePlanetSpaceFactory implements SpaceFactory {
 	 *
 	 ***************************************************************************/
 	@Override
-	public Space create(final int level, final Consumer<Force> forceSniffer) {
+	public Space create(final int level, final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 

@@ -20,7 +20,6 @@ package gravity.client.app;
 import java.util.List;
 
 import gravity.client.core.Body;
-import gravity.client.core.Force;
 import gravity.client.core.Space;
 import gravity.client.core.SpaceFactory;
 import gravity.client.core.Speed;
@@ -97,9 +96,9 @@ final class Engine {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private void sniffForce(final Force force) {
+	private void sniffForce(final double force) {
 
-		this.currentScore += force.getValue() / 10;
+		this.currentScore += force / 10;
 	}
 
 	/****************************************************************************

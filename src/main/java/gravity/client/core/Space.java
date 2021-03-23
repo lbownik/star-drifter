@@ -23,7 +23,6 @@ import static java.util.stream.IntStream.range;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
 /*******************************************************************************
@@ -34,7 +33,7 @@ public final class Space {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Space(final int width, final int height, final Consumer<Force> forceSniffer) {
+	public Space(final int width, final int height, final DoubleConsumer forceSniffer) {
 
 		this.width = width;
 		this.height = height;

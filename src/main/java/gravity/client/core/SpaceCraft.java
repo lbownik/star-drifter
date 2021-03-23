@@ -19,7 +19,7 @@ package gravity.client.core;
 
 import static gravity.client.core.Phase.forwardStopping;
 
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -30,7 +30,7 @@ class SpaceCraft extends Body {
 	 *
 	 ***************************************************************************/
 	public SpaceCraft(final Position center, final Speed speed,
-			final Consumer<Force> forceSniffer) {
+			final DoubleConsumer forceSniffer) {
 
 		super(1, 25, center, speed, angleFollowsSpeed(), forwardStopping(49, 0.8));
 
@@ -44,7 +44,7 @@ class SpaceCraft extends Body {
 	void moveBy(final Force force, final double timeInterval) {
 
 		super.moveBy(force, timeInterval);
-		this.forceSniffer.accept(force);
+		this.forceSniffer.accept(force.getValue());
 	}
 
 	/****************************************************************************
@@ -59,5 +59,5 @@ class SpaceCraft extends Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private final Consumer<Force> forceSniffer;
+	private final DoubleConsumer forceSniffer;
 }

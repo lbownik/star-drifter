@@ -35,7 +35,7 @@ import static java.lang.Math.PI;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 import java.util.function.Function;
 
 /*******************************************************************************
@@ -64,7 +64,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 *
 	 ***************************************************************************/
 	@Override
-	public Space create(final int level, final Consumer<Force> forceSniffer) {
+	public Space create(final int level, final DoubleConsumer forceSniffer) {
 
 		throwIf(level < 0 | level > getMaxLevel(),
 				() -> "Level mustbe between 0 and " + getMaxLevel());
@@ -75,7 +75,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation0(final Consumer<Force> forceSniffer) {
+	private Space getPlanetConstellation0(final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
@@ -106,7 +106,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation1(final Consumer<Force> forceSniffer) {
+	private Space getPlanetConstellation1(final DoubleConsumer forceSniffer) {
 
 		final int numberOfPhases = 49;
 
@@ -122,7 +122,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation2(final Consumer<Force> forceSniffer) {
+	private Space getPlanetConstellation2(final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
@@ -145,7 +145,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation3(final Consumer<Force> forceSniffer) {
+	private Space getPlanetConstellation3(final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
@@ -162,7 +162,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation4(final Consumer<Force> forceSniffer) {
+	private Space getPlanetConstellation4(final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
@@ -188,7 +188,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation5(final Consumer<Force> forceSniffer) {
+	private Space getPlanetConstellation5(final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
@@ -206,7 +206,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	private Space getPlanetConstellation6(final Consumer<Force> forceSniffer) {
+	private Space getPlanetConstellation6(final DoubleConsumer forceSniffer) {
 
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
@@ -233,7 +233,7 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private final int spaceWidth;
 	private final int spaceHeight;
-	private final List<Function<Consumer<Force>, Space>> constellations = new ArrayList<>();
+	private final List<Function<DoubleConsumer, Space>> constellations = new ArrayList<>();
 
 	final static int maxPhaseIndex = 49;
 }

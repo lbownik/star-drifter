@@ -39,7 +39,7 @@ public final class Speed extends Vector {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void changeBy(final Acceleration acc, final double timeInterval) {
+	void changeBy(final Acceleration acc, final double timeInterval) {
 
 		this.x += acc.x * timeInterval;
 		this.y += acc.y * timeInterval;

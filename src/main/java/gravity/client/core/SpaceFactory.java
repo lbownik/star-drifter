@@ -17,7 +17,7 @@
 
 package gravity.client.core;
 
-import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /*******************************************************************************
  * @author lukasz.bownik@gmail.com
@@ -27,7 +27,7 @@ public interface SpaceFactory {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	Space create(int level, final Consumer<Force> forceSniffer);
+	Space create(int level, final DoubleConsumer forceSniffer);
 	
 	/****************************************************************************
 	 *
