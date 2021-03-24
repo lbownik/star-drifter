@@ -148,7 +148,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public void setSpeed(final Speed speed) {
+	void setSpeed(final Speed speed) {
 
 		this.speed = speed;
 	}

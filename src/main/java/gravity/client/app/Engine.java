@@ -72,7 +72,7 @@ final class Engine {
 		final Speed speed = new Speed(cursorX - getSpaceCraft().getCenter().getX(),
 				cursorY - getSpaceCraft().getCenter().getY());
 		speed.scaleBy(0.1);
-		getSpaceCraft().setSpeed(speed);
+		this.space.setSpaceCraftSpeed(speed);
 	}
 
 	/****************************************************************************

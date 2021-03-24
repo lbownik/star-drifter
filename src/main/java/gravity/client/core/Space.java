@@ -57,6 +57,13 @@ public final class Space {
 		movePlanets(interval);
 		this.moveCraft.accept(interval);
 	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public void setSpaceCraftSpeed(final Speed speed) {
+
+		this.spaceCraft.setSpeed(speed);
+	}
 
 	/****************************************************************************
 	 *
