@@ -35,7 +35,7 @@ public abstract class Vector {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public <U extends Vector> U combineWith(final U other) {
+	<U extends Vector> U combineWith(final U other) {
 
 		this.x += other.x;
 		this.y += other.y;
@@ -58,14 +58,14 @@ public abstract class Vector {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public double getValue() {
+	double getValue() {
 
 		return hypot(this.x, this.y);
 	}
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public double getAngle() {
+	double getAngle() {
 
 		return atan2(this.y, this.x);
 	}
