@@ -74,7 +74,7 @@ public final class Space {
 				intervel);
 		this.spaceCraft.incrementTime(intervel);
 
-		if (hasSpaceCraftCrashed()) {
+		if (hasSpaceCraftCrashedIntoPlanet()) {
 			this.spaceCraft = new FireBall(this.spaceCraft.getCenter());
 			this.moveCraft = this.spaceCraft::incrementTime;
 		}
@@ -94,11 +94,18 @@ public final class Space {
 			this.planets.get(i).incrementTime(intervel);
 		});
 	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	public boolean hasSpaceCraftCrashed() {
+
+		return isSpaceCraftBurning();
+	}
 
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public boolean isSpaceCraftBurning() {
+	private boolean isSpaceCraftBurning() {
 
 		return this.spaceCraft.getName().equals(FireBall.name);
 	}
@@ -131,7 +138,7 @@ public final class Space {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public boolean hasSpaceCraftCrashed() {
+	private boolean hasSpaceCraftCrashedIntoPlanet() {
 
 		return this.planets.stream()
 				.anyMatch(planet -> this.spaceCraft.isCollidingWith(planet));
