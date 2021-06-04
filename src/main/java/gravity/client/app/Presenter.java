@@ -17,7 +17,6 @@
 
 package gravity.client.app;
 
-
 import java.util.List;
 
 import gravity.client.core.Body;
@@ -32,25 +31,25 @@ public final class Presenter {
 	 *
 	 ***************************************************************************/
 	public interface UI {
-		
+
 		void setPresenter(Presenter presenter);
 
-		void refresh(Body craft, List<? extends Body> planets, int score, int level,
-				int numOfLevels);
+		void refresh(Body craft, List<? extends Body> planets,
+				List<? extends Body> backPlanets, int score, int level, int numOfLevels);
 
-		void refreshWithSpeed(Body craft, List<? extends Body> planets, int score,
-				int level, int numOfLevels);
+		void refreshWithSpeed(Body craft, List<? extends Body> planets,
+				List<? extends Body> backPlanets, int score, int level, int numOfLevels);
 
 		void showFailure();
 
 		void showSuccess(int currrentScore);
-		
+
 		void playExlposion();
-		
+
 		void playLaunch();
-		
+
 		void enableAming();
-		
+
 		void disableAiming();
 	}
 
@@ -67,7 +66,7 @@ public final class Presenter {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Presenter(final Presenter.UI view, final SpaceFactory spaceFacotry, 
+	public Presenter(final Presenter.UI view, final SpaceFactory spaceFacotry,
 			final Scheduler scheduler, int initialLevel) {
 
 		this.view = view;
@@ -117,6 +116,7 @@ public final class Presenter {
 		this.refreshCommand = this::refreshView;
 		start();
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -134,36 +134,40 @@ public final class Presenter {
 
 		this.engine.incrementTime(interval_ms, this);
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	void inProgress() {
-		
+
 		this.refreshCommand.run();
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	void crashed() {
-		
+
 		this.playExplosionCommand.run();
-		this.playExplosionCommand = () -> {};
+		this.playExplosionCommand = () -> {
+		};
 	}
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	void success() {
-		
+
 		this.scheduler.cancel();
 		refreshView();
 		this.view.showSuccess(this.engine.getCurrentScore());
 	}
-	
+
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	void failure() {
-		
+
 		this.scheduler.cancel();
 		refreshView();
 		this.view.showFailure();
@@ -175,8 +179,8 @@ public final class Presenter {
 	private void refreshView() {
 
 		this.view.refresh(this.engine.getSpaceCraft(), this.engine.getPlanets(),
-				this.engine.getTotalScore(), this.engine.getCurrentLevelNo(),
-				this.engine.getLevelsCount());
+				this.engine.getBackPlanets(), this.engine.getTotalScore(),
+				this.engine.getCurrentLevelNo(), this.engine.getLevelsCount());
 	}
 
 	/****************************************************************************
@@ -185,8 +189,8 @@ public final class Presenter {
 	private void refreshViewWithSpeed() {
 
 		this.view.refreshWithSpeed(this.engine.getSpaceCraft(), this.engine.getPlanets(),
-				this.engine.getTotalScore(), this.engine.getCurrentLevelNo(),
-				this.engine.getLevelsCount());
+				this.engine.getBackPlanets(), this.engine.getTotalScore(),
+				this.engine.getCurrentLevelNo(), this.engine.getLevelsCount());
 	}
 
 	/****************************************************************************
@@ -196,5 +200,6 @@ public final class Presenter {
 	private final UI view;
 	private final Scheduler scheduler;
 	private Runnable refreshCommand = this::refreshView;
-	private Runnable playExplosionCommand = () -> {};
+	private Runnable playExplosionCommand = () -> {
+	};
 }

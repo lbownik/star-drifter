@@ -24,6 +24,8 @@ import static com.google.gwt.user.client.Event.setEventListener;
 import static com.google.gwt.user.client.Event.sinkEvents;
 import static java.lang.String.valueOf;
 
+import java.util.List;
+
 import com.google.gwt.canvas.dom.client.Context2d;
 import com.google.gwt.dom.client.CanvasElement;
 import com.google.gwt.dom.client.Document;
@@ -102,9 +104,11 @@ final class SpaceCanvas {
 	 *
 	 ***************************************************************************/
 	void refresh(final Body craft, final Iterable<? extends Body> planets,
-			final int score, final int level, final int numOfLevels) {
+			List<? extends Body> backPlanets, final int score, final int level,
+			final int numOfLevels) {
 
 		clear();
+		backPlanets.forEach(this::draw);
 		planets.forEach(this::draw);
 		draw(craft);
 		draw(score, level, numOfLevels);
@@ -114,9 +118,11 @@ final class SpaceCanvas {
 	 *
 	 ***************************************************************************/
 	void refreshWithSpeed(final Body craft, final Iterable<? extends Body> planets,
-			final int score, final int level, final int numOfLevels) {
+			List<? extends Body> backPlanets, final int score, final int level,
+			final int numOfLevels) {
 
 		clear();
+		backPlanets.forEach(this::draw);
 		planets.forEach(this::draw);
 		drawWithSpeed(craft);
 		draw(score, level, numOfLevels);

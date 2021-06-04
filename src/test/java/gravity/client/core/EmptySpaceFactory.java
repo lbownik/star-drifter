@@ -16,6 +16,10 @@
 //Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package gravity.client.core;
 
+import static gravity.client.core.Body.angleIsFixedAt;
+import static gravity.client.core.Phase.constant;
+import static gravity.client.core.Planet.Type.galaxy;
+
 import java.util.function.DoubleConsumer;
 
 /*******************************************************************************
@@ -39,6 +43,15 @@ public final class EmptySpaceFactory implements SpaceFactory {
 	public Space create(final int level, final DoubleConsumer forceSniffer) {
 
 		return new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
+	}
+	
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	@Override
+	public Space createBackSpace(int level) {
+		
+		return new Space(this.spaceWidth, this.spaceHeight, (f) -> {});
 	}
 
 	/****************************************************************************

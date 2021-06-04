@@ -44,6 +44,9 @@ final class Engine {
 	void incrementTime(final int interval_ms, final Presenter presenter) {
 
 		final double refreshRateIndependentInterval = interval_ms * gamePace;
+		
+		this.backSpace.incrementTime(refreshRateIndependentInterval);
+		
 		this.space.incrementTime(refreshRateIndependentInterval);
 
 		if (this.space.isSpaceCraftBeyondBounds()) {
@@ -91,6 +94,7 @@ final class Engine {
 		this.currentLevel = level;
 
 		this.space = this.spaceFactory.create(level, this::sniffForce);
+		this.backSpace = this.spaceFactory.createBackSpace(level);
 	}
 
 	/****************************************************************************
@@ -128,6 +132,13 @@ final class Engine {
 	List<? extends Body> getPlanets() {
 
 		return this.space.getPlanets();
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	List<? extends Body> getBackPlanets() {
+
+		return this.backSpace.getPlanets();
 	}
 
 	/****************************************************************************
@@ -175,6 +186,7 @@ final class Engine {
 	 ***************************************************************************/
 	private final SpaceFactory spaceFactory;
 	private Space space;
+	private Space backSpace;
 	private int currentLevel = 0;
 	private double currentScore = 0;
 	private double totalScore = 0;

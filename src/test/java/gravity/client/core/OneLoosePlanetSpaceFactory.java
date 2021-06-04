@@ -49,6 +49,14 @@ public final class OneLoosePlanetSpaceFactory implements SpaceFactory {
 
 		return space;
 	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	@Override
+	public Space createBackSpace(int level) {
+		
+		return new Space(this.spaceWidth, this.spaceHeight, (f) -> {});
+	}
 
 	/****************************************************************************
 	 *

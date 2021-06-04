@@ -17,6 +17,9 @@
 package gravity.client.core;
 
 import static gravity.client.core.Body.angleCirculatesAt;
+import static gravity.client.core.Body.angleIsFixedAt;
+import static gravity.client.core.Phase.constant;
+import static gravity.client.core.Planet.Type.galaxy;
 import static gravity.client.core.Planet.Type.meteorite;
 import static gravity.client.core.Planet.Type.rocky;
 
@@ -51,6 +54,18 @@ public final class FakeSpaceFactory implements SpaceFactory {
 
 		return this.constellations.get(level - 1).apply(forceSniffer);
 
+	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	@Override
+	public Space createBackSpace(int level) {
+		
+		final Space space = new Space(this.spaceWidth, this.spaceHeight, (f) -> {});
+		space.add(new StaticPlanet(galaxy, 1, 1,
+				new Position(this.spaceWidth / 2, this.spaceHeight / 2), angleIsFixedAt(0),
+				constant(0)));
+		return space;
 	}
 
 	/****************************************************************************

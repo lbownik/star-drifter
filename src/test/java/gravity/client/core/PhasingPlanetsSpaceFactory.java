@@ -55,6 +55,14 @@ public final class PhasingPlanetsSpaceFactory implements SpaceFactory {
 		return this.constellations.get(level - 1).get();
 
 	}
+	/****************************************************************************
+	 *
+	 ***************************************************************************/
+	@Override
+	public Space createBackSpace(int level) {
+		
+		return new Space(this.spaceWidth, this.spaceHeight, (f) -> {});
+	}
 
 	/****************************************************************************
 	 *
