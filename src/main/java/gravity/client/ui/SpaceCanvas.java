@@ -23,10 +23,13 @@ import static com.google.gwt.user.client.Event.ONMOUSEUP;
 import static com.google.gwt.user.client.Event.setEventListener;
 import static com.google.gwt.user.client.Event.sinkEvents;
 import static java.lang.String.valueOf;
+import static java.lang.Double.parseDouble;
+import static java.lang.Math.floor;
 
 import java.util.List;
 
 import com.google.gwt.canvas.dom.client.Context2d;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.CanvasElement;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.ImageElement;
@@ -157,9 +160,13 @@ final class SpaceCanvas {
 		this.context.rotate(body.getAngle());
 		final ImageElement image = (ImageElement) Document.get()
 				.getElementById(body.getName());
-		final double size = image.getHeight();
-		this.context.drawImage(image, body.getPhaseIndex() * size, 0, size, size,
-				-size / 2, -size / 2, size, size);
+		
+		final double size = parseDouble(image.getAttribute("data-frame-size"));
+		final double columns = image.getWidth() / size;
+		final double topX = (body.getPhaseIndex() % columns) * size;
+		final double topY = floor(body.getPhaseIndex() / columns) * size;
+		this.context.drawImage(image, topX, topY, size, size, -size / 2,
+				-size / 2, size, size);
 
 		this.context.restore();
 	}

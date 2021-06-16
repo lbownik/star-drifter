@@ -80,9 +80,9 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	public Space createBackSpace(int level) {
 		
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, (f) -> {});
-		space.add(new StaticPlanet(galaxy, 1, 1,
+		space.add(new StaticPlanet(galaxy, 1, 256,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 2), angleIsFixedAt(0),
-				forwardLooping(maxPhaseIndex, 0.8)));
+				forwardLooping(120, 0.8)));
 		return space;
 	}
 
