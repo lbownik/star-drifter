@@ -26,12 +26,10 @@ public class FakeUI implements Presenter.UI {
 		 *
 		 ************************************************************************/
 		public RefreshRecord(final Body craft, final List<? extends Body> planets,
-				List<? extends Body> backPlanets, final int score, final int level,
-				final int numOfLevels) {
+				final int score, final int level, final int numOfLevels) {
 
 			this.craft = craft;
 			this.planets = planets;
-			this.backPlanets = backPlanets;
 			this.score = score;
 			this.level = level;
 			this.numOfLevels = numOfLevels;
@@ -100,7 +98,6 @@ public class FakeUI implements Presenter.UI {
 		 ************************************************************************/
 		public final Body craft;
 		public final List<? extends Body> planets;
-		public final List<? extends Body> backPlanets;
 		public final int score;
 		public final int level;
 		public final int numOfLevels;
@@ -120,11 +117,10 @@ public class FakeUI implements Presenter.UI {
 	 ***************************************************************************/
 	@Override
 	public void refresh(final Body craft, final List<? extends Body> planets,
-			List<? extends Body> backPlanets, final int score, final int level,
-			final int numOfLevels) {
+			final int score, final int level, final int numOfLevels) {
 
-		this.refreshCalled.add(
-				new RefreshRecord(craft, planets, backPlanets, score, level, numOfLevels));
+		this.refreshCalled
+				.add(new RefreshRecord(craft, planets, score, level, numOfLevels));
 	}
 
 	/****************************************************************************
@@ -132,11 +128,10 @@ public class FakeUI implements Presenter.UI {
 	 ***************************************************************************/
 	@Override
 	public void refreshWithSpeed(final Body craft, final List<? extends Body> planets,
-			List<? extends Body> backPlanets, final int score, final int level,
-			final int numOfLevels) {
+			final int score, final int level, final int numOfLevels) {
 
-		this.refreshWithSpeedCalled.add(
-				new RefreshRecord(craft, planets, backPlanets, score, level, numOfLevels));
+		this.refreshWithSpeedCalled
+				.add(new RefreshRecord(craft, planets, score, level, numOfLevels));
 	}
 
 	/****************************************************************************
@@ -255,8 +250,6 @@ public class FakeUI implements Presenter.UI {
 	public void assertThatPlanetsWereNeverNullIn(final List<RefreshRecord> records) {
 
 		assertTrue(records.stream().flatMap(r -> r.planets.stream())
-				.allMatch(Objects::nonNull));
-		assertTrue(records.stream().flatMap(r -> r.backPlanets.stream())
 				.allMatch(Objects::nonNull));
 	}
 

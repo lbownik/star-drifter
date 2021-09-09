@@ -22,13 +22,6 @@
 <link rel="shortcut icon" href="favicon.png" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <style>
-html {
-	background-image: linear-gradient(90deg, black, grey, grey);
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100%;
-	text-shadow: 1px 1px 10px yellow;
-}
 canvas {
 	background-image: url("space.jpg");
 	z-index: 0;
@@ -37,7 +30,6 @@ canvas {
 	margin-left: -400px;
 	padding: 0px;
 	margin-top: 1.5em;
-	box-shadow: 10px 10px 5px grey;
 }
 
 #logo {
@@ -120,10 +112,6 @@ canvas {
 	position: fixed;
 	left: 50%;
 	margin-left: -400px;
-	color: white;
-}
-#authors a {
-	color: yellow;
 }
 
 #scorePanel {
@@ -161,16 +149,15 @@ canvas {
 		<button id="startButton"></button>
 	</div>
 	<!-- preload images -->
-	<img src="spacecraft.png" id="spacecraft" hidden="true" data-frame-size="50"/>
-	<img src="blackHole.png" id="blackHole" hidden="true"data-frame-size="100"/>
-	<img src="earthLike.png" id="earthLike" hidden="true" data-frame-size="100"/>
-	<img src="gas.png" id="gas" hidden="true" data-frame-size="100"/>
-	<img src="ice.png" id="ice" hidden="true" data-frame-size="100"/>
-	<img src="rocky.png" id="rocky" hidden="true" data-frame-size="100"/>
-	<img src="withRings.png" id="withRings" hidden="true" data-frame-size="100"/>
-	<img src="fireball.png" id="fireball" hidden="true" data-frame-size="100"/>
-	<img src="meteorite.png" id="meteorite" hidden="true" data-frame-size="100"/>
-	<img src="galaxy.png" id="galaxy" hidden="true" data-frame-size="512"/>
+	<img src="spacecraft.png" id="spacecraft" hidden="true"/>
+	<img src="blackHole.png" id="blackHole" hidden="true"/>
+	<img src="earthLike.png" id="earthLike" hidden="true"/>
+	<img src="gas.png" id="gas" hidden="true"/>
+	<img src="ice.png" id="ice" hidden="true"/>
+	<img src="rocky.png" id="rocky" hidden="true"/>
+	<img src="withRings.png" id="withRings" hidden="true"/>
+	<img src="fireball.png" id="fireball" hidden="true"/>
+	<img src="meteorite.png" id="meteorite" hidden="true"/>
 
 	<audio id="blast" preload="auto">
 		<source src="200466__wubitog__short-explosion.wav" type="audio/wav" />

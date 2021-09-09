@@ -132,25 +132,22 @@ public final class WebUI implements Presenter.UI {
 
 		this.presenter = presenter;
 	}
-
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
 	public void enableAming() {
-
+		
 		this.spacePane.enableClickEvents();
 	}
-
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
 	@Override
 	public void disableAiming() {
-
+	
 		this.spacePane.disableClickEvents();
 	}
-
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
@@ -172,10 +169,9 @@ public final class WebUI implements Presenter.UI {
 	 ***************************************************************************/
 	@Override
 	public void refresh(final Body craft, final List<? extends Body> planets,
-			final List<? extends Body> backPlanets, final int score, final int level,
-			final int numOfLevels) {
+			final int score, final int level, final int numOfLevels) {
 
-		this.spacePane.refresh(craft, planets, backPlanets, score, level, numOfLevels);
+		this.spacePane.refresh(craft, planets, score, level, numOfLevels);
 	}
 
 	/****************************************************************************
@@ -183,11 +179,9 @@ public final class WebUI implements Presenter.UI {
 	 ***************************************************************************/
 	@Override
 	public void refreshWithSpeed(final Body craft, final List<? extends Body> planets,
-			final List<? extends Body> backPlanets, final int score, final int level,
-			final int numOfLevels) {
+			final int score, final int level, final int numOfLevels) {
 
-		this.spacePane.refreshWithSpeed(craft, planets, backPlanets, score, level,
-				numOfLevels);
+		this.spacePane.refreshWithSpeed(craft, planets, score, level, numOfLevels);
 	}
 
 	/****************************************************************************

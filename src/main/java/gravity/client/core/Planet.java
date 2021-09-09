@@ -29,7 +29,7 @@ class Planet extends Body {
 	 *
 	 ***************************************************************************/
 	public enum Type {
-		rocky, earthLike, gas, ice, withRings, blackHole, meteorite, galaxy;
+		rocky, earthLike, gas, ice, withRings, blackHole, meteorite;
 	}
 
 	/****************************************************************************

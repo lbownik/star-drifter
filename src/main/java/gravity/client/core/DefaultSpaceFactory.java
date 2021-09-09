@@ -23,7 +23,6 @@ import static gravity.client.core.Body.angleIsFixedAt;
 import static gravity.client.core.Phase.backwardLooping;
 import static gravity.client.core.Phase.forwardBackwardLooping;
 import static gravity.client.core.Phase.forwardLooping;
-import static gravity.client.core.Phase.constant;
 import static gravity.client.core.Planet.Type.blackHole;
 import static gravity.client.core.Planet.Type.earthLike;
 import static gravity.client.core.Planet.Type.gas;
@@ -31,7 +30,6 @@ import static gravity.client.core.Planet.Type.ice;
 import static gravity.client.core.Planet.Type.meteorite;
 import static gravity.client.core.Planet.Type.rocky;
 import static gravity.client.core.Planet.Type.withRings;
-import static gravity.client.core.Planet.Type.galaxy;
 import static gravity.client.core.Preconditions.throwIf;
 import static java.lang.Math.PI;
 
@@ -73,18 +71,6 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 
 		return this.constellations.get(level).apply(forceSniffer);
 	}
-	/****************************************************************************
-	 *
-	 ***************************************************************************/
-	@Override
-	public Space createBackSpace(int level) {
-		
-		final Space space = new Space(this.spaceWidth, this.spaceHeight, (f) -> {});
-		space.add(new StaticPlanet(galaxy, 1, 256,
-				new Position(this.spaceWidth / 2, this.spaceHeight / 2), angleIsFixedAt(0),
-				forwardLooping(120, 0.8)));
-		return space;
-	}
 
 	/****************************************************************************
 	 *
@@ -122,11 +108,13 @@ public final class DefaultSpaceFactory implements SpaceFactory {
 	 ***************************************************************************/
 	private Space getPlanetConstellation1(final DoubleConsumer forceSniffer) {
 
+		final int numberOfPhases = 49;
+
 		final Space space = new Space(this.spaceWidth, this.spaceHeight, forceSniffer);
 
 		space.add(new StaticPlanet(rocky, 100, 50,
 				new Position(this.spaceWidth / 2, this.spaceHeight / 2), angleIsFixedAt(0),
-				forwardLooping(maxPhaseIndex, 0.8)));
+				forwardLooping(numberOfPhases, 0.8)));
 
 		return space;
 	}
