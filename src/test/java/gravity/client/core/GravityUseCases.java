@@ -67,18 +67,14 @@ public class GravityUseCases {
 	 *
 	 ***************************************************************************/
 	@Test
-	public void forceCannotBeComputed_forTwoMassiveObjects_whanThenOccupyTheSamePoint()
+	public void forceIsZero_forTwoMassiveObjects_whanThenOccupyTheSamePoint()
 			throws Exception {
 
 		Planet p = new Planet(rocky, 1, 1, new Position(0, 0), Speed.zero());
 		SpaceCraft c = new SpaceCraft(new Position(0, 0), Speed.zero(), (f) -> {
 		});
-
-		try {
-			c.gravitationalForceFrom(p);
-		} catch (final IllegalStateException e) {
-			assertEquals("Two objects cannot ocupy the same point.", e.getMessage());
-		}
+		
+		assertEquals(0.0, c.gravitationalForceFrom(p).getValue(), 0.001);
 	}
 
 	/****************************************************************************
