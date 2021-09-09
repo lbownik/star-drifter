@@ -73,6 +73,7 @@ public class OnePlanetSpaceUseCases {
 		record.assertThatScoreIs(0);
 		record.assertThatLevelNumberIs(2);
 		record.assertThatNumberOfPlanetsIs(1);
+		assertEquals("rocky", planet.getName());
 		assertEquals(21.599, planet.getAngle(), 0.001);
 		assertEquals(0, planet.getPhaseIndex());
 
