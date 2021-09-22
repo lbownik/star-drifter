@@ -32,7 +32,7 @@ public abstract class Body {
 	/****************************************************************************
 	 *
 	 ***************************************************************************/
-	public Body(final double mass, final double radius, final Position center,
+	Body(final double mass, final double radius, final Position center,
 			final Speed speed, final IncrementableOperator angleStrategy,
 			final Phase phase) {
 
