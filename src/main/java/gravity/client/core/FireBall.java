@@ -28,7 +28,6 @@ class FireBall extends Body {
 	FireBall(final Position center) {
 
 		super(0.0001, 25, center, Speed.zero(), angleIsFixedAt(0),
-				//Phase.constant(4));
 				Phase.forwardStopping(maxIndex, 0.2));
 	}
 	/****************************************************************************
